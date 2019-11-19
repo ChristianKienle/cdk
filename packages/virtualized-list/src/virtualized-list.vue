@@ -9,7 +9,6 @@
     :items="items"
   >
     <template v-slot:after>
-      <!-- this div needs a certain min-height in order for v-observe-visibility to work. -->
       <div style="height: 10px;" ref="after" v-observe-visibility="afterVisibilityChanged">
         <template v-if="isLoading">
           <slot name="loading">
@@ -38,11 +37,9 @@
 </template>
 
 <script>
-import FdSpinner from "./../Spinner/Spinner.vue";
 
 export default {
-  name: "FdVirtualizedList",
-  components: { FdSpinner },
+  name: 'CVirtualizedList',
   props: {
     // this prop is passed – as it – to `vue-virtual-scroller`. For details please refer to `vue-virtual-scroller` documentation. To sum this prop up: Specify reactive values that can affect the size of the rendered item. This prop will be observed by `vue-virtual-scroller`.
     sizeDependencies: {
@@ -171,7 +168,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-@import "./virtualized-list";
-</style>

@@ -1,6 +1,10 @@
 {
   "packages": [
-    "src/components/*"
+    "packages/*",
+    "docs",
+    "e2e"
   ],
-  "version": "0.0.0"
+  "parallel": false,
+  "npmClient": "npm",
+  "version": "0.1.0"
 }

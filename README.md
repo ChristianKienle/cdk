@@ -16,6 +16,12 @@ Everything in VCDK should be in it's own package and consumable as such.
 ### Drag and Drop
 …
 
+### Popovers / Dropdowns
+…
 
+### Focus Trapping
+…
 
+### Platform Utils
+get the current OS
 

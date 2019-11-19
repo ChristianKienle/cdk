@@ -1,0 +1,24 @@
+{
+	"name": "@vue-cdk/docs",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "minipress dev"
+  },
+	"description": "",
+	"main": "index.js",
+	"keywords": [],
+	"author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue-cdk/virtualized-list": "^0.1.0",
+    "@vue-cdk/breakpoint-observer": "^0.1.0",
+    "@vue-cdk/match-media": "^0.1.0"
+  },
+	"devDependencies": {
+    "@minipress/minipress": "^0.9.0",
+		"@minipress/plugin-clean-urls": "^0.9.0",
+    "@minipress/theme-docs": "^0.8.1",
+    "@minipress/plugin-component-documentation": "^0.9.0",
+    "@minipress/plugin-component-demo": "^0.9.0"
+	}
+}

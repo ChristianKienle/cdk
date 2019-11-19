@@ -3,25 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap --concurrency 1",
+    "clean": "lerna clean -y",
+    "docs": "cd docs && npm run dev",
+    "test:e2e": "cd e2e && npm run start"
   },
-  "dependencies": {
-    "core-js": "^3.3.2",
-    "vue": "^2.6.10"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.0.0",
-    "@vue/cli-plugin-e2e-cypress": "^4.0.0",
-    "@vue/cli-plugin-eslint": "^4.0.0",
-    "@vue/cli-plugin-unit-jest": "^4.0.0",
-    "@vue/cli-service": "^4.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "lerna": "^3.18.3",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "lerna": "^3.18.3"
   }
 }
