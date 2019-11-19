@@ -15,6 +15,7 @@
     "@vue-cdk/match-media": "^0.1.0"
   },
 	"devDependencies": {
+    "saber": "^0.11.3",
     "@minipress/minipress": "^0.9.0",
 		"@minipress/plugin-clean-urls": "^0.9.0",
     "@minipress/theme-docs": "^0.8.1",

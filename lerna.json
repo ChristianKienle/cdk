@@ -2,6 +2,7 @@
   "packages": [
     "packages/*",
     "docs",
+    "storybook",
     "e2e"
   ],
   "parallel": false,
