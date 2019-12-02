@@ -9,7 +9,8 @@
     "docs": "cd docs && npm run dev",
     "test:unit": "cross-env BASE_URL='/' vue-cli-service test:unit --no-collect-coverage",
     "test:unit:watch": "cross-env BASE_URL='/' vue-cli-service test:unit --no-collect-coverage --watch",
-    "test:e2e": "cd e2e && npm run start"
+    "test:e2e": "cd e2e && npm run start",
+    "postinstall": "npm run bootstrap"
   },
   "dependencies": {},
   "devDependencies": {

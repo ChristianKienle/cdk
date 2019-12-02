@@ -1,0 +1,32 @@
+<template>
+  <CPopover
+    with-arrow
+    theme="clean"
+    :flips="false"
+    :body-styles="{
+      overflowY: 'scroll',
+      maxWidth: '350px',
+      maxHeight: '200px'
+    }"
+  >
+  <template #trigger>
+    <button>Show Popover</button>
+
+  </template>
+  <template #default>
+
+    <div>
+      <div v-for="idx in indices" :key="String(idx)">
+        I am part {{ idx + 1 }} of a wonderful popover.
+      </div>
+    </div>
+  </template>
+  </CPopover>
+</template>
+
+<script>
+import "@vue-cdk/popover/themes/clean.css";
+export default {
+  data: () => ({ indices: Array.from({ length: 35 }).map((_, idx) => idx) })
+};
+</script>

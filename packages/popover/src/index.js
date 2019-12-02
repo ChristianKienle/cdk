@@ -1,7 +1,7 @@
-import KPop from "./k-pop.vue"
+import Popover from "./popover.vue"
 
-KPop.install = _vue => {
-  _vue.component("CPopover", KPop)
+Popover.install = _vue => {
+  _vue.component("CPopover", Popover)
 }
 
-export default KPop
+export default Popover

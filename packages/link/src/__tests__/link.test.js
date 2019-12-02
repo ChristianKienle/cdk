@@ -79,14 +79,29 @@ describe('Link', () => {
     expect(routerLink.props().to).toEqual({ name: 'home' })
   })
 
-  it('can be disabled', () => {
+  it('can be disabled', async () => {
+    const localVue = createLocalVue()
     const wrapper = mount({
-      template: `<Link href="#" disabled>Home sweet Home</Link>`,
+      template: `<div><Link @click="$emit('click', 'payload')" href="#" disabled>Home sweet Home</Link></div>`,
       components: { Link }
-    })
-    expect(wrapper.classes('is-disabled')).toBe(true)
-    wrapper.trigger('click')
+    }, { localVue })
+
+    wrapper.find('a').trigger('click')
+    await localVue.nextTick()
     expect(wrapper.emitted('click')).toBeUndefined()
+  })
+
+  it('emits click events', async () => {
+    const localVue = createLocalVue()
+
+    const wrapper = mount({
+      template: `<div><Link @click="$emit('click', 'payload')" href="#">Home sweet Home</Link></div>`,
+      components: { Link }
+    }, { localVue })
+
+    wrapper.find('a').trigger('click')
+    await localVue.nextTick()
+    expect(wrapper.emitted()).toEqual({click: [['payload']]})
   })
 
   // this came up during the execution of end to end tests

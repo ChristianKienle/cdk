@@ -11,20 +11,24 @@
   },
   "main": "src/index.js",
   "files": [
-    "src",
+    "src/**/*.js",
+    "src/**/*.vue",
     "themes/*.css"
   ],
   "peerDependencies": {
     "core-js": "^3.3.2",
-    "vue": "^2.6.10"
-  },
-  "dependencies": {
-    "vue-observe-visibility": "^0.4.6",
-    "vue-virtual-scroller": "^1.0.0-rc.2",
+    "vue": "^2.6.10",
     "@linusborg/vue-simple-portal": "^0.1.4",
+    "@vue-cdk/client-only": "^0.1.0",
     "popper.js": "^1.16.0"
   },
+  "dependencies": {
+    "@vue-cdk/utils": "^0.1.0"
+  },
   "devDependencies": {
+    "@vue-cdk/client-only": "^0.1.0",
+    "@linusborg/vue-simple-portal": "^0.1.4",
+    "popper.js": "^1.16.0",
     "core-js": "^3.3.2",
     "vue": "^2.6.10",
     "@vue/cli-plugin-babel": "^4.0.0",

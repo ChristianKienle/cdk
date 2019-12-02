@@ -17,13 +17,13 @@
   ],
   "peerDependencies": {
     "core-js": "^3.3.2",
-    "vue": "^2.6.10"
-  },
-  "dependencies": {
+    "vue": "^2.6.10",
     "vue-observe-visibility": "^0.4.6",
     "vue-virtual-scroller": "^1.0.0-rc.2"
   },
   "devDependencies": {
+    "vue-observe-visibility": "^0.4.6",
+    "vue-virtual-scroller": "^1.0.0-rc.2",
     "core-js": "^3.3.2",
     "vue": "^2.6.10",
     "@vue/cli-plugin-babel": "^4.0.0",

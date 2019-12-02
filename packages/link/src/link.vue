@@ -1,4 +1,5 @@
 <script>
+// @ts-check
 import isExternal from './is-external'
 
 const EXTERNAL_ATTRS = {
@@ -6,7 +7,14 @@ const EXTERNAL_ATTRS = {
   rel: 'noopener noreferrer'
 }
 
-const renderNativeAnchor = h => (href, context) => {
+/** @param {import('vue').CreateElement} h */
+const renderNativeAnchor =
+h =>
+/**
+ * @param {string} href
+ * @param {import('vue').RenderContext} context
+ */
+(href, context) => {
   const { props, data } = context
 
   const attrs = {
@@ -20,10 +28,26 @@ const renderNativeAnchor = h => (href, context) => {
       'is-disabled': props.disabled
     }
   ]
+
+  const on = {
+    /** @param {Event} event */
+    click: event => {
+      if(props.disabled === true) {
+        event.preventDefault()
+      } else {
+        const emitClick = context.listeners.click;
+        if(emitClick != null) {
+          // @ts-ignore
+          emitClick()
+        }
+      }
+    }
+  }
   const _data = {
     ...context.data,
     attrs,
-    class: _class
+    class: _class,
+    on
   }
   return h('a', _data, context.children || '')
 }
