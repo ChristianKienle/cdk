@@ -12,7 +12,8 @@
   "main": "src/index.js",
   "files": [
     "src/index.js",
-    "src/virtualized-list.vue"
+    "src/virtualized-list.vue",
+    "src/virtualized-list-item.vue"
   ],
   "peerDependencies": {
     "core-js": "^3.3.2",

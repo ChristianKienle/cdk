@@ -1,0 +1,15 @@
+{
+  "name": "@vue-cdk/pluginify",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.js",
+  "files": [
+    "src/**/*.js"
+  ],
+  "peerDependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "vue": "^2.6.10"
+  }
+}

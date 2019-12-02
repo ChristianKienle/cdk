@@ -6,13 +6,15 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "storybook": "start-storybook --ci"
+    "storybook": "start-storybook --ci --port 9999"
   },
   "dependencies": {
     "core-js": "^3.3.2",
     "vue": "^2.6.10",
     "@vue-cdk/virtualized-list": "^0.1.0",
-    "@vue-cdk/match-media": "^0.1.0"
+    "@vue-cdk/link": "^0.1.0",
+    "@vue-cdk/match-media": "^0.1.0",
+    "@vue-cdk/popover": "^0.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",

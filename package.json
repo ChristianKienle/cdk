@@ -3,13 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "storybook": "cd storybook && npm run storybook",
     "bootstrap": "lerna bootstrap --concurrency 1",
     "clean": "lerna clean -y",
     "docs": "cd docs && npm run dev",
+    "test:unit": "cross-env BASE_URL='/' vue-cli-service test:unit --no-collect-coverage",
+    "test:unit:watch": "cross-env BASE_URL='/' vue-cli-service test:unit --no-collect-coverage --watch",
     "test:e2e": "cd e2e && npm run start"
   },
   "dependencies": {},
   "devDependencies": {
-    "lerna": "^3.18.3"
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "vue-template-compiler": "^2.6.10",
+    "@vue/cli-service": "^4.1.1",
+    "@vue/cli-plugin-unit-jest": "^4.1.1",
+    "@vue/cli-plugin-babel": "^4.1.1",
+    "babel-jest": "^24.9.0",
+    "lerna": "^3.18.3",
+    "cross-env": "^6.0.3"
   }
 }

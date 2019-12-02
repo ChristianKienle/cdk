@@ -12,14 +12,14 @@
 
 
 <script>
-import MatchMedia from '@vue-cdk/match-media';
+// import MatchMedia from '@vue-cdk/match-media';
 export default {
   mixins: [
-    MatchMedia({
-      mini: "(max-width: 200px)",
-      compact: "(min-width: 200px) and (max-width: 400px)",
-      regular: "(min-width: 400px)"
-    })
+    // MatchMedia({
+    //   mini: "(max-width: 200px)",
+    //   compact: "(min-width: 200px) and (max-width: 400px)",
+    //   regular: "(min-width: 400px)"
+    // })
   ]
 };
 </script>

@@ -2,7 +2,7 @@
 	"name": "@vue-cdk/docs",
   "version": "0.1.0",
   "scripts": {
-    "dev": "minipress dev"
+    "dev": "vuepress dev"
   },
 	"description": "",
 	"main": "index.js",
@@ -11,15 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "@vue-cdk/virtualized-list": "^0.1.0",
-    "@vue-cdk/breakpoint-observer": "^0.1.0",
-    "@vue-cdk/match-media": "^0.1.0"
+    "@vue-cdk/link": "^0.1.0",
+    "@vue-cdk/pluginify": "^0.1.0",
+    "@vue-cdk/match-media": "^0.1.0",
+    "@vuese/parser": "^2.4.3"
   },
 	"devDependencies": {
-    "saber": "^0.11.3",
-    "@minipress/minipress": "^0.9.0",
-		"@minipress/plugin-clean-urls": "^0.9.0",
-    "@minipress/theme-docs": "^0.8.1",
-    "@minipress/plugin-component-documentation": "^0.9.0",
-    "@minipress/plugin-component-demo": "^0.9.0"
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-clean-urls": "^1.1.1"
 	}
 }

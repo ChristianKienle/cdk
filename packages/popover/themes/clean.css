@@ -1,0 +1,84 @@
+.kpop-theme-clean[aria-hidden='true'] {
+  opacity: 0;
+  transition: opacity 0.25s, visibility 0.25s;
+  visibility: hidden; }
+
+.kpop-theme-clean[aria-hidden='false'] {
+  opacity: 1;
+  transition: opacity 0.25s;
+  visibility: visible; }
+
+.kpop-theme-clean.kpop-body {
+  background-color: #fff;
+  border: 1px solid #f1f3f8;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  padding: 15px; }
+  .kpop-theme-clean.kpop-body.kpop-no-arrow {
+    margin: 0 !important; }
+    .kpop-theme-clean.kpop-body.kpop-no-arrow .kpop-arrow {
+      display: none; }
+  .kpop-theme-clean.kpop-body[x-out-of-boundaries] {
+    display: none; }
+  .kpop-theme-clean.kpop-body[x-placement^='bottom'] {
+    margin-top: 15px; }
+    .kpop-theme-clean.kpop-body[x-placement^='bottom'] .kpop-arrow {
+      border-bottom-color: #e0e4f0;
+      border-width: 0 7.5px 15px;
+      margin: 0 7.5px;
+      top: -15px; }
+      .kpop-theme-clean.kpop-body[x-placement^='bottom'] .kpop-arrow::after {
+        border-bottom-color: #fff;
+        border-width: 0 7.5px 15px;
+        margin: 0 -7.5px;
+        top: 1px; }
+  .kpop-theme-clean.kpop-body[x-placement^='top'] {
+    margin-bottom: 15px; }
+    .kpop-theme-clean.kpop-body[x-placement^='top'] .kpop-arrow {
+      border-top-color: #fff;
+      border-width: 15px 7.5px 0 7.5px;
+      bottom: -15px;
+      margin: 0 7.5px; }
+      .kpop-theme-clean.kpop-body[x-placement^='top'] .kpop-arrow::after {
+        border-top-color: #fff;
+        border-width: 15px 7.5px 0 7.5px;
+        bottom: 1px;
+        margin: 0 -7.5px; }
+  .kpop-theme-clean.kpop-body[x-placement^='left'] {
+    margin-right: 15px; }
+    .kpop-theme-clean.kpop-body[x-placement^='left'] .kpop-arrow {
+      border-left-color: #e0e4f0;
+      border-width: 7.5px 0 7.5px 15px;
+      margin: 7.5px 0;
+      right: -15px; }
+      .kpop-theme-clean.kpop-body[x-placement^='left'] .kpop-arrow::after {
+        border-left-color: #fff;
+        border-width: 7.5px 0 7.5px 15px;
+        margin: -7.5px 0;
+        right: 1px; }
+  .kpop-theme-clean.kpop-body[x-placement^='right'] {
+    margin-left: 15px; }
+    .kpop-theme-clean.kpop-body[x-placement^='right'] .kpop-arrow {
+      border-right-color: #e0e4f0;
+      border-width: 7.5px 15px 7.5px 0;
+      left: -15px;
+      margin: 7.5px 0; }
+      .kpop-theme-clean.kpop-body[x-placement^='right'] .kpop-arrow::after {
+        border-right-color: #fff;
+        border-width: 7.5px 15px 7.5px 0;
+        left: 1px;
+        margin: -7.5px 0; }
+  .kpop-theme-clean.kpop-body .kpop-arrow {
+    border-color: transparent;
+    border-style: solid;
+    height: 0;
+    position: absolute;
+    width: 0; }
+    .kpop-theme-clean.kpop-body .kpop-arrow::after {
+      border-color: transparent;
+      border-style: solid;
+      content: '';
+      position: absolute; }
+
+/*# sourceMappingURL=clean.css.map */

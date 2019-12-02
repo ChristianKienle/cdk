@@ -1,55 +1,49 @@
 <template>
-  <component
+  <CDynamicScroller
+    tabindex="0"
     ref="vList"
     style="height: 100%;"
-    class="fdv-virtualized-list"
     :key-field="keyField"
-    :is="dynamicScrollerComponent"
     :min-item-size="minItemSize"
     :items="items"
   >
     <template v-slot:after>
-      <div style="height: 10px;" ref="after" v-observe-visibility="afterVisibilityChanged">
+      <div
+        style="height: 10px;"
+        ref="after"
+        v-observe-visibility="afterVisibilityChanged"
+      >
         <template v-if="isLoading">
           <slot name="loading">
-            <fd-spinner v-if="isLoading" />
+            <div>Loading…</div>
           </slot>
         </template>
       </div>
     </template>
 
-    <template v-slot="{ item, index, active }">
-      <component
-        :is="dynamicScrollerItemComponent"
-        @click.native="selectItem(item)"
-        :item="item"
-        :active="active"
-        :data-index="index"
-        :data-fdv-virtualized-item-selected="String(itemIsSelected(item))"
-        :data-active="active"
-        :class="rowClasses(item)"
-        :size-dependencies="sizeDependencies"
-      >
-        <slot name="item" v-bind="{ item, index, active }"></slot>
-      </component>
+    <template v-slot="{ item, active, index }">
+      <div>
+        <slot name="item" :item="item" :active="active" :index="index"></slot>
+      </div>
     </template>
-  </component>
+  </CDynamicScroller>
 </template>
 
 <script>
+import CDynamicScroller from "vue-virtual-scroller/src/components/DynamicScroller";
+import CDynamicScrollerItem from "vue-virtual-scroller/src/components/DynamicScrollerItem";
 
 export default {
-  name: 'CVirtualizedList',
+  name: "CVirtualizedList",
+  components: {
+    CDynamicScroller,
+    CDynamicScrollerItem
+  },
   props: {
-    // this prop is passed – as it – to `vue-virtual-scroller`. For details please refer to `vue-virtual-scroller` documentation. To sum this prop up: Specify reactive values that can affect the size of the rendered item. This prop will be observed by `vue-virtual-scroller`.
-    sizeDependencies: {
-      type: [Array, Object],
-      default: null
-    },
     // Name of property that uniquely identifies an item.
     keyField: {
       type: String,
-      required: true
+      default: 'id'
     },
     // By default fd-virtualized-list will automatically requests more items if the use has scrolled down to the bottom of the list. Assume that your list has space for 30 items to be displayed at the same time and after loading the initial batch there is still space left. If total-item-count is set to a value greater than 30 or to null fd-virtualized-list automatically requests more items. This is repeated, until there is no space left or the total item count specified is reached. Of course the user can still load more items by scrolling to the bottom.
     totalItemCount: {
@@ -58,16 +52,6 @@ export default {
     },
     // Minimal size of the items. Will be passed onto DynamicScroller.
     minItemSize: { type: Number, default: 30 },
-    // Under the hood FdVirtualizedList is using Vue's built in dynamic-component-mechanism to render components that belong to vue-virtual-scroller. In case you have customized the installation of vue-virtual-scroller use this prop to tell FdVirtualizedList about the DynamicScroller.
-    dynamicScrollerComponent: {
-      type: [Object, Function, String],
-      default: "DynamicScroller"
-    },
-    // See dynamicScrollerComponent for more information.
-    dynamicScrollerItemComponent: {
-      type: [Object, Function, String],
-      default: "DynamicScrollerItem"
-    },
     // Items to be rendered by the virtualized list. Each item must have a unique identifier. You can specify the name of the identifying property by using the key-field-prop.
     items: { type: Array, default: () => [] },
     // Function to be called when the list needs more items from you. This function is called with a callback parameter that you MUST call at some point with additional items.
@@ -118,7 +102,8 @@ export default {
       if (!loadingIsPossible) {
         return;
       }
-      const moreItemsAvailable = totalItemCount == null ? true : totalItemCount > items.length;
+      const moreItemsAvailable =
+        totalItemCount == null ? true : totalItemCount > items.length;
       const isNeeded = afterSlotVisible && moreItemsAvailable;
       if (!isNeeded) {
         return;
@@ -141,19 +126,6 @@ export default {
       setTimeout(() => {
         this.loadMoreItemsIfNeeded();
       }, 100);
-    },
-    selectItem(item) {
-      this.selectedId = this.idForItem(item);
-      // Triggers when the selected item changes.
-      // @arg the selected item or null
-      this.$emit("update:selectedItem", this.selectedItem);
-    },
-    rowClasses(item) {
-      const selected = this.itemIsSelected(item); //this.idForItem(item) === this.selectedId;
-      return {
-        "fdv-virtualized-list-item": true,
-        "fd-has-background-color-background-selected": selected
-      };
     },
     updateScroll() {
       this.$refs["vList"].$el.scrollTop = this.$refs["vList"].$el.scrollTop - 5;
