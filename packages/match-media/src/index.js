@@ -1,7 +1,18 @@
-import Vue from 'vue'
+// @ts-check
 import MediaQueryObserver from './media-query-observer'
 
-export default namedQueries => {
+/** @typedef {{[name: string]: string}} NamedQueries */
+/** @typedef {import("vue").VueConstructor} VueCtor */
+/**
+ * @typedef {object} Options
+ * @prop {VueCtor} Vue
+ */
+
+/**
+ * @param {NamedQueries} namedQueries
+ * @param {Options} options
+ */
+export default (namedQueries, { Vue }) => {
   const names = Object.keys(namedQueries)
   const mq = Vue.observable({})
 
@@ -39,4 +50,3 @@ export default namedQueries => {
     }
   }
 }
-

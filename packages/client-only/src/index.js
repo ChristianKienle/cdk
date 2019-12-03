@@ -1,8 +1,6 @@
-import ClientOnly from './client-only'
+import ClientOnly from './client-only.vue'
+import pluginify from '@vue-cdk/pluginify'
 
-export const install = vue => {
-  vue.component('CClientOnly', ClientOnly)
-}
-
-export { default as ClientOnly } from './client-only'
+export default pluginify(ClientOnly)
+export { ClientOnly }
 

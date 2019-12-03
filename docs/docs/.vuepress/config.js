@@ -48,11 +48,11 @@ module.exports = {
         after: ""
       }
     ],
-    // 'vuepress-plugin-clean-urls',
     [ApiPlugin, {
       'virtualized-list': require.resolve('@vue-cdk/virtualized-list/src/virtualized-list.vue'),
       'link': require.resolve('@vue-cdk/link/src/link.vue'),
       'popover': require.resolve('@vue-cdk/popover/src/popover.vue'),
+      'client-only': require.resolve('@vue-cdk/client-only/src/client-only.vue')
     }]
   ]
 }
