@@ -1,18 +1,39 @@
 import MatchMedia from '@vue-cdk/match-media';
-import Vue from 'vue';
 
 export default { title: 'Match Media' };
 
-export const defaultMatchMedia = () => ({
-  mixins: [
-    MatchMedia({
-      mini: "(max-width: 200px)",
-      compact: "(min-width: 200px) and (max-width: 400px)",
-      regular: "(min-width: 400px)"
-    }, { Vue })
-  ],
+
+const MediaQueryConsumer = {
+  inject: ['$vcdkMq'],
   template: `
-<div style="height: 100px; border: 1px solid red;">
-{{ $mq }}
+  <div>
+  <h2>Consumer</h2>
+  <ul>
+  <li data-cy="mini">{{ $vcdkMq.mini }}</li>
+  <li data-cy="compact">{{ $vcdkMq.compact }}</li>
+  <li data-cy="regular">{{ $vcdkMq.regular }}</li>
+  <li data-cy="all">{{ $vcdkMq.$all }}</li>
+</ul>
+  </div>
+  `
+}
+
+export const defaultMatchMedia = () => ({
+  vcdkMediaQueriesByName: {
+    mini: "only screen and (max-width: 400px)",
+    compact: "only screen and (min-width: 500px) and (max-width: 600px)",
+    regular: "only screen and (min-width: 600px)"
+  },
+  components: { MediaQueryConsumer },
+  mixins: [MatchMedia],
+  template: `
+<div style="height: 200px; border: 1px solid red;">
+  <ul>
+    <li data-cy="mini">{{ vcdkMq.mini }}</li>
+    <li data-cy="compact">{{ vcdkMq.compact }}</li>
+    <li data-cy="regular">{{ vcdkMq.regular }}</li>
+    <li data-cy="all">{{ vcdkMq.$all }}</li>
+  </ul>
+  <MediaQueryConsumer />
 </div>`,
 });

@@ -7,7 +7,7 @@ The *Link*-component has a dedicated [API documentation](./../../api/link/README
 
 ## Installation
 ``` sh
-npm install @vue-cdk/link --save
+$ npm install @vue-cdk/link --save
 ```
 
 ::: warning Weak Dependencies

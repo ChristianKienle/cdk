@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "start-storybook --ci --port 9999"
+    "start": "start-storybook --ci --port 9999",
+    "build": "build-storybook -c .storybook -o dist"
   },
   "dependencies": {
     "core-js": "^3.3.2",
