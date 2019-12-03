@@ -3,7 +3,6 @@
     <CPopoverTrigger ref="trigger" @click.native="handleClickOnTrigger">
       <slot name="trigger" v-bind="slotProps" />
     </CPopoverTrigger>
-    <ClientOnly>
       <SimplePortal :selector="portalSelector">
         <div
           ref="body"
@@ -15,18 +14,17 @@
           <vp-arrow x-arrow :class="arrowClasses" />
         </div>
       </SimplePortal>
-    </ClientOnly>
   </div>
 </template>
 
 <script>
 import { shortId, normalizedClasses } from "./helper";
-import { Portal as SimplePortal } from "@linusborg/vue-simple-portal";
 import Popper from "popper.js";
 import { inBrowser } from "@vue-cdk/utils";
 import { isValidBoundary, defaultBoundary } from "./boundary";
 import * as BodySizeMode from "./body-size-mode";
-import { ClientOnly } from '@vue-cdk/client-only'
+import { Portal as SimplePortal } from '@vue-cdk/portal'
+
 const CPopoverTrigger = {
   mounted() {
     this.$parent.popperReference = this.$el;
@@ -43,7 +41,6 @@ export default {
   components: {
     CPopoverTrigger,
     SimplePortal,
-    ClientOnly,
     VpArrow: { render: h => h("span") }
   },
   props: {
@@ -51,7 +48,7 @@ export default {
       type: Object,
       default: () => {}
     },
-    portalId: { default: () => "k-pop-portal-container", type: String },
+    portalId: { default: () => "vcdk-popover-portal-container", type: String },
     offset: { type: Number, default: 0 },
     adjustsBodyWidth: { type: Boolean, default: false },
     adjustsVisibility: { type: Boolean, default: true },
@@ -123,7 +120,7 @@ export default {
     },
     arrowClasses() {
       const { theme, arrowClass } = this;
-      return normalizedClasses([arrowClass, theme ? "kpop-arrow" : null]);
+      return normalizedClasses([arrowClass, theme ? "vcdk-popover--arrow" : null]);
     },
     bodyStyles_() {
       const result = {
@@ -145,9 +142,9 @@ export default {
       const bodyClassAsArray = bodyClass.split(" ");
       return normalizedClasses([
         ...bodyClassAsArray,
-        "kpop-body",
-        theme ? `kpop-theme-${this.theme}` : null,
-        !withArrow ? "kpop-no-arrow" : null
+        "vcdk-popover-body",
+        theme ? `vcdk-popover-theme-${this.theme}` : null,
+        !withArrow ? "vcdk-popover--no-arrow" : null
       ]);
     },
     // We merge the user defined modifiers with the modifiers required by FdPopper
@@ -255,9 +252,7 @@ export default {
       const trigger = this.$refs.trigger;
       if (this.visible_ === false) {
         if (popoverNode != null && popoverNode.parentNode != null) {
-          console.log("hih");
           popoverNode.parentNode.removeChild(popoverNode);
-          console.log("hah");
         }
       } else if (trigger) {
         trigger.$el.appendChild(popoverNode);

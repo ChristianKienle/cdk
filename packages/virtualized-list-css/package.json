@@ -1,0 +1,9 @@
+{
+  "name": "@vue-cdk/virtualized-list-css",
+  "version": "0.1.0",
+  "private": true,
+  "files": [
+    "index.css"
+  ],
+  "style": "index.css"
+}

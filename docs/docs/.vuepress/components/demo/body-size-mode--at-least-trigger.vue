@@ -24,6 +24,6 @@
 </template>
 
 <script>
-import "@vue-cdk/popover/themes/clean.css";
+import '@vue-cdk/popover-themes/index.css'
 export default {};
 </script>

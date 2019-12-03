@@ -11,10 +11,8 @@
   >
   <template #trigger>
     <button>Show Popover</button>
-
   </template>
   <template #default>
-
     <div>
       <div v-for="idx in indices" :key="String(idx)">
         I am part {{ idx + 1 }} of a wonderful popover.
@@ -25,8 +23,8 @@
 </template>
 
 <script>
-import "@vue-cdk/popover/themes/clean.css";
+import '@vue-cdk/popover-themes/index.css'
 export default {
   data: () => ({ indices: Array.from({ length: 35 }).map((_, idx) => idx) })
-};
+}
 </script>

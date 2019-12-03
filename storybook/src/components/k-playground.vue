@@ -31,7 +31,7 @@
 <script>
 import KSettings from "./playground/k-settings.vue";
 import KBtn from "./k-btn.vue";
-import '@vue-cdk/popover/themes/all.css';
+import '@vue-cdk/popover-themes/index.css'
 
 export default {
   name: "playground",

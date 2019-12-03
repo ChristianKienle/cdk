@@ -1,14 +1,14 @@
-.kpop-theme-dark[aria-hidden='true'] {
+.vcdk-popover-theme-dark[aria-hidden='true'] {
   opacity: 0;
   transition: opacity 0.25s, visibility 0.25s;
   visibility: hidden; }
 
-.kpop-theme-dark[aria-hidden='false'] {
+.vcdk-popover-theme-dark[aria-hidden='false'] {
   opacity: 1;
   transition: opacity 0.25s;
   visibility: visible; }
 
-.kpop-theme-dark.kpop-body {
+.vcdk-popover-theme-dark.vcdk-popover-body {
   background-color: #1d2935;
   border: 1px solid #1d2935;
   border-radius: 5px;
@@ -16,67 +16,67 @@
   box-sizing: border-box;
   padding: 15px;
   color: #fff; }
-  .kpop-theme-dark.kpop-body.kpop-no-arrow {
+  .vcdk-popover-theme-dark.vcdk-popover-body.vcdk-popover--no-arrow {
     margin: 0 !important; }
-    .kpop-theme-dark.kpop-body.kpop-no-arrow .kpop-arrow {
+    .vcdk-popover-theme-dark.vcdk-popover-body.vcdk-popover--no-arrow .vcdk-popover--arrow {
       display: none; }
-  .kpop-theme-dark.kpop-body[x-out-of-boundaries] {
+  .vcdk-popover-theme-dark.vcdk-popover-body[x-out-of-boundaries] {
     display: none; }
-  .kpop-theme-dark.kpop-body[x-placement^='bottom'] {
+  .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='bottom'] {
     margin-top: 15px; }
-    .kpop-theme-dark.kpop-body[x-placement^='bottom'] .kpop-arrow {
+    .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='bottom'] .vcdk-popover--arrow {
       border-bottom-color: #141c25;
       border-width: 0 7.5px 15px;
       margin: 0 7.5px;
       top: -15px; }
-      .kpop-theme-dark.kpop-body[x-placement^='bottom'] .kpop-arrow::after {
+      .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='bottom'] .vcdk-popover--arrow::after {
         border-bottom-color: #1d2935;
         border-width: 0 7.5px 15px;
         margin: 0 -7.5px;
         top: 1px; }
-  .kpop-theme-dark.kpop-body[x-placement^='top'] {
+  .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='top'] {
     margin-bottom: 15px; }
-    .kpop-theme-dark.kpop-body[x-placement^='top'] .kpop-arrow {
+    .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='top'] .vcdk-popover--arrow {
       border-top-color: #1d2935;
       border-width: 15px 7.5px 0 7.5px;
       bottom: -15px;
       margin: 0 7.5px; }
-      .kpop-theme-dark.kpop-body[x-placement^='top'] .kpop-arrow::after {
+      .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='top'] .vcdk-popover--arrow::after {
         border-top-color: #1d2935;
         border-width: 15px 7.5px 0 7.5px;
         bottom: 1px;
         margin: 0 -7.5px; }
-  .kpop-theme-dark.kpop-body[x-placement^='left'] {
+  .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='left'] {
     margin-right: 15px; }
-    .kpop-theme-dark.kpop-body[x-placement^='left'] .kpop-arrow {
+    .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='left'] .vcdk-popover--arrow {
       border-left-color: #141c25;
       border-width: 7.5px 0 7.5px 15px;
       margin: 7.5px 0;
       right: -15px; }
-      .kpop-theme-dark.kpop-body[x-placement^='left'] .kpop-arrow::after {
+      .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='left'] .vcdk-popover--arrow::after {
         border-left-color: #1d2935;
         border-width: 7.5px 0 7.5px 15px;
         margin: -7.5px 0;
         right: 1px; }
-  .kpop-theme-dark.kpop-body[x-placement^='right'] {
+  .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='right'] {
     margin-left: 15px; }
-    .kpop-theme-dark.kpop-body[x-placement^='right'] .kpop-arrow {
+    .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='right'] .vcdk-popover--arrow {
       border-right-color: #141c25;
       border-width: 7.5px 15px 7.5px 0;
       left: -15px;
       margin: 7.5px 0; }
-      .kpop-theme-dark.kpop-body[x-placement^='right'] .kpop-arrow::after {
+      .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='right'] .vcdk-popover--arrow::after {
         border-right-color: #1d2935;
         border-width: 7.5px 15px 7.5px 0;
         left: 1px;
         margin: -7.5px 0; }
-  .kpop-theme-dark.kpop-body .kpop-arrow {
+  .vcdk-popover-theme-dark.vcdk-popover-body .vcdk-popover--arrow {
     border-color: transparent;
     border-style: solid;
     height: 0;
     position: absolute;
     width: 0; }
-    .kpop-theme-dark.kpop-body .kpop-arrow::after {
+    .vcdk-popover-theme-dark.vcdk-popover-body .vcdk-popover--arrow::after {
       border-color: transparent;
       border-style: solid;
       content: '';

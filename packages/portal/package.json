@@ -1,12 +1,8 @@
 {
-  "name": "@vue-cdk/popover",
+  "name": "@vue-cdk/portal",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
   "main": "src/index.js",
@@ -17,14 +13,15 @@
   "peerDependencies": {
     "core-js": "^3.3.2",
     "vue": "^2.6.10",
-    "popper.js": "^1.16.0"
+    "@linusborg/vue-simple-portal": "^0.1.4"
   },
   "dependencies": {
-    "@vue-cdk/portal": "^0.1.0",
-    "@vue-cdk/utils": "^0.1.0"
+    "@vue-cdk/utils": "^0.1.0",
+    "@vue-cdk/pluginify": "^0.1.0",
+    "@vue-cdk/client-only": "^0.1.0"
   },
   "devDependencies": {
-    "popper.js": "^1.16.0",
+    "@linusborg/vue-simple-portal": "^0.1.4",
     "core-js": "^3.3.2",
     "vue": "^2.6.10",
     "@vue/cli-plugin-babel": "^4.0.0",

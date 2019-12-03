@@ -3,13 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "main": "src/index.js",
+  "scripts": {
+    "test": "vue-cli-service test:unit"
+  },
   "files": [
     "src/**/*.js"
   ],
   "peerDependencies": {
+    "core-js": "^3.3.2",
     "vue": "^2.6.10"
   },
+  "dependencies": {
+    "@vue-cdk/utils": "^0.1.0"
+  },
   "devDependencies": {
-    "vue": "^2.6.10"
+    "vue-server-renderer": "^2.6.10",
+    "jest": "^24.9.0",
+    "core-js": "^3.3.2",
+    "@vue/cli-plugin-babel": "^4.1.1",
+    "@vue/cli-plugin-eslint": "^4.1.1",
+    "@vue/cli-plugin-unit-jest": "^4.1.1",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^6.0.1",
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "@vue/cli-service": "^4.1.1",
+    "babel-jest": "^24.9.0",
+    "lerna": "^3.18.3",
+    "cross-env": "^6.0.3"
   }
 }
