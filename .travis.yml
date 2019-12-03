@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - lts/*
+script:
+  - npm install         # install deps + runs lerna bootstrap
+  - npm run test        # run unit tests
+  - npm run docs:build  # generate static build of docs
+  #- npm run test:e2e    # run end-to-end tests
+deploy:
+  local_dir: docs/dist
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: gh-pages

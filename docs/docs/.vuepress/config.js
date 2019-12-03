@@ -34,7 +34,9 @@ module.exports = {
         items: [
           { text: 'Virtualized List', link: '/components/virtualized-list/' },
           { text: 'Link', link: '/components/link/' },
-          { text: 'Popover', link: '/components/popover/' }
+          { text: 'Popover', link: '/components/popover/' },
+          { text: 'Client Only', link: '/components/client-only/' },
+          { text: 'Match Media', link: '/components/match-media/' }
         ]
       },
     ]
