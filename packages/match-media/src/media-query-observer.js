@@ -27,11 +27,11 @@ export default class MediaQueryObserver {
     }
     const { query } = this
     this.queryList = window.matchMedia(query)
-
     this._stopObservation = () => {
       this.queryList.removeListener(this.handleChange.bind(this))
       this.queryList = null
     }
+    this.cb(this.queryList.matches)
     this.queryList.addListener(this.handleChange.bind(this))
   }
 

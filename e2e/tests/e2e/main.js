@@ -7,6 +7,10 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
+      path: '/',
+      component: () => import('./pages/start.vue')
+    },
+    {
       path: '/match-media',
       component: () => import('./pages/match-media.vue')
     },
