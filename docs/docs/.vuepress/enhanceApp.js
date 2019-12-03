@@ -1,6 +1,6 @@
 import Link from '@vue-cdk/link'
 import Popover from '@vue-cdk/popover'
-import VueSimplePortal from "@linusborg/vue-simple-portal";
+import '@vue-cdk/virtualized-list-css/index.css'
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
@@ -8,7 +8,6 @@ export default ({
   router, // the router instance for the app
   siteData // site metadata
 }) => {
-  Vue.use(VueSimplePortal)
   Vue.use(Link)
   Vue.use(Popover)
 }

@@ -39,6 +39,7 @@ module.exports = {
           { text: 'Match Media', link: '/components/match-media/' }
         ]
       },
+      { text: 'Customizing', link: '/customizing/' }
     ]
   },
   plugins: [
