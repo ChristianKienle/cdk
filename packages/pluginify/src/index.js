@@ -1,4 +1,5 @@
 // @ts-check
+// eslint-disable-next-line no-console
 const log = console.log
 import normalizedPluginOptions from './plugin-options'
 
