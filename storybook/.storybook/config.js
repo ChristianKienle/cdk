@@ -1,4 +1,6 @@
-import { configure } from '@storybook/vue';
+import { configure, addParameters } from '@storybook/vue';
+import '@storybook/addon-console'
+
 // Dependencies
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -8,6 +10,13 @@ import '@vue-cdk/virtualized-list-css/index.css';
 import Popover from '@vue-cdk/popover';
 import Link from '@vue-cdk/link';
 import Portal from '@vue-cdk/portal';
+
+addParameters({
+  backgrounds: [
+    { name: 'twitter', value: '#00aced' },
+    { name: 'facebook', value: '#3b5998' },
+  ],
+});
 
 const router = new VueRouter({
   mode: 'hash',
