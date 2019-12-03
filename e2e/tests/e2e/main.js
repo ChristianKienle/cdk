@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './app.vue'
 import Router from 'vue-router'
+Vue.config.devtools = true
 
 const router = new Router({
   mode: 'history',
@@ -8,6 +9,10 @@ const router = new Router({
     {
       path: '/match-media',
       component: () => import('./pages/match-media.vue')
+    },
+    {
+      path: '/client-only',
+      component: () => import('./pages/client-only.vue')
     },
     {
       path: '/virtualized-list',

@@ -1,3 +1,4 @@
+// @ts-check
 const log = console.log
 import normalizedPluginOptions from './plugin-options'
 
@@ -12,6 +13,9 @@ const getComponentName = component => {
 // This function turns any constructor into a Vue plugin.
 // If you have a components that depends on other components to be globally
 // installed pass them as the seoncond parameter.
+/**
+ * @param {Array<import('vue').Component>} dependencies
+ */
 export default (...dependencies) => {
   const install = (vue, options) => {
     const _options = normalizedPluginOptions(options)

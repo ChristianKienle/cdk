@@ -1,4 +1,4 @@
-import onServer from '@vue-cdk/utils/on-server'
+import { onServer } from '@vue-cdk/utils'
 
 export default class MediaQueryObserver {
   constructor(query, cb) {
