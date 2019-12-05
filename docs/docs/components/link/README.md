@@ -2,7 +2,7 @@
 A *Link*-component with sensible defaults and [Vue Router](https://router.vuejs.org/) integration.
 
 ::: tip API
-The *Link*-component has a dedicated [API documentation](./../../api/link/README.md).
+The *Link*-component has a dedicated [API documentation](./../../api/link).
 :::
 
 ## Installation
@@ -63,12 +63,12 @@ Nothing special here – just two examples:
 ### Internal Link
 
 ```markup
-<CLink to="/components/">/components/<CLink>
+<CLink to="/components">/components/<CLink>
 ```
 
 **Preview:**
 
-<c-link to="/components/">/components/</c-link>
+<c-link to="/components">/components/</c-link>
 
 ### External Link
 

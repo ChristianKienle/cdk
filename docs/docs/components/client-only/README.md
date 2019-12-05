@@ -1,16 +1,14 @@
 # Client Only
 
-The `@vue-cdk/client-only`-package contains a single component: `ClientOnly`. This component can be used to wrap non SSR friendly components.
-
 ::: tip API
-The *Client-Only*-component has a dedicated [API documentation](./../../api/client-only/README.md).
+The *Client-Only*-component has a dedicated [API documentation](./../../api/client-only).
 :::
+
+The `@vue-cdk/client-only`-package contains a single component: `ClientOnly`. This component can be used to wrap non SSR friendly components.
 
 **History & Credits**
 
 `@vue-cdk/client-only` is a friendly fork of [egoist/vue-client-only](https://github.com/egoist/vue-client-only). The component was only slightly changed. However, a lot of tests and documentation was added to make it easier to consume. Those additions will be contributed back to the original authors. The original license of [egoist/vue-client-only](https://github.com/egoist/vue-client-only) can be found within the source of `@vue-cdk/client-only`.
-
-<!-- <Badge text="IMPORTANT" vertical="middle"/> -->
 
 
 ## Installation

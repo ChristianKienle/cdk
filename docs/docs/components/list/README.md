@@ -1,7 +1,7 @@
 # List
 
 ::: tip API
-The *List*-component has a dedicated [API documentation](./../../api/list/README.md).
+The *List*-component has a dedicated [API documentation](./../../api/list).
 :::
 
 ## Installation
@@ -10,3 +10,4 @@ npm install @vue-cdk/list --save
 ```
 
 ## Guide
+
