@@ -4,8 +4,9 @@ import '@storybook/addon-console'
 // Dependencies
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// Vue Component Development Kit Imports
+// Vue Component Development Kit Imports – Styles
 import '@vue-cdk/list-style/index.css';
+// Vue Component Development Kit Imports – Components
 import List from '@vue-cdk/list';
 import Popover from '@vue-cdk/popover';
 import Link from '@vue-cdk/link';
@@ -14,8 +15,10 @@ import ScrollContainer from '@vue-cdk/scroll-container';
 
 addParameters({
   backgrounds: [
-    { name: 'twitter', value: '#00aced' },
-    { name: 'facebook', value: '#3b5998' },
+    { name: 'dark', value: '#241A30' },
+    { name: 'light', value: '#F0F0F0' },
+    { name: 'black', value: '#000' },
+    { name: 'white', value: '#FFF' },
   ],
 });
 
