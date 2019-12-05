@@ -1990,16 +1990,16 @@
   dependencies:
     global "^4.3.2"
 
-"@storybook/addon-storysource@5.3.0-beta.14":
-  version "5.3.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-5.3.0-beta.14.tgz#68286c6c048617ab2f960e1b399904dc8b1b7e88"
-  integrity sha512-mrXDdLbKW2Hp5Xc1vXiqSFQqm+qre5DGhADlCpOVwL7Iztnfx/tvx78GbunXmHn9ZzxjpUOmZMgf+6GUwsMssA==
+"@storybook/addon-storysource@5.3.0-beta.16":
+  version "5.3.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-5.3.0-beta.16.tgz#93c11fd02c9ae622805806d5a837a7bc4449188f"
+  integrity sha512-A7lQQ4cYr5Jqjw9qvePI98mNJPrdGtmqB5FSc5MlSrm3+xlPObuYGPE3X8pgMl4ZuwG5kzm8npE9bhV7z41uAg==
   dependencies:
-    "@storybook/addons" "5.3.0-beta.14"
-    "@storybook/components" "5.3.0-beta.14"
-    "@storybook/router" "5.3.0-beta.14"
-    "@storybook/source-loader" "5.3.0-beta.14"
-    "@storybook/theming" "5.3.0-beta.14"
+    "@storybook/addons" "5.3.0-beta.16"
+    "@storybook/components" "5.3.0-beta.16"
+    "@storybook/router" "5.3.0-beta.16"
+    "@storybook/source-loader" "5.3.0-beta.16"
+    "@storybook/theming" "5.3.0-beta.16"
     core-js "^3.0.1"
     estraverse "^4.2.0"
     loader-utils "^1.2.3"
@@ -2466,14 +2466,14 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
 
-"@storybook/source-loader@5.3.0-beta.14":
-  version "5.3.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-beta.14.tgz#045b981382fd88eca74622e476608d7b04219f46"
-  integrity sha512-g3z0hzm9KYwEjrYzRq4bBAtlz8AB2CW9mnhCkc8YGfdhSsVDPiuWJHyXRg0IjUqsRFMsB0EZLRjwWGU9PTr4GA==
+"@storybook/source-loader@5.3.0-beta.16":
+  version "5.3.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-beta.16.tgz#09aca05c0efdbaa927c39149c1afdc0271842a55"
+  integrity sha512-TjrovP22S2Enm40G+ObfrGGqY3UjRVFfmT1lmrkGykIfHA4UJfYG/iz3OikCKaiogF0JtjIcPMp8fDla4EuW1g==
   dependencies:
-    "@storybook/addons" "5.3.0-beta.14"
-    "@storybook/client-logger" "5.3.0-beta.14"
-    "@storybook/router" "5.3.0-beta.14"
+    "@storybook/addons" "5.3.0-beta.16"
+    "@storybook/client-logger" "5.3.0-beta.16"
+    "@storybook/router" "5.3.0-beta.16"
     core-js "^3.0.1"
     estraverse "^4.2.0"
     global "^4.3.2"
