@@ -2,9 +2,9 @@ language: node_js
 node_js:
   - lts/*
 script:
-  - npm install         # install deps + runs lerna bootstrap
-  - npm run test        # run unit tests
-  - npm run docs:build  # generate static build of docs
+  - yarn install         # install deps + runs lerna bootstrap
+  - yarn test        # run unit tests
+  - yarn docs:build  # generate static build of docs
   #- npm run test:e2e    # run end-to-end tests
 deploy:
   local_dir: docs/dist
