@@ -34,7 +34,7 @@ import CDynamicScroller from "vue-virtual-scroller/src/components/DynamicScrolle
 import CDynamicScrollerItem from "vue-virtual-scroller/src/components/DynamicScrollerItem";
 
 export default {
-  name: "CVirtualizedList",
+  name: "CList",
   components: {
     CDynamicScroller,
     CDynamicScrollerItem

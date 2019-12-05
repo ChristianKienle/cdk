@@ -32,7 +32,7 @@ module.exports = {
       {
         text: 'Components', link: '/components/',
         items: [
-          { text: 'Virtualized List', link: '/components/virtualized-list/' },
+          { text: 'List', link: '/components/list/' },
           { text: 'Link', link: '/components/link/' },
           { text: 'Popover', link: '/components/popover/' },
           { text: 'Client Only', link: '/components/client-only/' },
@@ -52,7 +52,8 @@ module.exports = {
       }
     ],
     [ApiPlugin, {
-      'virtualized-list': require.resolve('@vue-cdk/virtualized-list/src/virtualized-list.vue'),
+      'list': require.resolve('@vue-cdk/list/src/list.vue'),
+      'list-item': require.resolve('@vue-cdk/list/src/item.vue'),
       'link': require.resolve('@vue-cdk/link/src/link.vue'),
       'popover': require.resolve('@vue-cdk/popover/src/popover.vue'),
       'client-only': require.resolve('@vue-cdk/client-only/src/client-only.vue')

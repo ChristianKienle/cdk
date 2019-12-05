@@ -34,7 +34,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10",
     "@vue-cdk/match-media": "^0.1.0",
-    "@vue-cdk/virtualized-list": "^0.1.0",
+    "@vue-cdk/list": "^0.1.0",
     "@vue-cdk/utils": "^0.1.0",
     "@vue-cdk/client-only": "^0.1.0"
   }

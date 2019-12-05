@@ -5,8 +5,8 @@ import '@storybook/addon-console'
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 // Vue Component Development Kit Imports
-import VirtualizedList from '@vue-cdk/virtualized-list';
-import '@vue-cdk/virtualized-list-css/index.css';
+import List from '@vue-cdk/list';
+import '@vue-cdk/list-style/index.css';
 import Popover from '@vue-cdk/popover';
 import Link from '@vue-cdk/link';
 import Portal from '@vue-cdk/portal';
@@ -27,7 +27,7 @@ const router = new VueRouter({
   ]
 })
 Vue.use(VueRouter)
-Vue.use(VirtualizedList);
+Vue.use(List);
 Vue.use(Popover);
 Vue.use(Link);
 Vue.use(Portal);

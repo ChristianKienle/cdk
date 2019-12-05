@@ -1,6 +1,6 @@
 # Components
 
-- [Virtualized List](./virtualized-list)
+- [List](./list)
 - [Link](./link)
 - [Popover](./popover)
 - [Client Only](./client-only)
