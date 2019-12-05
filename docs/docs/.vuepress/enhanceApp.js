@@ -1,6 +1,7 @@
 import Link from '@vue-cdk/link'
 import Popover from '@vue-cdk/popover'
 import ScrollContainer from '@vue-cdk/scroll-container'
+import List from '@vue-cdk/list'
 import '@vue-cdk/list-style/index.css'
 
 export default ({
@@ -11,5 +12,6 @@ export default ({
 }) => {
   Vue.use(Link)
   Vue.use(Popover)
+  Vue.use(List)
   Vue.use(ScrollContainer)
 }
