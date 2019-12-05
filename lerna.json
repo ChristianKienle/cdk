@@ -6,6 +6,7 @@
     "e2e"
   ],
   "parallel": false,
-  "npmClient": "npm",
-  "version": "0.1.0"
+  "npmClient": "yarn",
+  "version": "0.1.0",
+  "useWorkspaces": true
 }
