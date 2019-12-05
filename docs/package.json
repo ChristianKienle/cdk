@@ -2,8 +2,8 @@
 	"name": "@vue-cdk/docs",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs --dest ./dist"
+    "dev": "vuepress dev docs --no-clear-screen --no-cache",
+    "build": "vuepress build docs --dest ./dist --debug --no-cache"
   },
 	"description": "",
 	"main": "index.js",
@@ -20,7 +20,9 @@
     "@vue-cdk/popover-themes": "^0.1.0",
     "@vue-cdk/pluginify": "^0.1.0",
     "@vue-cdk/match-media": "^0.1.0",
+    "@vue-cdk/scroll-container": "^0.1.0",
     "@vue-cdk/utils": "^0.1.0",
+    "@vue-cdk/node-utils": "^0.1.0",
     "@vuese/parser": "^2.4.3",
     "popper.js": "^1.16.0",
     "@linusborg/vue-simple-portal": "^0.1.4"
@@ -32,6 +34,7 @@
     "vuepress": "^1.2.0",
     "@vuese/markdown-render": "^2.5.3",
     "stringify-attributes": "^2.0.0",
+    "@vuepress/plugin-register-components": "^1.2.0",
     "vuepress-plugin-clean-urls": "^1.1.1"
 	}
 }

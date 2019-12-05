@@ -2,7 +2,7 @@
 *Vue Component Development Kit* can be customized.
 
 ## CSS
-The amount of custom CSS is kept at a minimum. *Vue Component Development Kit* only introduces custom CSS if it is required for a specific feature. For example, the [Virtualized List component](./../components/virtualized-list/) applies `overflow: hidden` to the list container element – otherwise the list would not be scrollable and break your layout. Sometimes *Vue Component Development Kit* relies on a third party library that requires custom CSS. If that is the case we don't try to work around that. We simply accept it and move on.
+The amount of custom CSS is kept at a minimum. *Vue Component Development Kit* only introduces custom CSS if it is required for a specific feature. For example, the [List component](./../components/list/) applies `overflow: hidden` to the list container element – otherwise the list would not be scrollable and break your layout. Sometimes *Vue Component Development Kit* relies on a third party library that requires custom CSS. If that is the case we don't try to work around that. We simply accept it and move on.
 
 Custom CSS follows a set of guidelines:
 

@@ -33,7 +33,7 @@ export default (...dependencies) => {
         log(`Register component ${componentName}`)
       }
       vue.component(componentName, component)
-      register('component', { name, component })
+      register('component', { name: componentName, component })
     })
   }
 
