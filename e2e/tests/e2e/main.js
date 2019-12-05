@@ -19,8 +19,8 @@ const router = new Router({
       component: () => import('./pages/client-only.vue')
     },
     {
-      path: '/virtualized-list',
-      component: () => import('./pages/virtualized-list.vue')
+      path: '/list',
+      component: () => import('./pages/list.vue')
     }
   ]
 })

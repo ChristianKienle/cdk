@@ -20,7 +20,7 @@ The *Vue Component Development Kit* is a set of low-level components, mixins and
 
 ## Features
 
-- [Virtualized List](./components/virtualized-list)
+- [List](./components/list)
 - [Link](./components/link)
 - [Match Media Mixin](./components/match-media)
 - [Popover](./components/popover)
