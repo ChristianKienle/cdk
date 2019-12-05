@@ -22,9 +22,7 @@
     </template>
 
     <template v-slot="{ item, active, index }">
-      <div>
-        <slot name="item" :item="item" :active="active" :index="index"></slot>
-      </div>
+      <slot name="item" :item="item" :active="active" :index="index"></slot>
     </template>
   </CDynamicScroller>
 </template>

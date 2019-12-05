@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './app.vue'
 import Router from 'vue-router'
+import List from '@vue-cdk/list'
+
 Vue.config.devtools = true
 
 const router = new Router({
@@ -19,12 +21,21 @@ const router = new Router({
       component: () => import('./pages/client-only.vue')
     },
     {
-      path: '/list',
-      component: () => import('./pages/list.vue')
+      path: '/list/default',
+      component: () => import('./pages/list/default.vue')
+    },
+    {
+      path: '/list/no-initial-items',
+      component: () => import('./pages/list/no-initial-items.vue')
+    },
+    {
+      path: '/list/size-dependencies',
+      component: () => import('./pages/list/size-dependencies.vue')
     }
   ]
 })
 
+Vue.use(List)
 Vue.use(Router)
 
 new Vue({

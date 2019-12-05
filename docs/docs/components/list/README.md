@@ -11,3 +11,6 @@ npm install @vue-cdk/list --save
 
 ## Guide
 
+::: example List-Default
+<<< @/../examples/list/default.vue
+:::
