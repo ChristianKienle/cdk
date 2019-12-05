@@ -28,20 +28,12 @@ module.exports = {
     }
   },
   themeConfig: {
+    displayAllHeaders: true, // Default: false
     logo: '/logo.png',
+    sidebar: 'auto',
     nav: [
       { text: 'Home', link: '/' },
-      {
-        text: 'Components', link: '/components',
-        items: [
-          { text: 'List', link: '/components/list/' },
-          { text: 'Link', link: '/components/link/' },
-          { text: 'Popover', link: '/components/popover/' },
-          { text: 'Client Only', link: '/components/client-only/' },
-          { text: 'Match Media', link: '/components/match-media/' },
-          { text: 'Scroll Container', link: '/components/scroll-container/' }
-        ]
-      },
+      { text: 'Components', link: '/components/' },
       { text: 'Customizing', link: '/customizing/' }
     ]
   },
