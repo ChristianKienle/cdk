@@ -2009,17 +2009,17 @@
     regenerator-runtime "^0.13.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-viewport@5.3.0-beta.14":
-  version "5.3.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-5.3.0-beta.14.tgz#4ad39aca78022e42d3f3cf0383df21d602b9b998"
-  integrity sha512-HVvk9B57UX9EArEs29jfcbFK+twCj+hPs3Byjch05VQ6ByF3Hp7glt3mGfd/RMuquP7JnbXqxQdXs53yMzYviw==
+"@storybook/addon-viewport@5.3.0-beta.16":
+  version "5.3.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-5.3.0-beta.16.tgz#7babc0b8a9be3bcd1e78aae3606c37b4cd63e5a6"
+  integrity sha512-qR0PcyDGs+tWLtjQVXYCsG0DLr1xLpzQOiTzbNWcDZyxr1Wp09cmd4DHj0Qx4D422lRBjvfCoFx/s7G7IGL75w==
   dependencies:
-    "@storybook/addons" "5.3.0-beta.14"
-    "@storybook/api" "5.3.0-beta.14"
-    "@storybook/client-logger" "5.3.0-beta.14"
-    "@storybook/components" "5.3.0-beta.14"
-    "@storybook/core-events" "5.3.0-beta.14"
-    "@storybook/theming" "5.3.0-beta.14"
+    "@storybook/addons" "5.3.0-beta.16"
+    "@storybook/api" "5.3.0-beta.16"
+    "@storybook/client-logger" "5.3.0-beta.16"
+    "@storybook/components" "5.3.0-beta.16"
+    "@storybook/core-events" "5.3.0-beta.16"
+    "@storybook/theming" "5.3.0-beta.16"
     core-js "^3.0.1"
     global "^4.3.2"
     memoizerific "^1.11.3"
