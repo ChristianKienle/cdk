@@ -11,10 +11,6 @@ npm install @vue-cdk/infinite-scroll --save
 
 ## Guide
 
-::: example InfiniteScroll-Default
-<<< @/../examples/infinite-scroll/default.vue
-:::
+<Demo for="infinite-scroll/default" />
 
-::: example InfiniteScroll-ScrollEvents
-<<< @/../examples/infinite-scroll/scroll-events.vue
-:::
+<Demo for="infinite-scroll/scroll-events" />

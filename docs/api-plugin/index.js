@@ -8,7 +8,6 @@ module.exports = (options, ctx) => {
         const result = fromFile(path);
         const mdContent = renderer.Default(result)
         return {
-
           relative: `api/${name}/README.md`,
           // regularPath: `api/${name}/README.md`,
           content: mdContent

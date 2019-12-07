@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100px; border: 1px solid red;">
+  <div style="height: 100px;">
     <CList
       :items="[
         { id: 1 },

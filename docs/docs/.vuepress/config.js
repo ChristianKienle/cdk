@@ -1,24 +1,12 @@
 // @ts-check
 const ApiPlugin = require('./../../api-plugin')
+const ExamplesPlugin = require('./../../examples-plugin')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const toPascalCase = require('@vue-cdk/node-utils/to-pascal-case')
 
 module.exports = {
   base: '/cdk/',
-  // chainWebpack: (config, isServer) => {
-  //   // config.resolve.set('symlinks', true)
-  //   // config.resolve.alias.set('@linusborg/vue-simple-portal', require.resolve('@linusborg/vue-simple-portal'))
-  //   // config
-  //   // .plugin('webpack-analyzer')
-  //   // .usew(BundleAnalyzerPlugin, [
-  //   //   {
-  //   //     analyzerPort: 10001,
-  //   //     openAnalyzer: true
-  //   //   }
-  //   // ])
-  //   // .end()
-  // },
   configureWebpack: {
     resolve: {
       extensions: [".js", ".vue"],
@@ -50,31 +38,7 @@ module.exports = {
         }
       }
     ],
-    [
-      "container",
-      {
-        type: "example",
-        before: info => `
-
-         <Example-${info} />
-
-
-        `,
-        after: ""
-      }
-    ],
-    [
-      "container",
-      {
-        type: "expandable",
-        before: info => `
-        <details>
-        <summary>${info}</summary>
-
-        `,
-        after:  "</details>"
-      }
-    ],
+    [ExamplesPlugin],
     [ApiPlugin, {
       'list': require.resolve('@vue-cdk/list/src/list.vue'),
       'list-item': require.resolve('@vue-cdk/list/src/item.vue'),
