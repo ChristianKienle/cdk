@@ -52,7 +52,6 @@ export default {
       }
     },
     onScroll(event) {
-      console.log(this.$el.scrollTop)
       this.scrollPosition_ = this.$el.scrollTop
       this.$emit('input', this.scrollPosition_)
     }
