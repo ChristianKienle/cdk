@@ -1,12 +1,11 @@
 {
-  "name": "@vue-cdk/list",
+  "name": "@vue-cdk/infinite-scroll",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
   "main": "src/index.js",
@@ -15,9 +14,9 @@
     "src/list.vue",
     "src/list-item.vue"
   ],
+  "style": "style/index.css",
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.1.0",
-    "@vue-cdk/infinite-scroll": "^0.1.0"
+    "@vue-cdk/pluginify": "^0.1.0"
   },
   "peerDependencies": {
     "core-js": "^3.3.2",

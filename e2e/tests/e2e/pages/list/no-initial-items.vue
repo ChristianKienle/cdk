@@ -17,9 +17,9 @@
         <CListItem
           :item="item"
           style="height: 20px;"
-          data-cy="item" :data-id="item.id"
+          data-cy="item" :data-cy-id="item.id"
         >
-          <div>{{ item.title }}[{{ index }}]</div>
+          <div>{{item.index}}</div>
         </CListItem>
       </template>
     </CList>
@@ -52,7 +52,7 @@ export default {
         const { items } = that
         items.push(...createItems(items.length, 5))
         done()
-      }, 2000)
+      }, 1000)
     }
   },
   data() {

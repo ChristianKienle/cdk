@@ -1,5 +1,5 @@
 import { configure, addParameters } from '@storybook/vue';
-import '@storybook/addon-console'
+// import '@storybook/addon-console'
 
 // Dependencies
 import Vue from 'vue';
@@ -8,6 +8,7 @@ import VueRouter from 'vue-router';
 import '@vue-cdk/list-style/index.css';
 // Vue Component Development Kit Imports – Components
 import List from '@vue-cdk/list';
+import InfiniteScroll from '@vue-cdk/infinite-scroll';
 import Popover from '@vue-cdk/popover';
 import Link from '@vue-cdk/link';
 import Portal from '@vue-cdk/portal';
@@ -32,6 +33,7 @@ const router = new VueRouter({
 })
 Vue.use(VueRouter)
 Vue.use(List);
+Vue.use(InfiniteScroll);
 Vue.use(Popover);
 Vue.use(Link);
 Vue.use(Portal);

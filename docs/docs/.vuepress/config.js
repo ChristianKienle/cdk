@@ -78,6 +78,8 @@ module.exports = {
     [ApiPlugin, {
       'list': require.resolve('@vue-cdk/list/src/list.vue'),
       'list-item': require.resolve('@vue-cdk/list/src/item.vue'),
+      'infinite-scroll': require.resolve('@vue-cdk/infinite-scroll/src/infinite-scroll.vue'),
+      'infinite-scroll-item': require.resolve('@vue-cdk/infinite-scroll/src/item.vue'),
       'scroll-container': require.resolve('@vue-cdk/scroll-container/src/scroll-container.vue'),
       'link': require.resolve('@vue-cdk/link/src/link.vue'),
       'popover': require.resolve('@vue-cdk/popover/src/popover.vue'),

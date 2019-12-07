@@ -31,6 +31,9 @@
     "@vue/cli-plugin-unit-jest": "^4.1.1",
     "@vue/cli-plugin-babel": "^4.1.1",
     "@vue/cli-plugin-eslint": "^4.1.1",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
     "babel-jest": "^24.9.0",
     "lerna": "^3.18.3",
     "cross-env": "^6.0.3"

@@ -1,6 +1,6 @@
 <template>
-  <div style="height: 100px; border: 1px solid red;">
-    <CList
+  <div style="height: 200px; border: 1px dashed #ccc;">
+    <CInfiniteScroll
       :items="[
         { id: 1 },
         { id: 2 },
@@ -11,25 +11,22 @@
         { id: 7 },
         { id: 8 }
       ]"
-      keyField="id"
     >
       <template #default="{item, active, index }">
-        <CListItem
+        <CInfiniteScrollItem
           :item="item"
           :active="active"
-          :sizeDependencies="[item.id]"
+          :size-dependencies="[item.id]"
           :data-index="index"
         >
           {{ item }}
-        </CListItem>
+        </CInfiniteScrollItem>
       </template>
-    </CList>
+    </CInfiniteScroll>
   </div>
 </template>
 
 <script>
-import '@vue-cdk/list-style/index.css'
-
+import '@vue-cdk/infinite-scroll/style/index.css'
 export default {}
-
 </script>

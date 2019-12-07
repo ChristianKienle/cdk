@@ -8,4 +8,4 @@ function install(vue) {
   vue.component('CListItem', ListItem)
 }
 
-export default { install };
+export default install

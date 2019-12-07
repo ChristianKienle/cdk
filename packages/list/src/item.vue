@@ -1,14 +1,11 @@
 <script>
-import CDynamicScrollerItem from "vue-virtual-scroller/src/components/DynamicScrollerItem";
+import InifiniteScrollItem from '@vue-cdk/infinite-scroll/src/item.vue'
 
 export default {
   name: "CListItem",
   functional: true,
   render(h, ctx) {
-    const data = {
-      ...ctx.data,
-    }
-    return h(CDynamicScrollerItem, data, ctx.children)
+    return h(InifiniteScrollItem, ctx.data, ctx.children)
   }
 };
 </script>
