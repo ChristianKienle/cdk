@@ -2,7 +2,7 @@
 import CDynamicScrollerItem from "vue-virtual-scroller/src/components/DynamicScrollerItem";
 
 export default {
-  name: "CListItem",
+  name: "ListItem",
   functional: true,
   render(h, ctx) {
     const data = {

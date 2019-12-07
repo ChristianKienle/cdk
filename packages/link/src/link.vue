@@ -63,7 +63,7 @@ const renderRouterLink = h => context => {
 }
 
 export default {
-  name: 'CLink',
+  name: 'Link',
   functional: true,
   props: {
     // Setting `disabled` prop will cancel all `click`-events from being emitted.
