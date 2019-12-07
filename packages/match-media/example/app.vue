@@ -9,16 +9,15 @@
   </div>
 </template>
 
-
 <script>
-import MatchMedia from './../src';
+import MatchMedia from './../src'
 export default {
   mixins: [
     MatchMedia({
-      mini: "(max-width: 200px)",
-      compact: "(min-width: 200px) and (max-width: 400px)",
-      regular: "(min-width: 400px)"
+      mini: '(max-width: 200px)',
+      compact: '(min-width: 200px) and (max-width: 400px)',
+      regular: '(min-width: 400px)'
     })
   ]
-};
+}
 </script>

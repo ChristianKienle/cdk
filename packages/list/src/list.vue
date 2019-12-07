@@ -1,6 +1,6 @@
 <template>
   <InifiniteScroll
-    ref="dynamicScroller"
+    ref="inifiniteScroll"
     :keyField="keyField"
     :minItemSize="minItemSize"
     :items="items"
@@ -21,10 +21,6 @@
         </slot>
       </template>
     </template>
-
-    <!-- <template v-slot="{ item, active, index }">
-      <slot name="item" :item="item" :active="active" :index="index"></slot>
-    </template> -->
   </InifiniteScroll>
 </template>
 
@@ -69,19 +65,13 @@ export default {
     }
   },
   mounted() {
-    if (this.items.length === 0) {
-      // this.startToLoadMoreItems()
-    }
-    // this.$forceUpdate()
+    this.loadMoreIfNeeded()
   },
-  // updated() {
-  //   requestAnimationFrame(() => {
-  //     this.loadMoreIfNeeded()
-  //   })
-  // },
+  updated() {
+    requestAnimationFrame(() => this.loadMoreIfNeeded())
+  },
   methods: {
     handleScrollState(scrollState) {
-      console.log('handleScrollState', scrollState)
       if (scrollState.nearBottom === true) {
         this.loadMoreIfNeeded()
       }
@@ -101,9 +91,9 @@ export default {
       if (moreItemsAvailable === false) {
         return
       }
-      this.startToLoadMoreItems()
+      this.startToLoadMore()
     },
-    startToLoadMoreItems(event) {
+    startToLoadMore(event) {
       if (this.loadMore != null) {
         this.state = 'loading'
         if (event != null) {
@@ -111,7 +101,6 @@ export default {
           event.stopPropagation()
         }
         this.loadMore(this.acceptNewItems)
-        // this.updateScroll();
       }
     },
     acceptNewItems() {
@@ -120,14 +109,10 @@ export default {
         this.loadMoreIfNeeded()
       }, 100)
     },
-    updateScroll() {
-      // this.$refs.dynamicScroller.$el.scrollTop = this.$refs.dynamicScroller.$el.scrollTop - 5;
-    },
     // @vuese
     // Scrolls the list to the item at `index`.
-    scrollToItemAtIndex(index) {
-      // const scroller = this.$refs.dynamicScroller
-      // scroller.scrollToItem(index)
+    scrollToIndex(index) {
+      this.$refs.inifiniteScroll.scrollToIndex(index)
     }
   },
   data() {

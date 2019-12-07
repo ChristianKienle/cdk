@@ -2,7 +2,7 @@
 	"name": "@vue-cdk/docs",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vuepress dev docs --no-clear-screen --no-cache",
+    "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090",
     "build": "vuepress build docs --dest ./dist --debug --no-cache"
   },
 	"description": "",

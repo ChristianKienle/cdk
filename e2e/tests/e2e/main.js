@@ -25,8 +25,8 @@ const router = new Router({
       component: () => import('./pages/list/default.vue')
     },
     {
-      path: '/list/no-initial-items',
-      component: () => import('./pages/list/no-initial-items.vue')
+      path: '/list/initial-items',
+      component: () => import('./pages/list/initial-items.vue')
     },
     {
       path: '/list/size-dependencies',

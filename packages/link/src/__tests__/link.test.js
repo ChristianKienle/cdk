@@ -25,7 +25,6 @@ describe('Link', () => {
     expect(wrapper.attributes('rel')).toStrictEqual('xxx')
   })
 
-
   it('throws if href and to are used', () => {
     expect(() => mount(Link, { propsData: { href: '/hello-world', to: '/hello' } })).toThrow()
   })
@@ -81,10 +80,13 @@ describe('Link', () => {
 
   it('can be disabled', async () => {
     const localVue = createLocalVue()
-    const wrapper = mount({
-      template: `<div><Link @click="$emit('click', 'payload')" href="#" disabled>Home sweet Home</Link></div>`,
-      components: { Link }
-    }, { localVue })
+    const wrapper = mount(
+      {
+        template: `<div><Link @click="$emit('click', 'payload')" href="#" disabled>Home sweet Home</Link></div>`,
+        components: { Link }
+      },
+      { localVue }
+    )
 
     wrapper.find('a').trigger('click')
     await localVue.nextTick()
@@ -94,14 +96,17 @@ describe('Link', () => {
   it('emits click events', async () => {
     const localVue = createLocalVue()
 
-    const wrapper = mount({
-      template: `<div><Link @click="$emit('click', 'payload')" href="#">Home sweet Home</Link></div>`,
-      components: { Link }
-    }, { localVue })
+    const wrapper = mount(
+      {
+        template: `<div><Link @click="$emit('click', 'payload')" href="#">Home sweet Home</Link></div>`,
+        components: { Link }
+      },
+      { localVue }
+    )
 
     wrapper.find('a').trigger('click')
     await localVue.nextTick()
-    expect(wrapper.emitted()).toEqual({click: [['payload']]})
+    expect(wrapper.emitted()).toEqual({ click: [['payload']] })
   })
 
   // this came up during the execution of end to end tests

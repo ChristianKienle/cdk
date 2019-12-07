@@ -16,9 +16,15 @@ describe('list component', () => {
     cy.dataCy('list').get('[data-cy=item] div:visible').should('have.length.gte', 6)
   })
 
-  it.only('works without initial items', () => {
-    cy.visit('/list/no-initial-items')
-    // cy.get('[data-cy=loading]').should('not.be.visible')
+  it('works with 1 initial item', () => {
+    cy.visit('/list/initial-items?numberOfInitialItems=1')
+    cy.get('[data-cy=item]').should('have.have.length', 1)
+    cy.dataCy('loading').should('be.visible')
+    cy.get('[data-cy=item]').should('have.have.length', 6)
+  })
+
+  it('works without initial items', () => {
+    cy.visit('/list/initial-items?numberOfInitialItems=0')
     cy.get('[data-cy=item]').should('have.have.length.greaterThan', 9)
     cy.get('[data-cy=list]').scrollTo(0, 220)
     cy.get('[data-cy=list]').find('[data-cy-id=10]').should('be.visible')

@@ -13,7 +13,7 @@
       <template #loading>
         <div data-cy="loading">Loading Indicator</div>
       </template>
-      <template #item="{ item, index }">
+      <template #default="{ item, index }">
         <CListItem
           :item="item"
           :sizeDependencies="[item.title]"

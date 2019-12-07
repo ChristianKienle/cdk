@@ -31,12 +31,15 @@ describe('pluginify', () => {
     localVue.use(HelloWorldPlugin, {
       componentName
     })
-    expect(componentName).toHaveBeenCalledWith({ name: 'HelloWorld', component: HelloWorld})
+    expect(componentName).toHaveBeenCalledWith({ name: 'HelloWorld', component: HelloWorld })
 
     // Also mount it and use the modified name
-    const wrapper = mount({
-      template: `<BHelloWorld />`
-    }, { localVue })
+    const wrapper = mount(
+      {
+        template: `<BHelloWorld />`
+      },
+      { localVue }
+    )
     expect(wrapper.text()).toEqual('1337')
   })
 
@@ -50,9 +53,12 @@ describe('pluginify', () => {
     }
     const HelloWorldPlugin = pluginify(HelloWorld)
     localVue.use(HelloWorldPlugin)
-    const wrapper = mount({
-      template: `<CHelloWorld />`
-    }, { localVue })
+    const wrapper = mount(
+      {
+        template: `<CHelloWorld />`
+      },
+      { localVue }
+    )
     expect(wrapper.text()).toEqual('1337')
   })
 
@@ -67,9 +73,12 @@ describe('pluginify', () => {
     }
     const HelloWorldPlugin = pluginify(HelloWorld)
     localVue.use(HelloWorldPlugin)
-    const wrapper = mount({
-      template: `<CHelloWorld />`
-    }, { localVue })
+    const wrapper = mount(
+      {
+        template: `<CHelloWorld />`
+      },
+      { localVue }
+    )
     expect(wrapper.html()).toContain('1337')
   })
 
@@ -79,9 +88,12 @@ describe('pluginify', () => {
 
     const HelloWorldPlugin = pluginify(HelloWorld.default)
     localVue.use(HelloWorldPlugin)
-    const wrapper = mount({
-      template: `<CHelloWorld />`
-    }, { localVue })
+    const wrapper = mount(
+      {
+        template: `<CHelloWorld />`
+      },
+      { localVue }
+    )
     expect(wrapper.html()).toContain('1337')
   })
 })

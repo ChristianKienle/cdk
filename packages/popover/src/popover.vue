@@ -3,51 +3,46 @@
     <CPopoverTrigger ref="trigger" @click.native="handleClickOnTrigger">
       <slot name="trigger" v-bind="slotProps" />
     </CPopoverTrigger>
-      <SimplePortal :selector="portalSelector">
-        <div
-          ref="body"
-          :aria-hidden="String(!visible_)"
-          :class="bodyClasses"
-          :style="bodyStyles_"
-        >
-          <slot v-bind="slotProps" />
-          <vp-arrow x-arrow :class="arrowClasses" />
-        </div>
-      </SimplePortal>
+    <SimplePortal :selector="portalSelector">
+      <div ref="body" :aria-hidden="String(!visible_)" :class="bodyClasses" :style="bodyStyles_">
+        <slot v-bind="slotProps" />
+        <vp-arrow x-arrow :class="arrowClasses" />
+      </div>
+    </SimplePortal>
   </div>
 </template>
 
 <script>
-import { shortId, normalizedClasses } from "./helper";
-import Popper from "popper.js";
-import { inBrowser } from "@vue-cdk/utils";
-import { isValidBoundary, defaultBoundary } from "./boundary";
-import * as BodySizeMode from "./body-size-mode";
+import { normalizedClasses, shortId } from './helper'
+import Popper from 'popper.js'
+import { inBrowser } from '@vue-cdk/utils'
+import { defaultBoundary, isValidBoundary } from './boundary'
+import * as BodySizeMode from './body-size-mode'
 import { Portal as SimplePortal } from '@vue-cdk/portal'
 
 const CPopoverTrigger = {
   mounted() {
-    this.$parent.popperReference = this.$el;
-    this.$parent.updatePopperInstance();
+    this.$parent.popperReference = this.$el
+    this.$parent.updatePopperInstance()
   },
   render() {
-    return this.$scopedSlots.default();
+    return this.$scopedSlots.default()
   }
-};
+}
 
 export default {
-  name: "Popover",
+  name: 'Popover',
   components: {
     CPopoverTrigger,
     SimplePortal,
-    VpArrow: { render: h => h("span") }
+    VpArrow: { render: h => h('span') }
   },
   props: {
     bodyStyles: {
       type: Object,
       default: () => {}
     },
-    portalId: { default: () => "vcdk-popover-portal-container", type: String },
+    portalId: { default: () => 'vcdk-popover-portal-container', type: String },
     offset: { type: Number, default: 0 },
     adjustsBodyWidth: { type: Boolean, default: false },
     adjustsVisibility: { type: Boolean, default: true },
@@ -62,10 +57,10 @@ export default {
       validator: BodySizeMode.isValid
     },
     theme: { type: String, default: null },
-    bodyClass: { type: String, default: "" },
+    bodyClass: { type: String, default: '' },
     defaultBodyZIndex: { type: [Number, String], default: 1000 },
     arrowClass: { type: String, default: null },
-    transition: { type: String, default: "fade" },
+    transition: { type: String, default: 'fade' },
     withArrow: { type: Boolean, default: false },
     flips: { type: Boolean, default: true },
     visible: { type: Boolean, default: false },
@@ -76,22 +71,22 @@ export default {
     placement: {
       type: String,
       validator: value => Popper.placements.indexOf(value) >= 0,
-      default: "bottom"
+      default: 'bottom'
     }
   },
   data() {
     return {
       visible_: this.visible,
       outOfBoundaries_: false
-    };
+    }
   },
   computed: {
     bodySizeMode_() {
       // Handle deprecated first for compatibility
       if (this.adjustsBodyWidth) {
-        return BodySizeMode.EQUALS_TRIGGER;
+        return BodySizeMode.EQUALS_TRIGGER
       }
-      return this.bodySizeMode;
+      return this.bodySizeMode
     },
     slotProps() {
       return {
@@ -99,10 +94,10 @@ export default {
         show: this.show,
         hide: this.hide,
         toggle: this.toggle
-      };
+      }
     },
     portalSelector() {
-      return `#${this.portalId}`;
+      return `#${this.portalId}`
     },
     // This computed prop simply references every prop that, when changed
     // should cause the Popper-instance to be recreated.
@@ -112,39 +107,36 @@ export default {
         flips: this.flips,
         withArrow: this.withArrow,
         placement: this.placement
-      };
+      }
     },
     hasCustomTriggerLogic() {
-      return this.$slots.trigger == null && this.$scopedSlots.trigger != null;
+      return this.$slots.trigger == null && this.$scopedSlots.trigger != null
     },
     arrowClasses() {
-      const { theme, arrowClass } = this;
-      return normalizedClasses([arrowClass, theme ? "vcdk-popover--arrow" : null]);
+      const { theme, arrowClass } = this
+      return normalizedClasses([arrowClass, theme ? 'vcdk-popover--arrow' : null])
     },
     bodyStyles_() {
       const result = {
         ...this.bodyStyles,
         zIndex: this.defaultBodyZIndex
-      };
+      }
 
       if (this.theme == null && this.adjustsVisibility) {
         // We cannot adjust "display" because this will result in the popover body jumping around.
-        result.visibility =
-          this.visible_ && this.outOfBoundaries_ === false
-            ? "visible"
-            : "hidden";
+        result.visibility = this.visible_ && this.outOfBoundaries_ === false ? 'visible' : 'hidden'
       }
-      return result;
+      return result
     },
     bodyClasses() {
-      const { theme, bodyClass, withArrow } = this;
-      const bodyClassAsArray = bodyClass.split(" ");
+      const { theme, bodyClass, withArrow } = this
+      const bodyClassAsArray = bodyClass.split(' ')
       return normalizedClasses([
         ...bodyClassAsArray,
-        "vcdk-popover-body",
+        'vcdk-popover-body',
         theme ? `vcdk-popover-theme-${this.theme}` : null,
-        !withArrow ? "vcdk-popover--no-arrow" : null
-      ]);
+        !withArrow ? 'vcdk-popover--no-arrow' : null
+      ])
     },
     // We merge the user defined modifiers with the modifiers required by FdPopper
     modifiers_() {
@@ -173,131 +165,129 @@ export default {
           offset: `0,${this.offset}`
         },
         ...this.modifiers
-      };
+      }
     }
   },
   watch: {
     adjustsBodyWidth() {
-      this.updatePopperInstance();
+      this.updatePopperInstance()
     },
     stateThatRequiredPopperInstanceUpdate: {
       deep: true,
       handler() {
-        this.updatePopperInstance();
+        this.updatePopperInstance()
       }
     },
     visible(visible) {
-      this.visible_ = visible;
+      this.visible_ = visible
       if (visible && this.popperInstance == null) {
-        this.updatePopperInstance();
+        this.updatePopperInstance()
       }
-      this.scheduleUpdate();
+      this.scheduleUpdate()
     }
   },
   beforeDestroy() {
-    this.destroyPopperInstance(true);
+    this.destroyPopperInstance(true)
   },
   mounted() {
-    this.$forceUpdate();
+    this.$forceUpdate()
   },
   methods: {
     modifier_bodySizeMode(data) {
-      const mode = this.bodySizeMode_;
+      const mode = this.bodySizeMode_
       if (mode === BodySizeMode.AUTO) {
-        return data;
+        return data
       }
-      const { instance, offsets } = data;
-      const { reference, popper } = instance;
-      const referenceWidth = instance.reference.clientWidth;
+      const { instance, offsets } = data
+      const { reference, popper } = instance
+      const referenceWidth = instance.reference.clientWidth
       if (mode === BodySizeMode.AT_LEAST_TRIGGER) {
-        popper.style.minWidth = referenceWidth + "px";
-        return data;
+        popper.style.minWidth = referenceWidth + 'px'
+        return data
       }
 
       if (mode === BodySizeMode.EQUALS_TRIGGER) {
-        const delta = referenceWidth - offsets.popper.width;
-        popper.style.width = referenceWidth + "px";
-        offsets.popper.width = referenceWidth;
-        offsets.popper.left = offsets.popper.left - 0.5 * delta;
-        return data;
+        const delta = referenceWidth - offsets.popper.width
+        popper.style.width = referenceWidth + 'px'
+        offsets.popper.width = referenceWidth
+        offsets.popper.left = offsets.popper.left - 0.5 * delta
+        return data
       }
-      return data;
+      return data
     },
     modifier_updateState(data) {
-      const rawOutOfBoundaries = data.attributes["x-out-of-boundaries"];
+      const rawOutOfBoundaries = data.attributes['x-out-of-boundaries']
       const isOutOfBoundaries =
-        rawOutOfBoundaries === true ||
-        rawOutOfBoundaries === "" ||
-        rawOutOfBoundaries === "true";
-      this.outOfBoundaries_ = isOutOfBoundaries;
-      return data;
+        rawOutOfBoundaries === true || rawOutOfBoundaries === '' || rawOutOfBoundaries === 'true'
+      this.outOfBoundaries_ = isOutOfBoundaries
+      return data
     },
     handleClickOnTrigger() {
       if (this.hasCustomTriggerLogic) {
-        return;
+        return
       }
-      this.toggle();
+      this.toggle()
     },
     destroyPopperInstance(isBeforeDestroy = false) {
       if (this.popperInstance == null) {
-        return;
+        return
       }
       if (isBeforeDestroy === true) {
-        this.popperInstance.destroy();
-        this.popperInstance = null;
-        return;
+        this.popperInstance.destroy()
+        this.popperInstance = null
+        return
       }
-      const popoverNode = this.$refs.body;
-      const trigger = this.$refs.trigger;
+      const popoverNode = this.$refs.body
+      const trigger = this.$refs.trigger
       if (this.visible_ === false) {
         if (popoverNode != null && popoverNode.parentNode != null) {
-          popoverNode.parentNode.removeChild(popoverNode);
+          popoverNode.parentNode.removeChild(popoverNode)
         }
       } else if (trigger) {
-        trigger.$el.appendChild(popoverNode);
+        trigger.$el.appendChild(popoverNode)
       }
     },
     updatePopperInstance() {
       if (inBrowser() === false) {
-        return;
+        return
       }
-      this.destroyPopperInstance();
-      const { placement, modifiers_: modifiers, popperReference } = this;
+      this.destroyPopperInstance()
+      const { placement, modifiers_: modifiers, popperReference } = this
       if (popperReference == null) {
-        return;
+        return
       }
-      const body = this.$refs.body;
+      const body = this.$refs.body
       if (body == null) {
-        return;
+        return
       }
-      const options = { modifiers, placement };
-      this.popperInstance = new Popper(popperReference, body, options);
+      const options = { modifiers, placement }
+      this.popperInstance = new Popper(popperReference, body, options)
     },
     scheduleUpdate() {
       if (inBrowser() === false) {
-        return;
+        return
       }
       if (this.popperInstance) {
-        this.popperInstance.scheduleUpdate();
+        this.popperInstance.scheduleUpdate()
       }
     },
     setVisible(newVisible) {
-      this.visible_ = newVisible;
-      this.$emit("update:visible", this.visible_);
+      this.visible_ = newVisible
+      this.$emit('update:visible', this.visible_)
       if (this.visible_ && this.popperInstance == null) {
-        this.updatePopperInstance();
+        this.updatePopperInstance()
       }
-      setTimeout(this.scheduleUpdate);
+      setTimeout(this.scheduleUpdate)
     },
     show() {
-      this.setVisible(true);
+      this.setVisible(true)
     },
     hide(event) {
-      this.setVisible(false);
+      this.setVisible(false)
     },
     toggle() {
-      this.setVisible(!this.visible_);
+      this.setVisible(!this.visible_)
     }
   }
-};
+}
 </script>

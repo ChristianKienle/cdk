@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     scrollToItem() {
-      this.$refs.list.scrollToItemAtIndex(this.itemIndex);
+      this.$refs.list.scrollToIndex(this.itemIndex);
     }
   }
 };

@@ -4,7 +4,7 @@
     <button data-cy="setHeightButton" @click="scrollToItem">scroll</button>
     <div style="height: 100px; border: 1px solid red;">
       <CInfiniteScroll ref="list" :items="items">
-        <template #item="{item, active, index}">
+        <template #default="{item, active, index}">
           <CInfiniteScrollItem
             :item="item"
             :active="active"
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     scrollToItem() {
-      this.$refs.list.scrollToItemAtIndex(this.itemIndex)
+      this.$refs.list.scrollToIndex(this.itemIndex)
     }
   }
 }

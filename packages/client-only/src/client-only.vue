@@ -1,7 +1,7 @@
 <script>
 // A component to wrap non SSR friendly components/markup. You can provide a placeholder text that will be shown until the component has been mounted. Alternatively you can also provide a placeholder-slot. The slot is useful if you want to render something other than text – like a loading indicator.
 export default {
-  name: "ClientOnly",
+  name: 'ClientOnly',
   functional: true,
   props: {
     // Text that will be rendered as a placeholder until <CClientOnly /> is mounted on the client-side. You can use this to show a loading indicator or some other kind of placeholder.
@@ -13,7 +13,7 @@ export default {
     placeholderTag: {
       type: String,
       // `div`
-      default: "div"
+      default: 'div'
     }
   },
   render(h, { parent, slots, props }) {
@@ -23,7 +23,7 @@ export default {
       return defaultSlot
     }
 
-    parent.$once("hook:mounted", () => {
+    parent.$once('hook:mounted', () => {
       parent.$forceUpdate()
     })
 
@@ -31,7 +31,7 @@ export default {
       return h(
         props.placeholderTag,
         {
-          class: ["no-ssr-placeholder"]
+          class: ['no-ssr-placeholder']
         },
         props.placeholder || placeholderSlot
       )

@@ -5,7 +5,7 @@
     <button data-cy="setHeightButton" @click="setHeight">set height</button>
     <div style="height: 100px; border: 1px solid red;">
       <CInfiniteScroll :items="items">
-        <template #item="{item, active, index}">
+        <template #default="{item, active, index}">
           <CInfiniteScrollItem
             :item="item"
             :active="active"

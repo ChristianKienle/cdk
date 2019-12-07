@@ -23,6 +23,7 @@ module.exports = {
     }
 
   ],
+  ignorePatterns: ['node_modules'],
   extends: ["plugin:vue/essential", "@vue/prettier"]
 
   // root: true,

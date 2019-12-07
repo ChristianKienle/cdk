@@ -38,7 +38,7 @@ export default {
     // Minimal size of the items (in `px`). Will be passed onto DynamicScroller.
     minItemSize: {
       type: Number,
-      default: 30,
+      default: 30
     },
     // Items to be rendered by the virtualized list. Each item must have a unique identifier. You can specify the name of the identifying property by using the key-field-prop.
     items: { type: Array, default: () => [] }
@@ -66,7 +66,7 @@ export default {
       const nearBottom = clientHeight - $el.scrollTop <= bounds.height + minItemSize
       const nearTop = $el.scrollTop <= minItemSize
       const newScrollState = { nearTop, nearBottom }
-      if(scrollStatesEqual(scrollState, newScrollState)) {
+      if (scrollStatesEqual(scrollState, newScrollState)) {
         return
       }
       this.scrollState = newScrollState
