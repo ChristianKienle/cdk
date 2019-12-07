@@ -1,7 +1,5 @@
 import Popover from "./popover.vue"
+import pluginify from '@vue-cdk/pluginify'
 
-Popover.install = _vue => {
-  _vue.component("CPopover", Popover)
-}
-
-export default Popover
+export default pluginify(Popover)
+export { Popover }

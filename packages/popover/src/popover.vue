@@ -36,8 +36,7 @@ const CPopoverTrigger = {
 };
 
 export default {
-  // eslint-disable-next-line vue/name-property-casing
-  name: "CPopover",
+  name: "Popover",
   components: {
     CPopoverTrigger,
     SimplePortal,
