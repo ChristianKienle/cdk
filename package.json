@@ -19,6 +19,7 @@
     "test:unit": "vue-cli-service test:unit --no-collect-coverage",
     "test:unit:watch": "cross-env BASE_URL='/' vue-cli-service test:unit --no-collect-coverage --watch",
     "test:e2e": "cd e2e && yarn start",
+    "poor-ci": "yarn test && yarn lint && yarn test:e2e && yarn docs:build",
     "lint": "eslint --ext .js,.vue packages",
     "postinstall": "yarn bootstrap"
   },
