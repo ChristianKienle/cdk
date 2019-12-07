@@ -1,11 +1,11 @@
 import InfiniteScroll from './infinite-scroll.vue'
 import InfiniteScrollItem from './item.vue'
 import VueObserveVisibility from 'vue-observe-visibility'
+import pluginify from '@vue-cdk/pluginify'
 
-function install(vue) {
-  vue.use(VueObserveVisibility)
-  vue.component('CInfiniteScroll', InfiniteScroll)
-  vue.component('CInfiniteScrollItem', InfiniteScrollItem)
+const plugin = pluginify(InfiniteScroll, InfiniteScrollItem)
+
+export default (vue, options) => {
+  vue.use(plugin, options)
+  vue.use(VueObserveVisibility, options)
 }
-
-export default install

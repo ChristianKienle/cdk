@@ -33,7 +33,7 @@ import InifiniteScroll from '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'
 // import InifiniteScrollItem from '@vue-cdk/infinite-scroll/src/item.vue'
 
 export default {
-  name: 'CList',
+  name: 'List',
   components: { InifiniteScroll },
   props: {
     // Name of property that uniquely identifies an item.

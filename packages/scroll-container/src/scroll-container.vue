@@ -13,7 +13,7 @@ const Wrapper = {
 };
 
 export default {
-  name: "CScrollContainer",
+  name: "ScrollContainer",
   components: { Wrapper },
   computed: {
     styles() {

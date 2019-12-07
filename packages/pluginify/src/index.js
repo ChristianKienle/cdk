@@ -1,7 +1,5 @@
 // @ts-check
-// eslint-disable-next-line no-console
-const log = console.log
-import normalizedPluginOptions from './plugin-options'
+import normalizedPluginOptions from './normalize-options'
 
 const getComponentName = component => {
   if (typeof component === 'function') {
@@ -20,24 +18,18 @@ const getComponentName = component => {
 export default (...dependencies) => {
   const install = (vue, options) => {
     const _options = normalizedPluginOptions(options)
-    const registerComponent = _options.log.registerComponent
-    const register = _options.register
+    const { onDidRegisterComponent } = _options
     dependencies.forEach(component => {
-      const componentName = getComponentName(component)
-      if (componentName == null) {
-        throw Error(`
+      const rawComponentName = getComponentName(component)
+      if (rawComponentName == null) {
+        throw new Error(`
             Unable to determine component name. Component: ${component}. Did you forget to add a 'name' attribute?
                 `)
       }
-      if (registerComponent === true) {
-        log(`Register component ${componentName}`)
-      }
+      const componentName = _options.componentName({ name: rawComponentName, component: component })
       vue.component(componentName, component)
-      register('component', { name: componentName, component })
+      onDidRegisterComponent(componentName, component)
     })
   }
-
-  const [component] = dependencies
-  component.install = install
-  return component
+  return { install }
 }
