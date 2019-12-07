@@ -1,42 +1,36 @@
 <template>
-  <CDynamicScroller
-    tabindex="0"
-    ref="vList"
-    style="height: 100%;"
-    :key-field="keyField"
-    :min-item-size="minItemSize"
+  <InifiniteScroll
+    ref="inifiniteScroll"
+    :keyField="keyField"
+    :minItemSize="minItemSize"
     :items="items"
+    @scrollState="handleScrollState"
   >
-    <template v-slot:after>
-      <div
-        style="height: 10px;"
-        ref="after"
-        v-observe-visibility="afterVisibilityChanged"
-      >
-        <template v-if="isLoading">
-          <slot name="loading">
-            <div>Loading…</div>
-          </slot>
-        </template>
-      </div>
+    <template #before>
+      <slot name="before" />
     </template>
 
-    <template v-slot="{ item, active, index }">
-      <slot name="item" :item="item" :active="active" :index="index"></slot>
+    <template #default="{item, active, index}">
+      <slot :item="item" :active="active" :index="index" />
     </template>
-  </CDynamicScroller>
+
+    <template #after>
+      <template v-if="isLoading">
+        <slot name="loading">
+          <div>Loading…</div>
+        </slot>
+      </template>
+    </template>
+  </InifiniteScroll>
 </template>
 
 <script>
-import CDynamicScroller from "vue-virtual-scroller/src/components/DynamicScroller";
-import CDynamicScrollerItem from "vue-virtual-scroller/src/components/DynamicScrollerItem";
+import InifiniteScroll from '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'
+// import InifiniteScrollItem from '@vue-cdk/infinite-scroll/src/item.vue'
 
 export default {
-  name: "List",
-  components: {
-    CDynamicScroller,
-    CDynamicScrollerItem
-  },
+  name: 'List',
+  components: { InifiniteScroll },
   props: {
     // Name of property that uniquely identifies an item.
     keyField: {
@@ -53,88 +47,79 @@ export default {
     // Items to be rendered by the virtualized list. Each item must have a unique identifier. You can specify the name of the identifying property by using the key-field-prop.
     items: { type: Array, default: () => [] },
     // Function to be called when the list needs more items from you. This function is called with a callback parameter that you MUST call at some point with additional items.
-    loadMoreItems: { type: Function, default: null }
+    loadMore: { type: Function, default: null }
   },
   computed: {
     isLoading() {
-      return this.state === "loading";
+      return this.state === 'loading'
     },
     selectedItem() {
-      const { selectedId, items } = this;
+      const { selectedId, items } = this
       if (selectedId == null) {
-        return;
+        return
       }
       const index = items.findIndex(item => {
-        return this.idForItem(item) === selectedId;
-      });
-      return index < 0 ? undefined : items[index];
+        return this.idForItem(item) === selectedId
+      })
+      return index < 0 ? undefined : items[index]
     }
   },
   mounted() {
-    if (this.items.length === 0) {
-      this.startToLoadMoreItems();
-    }
-    this.$forceUpdate();
+    this.loadMoreIfNeeded()
   },
   updated() {
-    requestAnimationFrame(() => {
-      this.loadMoreItemsIfNeeded();
-    });
+    requestAnimationFrame(() => this.loadMoreIfNeeded())
   },
   methods: {
-    itemIsSelected(item) {
-      return this.idForItem(item) === this.selectedId;
+    handleScrollState(scrollState) {
+      if (scrollState.nearBottom === true) {
+        this.loadMoreIfNeeded()
+      }
+    },
+    isSelected(item) {
+      return this.idForItem(item) === this.selectedId
     },
     idForItem(item) {
-      return item[this.keyField];
+      return item[this.keyField]
     },
-    afterVisibilityChanged(isVisible) {
-      this.afterSlotVisible = isVisible;
-      if (isVisible) {
-        this.loadMoreItemsIfNeeded();
+    loadMoreIfNeeded() {
+      const { totalItemCount, isLoading, items } = this
+      if (isLoading === true) {
+        return
       }
+      const moreItemsAvailable = totalItemCount == null ? true : totalItemCount > items.length
+      if (moreItemsAvailable === false) {
+        return
+      }
+      this.startToLoadMore()
     },
-    loadMoreItemsIfNeeded() {
-      const { totalItemCount, isLoading, items, afterSlotVisible } = this;
-      const loadingIsPossible = !isLoading;
-      if (!loadingIsPossible) {
-        return;
-      }
-      const moreItemsAvailable =
-        totalItemCount == null ? true : totalItemCount > items.length;
-      const isNeeded = afterSlotVisible && moreItemsAvailable;
-      if (!isNeeded) {
-        return;
-      }
-      this.startToLoadMoreItems();
-    },
-    startToLoadMoreItems(event) {
-      if (this.loadMoreItems != null) {
-        this.state = "loading";
+    startToLoadMore(event) {
+      if (this.loadMore != null) {
+        this.state = 'loading'
         if (event != null) {
-          event.preventDefault();
-          event.stopPropagation();
+          event.preventDefault()
+          event.stopPropagation()
         }
-        this.loadMoreItems(this.acceptNewItems);
-        this.updateScroll();
+        this.loadMore(this.acceptNewItems)
       }
     },
     acceptNewItems() {
-      this.state = "default";
+      this.state = 'default'
       setTimeout(() => {
-        this.loadMoreItemsIfNeeded();
-      }, 100);
+        this.loadMoreIfNeeded()
+      }, 100)
     },
-    updateScroll() {
-      this.$refs["vList"].$el.scrollTop = this.$refs["vList"].$el.scrollTop - 5;
+    // @vuese
+    // Scrolls the list to the item at `index`.
+    scrollToIndex(index) {
+      this.$refs.inifiniteScroll.scrollToIndex(index)
     }
   },
   data() {
     return {
-      afterSlotVisible: false,
-      state: "default",
+      state: 'default',
       selectedId: null
-    };
+    }
   }
-};
+}
 </script>

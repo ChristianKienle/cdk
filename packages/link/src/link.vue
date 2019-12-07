@@ -8,49 +8,48 @@ const EXTERNAL_ATTRS = {
 }
 
 /** @param {import('vue').CreateElement} h */
-const renderNativeAnchor =
-h =>
-/**
- * @param {string} href
- * @param {import('vue').RenderContext} context
- */
-(href, context) => {
-  const { props, data } = context
+const renderNativeAnchor = h =>
+  /**
+   * @param {string} href
+   * @param {import('vue').RenderContext} context
+   */
+  (href, context) => {
+    const { props, data } = context
 
-  const attrs = {
-    ...(isExternal(href) ? EXTERNAL_ATTRS : {}),
-    ...data.attrs,
-    href
-  }
-  const _class = [
-    data.class,
-    {
-      'is-disabled': props.disabled
+    const attrs = {
+      ...(isExternal(href) ? EXTERNAL_ATTRS : {}),
+      ...data.attrs,
+      href
     }
-  ]
+    const _class = [
+      data.class,
+      {
+        'is-disabled': props.disabled
+      }
+    ]
 
-  const on = {
-    /** @param {Event} event */
-    click: event => {
-      if(props.disabled === true) {
-        event.preventDefault()
-      } else {
-        const emitClick = context.listeners.click;
-        if(emitClick != null) {
-          // @ts-ignore
-          emitClick()
+    const on = {
+      /** @param {Event} event */
+      click: event => {
+        if (props.disabled === true) {
+          event.preventDefault()
+        } else {
+          const emitClick = context.listeners.click
+          if (emitClick != null) {
+            // @ts-ignore
+            emitClick()
+          }
         }
       }
     }
+    const _data = {
+      ...context.data,
+      attrs,
+      class: _class,
+      on
+    }
+    return h('a', _data, context.children || '')
   }
-  const _data = {
-    ...context.data,
-    attrs,
-    class: _class,
-    on
-  }
-  return h('a', _data, context.children || '')
-}
 
 const renderRouterLink = h => context => {
   const scopedSlots = {
@@ -79,8 +78,10 @@ export default {
   render(h, context) {
     const { props, children } = context
     const { to, href, disabled } = props
-    if(to != null && href != null) {
-      throw Error(`[Error] Serious programmer error: You cannot set values for href and to at the same time.`)
+    if (to != null && href != null) {
+      throw Error(
+        `[Error] Serious programmer error: You cannot set values for href and to at the same time.`
+      )
     }
     if (href != null && typeof href === 'string') {
       return renderNativeAnchor(h)(href, context)

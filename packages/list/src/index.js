@@ -10,5 +10,4 @@ function install(vue, options) {
   vue.use(plugin, options)
 }
 
-export default { install };
-
+export default install

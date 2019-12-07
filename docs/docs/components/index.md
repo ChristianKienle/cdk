@@ -3,6 +3,7 @@
 The following components/plugins/mixins are available:
 
 - [List](./list)
+- [Infinite Scroll](./infinite-scroll)
 - [Link](./link)
 - [Popover](./popover)
 - [Client Only](./client-only)

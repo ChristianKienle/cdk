@@ -1,11 +1,7 @@
-<template>
-
-</template>
+<template> </template>
 
 <script>
 export default {
-  render(h) {
-
-  }
+  render(h) {}
 }
 </script>

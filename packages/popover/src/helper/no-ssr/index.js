@@ -1,13 +1,13 @@
 // Adopted from https://raw.githubusercontent.com/egoist/vue-no-ssr
 // LICENSE: see LICENSE-no-ssr.text
 export default {
-  name: "NoSsr",
+  name: 'NoSsr',
   functional: true,
   props: {
     placeholder: String,
     placeholderTag: {
       type: String,
-      default: "div"
+      default: 'div'
     }
   },
   render(h, { parent, slots, props }) {
@@ -17,7 +17,7 @@ export default {
       return defaultSlot
     }
 
-    parent.$once("hook:mounted", () => {
+    parent.$once('hook:mounted', () => {
       parent.$forceUpdate()
     })
 
@@ -25,7 +25,7 @@ export default {
       return h(
         props.placeholderTag,
         {
-          class: ["no-ssr-placeholder"]
+          class: ['no-ssr-placeholder']
         },
         props.placeholder || placeholderSlot
       )

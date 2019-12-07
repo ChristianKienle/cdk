@@ -4,7 +4,7 @@
  * @param {any} cls
  * @returns {boolean}
  */
-const invalidClasses = cls => typeof cls === "string" && cls.length > 0
+const invalidClasses = cls => typeof cls === 'string' && cls.length > 0
 
 /**
  * @typedef {string | null | undefined} Value
@@ -15,7 +15,7 @@ const invalidClasses = cls => typeof cls === "string" && cls.length > 0
 const _classes = classes => {
   // Filter out null, undefined and ""
   const onlyClasses = classes.filter(invalidClasses)
-  if(onlyClasses.length === 0) {
+  if (onlyClasses.length === 0) {
     return null
   }
   // @ts-ignore

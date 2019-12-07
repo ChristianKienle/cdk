@@ -9,6 +9,7 @@
   "dependencies": {
     "@vue-cdk/link": "^0.1.0",
     "@vue-cdk/list": "^0.1.0",
+    "@vue-cdk/infinite-scroll": "^0.1.0",
     "@vue-cdk/list-style": "^0.1.0",
     "@vue-cdk/match-media": "^0.1.0",
     "@vue-cdk/popover": "^0.1.0",

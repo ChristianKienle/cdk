@@ -5,7 +5,7 @@
     <button data-cy="set-height-button" @click="setHeight">set height</button>
     <div style="height: 200px; border: 1px solid red;">
       <CList :items="items" data-cy="list">
-        <template #item="{item, active, index}">
+        <template #default="{item, active, index}">
           <CListItem
             :item="item"
             :active="active"

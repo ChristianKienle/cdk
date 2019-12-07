@@ -1,8 +1,8 @@
 <template>
   <div style="height: 100px; border: 1px solid red;">
   <CList
-    :items="items" :loadMoreItems="loadMore">
-      <template #item="{item, active, index }">
+    :items="items" :loadMore="loadMore">
+      <template #default="{item, active, index }">
         <CListItem
           :item="item"
           :active="active"

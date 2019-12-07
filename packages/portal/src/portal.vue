@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import { Portal as VueSimplePortal } from "@linusborg/vue-simple-portal";
-import { ClientOnly } from "@vue-cdk/client-only";
+import { Portal as VueSimplePortal } from '@linusborg/vue-simple-portal'
+import { ClientOnly } from '@vue-cdk/client-only'
 
 export default {
   name: 'Portal',
@@ -17,5 +17,5 @@ export default {
     ClientOnly,
     VueSimplePortal
   }
-};
+}
 </script>

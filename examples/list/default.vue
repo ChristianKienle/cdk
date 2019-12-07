@@ -11,12 +11,13 @@
         { id: 7 },
         { id: 8 }
       ]"
+      keyField="id"
     >
-      <template #item="{item, active, index }">
+      <template #default="{item, active, index }">
         <CListItem
           :item="item"
           :active="active"
-          :size-dependencies="[item.id]"
+          :sizeDependencies="[item.id]"
           :data-index="index"
         >
           {{ item }}

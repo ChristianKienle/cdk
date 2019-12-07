@@ -7,7 +7,7 @@ import MediaQueryObserver from './media-query-observer'
  */
 const optionSetWithKeys = keys => {
   const obj = /** @type {{[key: string]: false}} */ ({})
-  keys.forEach(key => obj[key] = false)
+  keys.forEach(key => (obj[key] = false))
   return obj
 }
 
@@ -34,7 +34,7 @@ export default {
       // The value of the query names will initially be false.
       // $all will be set to [].
       // That way vcdkMq is fully reactive from the get go.
-      vcdkMq: {...optionSetWithKeys(Object.keys(this.$options.vcdkMediaQueriesByName)), $all: []}
+      vcdkMq: { ...optionSetWithKeys(Object.keys(this.$options.vcdkMediaQueriesByName)), $all: [] }
     }
   },
   created() {

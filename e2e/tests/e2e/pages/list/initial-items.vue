@@ -6,20 +6,20 @@
       :minItemSize="20"
       :items="items"
       :totalItemCount="1000"
-      :loadMoreItems="loadMoreItems"
+      :loadMore="loadMore"
       style="height: 200px;"
       keyField="id"
     >
       <template #loading>
         <div data-cy="loading">Loading Indicator</div>
       </template>
-      <template #item="{ item, index }">
+      <template #default="{ item, index }">
         <CListItem
           :item="item"
           style="height: 20px;"
-          data-cy="item" :data-id="item.id"
+          data-cy="item" :data-cy-id="item.id"
         >
-          <div>{{ item.title }}[{{ index }}]</div>
+          <div>{{item.index}}</div>
         </CListItem>
       </template>
     </CList>
@@ -35,29 +35,25 @@ const createItem = index => ({
   title: `item ${index}`
 })
 
-const createItems = (startIndex, count) => {
-  return Array.from({ length: count }).map((_, index) => {
-    return createItem(index + startIndex)
-  })
-}
+const createItems = (startIndex, count) => [...Array(count).keys()].map(index => createItem(index + startIndex))
 
 export default {
   methods: {
     reset() {
       this.items = []
     },
-    loadMoreItems(done) {
+    loadMore(done) {
       const that = this
       setTimeout(() => {
         const { items } = that
         items.push(...createItems(items.length, 5))
         done()
-      }, 2000)
+      }, 1000)
     }
   },
   data() {
     return {
-      items: createItems(0, 0)
+      items: createItems(0, Number.parseInt(this.$route.query.numberOfInitialItems || 0, 10))
     }
   }
 }
