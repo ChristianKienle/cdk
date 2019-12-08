@@ -1,13 +1,8 @@
 <template>
   <div>
-    <div style="margin-bottom: 1rem;">Scroll State: {{ scrollState }}</div>
+    <div style="margin-bottom: 1rem;">Scroll Position: {{ scrollPosition }}</div>
     <div style="height: 200px; border: 1px dashed #ccc;">
-      <CInfiniteScroll
-        :items="items"
-        @scroll:bottom="scrollPosition = 'bottom'"
-        @scroll:top="scrollPosition = 'top'"
-        @scrollState="scrollState = $event"
-      >
+      <CInfiniteScroll :items="items" @scrollPosition="scrollPosition = $event">
         <template #default="{ item, active, index }">
           <CInfiniteScrollItem :item="item" :active="active" :sizeDependencies="[item.id]">
             {{ item }}
@@ -23,12 +18,11 @@ import '@vue-cdk/infinite-scroll/style/index.css'
 export default {
   data() {
     return {
-      scrollState: {
+      scrollPosition: {
         nearTop: null,
         nearBottom: null
       },
-      scrollPosition: 'top',
-      items: [...Array(100).keys()].map(index => ({ id: index }))
+      items: [...Array(50).keys()].map(index => ({ id: index }))
     }
   }
 }

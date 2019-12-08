@@ -1,28 +1,25 @@
 <template>
-  <div style="height: 100px; border: 1px solid red;">
-  <CList
-    :items="items" :loadMore="loadMore">
-      <template #default="{item, active, index }">
-        <CListItem
+  <div style="height: 200px;">
+    <CInfiniteScroll :items="items" :loadMore="loadMore">
+      <template #default="{item, active }">
+        <CInfiniteScrollItem
           :item="item"
           :active="active"
           :sizeDependencies="[item.id]"
-          :data-index="index"
         >
-        {{item}}
-      </CListItem>
-    </template>
-  </CList>
-</div>
+          Scroll down – {{ item.id }}
+        </CInfiniteScrollItem>
+      </template>
+    </CInfiniteScroll>
+  </div>
 </template>
 
 <script>
-import '@vue-cdk/list-style/index.css'
-
+import '@vue-cdk/infinite-scroll/style/index.css'
 export default {
   data() {
     return {
-      items: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }]
+      items: [...Array(20).keys()].map(index => ({id: index}))
     }
   },
   methods: {
@@ -36,5 +33,4 @@ export default {
     }
   }
 }
-
 </script>

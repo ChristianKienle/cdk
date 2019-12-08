@@ -1,0 +1,37 @@
+{
+  "name": "@vue-cdk/focus-trap",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src/*.js",
+    "src/*.vue"
+  ],
+  "dependencies": {
+    "@vue-cdk/pluginify": "^0.1.0"
+  },
+  "peerDependencies": {
+    "core-js": "^3.3.2",
+    "vue": "^2.6.10",
+    "focus-trap": "^5.1.0"
+  },
+  "devDependencies": {
+    "core-js": "^3.3.2",
+    "vue": "^2.6.10",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-unit-jest": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

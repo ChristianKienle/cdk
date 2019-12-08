@@ -9,7 +9,7 @@
     @scroll.native.passive="handleScroll"
   >
     <template #before>
-      <slot name="before" />
+      <slot name="before" :state="state" :scrollPosition="scrollPosition" />
     </template>
 
     <template v-slot="{ item, active, index }">
@@ -17,14 +17,14 @@
     </template>
 
     <template #after>
-      <slot name="after" />
+      <slot name="after" :state="state" :scrollPosition="scrollPosition" />
     </template>
   </VueVirtualDynamicScroller>
 </template>
 
 <script>
 import VueVirtualDynamicScroller from 'vue-virtual-scroller/src/components/DynamicScroller.vue'
-import { scrollStatesEqual } from './scroll-state'
+import scrollPositionsEqual from './scroll-positions-equal'
 
 export default {
   name: 'InfiniteScroll',
@@ -38,17 +38,30 @@ export default {
     // Minimal size of the items (in `px`). Will be passed onto DynamicScroller.
     minItemSize: {
       type: Number,
-      default: 30
+      default: 18
     },
-    // Items to be rendered by the virtualized list. Each item must have a unique identifier. You can specify the name of the identifying property by using the key-field-prop.
-    items: { type: Array, default: () => [] }
+    // Items to be rendered by the infinite scroll component. Each item must have a unique identifier. You can specify the name of the identifying property by using the key-field-prop.
+    items: { type: Array, default: () => [] },
+    // Function to be called when the list needs more items from you. This function is called with a callback parameter that you MUST call at some point with additional items.
+    loadMore: { type: Function, default: null }
   },
   data() {
     return {
-      scrollState: {
+      state: 'default',
+      scrollPosition: {
         nearTop: null,
         nearBottom: null
       }
+    }
+  },
+  computed: {
+    isLoading() {
+      return this.state === 'loading'
+    }
+  },
+  mounted() {
+    if (this.items.length === 0) {
+      this.startToLoadMore()
     }
   },
   methods: {
@@ -59,18 +72,38 @@ export default {
       scroller.scrollToItem(index)
     },
     handleScroll(event) {
-      const { scrollState, $el, minItemSize, $refs } = this
+      const { scrollPosition, $el, minItemSize, $refs } = this
       const bounds = $el.getBoundingClientRect()
       const scroller = $refs.dynamicScroller.$refs.scroller
       const clientHeight = scroller.$refs.wrapper.clientHeight
       const nearBottom = clientHeight - $el.scrollTop <= bounds.height + minItemSize
       const nearTop = $el.scrollTop <= minItemSize
       const newScrollState = { nearTop, nearBottom }
-      if (scrollStatesEqual(scrollState, newScrollState)) {
+      if (scrollPositionsEqual(scrollPosition, newScrollState)) {
         return
       }
-      this.scrollState = newScrollState
-      this.$emit('scrollState', { ...newScrollState })
+      this.scrollPosition = newScrollState
+      this.$emit('scrollPosition', { ...newScrollState })
+      if (newScrollState.nearBottom && this.isLoading === false) {
+        this.loadMoreIfNeeded()
+      }
+    },
+    loadMoreIfNeeded() {
+      const { isLoading } = this
+      if (isLoading === true) {
+        return
+      }
+      this.startToLoadMore()
+    },
+    startToLoadMore(event) {
+      if (this.loadMore != null) {
+        this.state = 'loading'
+        if (event != null) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        this.loadMore(() => this.state = 'default')
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-export interface ScrollState {
+export interface ScrollPosition {
   nearTop: boolean | null
   nearBottom: boolean | null
 }

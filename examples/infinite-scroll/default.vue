@@ -1,6 +1,7 @@
 <template>
-  <div style="height: 200px; border: 1px dashed #ccc;">
+  <div>
     <CInfiniteScroll
+    style="height: 200px"
       :items="[
         { id: 1 },
         { id: 2 },
@@ -16,10 +17,8 @@
         <CInfiniteScrollItem
           :item="item"
           :active="active"
-          :size-dependencies="[item.id]"
-          :data-index="index"
         >
-          {{ item }}
+          Item[{{index}}] = {{ item.id }}
         </CInfiniteScrollItem>
       </template>
     </CInfiniteScroll>

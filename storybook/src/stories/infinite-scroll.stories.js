@@ -3,3 +3,4 @@ export const defaultInfiniteScroll = () => require('./../../../examples/infinite
 export const sizeDependencies = () => require('./../../../examples/infinite-scroll/size-dependencies.vue').default
 export const scrollTo = () => require('./../../../examples/infinite-scroll/scroll-to.vue').default
 export const scrollEvents = () => require('./../../../examples/infinite-scroll/scroll-events.vue').default
+export const loadMore = () => require('./../../../examples/infinite-scroll/load-more.vue').default
