@@ -21,7 +21,7 @@ const createScopedClass = child => `${classPrefix}${child}`
 
 /** @param {ParserResult} result */
 const getDescription = result => {
-  const { componentDesc = { 'default': [] } } = result
+  const { componentDesc = { default: [] } } = result
   return componentDesc.default
 }
 
@@ -43,7 +43,8 @@ const renderHeading = (level, text) => {
  * @param {string=} cssClass
  */
 const renderDivWithScopedClass = (text, cssClass) => {
-  const scopedClass = cssClass == null ? 'component-documentation' : `component-documentation__${cssClass}`
+  const scopedClass =
+    cssClass == null ? 'component-documentation' : `component-documentation__${cssClass}`
   return new CreateMarkdown().raw(`<div class="${scopedClass}">${text}</div>`)
 }
 
@@ -100,10 +101,14 @@ const renderEvent = event => {
 }
 
 /** @param {ComputedResult} computed */
-const renderComputed = ({ name, describe }) => renderDivWithScopedClass(name, 'computed-name').nl().lines(describe, { wrap: true }).nl()
+const renderComputed = ({ name, describe }) =>
+  renderDivWithScopedClass(name, 'computed-name')
+    .nl()
+    .lines(describe, { wrap: true })
+    .nl()
 
 /** @param {ComputedResult[]} computed */
-const renderComputedProps = (computed) => {
+const renderComputedProps = computed => {
   if (computed.length === 0) {
     return ''
   }
@@ -137,8 +142,7 @@ const renderMethod = method => {
     .nl()
     .lines(method.describe, { wrap: true })
   if ((method.argumentsDesc || []).length > 0) {
-    md
-      .nl(2)
+    md.nl(2)
       .strong('Arguments:')
       .nl()
     const args = (method.argumentsDesc || []).map(arg => `- ${arg}`)
@@ -147,7 +151,6 @@ const renderMethod = method => {
   }
   return md
 }
-
 
 /** @param {SlotResult} slot */
 const renderSlot = slot => {
@@ -164,8 +167,7 @@ const renderSlots = slots => {
   if (slots.length === 0) {
     return ''
   }
-  const md = new CreateMarkdown()
-    .nl(2)
+  const md = new CreateMarkdown().nl(2)
   renderDivWithScopedClass('Slots', 'slots-heading')
     .nl(2)
     .raw(slots.map(renderSlot), { wrap: true })
@@ -184,8 +186,7 @@ const renderEvents = events => {
     .raw(renderDivWithScopedClass('Events', 'events-heading'))
     .nl(2)
   events.forEach(event => md.raw(renderEvent(event), { wrap: true }))
-  md
-    .nl(2)
+  md.nl(2)
   return renderWithScopedClass('__events', md.tokens)
 }
 
@@ -224,7 +225,9 @@ const render = componentApi => {
     .nl(2)
     .raw('</div>')
   if (md == null) {
-    throw Error(`Unable to render API for component ${componentApi} because 'renderMarkdown' returned 'null'.`)
+    throw Error(
+      `Unable to render API for component ${componentApi} because 'renderMarkdown' returned 'null'.`
+    )
   }
   return md.render()
 }

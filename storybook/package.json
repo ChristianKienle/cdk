@@ -15,6 +15,7 @@
     "@vue-cdk/popover": "^0.1.0",
     "@vue-cdk/popover-themes": "^0.1.0",
     "@vue-cdk/portal": "^0.1.0",
+    "@vue-cdk/client-only": "^0.1.0",
     "@vue-cdk/scroll-container": "^0.1.0",
     "core-js": "^3.3.2",
     "vue": "^2.6.10",

@@ -41,7 +41,8 @@ Vue.use(InfiniteScroll)
 ### Using the Components directly
 If you don't like the globally registered components that come with `@vue-cdk/infinite-scroll` you can also import the components directly.
 
-```js
+```markup
+<script>
 import {
   InfiniteScroll,
   InfiniteScrollItem
@@ -49,11 +50,20 @@ import {
 
 export default {
   name: 'MyComponent',
-  components: { InfiniteScroll, InfiniteScrollItem },
-  render(h) {
-    return h(InfiniteScroll, {/*…*/}, [/*…*/])
+  components: {
+    InfiniteScroll,
+    InfiniteScrollItem
   }
 }
+</script>
+
+<template>
+  <InfiniteScroll :items="[{id: '1'}]">
+    <template #default="{item}">
+      <InfiniteScrollItem :item="item">{{item}}</InfiniteScrollItem>
+    </template>
+  </InfiniteScroll>
+</template>
 ```
 
 ### Importing the Styles
@@ -63,12 +73,11 @@ In order to properly work, *Infinite Scroll* requires some minimal styles that y
 import '@vue-cdk/infinite-scroll/style/index.css'
 ```
 
-
 ::: tip
 The CSS classes defined in that file are keeps to a minimum and don't introduce any visible styling. **It is up to you to make things look nice.**
 :::
 
-## Guide
+## Examples
 
 ### Hello World
 Getting [Infinite Scroll](./../../api/infinite-scroll) to render a simple list is straight forward:
@@ -106,6 +115,9 @@ The current scroll position is a local state. You can access it by using `$refs.
 You can use those events for a multitude of different things. The higher–level [List](./../list)–component uses those events in order to display a loading indicator automatically.
 
 <Demo for="infinite-scroll/scroll-events" />
+
+## Slot Props
+In every previous example certain slot props were used when rendering an item (by providing the default slot). If you want to know all slots props that are available please head over to the [Infinite Scroll](./../../api/infinite-scroll) API page.
 
 ## API
 

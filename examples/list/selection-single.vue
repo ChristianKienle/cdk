@@ -13,14 +13,13 @@
       ]"
       keyField="id"
     >
-      <template #default="{item, active, index}">
+      <template #default="{item, active, index, selected}">
         <CListItem
           :item="item"
           :active="active"
           :sizeDependencies="[item.id]"
-
         >
-          {{ item }}
+          {{selected ? '[x]' : '[ ]'}} {{ item }}
         </CListItem>
       </template>
     </CList>

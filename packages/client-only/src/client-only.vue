@@ -18,7 +18,8 @@ export default {
   },
   render(h, { parent, slots, props }) {
     const { default: defaultSlot = [], placeholder: placeholderSlot } = slots()
-
+    // eslint-disable-next-line no-debugger
+    debugger
     if (parent._isMounted) {
       return defaultSlot
     }

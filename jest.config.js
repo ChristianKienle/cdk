@@ -12,6 +12,7 @@ global.document.createRange = () => ({
 module.exports = {
   preset: '@vue/cli-plugin-unit-jest',
   testMatch: ['**/__tests__/**/*.test.js'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/vue-virtual-scroller/src/components/*.vue'],
   modulePathIgnorePatterns: [
     // dist has to be ignored because it contains our build artefacts which should not be tested.
     '<rootDir>/dist'
