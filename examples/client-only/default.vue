@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { ClientOnly } from "@vue-cdk/client-only"
+import { ClientOnly } from "@vue-cdk/client-only";
 export default {
   components: {
     ClientOnly

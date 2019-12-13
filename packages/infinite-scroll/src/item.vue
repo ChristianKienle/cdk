@@ -1,5 +1,5 @@
 <script>
-import CDynamicScrollerItem from 'vue-virtual-scroller/src/components/DynamicScrollerItem'
+import CDynamicScrollerItem from 'vue-virtual-scroller/src/components/DynamicScrollerItem.vue'
 
 export default {
   name: 'InfiniteScrollItem',

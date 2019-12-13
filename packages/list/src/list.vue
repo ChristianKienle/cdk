@@ -11,13 +11,13 @@
     </template>
 
     <template #default="{item, active, index}">
-      <slot :item="item" :active="active" :index="index" />
+      <slot :item="item" :active="active" :index="index" :selection="selection" :selected="selected(item)" />
     </template>
 
     <template #after="{ state }">
       <template v-if="state === 'loading'">
         <slot name="loading">
-          <div>Loading…</div>
+          <ListLoadingIndicator />
         </slot>
       </template>
     </template>
@@ -26,15 +26,26 @@
 
 <script>
 import InifiniteScroll from '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'
+import ListLoadingIndicator from './loading-indicator.vue'
+import SingleSelectionMode from './selection/single'
 
 export default {
   name: 'List',
-  components: { InifiniteScroll },
+  components: { InifiniteScroll, ListLoadingIndicator },
+  provide() {
+    return {
+      vcdkList: this
+    }
+  },
   props: {
     // Name of property that uniquely identifies an item.
     keyField: {
       type: String,
       default: 'id'
+    },
+    selectionMode: {
+      type: Function,
+      default: SingleSelectionMode
     },
     // Minimal size of the items. Will be passed onto DynamicScroller.
     minItemSize: { type: Number, default: 30 },
@@ -45,20 +56,30 @@ export default {
   },
   computed: {
     // selectedItem() {
-    //   const { selectedId, items } = this
+      //   const { selectedId, items } = this
     //   if (selectedId == null) {
-    //     return
+      //     return
     //   }
     //   const index = items.findIndex(item => {
-    //     return this.idForItem(item) === selectedId
+      //     return this.idForItem(item) === selectedId
     //   })
     //   return index < 0 ? undefined : items[index]
     // }
   },
   methods: {
+    idOfItem(item) {
+      return item[this.keyField]
+    },
+    selected(item) {
+      return this.selection.includes(this.idOfItem(item))
+    },
+    select(item) {
+      const id = this.idOfItem(item)
+      this.selection = this.selectionMode({selection: this.selection, affected: id })
+    },
     // loadMore_(done_) {
-    //   this.loadMore(() => {
-    //     done_()
+      //   this.loadMore(() => {
+        //     done_()
     //   })
     // },
     scrollToIndex(index) {
@@ -67,7 +88,7 @@ export default {
   },
   data() {
     return {
-      selectedId: null
+      selection: []
     }
   }
 }

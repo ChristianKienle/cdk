@@ -3,8 +3,8 @@
     tabindex="0"
     ref="dynamicScroller"
     style="height: 100%;"
-    :key-field="keyField"
-    :min-item-size="minItemSize"
+    :keyField="keyField"
+    :minItemSize="minItemSize"
     :items="items"
     @scroll.native.passive="handleScroll"
   >
@@ -26,6 +26,17 @@
 import VueVirtualDynamicScroller from 'vue-virtual-scroller/src/components/DynamicScroller.vue'
 import scrollPositionsEqual from './scroll-positions-equal'
 
+// The `InfiniteScroll` component expects you to do tell it two things at a minimum:
+// - **What to render:**: You do this by setting the `items`-prop. The items should be an array of objects with an `id`-field.
+// - **How to render a single item:** You do this by providing the scoped default slot. By default, `InfiniteScroll` expects the items-array to contain objects that have a least an `id`-property. You can override this by setting the `keyField`-prop.
+//
+// **Slot Props**
+//
+// The default slot you have to provide receives several slot-props:
+//
+// - `item`: The item that should be rendered
+// - `index`: The index (type: `Number`) of the item
+// - `active`: A `boolean` value that is `true` the item is currently active. An item is considered active when it is currently beeing positioned by the [virtualization library](https://github.com/Akryum/vue-virtual-scroller/) that is used under the hood.
 export default {
   name: 'InfiniteScroll',
   components: { VueVirtualDynamicScroller },
@@ -102,7 +113,7 @@ export default {
           event.preventDefault()
           event.stopPropagation()
         }
-        this.loadMore(() => this.state = 'default')
+        this.loadMore(() => (this.state = 'default'))
       }
     }
   }

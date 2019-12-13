@@ -1,5 +1,4 @@
 import { configure, addParameters } from '@storybook/vue';
-// import '@storybook/addon-console'
 
 // Dependencies
 import Vue from 'vue';
@@ -13,6 +12,7 @@ import Popover from '@vue-cdk/popover';
 import Link from '@vue-cdk/link';
 import Portal from '@vue-cdk/portal';
 import ScrollContainer from '@vue-cdk/scroll-container';
+import ClientOnly from '@vue-cdk/client-only';
 
 addParameters({
   backgrounds: [
@@ -38,5 +38,6 @@ Vue.use(Popover);
 Vue.use(Link);
 Vue.use(Portal);
 Vue.use(ScrollContainer);
+Vue.use(ClientOnly);
 
 configure(require.context('../src', true, /\.*.stories.js/), module);
