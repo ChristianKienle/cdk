@@ -61,10 +61,14 @@ export default {
   },
   methods: {
     keyForExampleAtPath() {
-      return this.$site.pages.find(({ frontmatter = {} }) => {
+      const page = this.$site.pages.find(({ frontmatter = {} }) => {
         const { examplePath = '' } = frontmatter
         return examplePath.replace('.vue', '') === this.for.replace('.vue', '')
-      }).key
+      })
+      if(page == null) {
+        return
+      }
+      return page.key
     }
   },
   render(h) {

@@ -9,7 +9,7 @@ This repository is using [Lerna](https://lerna.js.org/). The current lerna confi
 After cloning this repository you should run:
 
 ```sh
-$ npm install
+$ yarn install
 ```
 
 This will install all dependencies and automatically execute `lerna bootstrap` afterwards. `lerna bootstrap` will in turn initialize Lerna and all sub-projects.
@@ -21,7 +21,7 @@ The documentation is not a single thing. It consists of several things in order 
 The user-facing documentation is a standard [VuePress](https://v1.vuepress.vuejs.org/) installation. You run it by executing:
 
 ```sh
-$ npm run docs
+$ yarn docs
 ```
 
 Everything that goes into *Vue Component Development Kit* should be relfected somewhere in the user-facing documentation. The user-facing documentation is what developers will first go to in case of questions/need for information. Because of that it should contain everything in a single place:
@@ -41,7 +41,7 @@ The API reference is realized by a custom VuePress plugin which is using [vuese]
 The storybook is mainly used during the development of *Vue Component Development Kit*. You can run it by executing:
 
 ```sh
-$ npm run storybook
+$ yarn storybook
 ```
 
 The storybook is not the main documentation. It is intended to be used by people who are contributing to *Vue Component Development Kit*.
