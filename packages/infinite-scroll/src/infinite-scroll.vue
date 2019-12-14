@@ -6,6 +6,7 @@
     :keyField="keyField"
     :minItemSize="minItemSize"
     :items="items"
+    :prerender="items.length"
     @scroll.native.passive="handleScroll"
   >
     <template #before>
