@@ -5,4 +5,5 @@
 export const create = /** @type {Mode} */ () => () => []
 
 const defaultNoneSelectionMode = create({})
+defaultNoneSelectionMode['selectionModeName'] = 'none selection mode'
 export default defaultNoneSelectionMode

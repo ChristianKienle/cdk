@@ -65,4 +65,30 @@ describe('list component', () => {
     getItemWithIndex(6).click().should('have.attr', 'data-cy-selected', 'true')
     cy.get('[data-cy-selected="true"]').should('have.have.length', 1)
   })
+
+  it('supports multiple selection mode', () => {
+    visitStart()
+    visitPage('/list/configurable', { height: '200px', itemHeight: '20px', numberOfInitialItems: 10, selectionMode: 'multiple' })
+    cy.dataCy('list').should('exist')
+    cy.dataCy('item').should('have.length', 10)
+    // initially we expect there to be no selected item
+    cy.get('[data-cy-selected="true"]').should('have.have.length', 0)
+
+    // Now we get and item and select it and assert:
+    // – that the selection is actually there…
+    getItemWithIndex(1).click().should('have.attr', 'data-cy-selected', 'true')
+    // - and that there is only a single selected item
+    cy.get('[data-cy-selected="true"]').should('have.have.length', 1)
+    getItemWithIndex(1).should('have.attr', 'data-cy-selected', 'true')
+
+    // Now we click it again and hope that the selection is removed and that there is no selection in the list
+    getItemWithIndex(1).click().should('have.attr', 'data-cy-selected', 'false')
+    cy.get('[data-cy-selected="true"]').should('have.have.length', 0)
+
+    // Now we click two different items and assert that those items are in fact selected
+    getItemWithIndex(5).click().should('have.attr', 'data-cy-selected', 'true')
+    cy.get('[data-cy-selected="true"]').should('have.have.length', 1)
+    getItemWithIndex(6).click().should('have.attr', 'data-cy-selected', 'true')
+    cy.get('[data-cy-selected="true"]').should('have.have.length', 2)
+  })
 })
