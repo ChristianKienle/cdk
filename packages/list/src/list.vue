@@ -27,7 +27,7 @@
 <script>
 import InifiniteScroll from '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'
 import ListLoadingIndicator from './loading-indicator.vue'
-import SingleSelectionMode from './selection/single'
+import NoneSelectionMode from './selection/none'
 
 export default {
   name: 'List',
@@ -45,7 +45,7 @@ export default {
     },
     selectionMode: {
       type: Function,
-      default: SingleSelectionMode
+      default: NoneSelectionMode
     },
     // Minimal size of the items. Will be passed onto DynamicScroller.
     minItemSize: { type: Number, default: 30 },

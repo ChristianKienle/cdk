@@ -46,11 +46,38 @@ As a higher level package `@vue-cdk/list` has a notion of selection. It knows wh
 ### Hello World
 <Demo for="list/default" />
 
+
 ### Single Selection Mode
 <Demo for="list/selection-single" />
 
 ### Multiple Selection Mode
 <Demo for="list/selection-multiple" />
+
+## Custom Selection Mode
+The *List* component supports different selection modes. An item can either be selected or not selected.
+
+You can create a custom selection mode and simply use it as a value for the `selectionMode`-prop. A custom selection mode is simply a function that takes a `Mutation`-object and returns an array of selected item-ids. The `Mutation`-object looks like this:
+
+```ts
+interface Mutation {
+  // An array of ids that are currently selected
+  selection: string[]
+  // An id that is affected by the mutation.
+  // If a user clicks on an item this will be the id of the clicked item.
+  affected?: string
+  // An optional even object that triggered the mutation.
+  event?: Event
+}
+```
+
+Your custom selection mode is a function that turns a mutation object and turns it into an array of item-ids:
+
+```js
+const customSelectionMode = ({ selection, affected, event }) => {
+  // compute the new selection and return it
+  return [/* item ids */]
+}
+```
 
 ## API
 

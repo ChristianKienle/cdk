@@ -13,3 +13,4 @@ export interface SingleSelectionModeOptions {
 
 export type SingleSelectionMode = CreateSelectionMode<SingleSelectionModeOptions>
 export type MutlipleSelectionMode = CreateSelectionMode<object>
+export type NoneSelectionMode = CreateSelectionMode<any>

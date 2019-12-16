@@ -11,6 +11,7 @@
   },
   "main": "src/index.js",
   "files": [
+    "style/*.css",
     "src/index.js",
     "src/list.vue",
     "src/list-item.vue"
