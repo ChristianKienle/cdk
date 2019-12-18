@@ -13,7 +13,7 @@ actionLink: /components/
 #   details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
 # - title: Performant
 #   details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-footer: MIT Licensed | Copyright © 2018-present Evan You
+footer: MIT Licensed | Copyright © 2019-present Christian Kienle
 ---
 
 The *Vue Component Development Kit* is a set of low-level components, mixins and utilities that act as a foundation for component libraries and applications. Kickstart your project with a *well-tested*, *incrementally adoptable* and *minimally invasive* framework.
@@ -36,3 +36,7 @@ Everything that is part of the *Vue Component Development Kit* (abbr. **CDK**) t
 - **Solve an actual Problem:** A *CDK*-package solves an actual problem. A problem can be hard, error prone and/or tedious.
 - **Well Tested:** You should not have to think twice whether or not something that is part of *CDK* is stable/production ready. *CDK* is well tested.
 - **Outstanding Documentation:** Everything that has made it into *CDK* is well documented.
+
+<div style="margin: 1.5rem 0; text-align:center; font-size:0.8rem;" >
+<a href="https://www.netlify.com/">This site is powered by Netlify</a>
+</div>
