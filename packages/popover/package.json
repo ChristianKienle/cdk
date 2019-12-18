@@ -9,10 +9,12 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
+  "style": "themes/index.css",
   "main": "src/index.js",
   "files": [
     "src/**/*.js",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "themes/**/*.css"
   ],
   "peerDependencies": {
     "core-js": "^3.3.2",

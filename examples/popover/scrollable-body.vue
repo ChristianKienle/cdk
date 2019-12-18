@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import '@vue-cdk/popover-themes/index.css'
+import '@vue-cdk/popover/themes/index.css'
 export default {
   data: () => ({ indices: Array.from({ length: 35 }).map((_, idx) => idx) })
 }
