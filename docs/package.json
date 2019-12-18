@@ -2,7 +2,7 @@
 	"name": "@vue-cdk/docs",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090",
+    "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090 --debug",
     "build": "vuepress build docs --dest ./dist"
   },
 	"description": "",
@@ -36,7 +36,6 @@
     "vue": "^2.6.10",
     "webpack-bundle-analyzer": "^3.6.0",
     "vuepress": "^1.2.0",
-
     "@vuese/markdown-render": "^2.5.3",
     "stringify-attributes": "^2.0.0"
 	}
