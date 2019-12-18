@@ -27,7 +27,7 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'Components', link: '/components/' },
       { text: 'Customizing', link: '/customizing/' },
-      { text: 'Storybook', link: '/storybook/' }
+      { text: 'Storybook', link: `/storybook/`, target: '__blank' }
     ]
   },
   plugins: [
