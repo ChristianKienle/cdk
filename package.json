@@ -20,11 +20,11 @@
     "test:unit": "vue-cli-service test:unit --no-collect-coverage",
     "test:unit:watch": "cross-env BASE_URL='/' vue-cli-service test:unit --no-collect-coverage --watch",
     "test:e2e": "cd e2e && yarn start",
+    "test:e2e:ci": "cd e2e && yarn start  --headless",
     "poor-ci": "yarn test && yarn lint && yarn test:e2e && yarn docs:build",
-    "lint": "eslint --ext .js,.vue packages",
+    "lint": "eslint --ext .js,.vue packages examples storybook e2e",
     "postinstall": "yarn bootstrap"
   },
-  "dependencies": {},
   "devDependencies": {
     "rimraf": "^3.0.0",
     "bili": "^4.8.1",

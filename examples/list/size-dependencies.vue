@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     setHeight() {
-      console.log('setHeight')
       const { id, height, items } = this
       const item = items.find(item => id === item.id)
       if (item == null) {

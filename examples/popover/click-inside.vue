@@ -1,6 +1,6 @@
 <template>
   <Popover boundary="viewport" with-arrow theme="clean">
-  <template #trigger="{ toggle }">
+    <template #trigger="{ toggle }">
       <button @click="toggle">Show Popover</button>
     </template>
     <template #default="{ hide }">
@@ -14,5 +14,5 @@
 
 <script>
 import '@vue-cdk/popover-themes/index.css'
-export default {};
+export default {}
 </script>

@@ -4,8 +4,8 @@ node_modules
 .saber
 docs/dist
 
-/tests/e2e/videos/
-/tests/e2e/screenshots/
+/e2e/tests/e2e/videos/*.*.mp4
+/e2e/tests/e2e/screenshots/*.*.mp4
 
 # local env files
 .env.local
