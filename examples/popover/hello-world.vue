@@ -10,6 +10,6 @@
 </template>
 
 <script>
-import '@vue-cdk/popover-themes/index.css'
+import '@vue-cdk/popover/themes/index.css'
 export default {}
 </script>

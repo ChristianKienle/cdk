@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import '@vue-cdk/list-style/index.css'
+import '@vue-cdk/list/style/index.css'
 
 export default {
   data() {

@@ -4,7 +4,7 @@ import { configure, addParameters } from '@storybook/vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 // Vue Component Development Kit Imports – Styles
-import '@vue-cdk/list-style/index.css';
+import '@vue-cdk/list/style/index.css';
 // Vue Component Development Kit Imports – Components
 import List from '@vue-cdk/list';
 import InfiniteScroll from '@vue-cdk/infinite-scroll';

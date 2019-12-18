@@ -9,16 +9,18 @@ Custom CSS follows a set of guidelines:
 - **Consistently prefixed classes:** Custom CSS classes are consistently prefixed with
 <code><abbr title="Vue Component Development Kit">vcdk</abbr>-</code>.
 - **No polluting of the global scope:** You will never see <abbr title="Vue Component Development Kit">VCDK</abbr> apply styles to elements such as `button`, `a`, etc.
-- **Distributed separately:** Usually our custom CSS is distributed separately from the actual component/plugin/utility. For example there is a themeable popover-component (`@vue-cdk/popover`) that works even without any styles/themes. If you want to use one of the officially available themes then simply add `@vue-cdk/popover-themes` as a dependency and import the CSS:
+- **Distributed:** Usually our custom CSS is distributed within the actual component/plugin/utility. For example there is a themeable popover-component (`@vue-cdk/popover`) that works even without any styles/themes. If you want to use one of the officially available themes then simply import the theme styles from `@vue-cdk/popover/themes/$theme-name`.
+
+Importing from within CSS:
 
 ```js
 // import all themes:
-import '@vue-cdk/popover-themes/index.css'
+import '@vue-cdk/popover/themes/index.css'
 
 //                – or –                   //
 
 // import 'only' a specific theme:
-import '@vue-cdk/popover-themes/clean.css'
+import '@vue-cdk/popover/themes/clean.css'
 ```
 
 - **Use plain CSS:** Having to use custom CSS (within the context of <abbr title="Vue Component Development Kit">VCDK</abbr>) is already a little bit against what we actually want – so using the CSS and working with it should not introduce additional complexities. Keep it simple.

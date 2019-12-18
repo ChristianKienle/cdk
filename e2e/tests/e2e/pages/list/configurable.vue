@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import '@vue-cdk/list-style/index.css'
+import '@vue-cdk/list/style/index.css'
 import { SelectionMode } from '@vue-cdk/list'
 const createItem = index => ({
   index,
