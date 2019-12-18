@@ -910,8 +910,8 @@ __webpack_require__.r(__webpack_exports__);
   "v-b0b5210c": () => __webpack_require__.e(/*! import() */ 62).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-b0b5210c.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-b0b5210c.md")),
   "v-4507d382": () => __webpack_require__.e(/*! import() */ 49).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-4507d382.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-4507d382.md")),
   "v-12c3aba2": () => __webpack_require__.e(/*! import() */ 37).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-12c3aba2.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-12c3aba2.md")),
-  "v-2f76c080": () => __webpack_require__.e(/*! import() */ 46).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-2f76c080.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-2f76c080.md")),
   "v-96bfec74": () => __webpack_require__.e(/*! import() */ 61).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-96bfec74.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-96bfec74.md")),
+  "v-2f76c080": () => __webpack_require__.e(/*! import() */ 46).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-2f76c080.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-2f76c080.md")),
   "v-7571821c": () => __webpack_require__.e(/*! import() */ 54).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-7571821c.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-7571821c.md")),
   "v-44240933": () => __webpack_require__.e(/*! import() */ 48).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-44240933.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-44240933.md")),
   "v-92d62c6e": () => __webpack_require__.e(/*! import() */ 60).then(__webpack_require__.bind(null, /*! ../node_modules/@vuepress/core/.temp/temp-pages/v-92d62c6e.md */ "../node_modules/@vuepress/core/.temp/temp-pages/v-92d62c6e.md")),
@@ -1158,18 +1158,6 @@ const routes = [
     redirect: "/example-src/infinite-scroll/scroll-events/"
   },
   {
-    name: "v-2f76c080",
-    path: "/example-src/infinite-scroll/scroll-to/",
-    component: _home_travis_build_ChristianKienle_cdk_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-2f76c080").then(next)
-    },
-  },
-  {
-    path: "/example-src/infinite-scroll/scroll-to/index.html",
-    redirect: "/example-src/infinite-scroll/scroll-to/"
-  },
-  {
     name: "v-96bfec74",
     path: "/example-src/infinite-scroll/size-dependencies/",
     component: _home_travis_build_ChristianKienle_cdk_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -1180,6 +1168,18 @@ const routes = [
   {
     path: "/example-src/infinite-scroll/size-dependencies/index.html",
     redirect: "/example-src/infinite-scroll/size-dependencies/"
+  },
+  {
+    name: "v-2f76c080",
+    path: "/example-src/infinite-scroll/scroll-to/",
+    component: _home_travis_build_ChristianKienle_cdk_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-2f76c080").then(next)
+    },
+  },
+  {
+    path: "/example-src/infinite-scroll/scroll-to/index.html",
+    redirect: "/example-src/infinite-scroll/scroll-to/"
   },
   {
     name: "v-7571821c",
@@ -1881,19 +1881,19 @@ const siteData = {
     },
     {
       "frontmatter": {
-        "examplePath": "infinite-scroll/scroll-to.vue"
-      },
-      "regularPath": "/example-src/infinite-scroll/scroll-to/",
-      "key": "v-2f76c080",
-      "path": "/example-src/infinite-scroll/scroll-to/"
-    },
-    {
-      "frontmatter": {
         "examplePath": "infinite-scroll/size-dependencies.vue"
       },
       "regularPath": "/example-src/infinite-scroll/size-dependencies/",
       "key": "v-96bfec74",
       "path": "/example-src/infinite-scroll/size-dependencies/"
+    },
+    {
+      "frontmatter": {
+        "examplePath": "infinite-scroll/scroll-to.vue"
+      },
+      "regularPath": "/example-src/infinite-scroll/scroll-to/",
+      "key": "v-2f76c080",
+      "path": "/example-src/infinite-scroll/scroll-to/"
     },
     {
       "frontmatter": {
@@ -2378,7 +2378,7 @@ const { app, router } = Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(f
 
 window.__VUEPRESS__ = {
   version: "1.2.0",
-  hash: "ff79ba0"
+  hash: "b4b28fd"
 }
 
 router.onReady(() => {
@@ -31043,4 +31043,4 @@ module.exports = __webpack_require__(/*! /home/travis/build/ChristianKienle/cdk/
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.8e57f881.js.map
+//# sourceMappingURL=app.69553871.js.map
