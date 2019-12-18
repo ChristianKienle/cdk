@@ -3,38 +3,44 @@
     <CPopoverTrigger ref="trigger" @click.native="handleClickOnTrigger">
       <slot name="trigger" v-bind="slotProps" />
     </CPopoverTrigger>
-    <SimplePortal :selector="portalSelector">
-      <div ref="body" :aria-hidden="String(!visible_)" :class="bodyClasses" :style="bodyStyles_">
-        <slot v-bind="slotProps" />
-        <vp-arrow x-arrow :class="arrowClasses" />
-      </div>
-    </SimplePortal>
+    <NoSsr>
+      <SimplePortal :selector="portalSelector">
+        <div ref="body" :class="bodyClasses" :style="bodyStyles_">
+          <slot v-bind="slotProps" />
+          <vp-arrow x-arrow :class="arrowClasses" />
+        </div>
+      </SimplePortal>
+    </NoSsr>
   </div>
 </template>
 
 <script>
+import NoSsr from './helper/no-ssr'
 import { normalizedClasses, shortId } from './helper'
 import Popper from 'popper.js'
 import { inBrowser } from '@vue-cdk/utils'
 import { defaultBoundary, isValidBoundary } from './boundary'
 import * as BodySizeMode from './body-size-mode'
-import { Portal as SimplePortal } from '@vue-cdk/portal'
-
+// import { Portal as SimplePortal } from '@vue-cdk/portal'
+import { Portal as SimplePortal } from '@linusborg/vue-simple-portal'
+import { ClientOnly } from '@vue-cdk/client-only'
 const CPopoverTrigger = {
   mounted() {
     this.$parent.popperReference = this.$el
     this.$parent.updatePopperInstance()
   },
   render() {
-    return this.$scopedSlots.default()
+    return this.$slots.default
   }
 }
 
 export default {
   name: 'Popover',
   components: {
+    NoSsr,
     CPopoverTrigger,
     SimplePortal,
+    ClientOnly,
     VpArrow: { render: h => h('span') }
   },
   props: {
@@ -248,9 +254,9 @@ export default {
       }
     },
     updatePopperInstance() {
-      if (inBrowser() === false) {
-        return
-      }
+      // if (inBrowser() === false) {
+      //   return
+      // }
       this.destroyPopperInstance()
       const { placement, modifiers_: modifiers, popperReference } = this
       if (popperReference == null) {
@@ -264,9 +270,9 @@ export default {
       this.popperInstance = new Popper(popperReference, body, options)
     },
     scheduleUpdate() {
-      if (inBrowser() === false) {
-        return
-      }
+      // if (inBrowser() === false) {
+      //   return
+      // }
       if (this.popperInstance) {
         this.popperInstance.scheduleUpdate()
       }

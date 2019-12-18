@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090",
-    "build": "vuepress build docs --dest ./dist --debug --no-cache"
+    "build": "vuepress build docs --dest ./dist"
   },
 	"description": "",
 	"main": "index.js",
@@ -36,8 +36,6 @@
     "webpack-bundle-analyzer": "^3.6.0",
     "vuepress": "^1.2.0",
     "@vuese/markdown-render": "^2.5.3",
-    "stringify-attributes": "^2.0.0",
-    "@vuepress/plugin-register-components": "^1.2.0",
-    "vuepress-plugin-clean-urls": "^1.1.1"
+    "stringify-attributes": "^2.0.0"
 	}
 }

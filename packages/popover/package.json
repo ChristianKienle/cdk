@@ -22,7 +22,8 @@
   "dependencies": {
     "@vue-cdk/portal": "^0.1.0",
     "@vue-cdk/utils": "^0.1.0",
-    "@vue-cdk/pluginify": "^0.1.0"
+    "@vue-cdk/pluginify": "^0.1.0",
+    "@vue-cdk/client-only": "^0.1.0"
   },
   "devDependencies": {
     "popper.js": "^1.16.0",

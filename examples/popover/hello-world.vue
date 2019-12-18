@@ -1,7 +1,7 @@
 <template>
   <CPopover>
-    <template #trigger>
-      <button>Toggle</button>
+    <template #trigger="{toggle}">
+      <button @click="toggle">Toggle</button>
     </template>
     <template #default>
       <div>Popover Body</div>

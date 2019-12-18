@@ -17,14 +17,17 @@ export default {
     }
   },
   render(h, { parent, slots, props }) {
+    console.log('render')
     const { default: defaultSlot = [], placeholder: placeholderSlot } = slots()
-    // eslint-disable-next-line no-debugger
-    debugger
     if (parent._isMounted) {
+    console.log('parent._isMounted')
       return defaultSlot
     }
 
-    parent.$once('hook:mounted', () => {
+    parent.$once('hook:mounted', async () => {
+    console.log('hook:mounted')
+      parent._isMounted
+      await parent.$nextTick()
       parent.$forceUpdate()
     })
 

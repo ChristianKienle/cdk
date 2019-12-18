@@ -36,7 +36,7 @@
 
 <script>
 const titlecase = input => input[0].toLocaleUpperCase() + input.slice(1)
-
+import HelloWorldPopover from './../../../examples/popover/hello-world.vue'
 const toPascalCase = value => {
   if (value === null || value === void 0) return ''
   if (typeof value.toString !== 'function') return ''
@@ -54,6 +54,7 @@ const toPascalCase = value => {
 }
 
 export default {
+  components: {HelloWorldPopover},
   props: {
     for: {
       type: String

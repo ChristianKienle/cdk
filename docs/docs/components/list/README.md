@@ -44,14 +44,14 @@ As a higher level package `@vue-cdk/list` has a notion of selection. It knows wh
 ## Examples
 
 ### Hello World
-<Demo for="list/default" />
+<!-- <Demo for="list/default" /> -->
 
 
 ### Single Selection Mode
-<Demo for="list/selection-single" />
+<!-- <Demo for="list/selection-single" /> -->
 
 ### Multiple Selection Mode
-<Demo for="list/selection-multiple" />
+<!-- <Demo for="list/selection-multiple" /> -->
 
 ## Custom Selection Mode
 The *List* component supports different selection modes. An item can either be selected or not selected.

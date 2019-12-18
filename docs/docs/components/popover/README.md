@@ -53,7 +53,7 @@ Now it should look much better.
 
 This is the a classical *Hello World* example:
 
-<Demo for="popover/hello-world" />
+<!-- <Demo for="popover/hello-world" /> -->
 
 ::: tip
 The example above is not using any theme or custom styles. For this reason it looks like a bit boring. Most of the following examples are using a theme.
@@ -63,13 +63,13 @@ The example above is not using any theme or custom styles. For this reason it lo
 
 This example shows you how to add a *close*-button inside the popover.
 
-<Demo for="popover/click-inside" />
+<!-- <Demo for="popover/click-inside" /> -->
 
 ### Show on Hover
 
 The popover component is very flexible: This example shows how to show the popover on `mouseenter` and `mouseleave`. The result is a very simple tooltip.
 
-<Demo for="popover/custom-trigger" />
+<!-- <Demo for="popover/custom-trigger" /> -->
 
 ### Body Size Modes <Badge text="New"/>
 
@@ -86,13 +86,13 @@ By setting the `body-size-mode`-prop to `at-least-trigger` you tell the popover 
 1. Big popovers stay big: Even when attached to a small trigger the popover body is not scaled down but just keeps it size.
 2. Small popovers are made wider to match the width of the trigger.
 
-<Demo for="popover/body-size-mode-at-least-trigger" />
+<!-- <Demo for="popover/body-size-mode-at-least-trigger" /> -->
 
 #### `equal-trigger`
 
 By setting the `body-size-mode`-prop to `equal-trigger` you tell the popover to make the popover body the same width as the trigger element/component. The popovers below have the same width as the button.
 
-<Demo for="popover/body-size-mode-equal-trigger" />
+<!-- <Demo for="popover/body-size-mode-equal-trigger" /> -->
 
 ### Scrollable Popover Body
 
@@ -104,4 +104,4 @@ If you have a popover with a (potentially) large body then you might want to mak
 It is probably a good idea to also disable flipping by setting `flips` to `false`.
 :::
 
-<Demo for="popover/scrollable-body" />
+<!-- <Demo for="popover/scrollable-body" /> -->
