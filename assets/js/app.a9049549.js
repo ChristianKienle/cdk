@@ -898,8 +898,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   "v-24ec551f": () => __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! ./docs/components/client-only/README.md */ "./docs/components/client-only/README.md")),
   "v-d4bfe142": () => __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! ./docs/components/index.md */ "./docs/components/index.md")),
-  "v-5555d41f": () => __webpack_require__.e(/*! import() */ 26).then(__webpack_require__.bind(null, /*! ./docs/components/infinite-scroll/README.md */ "./docs/components/infinite-scroll/README.md")),
   "v-86c809f2": () => __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.bind(null, /*! ./docs/components/link/README.md */ "./docs/components/link/README.md")),
+  "v-5555d41f": () => __webpack_require__.e(/*! import() */ 26).then(__webpack_require__.bind(null, /*! ./docs/components/infinite-scroll/README.md */ "./docs/components/infinite-scroll/README.md")),
   "v-0284c7bf": () => __webpack_require__.e(/*! import() */ 28).then(__webpack_require__.bind(null, /*! ./docs/components/list/README.md */ "./docs/components/list/README.md")),
   "v-61a6a75f": () => __webpack_require__.e(/*! import() */ 29).then(__webpack_require__.bind(null, /*! ./docs/components/match-media/README.md */ "./docs/components/match-media/README.md")),
   "v-13413fbf": () => __webpack_require__.e(/*! import() */ 30).then(__webpack_require__.bind(null, /*! ./docs/components/popover/README.md */ "./docs/components/popover/README.md")),
@@ -1014,18 +1014,6 @@ const routes = [
     redirect: "/components/"
   },
   {
-    name: "v-5555d41f",
-    path: "/components/infinite-scroll/",
-    component: _home_travis_build_ChristianKienle_cdk_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-5555d41f").then(next)
-    },
-  },
-  {
-    path: "/components/infinite-scroll/index.html",
-    redirect: "/components/infinite-scroll/"
-  },
-  {
     name: "v-86c809f2",
     path: "/components/link/",
     component: _home_travis_build_ChristianKienle_cdk_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -1036,6 +1024,18 @@ const routes = [
   {
     path: "/components/link/index.html",
     redirect: "/components/link/"
+  },
+  {
+    name: "v-5555d41f",
+    path: "/components/infinite-scroll/",
+    component: _home_travis_build_ChristianKienle_cdk_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-5555d41f").then(next)
+    },
+  },
+  {
+    path: "/components/infinite-scroll/index.html",
+    redirect: "/components/infinite-scroll/"
   },
   {
     name: "v-0284c7bf",
@@ -1529,6 +1529,51 @@ const siteData = {
       ]
     },
     {
+      "title": "Link",
+      "frontmatter": {},
+      "regularPath": "/components/link/",
+      "relativePath": "components/link/README.md",
+      "key": "v-86c809f2",
+      "path": "/components/link/",
+      "headers": [
+        {
+          "level": 2,
+          "title": "Installation",
+          "slug": "installation"
+        },
+        {
+          "level": 2,
+          "title": "Rationale & Features",
+          "slug": "rationale-features"
+        },
+        {
+          "level": 3,
+          "title": "Security Issues",
+          "slug": "security-issues"
+        },
+        {
+          "level": 3,
+          "title": "Vue Router Integration",
+          "slug": "vue-router-integration"
+        },
+        {
+          "level": 2,
+          "title": "Demo",
+          "slug": "demo"
+        },
+        {
+          "level": 3,
+          "title": "Internal Link",
+          "slug": "internal-link"
+        },
+        {
+          "level": 3,
+          "title": "External Link",
+          "slug": "external-link"
+        }
+      ]
+    },
+    {
       "title": "Infinite Scroll",
       "frontmatter": {},
       "regularPath": "/components/infinite-scroll/",
@@ -1590,51 +1635,6 @@ const siteData = {
           "level": 2,
           "title": "API",
           "slug": "api"
-        }
-      ]
-    },
-    {
-      "title": "Link",
-      "frontmatter": {},
-      "regularPath": "/components/link/",
-      "relativePath": "components/link/README.md",
-      "key": "v-86c809f2",
-      "path": "/components/link/",
-      "headers": [
-        {
-          "level": 2,
-          "title": "Installation",
-          "slug": "installation"
-        },
-        {
-          "level": 2,
-          "title": "Rationale & Features",
-          "slug": "rationale-features"
-        },
-        {
-          "level": 3,
-          "title": "Security Issues",
-          "slug": "security-issues"
-        },
-        {
-          "level": 3,
-          "title": "Vue Router Integration",
-          "slug": "vue-router-integration"
-        },
-        {
-          "level": 2,
-          "title": "Demo",
-          "slug": "demo"
-        },
-        {
-          "level": 3,
-          "title": "Internal Link",
-          "slug": "internal-link"
-        },
-        {
-          "level": 3,
-          "title": "External Link",
-          "slug": "external-link"
         }
       ]
     },
@@ -31077,4 +31077,4 @@ module.exports = __webpack_require__(/*! /home/travis/build/ChristianKienle/cdk/
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.37904a5c.js.map
+//# sourceMappingURL=app.a9049549.js.map
