@@ -2378,7 +2378,7 @@ const { app, router } = Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(f
 
 window.__VUEPRESS__ = {
   version: "1.2.0",
-  hash: "0ade336"
+  hash: "80803bd"
 }
 
 router.onReady(() => {
@@ -31043,4 +31043,4 @@ module.exports = __webpack_require__(/*! /home/travis/build/ChristianKienle/cdk/
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.8ed58891.js.map
+//# sourceMappingURL=app.97cd2e71.js.map
