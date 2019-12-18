@@ -1,18 +1,18 @@
 <template>
   <div style="height: 100px; border: 1px solid red;">
-  <CList
+  <List
     :items="items" :loadMore="loadMore">
       <template #default="{item, active, index }">
-        <CListItem
+        <ListItem
           :item="item"
           :active="active"
           :sizeDependencies="[item.id]"
           :data-index="index"
         >
         {{item}}
-      </CListItem>
+      </ListItem>
     </template>
-  </CList>
+  </List>
 </div>
 </template>
 

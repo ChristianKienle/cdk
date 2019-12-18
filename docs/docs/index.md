@@ -16,8 +16,6 @@ actionLink: /components/
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
-<HelloWorld />
-
 The *Vue Component Development Kit* is a set of low-level components, mixins and utilities that act as a foundation for component libraries and applications. Kickstart your project with a *well-tested*, *incrementally adoptable* and *minimally invasive* framework.
 
 ## Features

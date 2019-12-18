@@ -86,7 +86,7 @@ Getting [Infinite Scroll](./../../api/infinite-scroll) to render a simple list i
 - Provide a scoped default slot that renders an item
 - Call it a day.
 
-<!-- <Demo for="infinite-scroll/default" /> -->
+<Demo for="infinite-scroll/default" />
 
 [Infinite Scroll](./../../api/infinite-scroll) expects you give it at least as many items that will make the user have to scroll. Otherwise [Infinite Scroll](./../../api/infinite-scroll) will never ask you for more items on it's own.
 
@@ -94,7 +94,7 @@ Getting [Infinite Scroll](./../../api/infinite-scroll) to render a simple list i
 ### Load More Items
 [Infinite Scroll](./../../api/infinite-scroll) will ask you for more items once the user has scrolled to the very end of the list. For this to work you have to set the `loadMore`-prop. `loadMore` must be a function that loads more items (how is up to you). Once you are done simply modify the items-array you initially passed to [Infinite Scroll](./../../api/infinite-scroll).
 
-<!-- <Demo for="infinite-scroll/load-more" /> -->
+<Demo for="infinite-scroll/load-more" />
 
 Your `loadMore`-function/method should call `done` once it is ready.
 
@@ -114,7 +114,7 @@ The current scroll position is a local state. You can access it by using `$refs.
 
 You can use those events for a multitude of different things. The higher–level [List](./../list)–component uses those events in order to display a loading indicator automatically.
 
-<!-- <Demo for="infinite-scroll/scroll-events" /> -->
+<Demo for="infinite-scroll/scroll-events" />
 
 ## Slot Props
 In every previous example certain slot props were used when rendering an item (by providing the default slot). If you want to know all slots props that are available please head over to the [Infinite Scroll](./../../api/infinite-scroll) API page.

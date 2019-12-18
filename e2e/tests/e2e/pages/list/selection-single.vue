@@ -1,6 +1,6 @@
 <template>
   <div style="height: 100px;">
-    <CList data-cy="list"
+    <List data-cy="list"
       :items="[
         { id: 1 },
         { id: 2 },
@@ -14,15 +14,15 @@
       keyField="id"
     >
       <template #default="{item, active, index, selected}">
-        <CListItem
+        <ListItem
           :item="item"
           :active="active"
           :sizeDependencies="[item.id]"
         >
           {{selected ? '[x]' : '[ ]'}} {{ item }}
-        </CListItem>
+        </ListItem>
       </template>
-    </CList>
+    </List>
   </div>
 </template>
 

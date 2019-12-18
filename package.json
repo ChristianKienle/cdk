@@ -14,7 +14,7 @@
     "bootstrap": "lerna bootstrap --concurrency 1 --use-workspaces",
     "clean": "lerna clean -y",
     "docs": "cd docs && yarn dev",
-    "docs:build": "cd docs && yarn build",
+    "docs:build": "cd storybook && yarn build && cd ../docs && yarn build && mkdir dist/storybook && cp -R ../storybook/dist/* dist/storybook",
     "docs:publish": "node docs/tools/publish.js",
     "test": "vue-cli-service test:unit --no-collect-coverage && lerna run test --concurrency 1",
     "test:unit": "vue-cli-service test:unit --no-collect-coverage",

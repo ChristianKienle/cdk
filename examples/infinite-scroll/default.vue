@@ -1,11 +1,11 @@
 <template>
-  <CInfiniteScroll style="height: 200px" :items="items">
+  <InfiniteScroll style="height: 200px" :items="items">
     <template #default="{ item, active, index }">
-      <CInfiniteScrollItem :item="item" :active="active">
+      <InfiniteScrollItem :item="item" :active="active">
         Item[{{ index }}] = {{ item.id }}
-      </CInfiniteScrollItem>
+      </InfiniteScrollItem>
     </template>
-  </CInfiniteScroll>
+  </InfiniteScroll>
 </template>
 
 <script>

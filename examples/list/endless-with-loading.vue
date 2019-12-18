@@ -1,12 +1,12 @@
 <template>
   <div style="height: 200px; border: 1px solid red;">
-    <CList :items="items" :loadMore="loadMore">
+    <List :items="items" :loadMore="loadMore">
       <template #default="{item, active, index }">
-        <CListItem :item="item" :active="active" :size-dependencies="[item.id]" :data-index="index">
+        <ListItem :item="item" :active="active" :size-dependencies="[item.id]" :data-index="index">
           {{ item }}
-        </CListItem>
+        </ListItem>
       </template>
-    </CList>
+    </List>
   </div>
 </template>
 

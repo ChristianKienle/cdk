@@ -9,7 +9,7 @@ export default {
   methods: {
     click() {
       const { vcdkList } = this
-      if(vcdkList == null) {
+      if (vcdkList == null) {
         return
       }
       vcdkList.select(this.item)
@@ -23,7 +23,9 @@ export default {
     keyField: {
       type: String,
       default: 'id'
-    }
+    },
+    active: {},
+    sizeDependencies: {}
   },
   render(h) {
     const nativeOn = {

@@ -1,9 +1,9 @@
 <template>
-  <CList :items="items" style="height: 100px;">
+  <List :items="items" style="height: 100px;">
     <template #default="{item, active, index}">
-      <CListItem :item="item" :active="active">{{ item }}</CListItem>
+      <ListItem :item="item" :active="active">{{ item }}</ListItem>
     </template>
-  </CList>
+  </List>
 </template>
 
 <script>

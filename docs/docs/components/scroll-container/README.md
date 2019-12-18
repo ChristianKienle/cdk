@@ -12,4 +12,4 @@ npm install @vue-cdk/scroll-container --save
 
 ## Guide
 
-<!-- <Demo for="scroll-container/vmodel" /> -->
+<Demo for="scroll-container/vmodel" />

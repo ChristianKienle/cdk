@@ -8,7 +8,7 @@
 
     <div class="outer" ref="scrollcontainer">
       <div class="inner" ref="contentview">
-        <CPopover v-bind="kPopProps">
+        <Popover v-bind="kPopProps">
           <template #trigger="{toggle}">
             <k-btn
               :style="triggerStyle"
@@ -22,7 +22,7 @@
             <p>Not like the brazen giant of Greek fame,</p>
             <p>With conquering limbs astride from land to land.</p>
           </div>
-        </CPopover>
+        </Popover>
       </div>
     </div>
   </div>
