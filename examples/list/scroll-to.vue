@@ -22,26 +22,26 @@
 </template>
 
 <script>
-import "@vue-cdk/list-style/index.css";
+import '@vue-cdk/list-style/index.css'
 
 const createItem = id => ({
   id,
   height: 20
-});
+})
 
 export default {
   data() {
     return {
       itemIndex: 0,
       items: [...Array(100).keys()].map(createItem)
-    };
+    }
   },
   methods: {
     scrollToItem() {
-      this.$refs.list.scrollToIndex(this.itemIndex);
+      this.$refs.list.scrollToIndex(this.itemIndex)
     }
   }
-};
+}
 </script>
 
 <style scoped>

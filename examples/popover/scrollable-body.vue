@@ -9,16 +9,16 @@
       maxHeight: '200px'
     }"
   >
-  <template #trigger="{toggle}">
-    <button @click="toggle">Show Popover</button>
-  </template>
-  <template #default>
-    <div>
-      <div v-for="idx in indices" :key="String(idx)">
-        I am part {{ idx + 1 }} of a wonderful popover.
+    <template #trigger="{toggle}">
+      <button @click="toggle">Show Popover</button>
+    </template>
+    <template #default>
+      <div>
+        <div v-for="idx in indices" :key="String(idx)">
+          I am part {{ idx + 1 }} of a wonderful popover.
+        </div>
       </div>
-    </div>
-  </template>
+    </template>
   </Popover>
 </template>
 

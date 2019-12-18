@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex;">
     <Popover body-size-mode="equal-trigger" with-arrow theme="clean">
-  <template #trigger="{toggle}">
+      <template #trigger="{toggle}">
         <button @click="toggle">Small Trigger</button>
       </template>
       <template #default>
@@ -22,5 +22,5 @@
 
 <script>
 import '@vue-cdk/popover-themes/index.css'
-export default {};
+export default {}
 </script>

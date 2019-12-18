@@ -2,15 +2,16 @@ language: node_js
 node_js:
   - lts/*
 script:
-  - yarn install         # install deps + runs lerna bootstrap
-  - yarn test        # run unit tests
-  - yarn docs:build  # generate static build of docs
-  #- npm run test:e2e    # run end-to-end tests
+  - yarn install
+  - yarn test
+  - yarn lint
+  - yarn docs:build
+  - yarn test:e2e:ci
 deploy:
   local_dir: docs/dist
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
     branch: master

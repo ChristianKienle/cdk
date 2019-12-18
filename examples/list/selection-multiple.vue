@@ -1,9 +1,5 @@
 <template>
-  <List
-    style="height: 100px;"
-    :selectionMode="selectionMode"
-    :items="items"
-  >
+  <List style="height: 100px;" :selectionMode="selectionMode" :items="items">
     <template #default="{ item, active, index, selected }">
       <ListItem :item="item" :active="active" :sizeDependencies="[item.id]">
         {{ selected ? '[x]' : '[ ]' }} {{ item }}
