@@ -13,4 +13,5 @@ export const create = /** @type {Mode} */ _ => ({ selection, affected }) => {
 }
 
 const defaultMultipleSelectionMode = create({})
+defaultMultipleSelectionMode['selectionModeName'] = 'multiple selection mode'
 export default defaultMultipleSelectionMode

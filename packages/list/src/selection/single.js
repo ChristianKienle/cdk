@@ -23,4 +23,5 @@ export const create = /** @type {Mode} */ (options = { allowsEmpty: true }) => (
 }
 
 const defaultSingleSelectionMode = create({ allowsEmpty: true })
+defaultSingleSelectionMode['selectionModeName'] = 'single selection mode'
 export default defaultSingleSelectionMode

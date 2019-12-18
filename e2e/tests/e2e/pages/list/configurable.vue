@@ -37,7 +37,7 @@
 <script>
 import '@vue-cdk/list-style/index.css'
 import { SelectionMode } from '@vue-cdk/list'
-
+debugger
 const createItem = index => ({
   index,
   id: `${index}`,
@@ -93,20 +93,6 @@ export default {
         height: `${this.itemHeight}px`
       }
     },
-    // height_() {
-    //   const { height } = this
-    //   if(typeof height === 'string') {
-    //     return height
-    //   }
-    //   return `${height}px`
-    // },
-    // itemHeight_() {
-    //   const { itemHeight } = this
-    //   if(typeof itemHeight === 'string') {
-    //     return itemHeight
-    //   }
-    //   return `${itemHeight}px`
-    // }
   },
   methods: {
     reset() {

@@ -58,7 +58,8 @@ const router = new Router({
           itemHeight,
           height,
           numberOfInitialItems: toInt(numberOfInitialItems, 0),
-          batchSize: toInt(batchSize, 10)
+          batchSize: toInt(batchSize, 10),
+          selectionMode: query.selectionMode || 'single'
         }
       },
     },
@@ -73,6 +74,7 @@ const router = new Router({
     }
   ]
 })
+
 
 Vue.use(List)
 Vue.use(Router)

@@ -1,35 +1,16 @@
 <template>
-  <div style="height: 100px;">
-    <CList
-      :items="[
-        { id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 },
-        { id: 6 },
-        { id: 7 },
-        { id: 8 }
-      ]"
-      keyField="id"
-    >
-      <template #default="{item, active, index}">
-        <CListItem
-          :item="item"
-          :active="active"
-          :sizeDependencies="[item.id]"
-
-        >
-          {{ item }}
-        </CListItem>
-      </template>
-    </CList>
-  </div>
+  <CList :items="items" style="height: 100px;">
+    <template #default="{item, active, index}">
+      <CListItem :item="item" :active="active">{{ item }}</CListItem>
+    </template>
+  </CList>
 </template>
 
 <script>
-import '@vue-cdk/list-style/index.css'
-
-export default {}
-
+import '@vue-cdk/list/style/index.css'
+export default {
+  data: () => ({
+    items: [...Array(10).keys()].map(id => ({ id }))
+  })
+}
 </script>
