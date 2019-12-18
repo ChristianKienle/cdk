@@ -23,14 +23,7 @@ addParameters({
   ],
 });
 
-const router = new VueRouter({
-  mode: 'hash',
-  routes: [
-    {
-      path: '/'
-    }
-  ]
-})
+
 Vue.use(VueRouter)
 Vue.use(List);
 Vue.use(InfiniteScroll);
