@@ -11,7 +11,13 @@
     </template>
 
     <template #default="{item, active, index}">
-      <slot :item="item" :active="active" :index="index" :selection="selection" :selected="selected(item)" />
+      <slot
+        :item="item"
+        :active="active"
+        :index="index"
+        :selection="selection"
+        :selected="selected(item)"
+      />
     </template>
 
     <template #after="{ state }">
@@ -56,12 +62,12 @@ export default {
   },
   computed: {
     // selectedItem() {
-      //   const { selectedId, items } = this
+    //   const { selectedId, items } = this
     //   if (selectedId == null) {
-      //     return
+    //     return
     //   }
     //   const index = items.findIndex(item => {
-      //     return this.idForItem(item) === selectedId
+    //     return this.idForItem(item) === selectedId
     //   })
     //   return index < 0 ? undefined : items[index]
     // }
@@ -75,11 +81,11 @@ export default {
     },
     select(item) {
       const id = this.idOfItem(item)
-      this.selection = this.selectionMode({selection: this.selection, affected: id })
+      this.selection = this.selectionMode({ selection: this.selection, affected: id })
     },
     // loadMore_(done_) {
-      //   this.loadMore(() => {
-        //     done_()
+    //   this.loadMore(() => {
+    //     done_()
     //   })
     // },
     scrollToIndex(index) {

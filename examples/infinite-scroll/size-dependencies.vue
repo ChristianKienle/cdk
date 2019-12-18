@@ -4,9 +4,9 @@
     <input type="number" v-model.number="height" />
     <button data-cy="setHeightButton" @click="setHeight">set height</button>
     <div style="height: 100px; border: 1px solid red;">
-      <CInfiniteScroll :items="items">
+      <InfiniteScroll :items="items">
         <template #default="{item, active, index}">
-          <CInfiniteScrollItem
+          <InfiniteScrollItem
             :item="item"
             :active="active"
             :data-index="index"
@@ -15,9 +15,9 @@
             <div class="sized-item" :style="{ height: `${item.height}px` }">
               {{ item }}
             </div>
-          </CInfiniteScrollItem>
+          </InfiniteScrollItem>
         </template>
-      </CInfiniteScroll>
+      </InfiniteScroll>
     </div>
   </div>
 </template>

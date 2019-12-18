@@ -1,7 +1,7 @@
 <template>
   <div>
     <button data-cy-reset @click="reset">reset</button>
-    <CList
+    <List
       data-cy="list"
       :minItemSize="itemHeight"
       :items="items"
@@ -15,7 +15,7 @@
         <div data-cy="loading">Loading Indicator</div>
       </template>
       <template #default="{ selected, active, item, index }">
-        <CListItem
+        <ListItem
           :item="item"
           :active="active"
           data-cy="item"
@@ -28,16 +28,15 @@
             {{ selected ? '[x]' : '[ ]' }} {{ item }}
             – {{ item.index }}
           </div>
-        </CListItem>
+        </ListItem>
       </template>
-    </CList>
+    </List>
   </div>
 </template>
 
 <script>
 import '@vue-cdk/list-style/index.css'
 import { SelectionMode } from '@vue-cdk/list'
-debugger
 const createItem = index => ({
   index,
   id: `${index}`,

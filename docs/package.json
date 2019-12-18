@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090",
-    "build": "vuepress build docs --dest ./dist --debug --no-cache"
+    "build": "vuepress build docs --dest ./dist"
   },
 	"description": "",
 	"main": "index.js",
@@ -28,16 +28,18 @@
     "popper.js": "^1.16.0",
     "@linusborg/vue-simple-portal": "^0.1.4",
     "globby": "^10.0.1",
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "stringify-attributes": "^2.0.0",
+    "@vuepress/plugin-register-components": "^1.2.0",
+    "vuepress-plugin-clean-urls": "^1.1.1"
   },
 	"devDependencies": {
     "gh-pages": "^2.1.1",
     "vue": "^2.6.10",
     "webpack-bundle-analyzer": "^3.6.0",
     "vuepress": "^1.2.0",
+
     "@vuese/markdown-render": "^2.5.3",
-    "stringify-attributes": "^2.0.0",
-    "@vuepress/plugin-register-components": "^1.2.0",
-    "vuepress-plugin-clean-urls": "^1.1.1"
+    "stringify-attributes": "^2.0.0"
 	}
 }

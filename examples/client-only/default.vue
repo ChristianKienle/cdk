@@ -9,6 +9,7 @@
 
 <script>
 import { ClientOnly } from "@vue-cdk/client-only";
+console.log(ClientOnly)
 export default {
   components: {
     ClientOnly

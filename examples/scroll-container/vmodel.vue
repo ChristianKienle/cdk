@@ -1,12 +1,12 @@
 <template>
   <div>
     <label>Scroll Position: <input v-model.number="scrollPosition"/></label>
-    <CScrollContainer
+    <ScrollContainer
       style="border: 1px solid black; height: 300px;"
       v-model="scrollPosition"
     >
       <div v-for="row in 100" :style="styleFor(row)" :key="String(row)">Row #{{ row }}</div>
-    </CScrollContainer>
+    </ScrollContainer>
   </div>
 </template>
 

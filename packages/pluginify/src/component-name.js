@@ -5,5 +5,5 @@
 
 /** @type {ComponentNameFn} */
 export const defaultComponentName = context => {
-  return `C${context.name}`
+  return `${context.name}`
 }

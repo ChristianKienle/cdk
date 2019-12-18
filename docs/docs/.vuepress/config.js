@@ -4,8 +4,13 @@ const ExamplesPlugin = require('./../../examples-plugin')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const toPascalCase = require('@vue-cdk/node-utils/to-pascal-case')
+
+const base = process.env.VCDK_BASE || '/cdk/'
+
+console.log(`Using base: '${base}'`)
+
 module.exports = {
-  base: '/cdk/',
+  base,
   configureWebpack: {
     resolve: {
       extensions: [".js", ".vue"],

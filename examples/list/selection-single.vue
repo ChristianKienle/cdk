@@ -1,15 +1,15 @@
 <template>
-  <CList
+  <List
     style="height: 100px;"
     :selectionMode="selectionMode"
     :items="items"
   >
     <template #default="{item, active, index, selected}">
-      <CListItem :item="item" :active="active" :sizeDependencies="[item.id]">
+      <ListItem :item="item" :active="active" :sizeDependencies="[item.id]">
         {{ selected ? '[x]' : '[ ]' }} {{ item }}
-      </CListItem>
+      </ListItem>
     </template>
-  </CList>
+  </List>
 </template>
 
 <script>

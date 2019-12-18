@@ -36,7 +36,6 @@
 
 <script>
 const titlecase = input => input[0].toLocaleUpperCase() + input.slice(1)
-
 const toPascalCase = value => {
   if (value === null || value === void 0) return ''
   if (typeof value.toString !== 'function') return ''

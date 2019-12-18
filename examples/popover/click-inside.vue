@@ -1,7 +1,7 @@
 <template>
-  <CPopover boundary="viewport" with-arrow theme="clean">
-    <template #trigger>
-      <button>Show Popover</button>
+  <Popover boundary="viewport" with-arrow theme="clean">
+  <template #trigger="{ toggle }">
+      <button @click="toggle">Show Popover</button>
     </template>
     <template #default="{ hide }">
       <div>
@@ -9,7 +9,7 @@
         <button @click="hide">Click here to Hide the Popover</button>
       </div>
     </template>
-  </CPopover>
+  </Popover>
 </template>
 
 <script>

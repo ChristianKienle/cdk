@@ -13,14 +13,14 @@ npm install @vue-cdk/popover --save
 You have to render a `trigger`-element and the actual popover content. The following example shows how to render a *hello-world* popover using `@vue-cdk/popover`:
 
 ```html
-<CPopover>
+<Popover>
   <template #trigger>
     <button>Toggle</button>
   </template>
   <!-- Wrapping the content in a `div` is not required if you ensure -->
   <!-- that there is only a single element in the default slot. -->
   <div>Popover Body</div>
-</CPopover>
+</Popover>
 ```
 
 This will render a button that toggles the visibility of the *Popover Body*. No worries: There are a lot of options you can play with in order to customize almost anything. By default, `CPopover` does not style the appearance of the rendered popover. It is up to you to make it nice (using CSS). However, `CPopover` comes with a set of stylesheets that you can use to get started quickly.
@@ -29,12 +29,12 @@ Before we dig deeper into `CPopover`, let's make it just a little nicer:
 
 ```html
   <!-- 'clean' is just a simple theme -->
-  <CPopover theme="clean">
+  <Popover theme="clean">
     <template #trigger>
       <button>Toggle</button>
     </template>
     <div>Popover Body</div>
-</CPopover>
+</Popover>
 ```
 
 Just setting the `theme`-prop is not enough. You also have to include the *clean*-theme:

@@ -4,9 +4,9 @@
     <input type="number" v-model.number="height" />
     <button data-cy="setHeightButton" @click="setHeight">set height</button>
     <div style="height: 100px; border: 1px solid red;">
-      <CList :items="items">
+      <List :items="items">
         <template #default="{item, active, index}">
-          <CListItem
+          <ListItem
             :item="item"
             :active="active"
             :data-index="index"
@@ -15,9 +15,9 @@
             <div class="sized-item" :style="{ height: `${item.height}px` }">
               {{ item }}
             </div>
-          </CListItem>
+          </ListItem>
         </template>
-      </CList>
+      </List>
     </div>
   </div>
 </template>

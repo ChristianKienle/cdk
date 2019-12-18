@@ -1,5 +1,5 @@
 <template>
-  <CPopover
+  <Popover
     with-arrow
     theme="clean"
     :flips="false"
@@ -9,8 +9,8 @@
       maxHeight: '200px'
     }"
   >
-  <template #trigger>
-    <button>Show Popover</button>
+  <template #trigger="{toggle}">
+    <button @click="toggle">Show Popover</button>
   </template>
   <template #default>
     <div>
@@ -19,7 +19,7 @@
       </div>
     </div>
   </template>
-  </CPopover>
+  </Popover>
 </template>
 
 <script>
