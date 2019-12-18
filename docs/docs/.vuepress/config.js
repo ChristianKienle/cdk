@@ -7,6 +7,13 @@ const toPascalCase = require('@vue-cdk/node-utils/to-pascal-case')
 
 const base = process.env.VCDK_BASE || '/cdk/'
 
+const GlobalUIPlugin = {
+  name: 'Global UI Plugin',
+  globalUIComponents: [
+    'PlaygroundButton'
+  ]
+}
+
 console.log(`Using base: '${base}'`)
 
 module.exports = {
@@ -20,17 +27,17 @@ module.exports = {
     }
   },
   themeConfig: {
-    displayAllHeaders: true, // Default: false
+    displayAllHeaders: true,
     logo: '/logo.png',
     sidebar: 'auto',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Components', link: '/components/' },
-      { text: 'Customizing', link: '/customizing/' },
-      { text: 'Storybook', link: `/storybook/`, target: '__blank' }
+      { text: 'Customizing', link: '/customizing/' }
     ]
   },
   plugins: [
+    GlobalUIPlugin,
     [
       '@vuepress/register-components',
       {
