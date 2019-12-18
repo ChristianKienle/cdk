@@ -6,3 +6,4 @@ export const sizeDependencies = () => require('./../../../examples/list/size-dep
 export const scrollTo = () => require('./../../../examples/list/scroll-to.vue').default
 export const singleSelectionMode = () => require('./../../../examples/list/selection-single.vue').default
 export const multipleSelectionMode = () => require('./../../../examples/list/selection-multiple.vue').default
+export const multipleSelectionModeStyled = () => require('./../../../examples/list/selection-multiple-styled.vue').default

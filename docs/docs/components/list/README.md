@@ -46,12 +46,20 @@ As a higher level package `@vue-cdk/list` has a notion of selection. It knows wh
 ### Hello World
 <Demo for="list/default" />
 
-
 ### Single Selection Mode
 <Demo for="list/selection-single" />
 
 ### Multiple Selection Mode
 <Demo for="list/selection-multiple" />
+
+### Applying Styles
+`@vue-cdk/list` does not add any styling that is not absolutely necessary. As a consequence, it is up to you to apply styles to your list and list items. The following example shows how to highlight the selected items.
+
+::: tip
+Try clicking on any item.
+:::
+
+<Demo for="list/selection-multiple-styled" />
 
 ## Custom Selection Mode
 The *List* component supports different selection modes. An item can either be selected or not selected.
@@ -80,6 +88,7 @@ const customSelectionMode = ({ selection, affected, event }) => {
 ```
 
 ## API
-
 - [List](./../../api/list)
 - [List Item](./../../api/list-item)
+- [Infinite Scroll](./../../api/infinite-scroll)
+- [Infinite Scroll Item](./../../api/infinite-scroll-item)
