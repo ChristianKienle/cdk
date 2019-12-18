@@ -4,7 +4,6 @@ const ExamplesPlugin = require('./../../examples-plugin')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const toPascalCase = require('@vue-cdk/node-utils/to-pascal-case')
-
 module.exports = {
   base: '/cdk/',
   configureWebpack: {
@@ -22,7 +21,8 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Components', link: '/components/' },
-      { text: 'Customizing', link: '/customizing/' }
+      { text: 'Customizing', link: '/customizing/' },
+      { text: 'Storybook', link: '/storybook/' }
     ]
   },
   plugins: [
