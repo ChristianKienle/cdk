@@ -3,9 +3,9 @@
     <input type="number" v-model.number="itemIndex" />
     <button data-cy="setHeightButton" @click="scrollToItem">scroll</button>
     <div style="height: 100px; border: 1px solid red;">
-      <List ref="list" :items="items">
+      <CList ref="list" :items="items">
         <template #default="{item, active, index}">
-          <ListItem
+          <CListItem
             :item="item"
             :active="active"
             :data-index="index"
@@ -14,9 +14,9 @@
             <div class="sized-item">
               {{ item }}
             </div>
-          </ListItem>
+          </CListItem>
         </template>
-      </List>
+      </CList>
     </div>
   </div>
 </template>

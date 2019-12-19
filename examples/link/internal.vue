@@ -1,5 +1,5 @@
 <template>
-  <Link to="/internal-path/">/internal-path/</Link>
+  <CLink to="/internal-path/">/internal-path/</CLink>
 </template>
 
 <script>

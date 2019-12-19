@@ -1,3 +1,3 @@
 <template>
-  <Link href="https://example.org">External Link (example.org)</Link>
+  <CLink href="https://example.org">External Link (example.org)</CLink>
 </template>

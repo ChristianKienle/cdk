@@ -1,12 +1,12 @@
 <template>
-  <Popover>
+  <CPopover>
     <template #trigger="{toggle}">
       <button @click="toggle">Toggle</button>
     </template>
     <template #default>
       <div>Popover Body</div>
     </template>
-  </Popover>
+  </CPopover>
 </template>
 
 <script>

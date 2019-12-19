@@ -1,7 +1,7 @@
 <template>
   <div>
     <button data-cy-reset @click="reset">reset</button>
-    <List
+    <CList
       data-cy="list"
       :minItemSize="itemHeight"
       :items="items"
@@ -15,7 +15,7 @@
         <div data-cy="loading">Loading Indicator</div>
       </template>
       <template #default="{ selected, active, item, index }">
-        <ListItem
+        <CListItem
           :item="item"
           :active="active"
           data-cy="item"
@@ -28,9 +28,9 @@
             {{ selected ? '[x]' : '[ ]' }} {{ item }}
             – {{ item.index }}
           </div>
-        </ListItem>
+        </CListItem>
       </template>
-    </List>
+    </CList>
   </div>
 </template>
 

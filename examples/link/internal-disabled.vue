@@ -1,5 +1,5 @@
 <template>
-  <Link disabled to="/internal-path/">/internal-path/</Link>
+  <CLink disabled to="/internal-path/">/internal-path/</CLink>
 </template>
 
 <script>

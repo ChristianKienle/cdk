@@ -1,7 +1,7 @@
 import Vue from 'vue'
-
+import { Component } from 'vue'
 interface NamedComponent {
-  component: Vue.Component
+  component: Component
   name: string
 }
 export type DidRegisterComponentFn = (context: NamedComponent) => void

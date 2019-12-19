@@ -1,6 +1,6 @@
 <template>
   <div style="display: flex;">
-    <Popover body-size-mode="at-least-trigger" with-arrow theme="clean">
+    <CPopover body-size-mode="at-least-trigger" with-arrow theme="clean">
       <template #trigger="{toggle}">
         <button @click="toggle">Small Trigger</button>
       </template>
@@ -10,16 +10,16 @@
           I am a Popover Body.
         </p>
       </template>
-    </Popover>
+    </CPopover>
 
-    <Popover body-size-mode="at-least-trigger" with-arrow theme="clean">
+    <CPopover body-size-mode="at-least-trigger" with-arrow theme="clean">
       <template #trigger="{toggle}">
         <button @click="toggle" style="width: 250px;">Show Popover</button>
       </template>
       <template #default>
         <div>I am a Popover Body.</div>
       </template>
-    </Popover>
+    </CPopover>
   </div>
 </template>
 

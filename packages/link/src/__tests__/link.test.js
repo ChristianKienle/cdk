@@ -1,4 +1,5 @@
 import Link from './../link.vue'
+import LinkPlugin from './..'
 import { RouterLinkStub, createLocalVue, mount } from '@vue/test-utils'
 import VueRouter from 'vue-router'
 
@@ -30,11 +31,15 @@ describe('Link', () => {
   })
 
   it('renders as anchor in case href is used and ensures external urls receive special handling', () => {
+    const localVue = createLocalVue()
+    localVue.use(LinkPlugin)
     const href = 'https://example.org/hello/worl?test=1'
-    const wrapper = mount({
-      template: `<Link href="${href}">hello</Link>`,
-      components: { Link }
-    })
+    const wrapper = mount(
+      {
+        template: `<CLink href="${href}">hello</CLink>`
+      },
+      { localVue }
+    )
     const attributes = wrapper.attributes()
     expect(attributes['href']).toEqual(href)
     expect(wrapper.element.tagName.toLowerCase()).toStrictEqual('a')
@@ -46,6 +51,7 @@ describe('Link', () => {
   it('renders as router link in case to-prop is used', () => {
     const localVue = createLocalVue()
     localVue.use(VueRouter)
+    localVue.use(LinkPlugin)
 
     const router = new VueRouter({
       mode: 'hash',
@@ -64,12 +70,12 @@ describe('Link', () => {
 
     const wrapper = mount(
       {
-        template: `<Link :to="{ name: 'home' }">Home sweet Home</Link>`,
-        components: { Link }
+        template: `<CLink :to="{ name: 'home' }">Home sweet Home</CLink>`
       },
       {
         stubs: { RouterLink: RouterLinkStub },
-        router
+        router,
+        localVue
       }
     )
 
@@ -80,10 +86,10 @@ describe('Link', () => {
 
   it('can be disabled', async () => {
     const localVue = createLocalVue()
+    localVue.use(LinkPlugin)
     const wrapper = mount(
       {
-        template: `<div><Link @click="$emit('click', 'payload')" href="#" disabled>Home sweet Home</Link></div>`,
-        components: { Link }
+        template: `<div><CLink @click="$emit('click', 'payload')" href="#" disabled>Home sweet Home</CLink></div>`
       },
       { localVue }
     )
@@ -95,11 +101,10 @@ describe('Link', () => {
 
   it('emits click events', async () => {
     const localVue = createLocalVue()
-
+    localVue.use(LinkPlugin)
     const wrapper = mount(
       {
-        template: `<div><Link @click="$emit('click', 'payload')" href="#">Home sweet Home</Link></div>`,
-        components: { Link }
+        template: `<div><CLink @click="$emit('click', 'payload')" href="#">Home sweet Home</CLink></div>`
       },
       { localVue }
     )
@@ -115,10 +120,15 @@ describe('Link', () => {
   // FdLink did not render those attributes and thus the tests failed.
   // Additional attributes should just work – not just for e2e-testing.
   it('renders additional attributes', () => {
-    const wrapper = mount({
-      template: `<Link href="#" data-cy-test="val">Home sweet Home</Link>`,
-      components: { Link }
-    })
+    const localVue = createLocalVue()
+    localVue.use(LinkPlugin)
+
+    const wrapper = mount(
+      {
+        template: `<CLink href="#" data-cy-test="val">Home sweet Home</CLink>`
+      },
+      { localVue }
+    )
     expect(wrapper.attributes('data-cy-test')).toBe('val')
   })
 })

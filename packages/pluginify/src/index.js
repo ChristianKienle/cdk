@@ -12,9 +12,7 @@ const getComponentName = component => {
 // This function turns any constructor into a Vue plugin.
 // If you have a components that depends on other components to be globally
 // installed pass them as the seoncond parameter.
-/**
- * @param {Array<import('vue').Component>} dependencies
- */
+/** @param {Array<import('vue').Component>} dependencies */
 export default (...dependencies) => {
   const install = (vue, options) => {
     const _options = normalizedPluginOptions(options)
@@ -28,7 +26,10 @@ export default (...dependencies) => {
       }
       const componentName = _options.componentName({ name: rawComponentName, component: component })
       vue.component(componentName, component)
-      onDidRegisterComponent(componentName, component)
+      onDidRegisterComponent({
+        component,
+        name: componentName
+      })
     })
   }
   return { install }

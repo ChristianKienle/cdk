@@ -15,7 +15,10 @@ describe('pluginify', () => {
     localVue.use(HelloWorldPlugin, {
       onDidRegisterComponent
     })
-    expect(onDidRegisterComponent).toHaveBeenCalledWith('HelloWorld', HelloWorld)
+    expect(onDidRegisterComponent).toHaveBeenCalledWith({
+      name: 'CHelloWorld',
+      component: HelloWorld
+    })
   })
 
   it('respects componentName options', () => {
@@ -55,7 +58,7 @@ describe('pluginify', () => {
     localVue.use(HelloWorldPlugin)
     const wrapper = mount(
       {
-        template: `<HelloWorld />`
+        template: `<CHelloWorld />`
       },
       { localVue }
     )
@@ -75,7 +78,7 @@ describe('pluginify', () => {
     localVue.use(HelloWorldPlugin)
     const wrapper = mount(
       {
-        template: `<HelloWorld />`
+        template: `<CHelloWorld />`
       },
       { localVue }
     )
@@ -90,7 +93,7 @@ describe('pluginify', () => {
     localVue.use(HelloWorldPlugin)
     const wrapper = mount(
       {
-        template: `<HelloWorld />`
+        template: `<CHelloWorld />`
       },
       { localVue }
     )

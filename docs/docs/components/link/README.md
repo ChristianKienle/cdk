@@ -43,18 +43,18 @@ External links are automatically detected by `@vue-cdk/link`.
 If you are using `href` then internal links will receive no special handling:
 
 ``` markup
-<Link href="/my/other/page">
+<CLink href="/my/other/page">
   My other Page
-</Link>
+</CLink>
 ```
 This will render a normal anchor-element without any special handling.
 
 `Link` also has a `to`-prop. If set, then `Link` will render a `RouterLink`. This allows you to use the same component for internal–, external– and router–links:
 
 ``` markup
-<Link to="/my/route">
+<CLink to="/my/route">
   Router Link to /my/route
-</Link>
+</CLink>
 ```
 
 ## Demo

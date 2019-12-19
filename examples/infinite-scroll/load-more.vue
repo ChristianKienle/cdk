@@ -1,11 +1,11 @@
 <template>
-  <InfiniteScroll style="height: 200px;" :items="items" :loadMore="loadMore">
+  <CInfiniteScroll style="height: 200px;" :items="items" :loadMore="loadMore">
     <template #default="{item, active }">
-      <InfiniteScrollItem :item="item" :active="active" :sizeDependencies="[item.id]">
+      <CInfiniteScrollItem :item="item" :active="active" :sizeDependencies="[item.id]">
         Scroll down – {{ item.id }}
-      </InfiniteScrollItem>
+      </CInfiniteScrollItem>
     </template>
-  </InfiniteScroll>
+  </CInfiniteScroll>
 </template>
 
 <script>

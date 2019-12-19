@@ -1,5 +1,5 @@
 <template>
-  <Link :to="{ path: '/internal-path' }">Internal router link to /internal-path</Link>
+  <CLink :to="{ path: '/internal-path' }">Internal router link to /internal-path</CLink>
 </template>
 <script>
 import VueRouter from 'vue-router'

@@ -1,6 +1,6 @@
 <template>
-  <Link disabled :to="{ path: '/internal-path' }"
-    >Disabled internal router link to /internal-path</Link
+  <CLink disabled :to="{ path: '/internal-path' }"
+    >Disabled internal router link to /internal-path</CLink
   >
 </template>
 

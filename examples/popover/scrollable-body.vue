@@ -1,5 +1,5 @@
 <template>
-  <Popover
+  <CPopover
     with-arrow
     theme="clean"
     :flips="false"
@@ -19,7 +19,7 @@
         </div>
       </div>
     </template>
-  </Popover>
+  </CPopover>
 </template>
 
 <script>

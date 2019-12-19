@@ -32,15 +32,12 @@ export default {
   methods: {
     trap() {
       const t = createFocusTrap(this.$refs.modal)
-      console.log('trap', t)
       t.activate({
         onDeactivate: () => {
-          console.log('onDeactivate')
           this.$refs.inputOutside.focus()
         },
         initialFocus: this.$refs.intialInput
       })
-      // this.$trapFocus()
     }
   }
 }

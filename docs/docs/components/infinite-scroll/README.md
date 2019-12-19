@@ -58,11 +58,11 @@ export default {
 </script>
 
 <template>
-  <InfiniteScroll :items="[{id: '1'}]">
+  <CInfiniteScroll :items="[{id: '1'}]">
     <template #default="{item}">
-      <InfiniteScrollItem :item="item">{{item}}</InfiniteScrollItem>
+      <CInfiniteScrollItem :item="item">{{item}}</CInfiniteScrollItem>
     </template>
-  </InfiniteScroll>
+  </CInfiniteScroll>
 </template>
 ```
 

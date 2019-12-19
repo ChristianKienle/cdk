@@ -1,5 +1,5 @@
 <template>
-  <InifiniteScroll
+  <CInifiniteScroll
     ref="inifiniteScroll"
     :keyField="keyField"
     :minItemSize="minItemSize"
@@ -23,21 +23,21 @@
     <template #after="{ state }">
       <template v-if="state === 'loading'">
         <slot name="loading">
-          <ListLoadingIndicator />
+          <CListLoadingIndicator />
         </slot>
       </template>
     </template>
-  </InifiniteScroll>
+  </CInifiniteScroll>
 </template>
 
 <script>
-import InifiniteScroll from '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'
-import ListLoadingIndicator from './loading-indicator.vue'
+import CInifiniteScroll from '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'
+import CListLoadingIndicator from './loading-indicator.vue'
 import NoneSelectionMode from './selection/none'
 
 export default {
   name: 'List',
-  components: { InifiniteScroll, ListLoadingIndicator },
+  components: { CInifiniteScroll, CListLoadingIndicator },
   provide() {
     return {
       vcdkList: this

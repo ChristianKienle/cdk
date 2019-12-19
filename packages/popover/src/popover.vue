@@ -1,8 +1,8 @@
 <template>
   <div>
-    <PopoverTrigger ref="trigger" @click.native="handleClickOnTrigger">
+    <CPopoverTrigger ref="trigger" @click.native="handleClickOnTrigger">
       <slot name="trigger" v-bind="slotProps" />
-    </PopoverTrigger>
+    </CPopoverTrigger>
     <NoSsr>
       <SimplePortal :selector="portalSelector">
         <div ref="body" :aria-hidden="String(!visible_)" :class="bodyClasses" :style="bodyStyles_">
@@ -22,7 +22,7 @@ import { inBrowser } from '@vue-cdk/utils'
 import { defaultBoundary, isValidBoundary } from './boundary'
 import * as BodySizeMode from './body-size-mode'
 import { Portal as SimplePortal } from '@linusborg/vue-simple-portal'
-const PopoverTrigger = {
+const CPopoverTrigger = {
   mounted() {
     this.$parent.popperReference = this.$el
     this.$parent.updatePopperInstance()
@@ -36,7 +36,7 @@ export default {
   name: 'Popover',
   components: {
     NoSsr,
-    PopoverTrigger,
+    CPopoverTrigger,
     SimplePortal,
     VpArrow: { render: h => h('span') }
   },

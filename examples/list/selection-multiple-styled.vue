@@ -1,7 +1,7 @@
 <template>
-  <List style="height: 100px;" :selectionMode="selectionMode" :items="items">
+  <CList style="height: 100px;" :selectionMode="selectionMode" :items="items">
     <template #default="{ item, active, index, selected }">
-      <ListItem
+      <CListItem
         class="item"
         :class="classesFor({ selected })"
         :item="item"
@@ -9,9 +9,9 @@
         :sizeDependencies="[item.id]"
       >
         {{ item }}
-      </ListItem>
+      </CListItem>
     </template>
-  </List>
+  </CList>
 </template>
 
 <script>

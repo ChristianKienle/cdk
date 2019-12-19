@@ -1,5 +1,5 @@
 <template>
-  <Popover boundary="viewport" with-arrow theme="clean">
+  <CPopover boundary="viewport" with-arrow theme="clean">
     <template #trigger="{ toggle }">
       <button @click="toggle">Show Popover</button>
     </template>
@@ -9,7 +9,7 @@
         <button @click="hide">Click here to Hide the Popover</button>
       </div>
     </template>
-  </Popover>
+  </CPopover>
 </template>
 
 <script>
