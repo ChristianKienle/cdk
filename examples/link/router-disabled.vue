@@ -1,5 +1,7 @@
 <template>
-  <Link disabled :to="{path: '/internal-path'}">Disabled internal router link to /internal-path</Link>
+  <Link disabled :to="{ path: '/internal-path' }"
+    >Disabled internal router link to /internal-path</Link
+  >
 </template>
 
 <script>
