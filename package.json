@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "bili --bundle-node-modules --file-name FundamentalVue.[format].js --format cjs --format umd-min --format es --module-name FundamentalVue --env.NODE_ENV production -d dist",
-    "storybook": "cd storybook && npm start",
+    "storybook": "cd storybook && yarn start",
     "bootstrap": "lerna bootstrap --concurrency 1 --use-workspaces",
     "clean": "lerna clean -y",
     "docs": "cd docs && yarn dev",

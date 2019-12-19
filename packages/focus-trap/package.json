@@ -14,12 +14,12 @@
     "src/*.vue"
   ],
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.1.0"
+    "@vue-cdk/pluginify": "^0.1.0",
+    "focus-trap": "^5.1.0"
   },
   "peerDependencies": {
     "core-js": "^3.3.2",
-    "vue": "^2.6.10",
-    "focus-trap": "^5.1.0"
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "core-js": "^3.3.2",
