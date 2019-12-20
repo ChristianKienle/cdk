@@ -1,24 +1,23 @@
 <template>
   <div>
     <div>
-      <input tabindex="-1" ref="inputOutside" />
+      <input data-cy="input-outside" tabindex="-1" ref="inputOutside" />
     </div>
-    <button @click.prevent.cancel.stop="trap">
+    <button data-cy="trap-button" @click.prevent.cancel.stop="trap">
       trap
     </button>
     <Modal ref="modal">
-      <div>
-        <p>I am a Modal</p>
-        <input tabindex="0" ref="intialInput" />
-        <input />
-        <input />
+      <div class="modal">
+        <input data-cy="input-a" tabindex="0" ref="intialInput" />
+        <input  data-cy="input-b" />
+        <input  data-cy="input-c" />
       </div>
     </Modal>
   </div>
 </template>
 
 <script>
-import { create as createFocusTrap } from '@vue-cdk/focus-trap'
+import { createFocusTrap } from '@vue-cdk/focus-trap'
 
 const Modal = {
   render(h) {
@@ -28,15 +27,13 @@ const Modal = {
 
 export default {
   components: { Modal },
-  // mixins: [FocusTrap],
   methods: {
     trap() {
       const t = createFocusTrap(this.$refs.modal)
-      console.log('trap', t)
       t.activate({
         onDeactivate: () => {
-          console.log('onDeactivate')
-          this.$refs.inputOutside.focus()
+          // console.log('onDeactivate')
+          // this.$refs.inputOutside.focus()
         },
         initialFocus: this.$refs.intialInput
       })
@@ -45,3 +42,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.modal {
+  background-color: #fefefe;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem;
+}
+</style>

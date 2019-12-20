@@ -59,7 +59,8 @@ module.exports = {
       'scroll-container': require.resolve('@vue-cdk/scroll-container/src/scroll-container.vue'),
       'link': require.resolve('@vue-cdk/link/src/link.vue'),
       'popover': require.resolve('@vue-cdk/popover/src/popover.vue'),
-      'client-only': require.resolve('@vue-cdk/client-only/src/client-only.vue')
+      'client-only': require.resolve('@vue-cdk/client-only/src/client-only.vue'),
+      'focus-trap': require.resolve('@vue-cdk/focus-trap/src/components/focus-trap.vue')
     }]
   ]
 }

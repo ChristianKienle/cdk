@@ -15,8 +15,6 @@ export default class FocusTrap {
     const _options = normalizeActivationOptions(this.trapable, options)
 
     const el = /** @type {HTMLElement} */ (this.trapable.$el)
-    // eslint-disable-next-line no-console
-    console.log('focu for el', el)
     this.trap = createFocusTrap(el, {
       initialFocus: /** @type {HTMLElement} */ (_options.initialFocus),
       escapeDeactivates: _options.deactivation === 'on-esc',

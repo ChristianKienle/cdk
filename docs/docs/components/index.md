@@ -9,6 +9,7 @@ The following components/plugins/mixins are available:
 - [Client Only](./client-only)
 - [Match Media](./match-media)
 - [Scroll Container](./scroll-container)
+- [Focus Trap](./focus-trap)
 
 ## Usage
 

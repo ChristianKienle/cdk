@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { create as createFocusTrap } from '@vue-cdk/focus-trap'
+import { createFocusTrap } from '@vue-cdk/focus-trap'
 
 const Modal = {
   render(h) {

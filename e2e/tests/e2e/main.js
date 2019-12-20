@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './app.vue'
 import Router from 'vue-router'
 import List from '@vue-cdk/list'
+import FocusTrap from '@vue-cdk/focus-trap'
 
 Vue.config.devtools = true
 /** @param {string | number | null} value */
@@ -75,12 +76,17 @@ const router = new Router({
     {
       path: '/focus-trap/default',
       component: () => import('./pages/focus-trap/default.vue')
+    },
+    {
+      path: '/focus-trap/component',
+      component: () => import('./pages/focus-trap/component.vue')
     }
   ]
 })
 
 
 Vue.use(List)
+Vue.use(FocusTrap)
 Vue.use(Router)
 
 const vm = new Vue({

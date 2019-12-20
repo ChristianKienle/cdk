@@ -1,6 +1,12 @@
 # Tasks and Ideas
 
 ## Tasks
+- The component API renderer needs to be made better
+  - title is missing
+  - no toc is generated
+  - some aspects are missing
+  - impossible to embed into existing page
+  - sitemap/list of all documented components
 
 ## Ideas
 

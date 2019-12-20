@@ -20,12 +20,14 @@ The *Vue Component Development Kit* is a set of low-level components, mixins and
 
 ## Features
 
-- [List](./list)
-- [Link](./link)
-- [Popover](./popover)
-- [Client Only](./client-only)
-- [Match Media](./match-media)
-- [Scroll Container](./scroll-container)
+- [Client Only](./components/client-only)
+- [Focus Trap](./components/focus-trap)
+- [Infinite Scroll](./components/infinite-scroll)
+- [Link](./components/link)
+- [List](./components/list)
+- [Match Media](./components/match-media)
+- [Popover](./components/popover)
+- [Scroll Container](./components/scroll-container)
 
 ## Philosophy
 
