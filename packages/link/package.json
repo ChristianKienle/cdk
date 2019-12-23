@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/link",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -18,7 +18,7 @@
     "src/**/*.vue"
   ],
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.1.2"
+    "@vue-cdk/pluginify": "^0.1.6"
   },
   "peerDependencies": {
     "core-js": "^3.3.2",

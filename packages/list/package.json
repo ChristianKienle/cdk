@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/list",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -20,8 +20,8 @@
     "src/list-item.vue"
   ],
   "dependencies": {
-    "@vue-cdk/infinite-scroll": "^0.1.2",
-    "@vue-cdk/pluginify": "^0.1.2"
+    "@vue-cdk/infinite-scroll": "^0.1.6",
+    "@vue-cdk/pluginify": "^0.1.6"
   },
   "peerDependencies": {
     "core-js": "^3.3.2",
