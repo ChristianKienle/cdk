@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/docs",
-  "private": false,
+  "private": true,
   "version": "0.1.4",
   "scripts": {
     "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090 --debug",
@@ -39,5 +39,6 @@
     "vue": "^2.6.10",
     "vuepress": "^1.2.0",
     "webpack-bundle-analyzer": "^3.6.0"
-  }
+  },
+  "gitHead": "36202b88600d43c88654acb1a92b8cc005bd7970"
 }

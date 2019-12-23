@@ -1,7 +1,10 @@
 {
   "name": "@vue-cdk/client-only",
   "version": "0.1.2",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "vue-cli-service test:unit"
   },
