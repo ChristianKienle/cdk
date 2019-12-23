@@ -1,9 +1,12 @@
+import { getCollection } from '@vue-cdk/examples'
+const collection = getCollection('list')
+
 export default { title: 'List' };
-export const defaultList = () => require('./../../../examples/list/default.vue').default
-export const endlessLoadingList = () => require('./../../../examples/list/endless.vue').default
-export const endlessLoadingListWithLoadingState = () => require('./../../../examples/list/endless-with-loading.vue').default
-export const sizeDependencies = () => require('./../../../examples/list/size-dependencies.vue').default
-export const scrollTo = () => require('./../../../examples/list/scroll-to.vue').default
-export const singleSelectionMode = () => require('./../../../examples/list/selection-single.vue').default
-export const multipleSelectionMode = () => require('./../../../examples/list/selection-multiple.vue').default
-export const multipleSelectionModeStyled = () => require('./../../../examples/list/selection-multiple-styled.vue').default
+export const defaultList = collection.importExample('default')
+export const endlessLoadingList = collection.importExample('endless')
+export const endlessLoadingListWithLoadingState = collection.importExample('endless-with-loading')
+export const sizeDependencies = collection.importExample('size-dependencies')
+export const scrollTo = collection.importExample('scroll-to')
+export const singleSelectionMode = collection.importExample('selection-single')
+export const multipleSelectionMode = collection.importExample('selection-multiple')
+export const multipleSelectionModeStyled = collection.importExample('selection-multiple-styled')

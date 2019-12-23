@@ -8,6 +8,7 @@
     "serve": "http-server dist"
   },
   "dependencies": {
+    "@vue-cdk/examples": "^0.1.0",
     "@vue-cdk/link": "^0.1.0",
     "@vue-cdk/list": "^0.1.0",
     "@vue-cdk/infinite-scroll": "^0.1.0",

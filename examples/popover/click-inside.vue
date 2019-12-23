@@ -1,5 +1,5 @@
 <template>
-  <CPopover boundary="viewport" with-arrow theme="clean">
+  <CPopover boundary="viewport" withArrow theme="clean">
     <template #trigger="{ toggle }">
       <button @click="toggle">Show Popover</button>
     </template>

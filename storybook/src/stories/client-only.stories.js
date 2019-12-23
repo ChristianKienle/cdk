@@ -1,3 +1,5 @@
-export default { title: 'Client Only' };
+import { getCollection } from '@vue-cdk/examples'
+const collection = getCollection('client-only')
 
-export const helloWorld = () => require('./../../../examples/client-only/default.vue').default
+export default { title: 'Client Only' };
+export const helloWorld = collection.importExample('default')
