@@ -16,6 +16,7 @@
     - Also distribute other module formats in `dist`. Fundamental Vue also has a working setup here. We can just copy that one. However since we are using Lerna (and have multiple packages) we have to find a way to make building a production build run on all packages. Should not be hard but has to be done.
     - Actually test tree shaking and the different distributed module formats.
 - **`Focus Trap` needs more tests:** The focus trap component has some logic but no tests. It cannot be easily tested within a unit test though.
+- **Smoke Test using Examples:** I would love to see some kind of test that simply launches every example there is and sees if there is any error logged. If yes the test should fail. In the past there were several failures that would have been caught by that. A simple rename of a component (without adjusting the examples) would cause such a failure and is totally confusing for users.
 
 ## Ideas
 
