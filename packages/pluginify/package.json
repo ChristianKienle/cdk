@@ -1,7 +1,10 @@
 {
   "name": "@vue-cdk/pluginify",
   "version": "0.1.2",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "src/index.js",
   "scripts": {
     "test": "vue-cli-service test:unit"

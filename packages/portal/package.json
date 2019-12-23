@@ -1,7 +1,10 @@
 {
   "name": "@vue-cdk/portal",
   "version": "0.1.5",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test:unit": "vue-cli-service test:unit"
   },

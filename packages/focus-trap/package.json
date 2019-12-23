@@ -1,7 +1,10 @@
 {
   "name": "@vue-cdk/focus-trap",
   "version": "0.1.2",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
