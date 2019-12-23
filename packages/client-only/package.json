@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/client-only",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "test": "vue-cli-service test:unit"
@@ -15,22 +15,22 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@vue-cdk/utils": "^0.1.0",
-    "@vue-cdk/pluginify": "^0.1.0"
+    "@vue-cdk/pluginify": "^0.1.1",
+    "@vue-cdk/utils": "^0.1.1"
   },
   "devDependencies": {
-    "vue-server-renderer": "^2.6.10",
-    "jest": "^24.9.0",
-    "core-js": "^3.3.2",
-    "vue": "^2.6.10",
     "@vue/cli-plugin-babel": "^4.1.1",
     "@vue/cli-plugin-eslint": "^4.1.1",
     "@vue/cli-plugin-unit-jest": "^4.1.1",
     "@vue/cli-service": "^4.1.1",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
+    "core-js": "^3.3.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.0.1",
+    "jest": "^24.9.0",
+    "vue": "^2.6.10",
+    "vue-server-renderer": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   }
 }
