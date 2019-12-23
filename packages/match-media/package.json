@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/match-media",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve example/index.js",
@@ -18,7 +18,7 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@vue-cdk/utils": "^0.1.1"
+    "@vue-cdk/utils": "^0.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",

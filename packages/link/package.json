@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/link",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -15,7 +15,7 @@
     "src/**/*.vue"
   ],
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.1.1"
+    "@vue-cdk/pluginify": "^0.1.2"
   },
   "peerDependencies": {
     "core-js": "^3.3.2",

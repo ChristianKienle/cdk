@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/popover",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -22,10 +22,10 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@vue-cdk/client-only": "^0.1.1",
-    "@vue-cdk/pluginify": "^0.1.1",
-    "@vue-cdk/portal": "^0.1.1",
-    "@vue-cdk/utils": "^0.1.1"
+    "@vue-cdk/client-only": "^0.1.2",
+    "@vue-cdk/pluginify": "^0.1.2",
+    "@vue-cdk/portal": "^0.1.2",
+    "@vue-cdk/utils": "^0.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
