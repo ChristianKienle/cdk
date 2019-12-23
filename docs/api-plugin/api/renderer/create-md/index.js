@@ -13,27 +13,27 @@ const {
   Elements,
   Hr,
   Div
-} = require("./elements");
+} = require('./elements')
 
 class CreateMarkdown {
   constructor(tokens = []) {
     /** @type {(() => string)[]} */
-    this.tokens = tokens;
+    this.tokens = tokens
   }
 
   add(...tokens) {
-    this.tokens.push(...tokens);
-    return this;
+    this.tokens.push(...tokens)
+    return this
   }
 
   hr() {
     return this.add(Hr())
   }
 
- /**
-  * @param {import('./types').Data} data
-  * @param {(() => string)[]} [children=[]]
-  */
+  /**
+   * @param {import('./types').Data} data
+   * @param {(() => string)[]} [children=[]]
+   */
   div(data, children = []) {
     return this.add(Div(data, children))
   }
@@ -43,16 +43,16 @@ class CreateMarkdown {
    * @param {string} title
    */
   h(level, title) {
-    return this.add(Heading({ level, text: title }));
+    return this.add(Heading({ level, text: title }))
   }
 
   nl(count = 1) {
-    return this.add(Newline(count));
+    return this.add(Newline(count))
   }
 
   /** @param {string} text */
   strong(text) {
-    return this.add(StrongText(text));
+    return this.add(StrongText(text))
   }
 
   /**
@@ -60,7 +60,7 @@ class CreateMarkdown {
    * @param {{defaultValue: string}=} options
    */
   code(text, { defaultValue } = { defaultValue: null }) {
-    return this.add(InlineCode(text, { defaultValue }));
+    return this.add(InlineCode(text, { defaultValue }))
   }
 
   /**
@@ -68,14 +68,14 @@ class CreateMarkdown {
    * @param {{wrap: boolean}} options
    */
   raw(raw, { wrap } = { wrap: false }) {
-    if(Array.isArray(raw)) {
-      raw.forEach(md => this.raw(md, { wrap }));
-      return this;
+    if (Array.isArray(raw)) {
+      raw.forEach(md => this.raw(md, { wrap }))
+      return this
     }
     if (raw instanceof CreateMarkdown) {
       return this.add(Elements(raw.tokens, { wrap }))
     }
-    return this.add(Raw(raw));
+    return this.add(Raw(raw))
   }
 
   /**
@@ -83,12 +83,12 @@ class CreateMarkdown {
    * @param {{wrap: boolean}} options
    */
   lines(lines, { wrap } = { wrap: false }) {
-    return this.add(Lines(lines, { wrap }));
+    return this.add(Lines(lines, { wrap }))
   }
 
   render() {
-    return this.tokens.map(token => token()).join("");
+    return this.tokens.map(token => token()).join('')
   }
 }
 
-module.exports = CreateMarkdown;
+module.exports = CreateMarkdown

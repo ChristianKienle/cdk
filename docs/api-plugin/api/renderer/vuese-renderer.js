@@ -1,4 +1,3 @@
-
 // @ts-check
 /* eslint-env node */
 const { Render } = require('@vuese/markdown-render')
@@ -11,7 +10,9 @@ const render = componentApi => {
   const result = new Render(componentApi)
   const md = result.renderMarkdown()
   if (md == null) {
-    throw Error(`Unable to render API for component ${componentApi} because 'renderMarkdown' returned 'null'.`)
+    throw Error(
+      `Unable to render API for component ${componentApi} because 'renderMarkdown' returned 'null'.`
+    )
   }
   return md.content
 }
