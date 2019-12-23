@@ -1,5 +1,5 @@
 // @ts-check
-/** @type {import('./types').ComponentNameFn} */
+/** @type {import('./types/options').GetComponentName} */
 // By default we prefix all of our components with a 'C'. A prefix is not needed in 99% of all cases but there are some situations which require a prefix. One edge case is the 'Link' component. 'Link' is considered by some players in the Vue ecosystem to be an invalid component name. For example having the following component:
 /*
 <template>
