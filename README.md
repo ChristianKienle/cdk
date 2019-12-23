@@ -46,6 +46,11 @@ $ yarn storybook
 
 The storybook is not the main documentation. It is intended to be used by people who are contributing to *Vue Component Development Kit*.
 
+## Making a Release
+```sh
+$ ./node_modules/.bin/lerna publish patch
+```
+
 ## Known Issues
 There are a lot of known issues:
 
