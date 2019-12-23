@@ -1,17 +1,13 @@
 const { fromFile, renderer } = require('./api')
 
-module.exports = (options, ctx) => {
+module.exports = options => {
   return {
     name: 'api-plugin',
     additionalPages() {
-      return Object.entries(options).map(([name, path]) => {
-        const result = fromFile(path)
-        const mdContent = renderer.Default(result)
-        return {
-          relative: `api/${name}/README.md`,
-          content: mdContent
-        }
-      })
+      return Object.entries(options).map(([name, path]) => ({
+        relative: `api/${name}/README.md`,
+        content: renderer.Default(fromFile(path))
+      }))
     }
   }
 }

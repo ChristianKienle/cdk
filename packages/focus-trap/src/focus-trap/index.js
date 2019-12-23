@@ -13,7 +13,6 @@ export default class FocusTrap {
   /** @param {import('./../../types/focus-trap').ActivateOptions} options */
   activate(options) {
     const _options = normalizeActivationOptions(this.trapable, options)
-
     const el = /** @type {HTMLElement} */ (this.trapable.$el)
     this.trap = createFocusTrap(el, {
       initialFocus: /** @type {HTMLElement} */ (_options.initialFocus),
@@ -25,7 +24,6 @@ export default class FocusTrap {
     })
     this.trap.activate()
   }
-
   deactivate() {
     this.trap.deactivate()
   }

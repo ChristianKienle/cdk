@@ -79,9 +79,9 @@ export default {
   methods: {
     // @vuese
     // Scrolls the list to the item at `index`.
+    // @arg index The row index of the item you want to scroll to.
     scrollToIndex(index) {
-      const scroller = this.$refs.dynamicScroller
-      scroller.scrollToItem(index)
+      this.$refs.dynamicScroller.scrollToItem(index)
     },
     handleScroll(event) {
       const { scrollPosition, $el, minItemSize, $refs } = this
