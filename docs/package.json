@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/docs",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "scripts": {
     "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090 --debug",
     "build": "vuepress build docs --dest ./dist"
