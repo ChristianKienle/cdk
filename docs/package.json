@@ -1,7 +1,7 @@
 {
   "name": "@vue-cdk/docs",
   "private": true,
-  "version": "0.1.6",
+  "version": "0.1.7",
   "scripts": {
     "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090 --debug",
     "build": "vuepress build docs --dest ./dist"
@@ -13,16 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "@linusborg/vue-simple-portal": "^0.1.4",
-    "@vue-cdk/client-only": "^0.1.6",
-    "@vue-cdk/infinite-scroll": "^0.1.6",
-    "@vue-cdk/link": "^0.1.6",
-    "@vue-cdk/list": "^0.1.6",
+    "@vue-cdk/client-only": "^0.1.7",
+    "@vue-cdk/infinite-scroll": "^0.1.7",
+    "@vue-cdk/link": "^0.1.7",
+    "@vue-cdk/list": "^0.1.7",
     "@vue-cdk/match-media": "^0.1.6",
     "@vue-cdk/node-utils": "^0.1.2",
-    "@vue-cdk/pluginify": "^0.1.6",
-    "@vue-cdk/popover": "^0.1.6",
-    "@vue-cdk/portal": "^0.1.6",
-    "@vue-cdk/scroll-container": "^0.1.6",
+    "@vue-cdk/pluginify": "^0.1.7",
+    "@vue-cdk/popover": "^0.1.7",
+    "@vue-cdk/portal": "^0.1.7",
+    "@vue-cdk/scroll-container": "^0.1.7",
     "@vue-cdk/utils": "^0.1.6",
     "@vuepress/plugin-register-components": "^1.2.0",
     "@vuese/parser": "^2.4.3",

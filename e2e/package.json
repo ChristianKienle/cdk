@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/e2e",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -18,8 +18,8 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue-cdk/client-only": "^0.1.6",
-    "@vue-cdk/list": "^0.1.6",
+    "@vue-cdk/client-only": "^0.1.7",
+    "@vue-cdk/list": "^0.1.7",
     "@vue-cdk/match-media": "^0.1.6",
     "@vue-cdk/utils": "^0.1.6",
     "@vue/cli-plugin-babel": "^4.1.1",
