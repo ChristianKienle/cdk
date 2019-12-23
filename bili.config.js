@@ -1,21 +1,21 @@
 /* eslint-env node */
 
-const { version } = require("./package.json");
-const Path = require("path");
-const Process = require("process");
+const { version } = require('./package.json')
+const Path = require('path')
+const Process = require('process')
 
 /** @type {import('bili').Config} */
 module.exports = {
   banner: `
 /**
- * Fundamental Vue
+ * Vue Component Development Kit
  * Version: ${version},
- * (c) SAP SE, ${new Date().getFullYear()}
- * LICENCE: Apache-2.0
- * https://github.com/SAP/fundamental-vue
+ * (c) Christian Kienle, 2019–${new Date().getFullYear()}
+ * LICENCE: MIT
+ * https://github.com/ChristianKienle/cdk
 */`,
   babel: {
-    configFile: Path.join(__dirname, "bili-babel.config.js"),
+    configFile: Path.join(__dirname, 'bili-babel.config.js'),
     babelrc: false
   },
   plugins: {
@@ -28,6 +28,6 @@ module.exports = {
   },
   runtimeHelpers: true,
   globals: {
-    vue: "Vue"
+    vue: 'Vue'
   }
-};
+}
