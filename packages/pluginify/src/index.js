@@ -32,5 +32,24 @@ export default (...dependencies) => {
       })
     })
   }
-  return { install }
+
+  function createMixin(options) {
+    const _options = normalizedPluginOptions(options)
+    const componentsOption = {}
+    dependencies.forEach(component => {
+      const rawComponentName = getComponentName(component)
+      if (rawComponentName == null) {
+        throw new Error(`
+            Unable to determine component name. Component: ${component}. Did you forget to add a 'name' attribute?
+                `)
+      }
+      const componentName = _options.componentName({ name: rawComponentName, component: component })
+      componentsOption[componentName] = component
+    })
+    return {
+      components: componentsOption
+    }
+  }
+  createMixin.install = install
+  return createMixin
 }

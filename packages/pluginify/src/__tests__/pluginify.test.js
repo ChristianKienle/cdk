@@ -99,4 +99,53 @@ describe('pluginify', () => {
     )
     expect(wrapper.html()).toContain('1337')
   })
+
+  describe('the exported mixin', () => {
+    it('works with simple component', () => {
+      const HelloWorld = {
+        name: 'HelloWorld',
+        render(h) {
+          return h('div', {}, '1337')
+        }
+      }
+      const mixin = pluginify(HelloWorld)()
+      expect(mixin).toBeDefined()
+      expect(mixin).toMatchObject({
+        components: {
+          CHelloWorld: HelloWorld
+        }
+      })
+      const wrapper = mount({
+        template: `<CHelloWorld />`,
+        mixins: [mixin]
+      })
+      expect(wrapper.text()).toEqual('1337')
+    })
+
+    it('respects componentName options', () => {
+      const HelloWorld = {
+        name: 'HelloWorld',
+        render(h) {
+          return h('div', {}, '1337')
+        }
+      }
+      const componentName = jest.fn(({ name }) => `B${name}`).mockName('mocked componentName')
+      const mixin = pluginify(HelloWorld)({ componentName })
+      expect(mixin).toBeDefined()
+      expect(mixin).toMatchObject({
+        components: {
+          BHelloWorld: HelloWorld
+        }
+      })
+
+      expect(componentName).toHaveBeenCalledWith({ name: 'HelloWorld', component: HelloWorld })
+
+      // Also mount it and use the modified name
+      const wrapper = mount({
+        mixins: [mixin],
+        template: `<BHelloWorld />`
+      })
+      expect(wrapper.text()).toEqual('1337')
+    })
+  })
 })
