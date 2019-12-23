@@ -1,1 +1,1 @@
-export default { title: 'Vue Component Kit' };
+export default { title: 'Vue Component Development Kit' };

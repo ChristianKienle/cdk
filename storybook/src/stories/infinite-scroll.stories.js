@@ -1,6 +1,9 @@
+import { getCollection } from '@vue-cdk/examples'
+const collection = getCollection('infinite-scroll')
+
 export default { title: 'Infinite Scroll' };
-export const defaultInfiniteScroll = () => require('./../../../examples/infinite-scroll/default.vue').default
-export const sizeDependencies = () => require('./../../../examples/infinite-scroll/size-dependencies.vue').default
-export const scrollTo = () => require('./../../../examples/infinite-scroll/scroll-to.vue').default
-export const scrollEvents = () => require('./../../../examples/infinite-scroll/scroll-events.vue').default
-export const loadMore = () => require('./../../../examples/infinite-scroll/load-more.vue').default
+export const defaultInfiniteScroll = collection.importExample('default')
+export const sizeDependencies = collection.importExample('size-dependencies')
+export const scrollTo = collection.importExample('scroll-to')
+export const scrollEvents = collection.importExample('scroll-events')
+export const loadMore = collection.importExample('load-more')

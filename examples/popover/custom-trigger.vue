@@ -1,5 +1,5 @@
 <template>
-  <CPopover placement="bottom" with-arrow theme="clean">
+  <CPopover placement="bottom" withArrow theme="clean">
     <template #trigger="{ show, hide }">
       <button @mouseenter="show" @mouseleave="hide">Tooltip shows hover</button>
     </template>
