@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/portal",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "private": true,
   "scripts": {
     "test:unit": "vue-cli-service test:unit"
@@ -16,7 +16,7 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@vue-cdk/client-only": "^0.1.2",
+    "@vue-cdk/client-only": "^0.1.5",
     "@vue-cdk/pluginify": "^0.1.2",
     "@vue-cdk/utils": "^0.1.2"
   },
