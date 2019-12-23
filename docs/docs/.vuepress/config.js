@@ -34,6 +34,12 @@ module.exports = {
     }
   },
   themeConfig: {
+    repo: 'christiankienle/cdk',
+    repoLabel: 'Contribute!',
+    docsDir: 'docs/docs',
+    editLinks: true,
+    editLinkText: 'Help us improve this page!',
+    lastUpdated: true,
     displayAllHeaders: true,
     logo: '/logo.png',
     sidebar: 'auto',
