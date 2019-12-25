@@ -53,6 +53,7 @@ const toPascalCase = value => {
 }
 
 export default {
+  name: 'Demo',
   props: {
     for: {
       type: String
@@ -64,13 +65,14 @@ export default {
         const { examplePath = '' } = frontmatter
         return examplePath.replace('.vue', '') === this.for.replace('.vue', '')
       })
-      if(page == null) {
+      if (page == null) {
         return
       }
       return page.key
     }
   },
   render(h) {
+    // return h('div')
     const srcComponent = h('Content', {
       props: {
         pageKey: this.keyForExampleAtPath()

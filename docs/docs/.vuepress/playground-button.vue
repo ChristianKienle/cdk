@@ -2,12 +2,7 @@
   <a :href="$withBase('/storybook/')" class="playground-button">Playground</a>
 </template>
 
-<script>
-export default {}
-</script>
-
 <style lang="stylus">
-@import url('./styles/palette');
 .playground-button
   cursor pointer
   position fixed

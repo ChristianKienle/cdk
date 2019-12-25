@@ -1,5 +1,4 @@
 // @ts-check
-const ExamplesPlugin = require('./../../examples-plugin')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const toPascalCase = require('@vue-cdk/node-utils/to-pascal-case')
@@ -57,19 +56,9 @@ module.exports = {
   },
   plugins: [
     GlobalUIPlugin,
-    [
-      '@vuepress/register-components',
-      {
-        componentsDir: path.resolve(__dirname, '..', '..', '..', 'examples'),
-        getComponentName(file) {
-          const defaultName = file.replace(/\/|\\/g, '-')
-          const components = file.split('/')
-          const name = `Example-${components.map(toPascalCase).join('-')}`
-          return name
-        }
-      }
-    ],
-    [ExamplesPlugin],
+    ['@vue-cdk/vuepress-plugin-demo', {
+      dir: path.resolve(__dirname, '..', '..', '..', 'examples')
+    }],
     ['@vue-cdk/vuepress-plugin-api', ApiPluginOptions]
   ]
 }
