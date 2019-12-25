@@ -33,6 +33,7 @@ module.exports = {
     }
   },
   themeConfig: {
+    search: false,
     repo: 'christiankienle/cdk',
     repoLabel: 'GitHub',
     docsDir: 'docs/docs',
@@ -40,7 +41,7 @@ module.exports = {
     editLinkText: 'Help us improve this page!',
     lastUpdated: true,
     displayAllHeaders: true,
-    logo: '/logo.png',
+    logo: '/logo-small@1x.png',
     sidebar: 'auto',
     nav: [
       { text: 'Home', link: '/' },

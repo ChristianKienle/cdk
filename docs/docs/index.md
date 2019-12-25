@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /logo-big.png
+heroImage: /logo@2x.png
 heroText: Vue Component Development Kit
 title: Vue Component Development Kit
 tagline: Build on a strong Foundation
