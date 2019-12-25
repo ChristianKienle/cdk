@@ -14,9 +14,9 @@
     </template>
     <template #default>
       <div>
-        <div v-for="idx in indices" :key="String(idx)">
-          I am part {{ idx + 1 }} of a wonderful popover.
-        </div>
+        <div v-for="idx in indices" :key="String(idx)"
+          >I am part {{ idx + 1 }} of a wonderful popover.</div
+        >
       </div>
     </template>
   </CPopover>

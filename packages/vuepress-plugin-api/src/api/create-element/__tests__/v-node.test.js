@@ -11,13 +11,13 @@ describe('VNode', () => {
   })
 
   it('renders simple attribute children = []', () => {
-    expect(new VNode('p', { attrs: { id: 'abc'} }, [], null).render()).toEqual('<p id="abc"></p>')
+    expect(new VNode('p', { attrs: { id: 'abc' } }, [], null).render()).toEqual('<p id="abc"></p>')
   })
 
   it('renders simple child', () => {
-    const text = new VNode(null, { }, [], 'abc')
-    const p = new VNode('p', { }, [text], null)
-    const div = new VNode('div', { }, [p], null)
+    const text = new VNode(null, {}, [], 'abc')
+    const p = new VNode('p', {}, [text], null)
+    const div = new VNode('div', {}, [p], null)
     expect(div.render()).toEqual('<div><p>abc</p></div>')
   })
 
