@@ -25,6 +25,7 @@
     "@vue-cdk/scroll-container": "^0.1.7",
     "@vue-cdk/utils": "^0.1.6",
     "@vue-cdk/vuepress-plugin-api": "^0.1.8",
+    "@vue-cdk/vuepress-plugin-demo": "^0.1.7",
     "@vuepress/plugin-register-components": "^1.2.0",
     "@vuese/parser": "^2.4.3",
     "fs-extra": "^8.1.0",
