@@ -1,7 +1,7 @@
 {
   "name": "@vue-cdk/docs",
   "private": true,
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
     "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090 --debug",
     "build": "vuepress build docs --dest ./dist"
@@ -24,14 +24,14 @@
     "@vue-cdk/portal": "^0.1.7",
     "@vue-cdk/scroll-container": "^0.1.7",
     "@vue-cdk/utils": "^0.1.6",
+    "@vue-cdk/vuepress-plugin-api": "^0.1.8",
     "@vuepress/plugin-register-components": "^1.2.0",
     "@vuese/parser": "^2.4.3",
     "fs-extra": "^8.1.0",
     "globby": "^10.0.1",
     "popper.js": "^1.16.0",
     "stringify-attributes": "^2.0.0",
-    "vuepress-plugin-clean-urls": "^1.1.1",
-    "@vue-cdk/vuepress-plugin-api": "^0.1.7"
+    "vuepress-plugin-clean-urls": "^1.1.1"
   },
   "devDependencies": {
     "@vuese/markdown-render": "^2.5.3",
