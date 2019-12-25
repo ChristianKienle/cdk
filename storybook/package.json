@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/storybook",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "private": true,
   "scripts": {
     "start": "start-storybook --ci --port 9999",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@vue-cdk/client-only": "^0.1.7",
-    "@vue-cdk/examples": "^0.1.7",
+    "@vue-cdk/examples": "^0.1.9",
     "@vue-cdk/focus-trap": "^0.1.7",
     "@vue-cdk/infinite-scroll": "^0.1.7",
     "@vue-cdk/link": "^0.1.7",
