@@ -12,10 +12,9 @@ The following components/plugins/mixins are available:
 - [Focus Trap](./focus-trap)
 
 ## Usage
-
 In general, components/plugins/mixins are grouped into packages that can be consumed individually. This allows you to incrementally adopt _Vue Component Development Kit_.
 
-Every package exposes by default a _Vue plugin_ that can be installed globally by using `Vue.use(…)`. For example:
+Usually a package exposes a _Vue plugin_ that can installed by using `Vue.use(…)`. For example:
 
 ```js
 import Vue from 'vue'
@@ -24,8 +23,18 @@ import List from '@vue-cdk/list'
 Vue.use(List /* options (optional) */)
 ```
 
-### Options
+Every package that exposes a _Vue Plugin_ also exposes a Vue mixin factory. You can use to create _Vue mixins_:
 
+```js
+import List from '@vue-cdk/list'
+export default {
+  mixins: [
+    List(/* options (optional) */)
+  ]
+}
+```
+
+### Options
 All plugins share a common set of options.
 
 ```js
