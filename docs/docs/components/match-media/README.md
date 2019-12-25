@@ -1,5 +1,9 @@
 # Match Media
 
+**Table of Contents**
+
+[[toc]]
+
 ## Installation
 
 ```sh
@@ -7,7 +11,6 @@ $ npm install @vue-cdk/match-media --save
 ```
 
 ## Usage
-
 You use `@vue-cdk/match-media` like this:
 
 - You import the mixin from `@vue-cdk/match-media`. The mixin is the default export of that package.

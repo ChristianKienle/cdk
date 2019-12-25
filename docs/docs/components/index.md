@@ -18,10 +18,10 @@ In general, components/plugins/mixins are grouped into packages that can be cons
 Every package exposes by default a _Vue plugin_ that can be installed globally by using `Vue.use(…)`. For example:
 
 ```js
-import Vue from "vue";
-import List from "@vue-cdk/list";
+import Vue from 'vue'
+import List from '@vue-cdk/list'
 
-Vue.use(List /* options (optional) */);
+Vue.use(List /* options (optional) */)
 ```
 
 ### Options

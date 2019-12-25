@@ -4,10 +4,26 @@
 The *Popover*-component has a dedicated [API documentation](./../../api/popover).
 :::
 
+**Table of Contents**
+
+[[toc]]
+
 ## Installation
 ``` sh
-npm install @vue-cdk/popover --save
+$ npm install @vue-cdk/popover --save
 ```
+
+## Usage
+`@vue-cdk/popover` exposes a *Vue plugin* that you can use like this:
+
+``` js
+import Vue from 'vue'
+import Popover from '@vue-cdk/popover'
+
+Vue.use(Popover)
+```
+
+This will globally register a popover component called `CPopover`.
 
 ## Guide
 You have to render a `trigger`-element and the actual popover content. The following example shows how to render a *hello-world* popover using `@vue-cdk/popover`:
@@ -86,3 +102,6 @@ It is probably a good idea to also disable flipping by setting `flips` to `false
 :::
 
 <Demo for="popover/scrollable-body" />
+
+## API
+- [Popover](./../../api/popover)

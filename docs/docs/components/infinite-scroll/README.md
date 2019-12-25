@@ -2,19 +2,13 @@
 
 The *Infinite Scroll* component can be used to render an indefintely scrolling list of items.
 
-[[toc]]
-
-*Infinite Scroll* has three main features that make it useful:
-
-1. **Renders only what is visible:** Imagine you have a list of *1000* items. It would be inefficient to render all *1000* items even though only (for example) 20 are visible at the same time. By only rendering the currently visible items *Infinite Scroll* can scroll through thousands of them with ease.
-2. **Emits *useful* scroll events:** For example, *Infinite Scroll* knows when you reach the bottom (or bottom) of the list while scrolling. This can come in handy when implementing more advanced features. One thing that comes to mind is to customize *Infinite Scroll* to show a loading indicator somewhere while loading is going on.
-3. **Automatically request more items:** By default, *Infinite Scroll* will ask you for more items once the user has scrolled near the bottom of the list.
-
-Even though *Infinite Scroll* is useful as is, there are higher level components that build on-top of it. The *[List](./../../api/list)* component is probably the most notably component that wraps
-
 ::: tip API
 The *Infinite Scroll*-component has a dedicated [API documentation](./../../api/infinite-scroll).
 :::
+
+**Table of Contents**
+
+[[toc]]
 
 ## Installation
 ``` sh
@@ -22,7 +16,7 @@ npm install @vue-cdk/infinite-scroll --save
 ```
 
 ## Usage
-As most `@vue-cdk`–packages, `@vue-cdk/infinite-scroll` exposes a *Vue plugin* that you can use like this:
+As most `@vue-cdk`–packages, `@vue-cdk/infinite-scroll` exposes a *Vue plugin*.
 
 ### Using the Plugin
 ``` js
@@ -76,6 +70,16 @@ import '@vue-cdk/infinite-scroll/style/index.css'
 ::: tip
 The CSS classes defined in that file are keeps to a minimum and don't introduce any visible styling. **It is up to you to make things look nice.**
 :::
+
+## Features
+
+*Infinite Scroll* has three main features that make it useful:
+
+1. **Renders only what is visible:** Imagine you have a list of *1000* items. It would be inefficient to render all *1000* items even though only (for example) 20 are visible at the same time. By only rendering the currently visible items *Infinite Scroll* can scroll through thousands of them with ease.
+2. **Emits *useful* scroll events:** For example, *Infinite Scroll* knows when you reach the bottom (or bottom) of the list while scrolling. This can come in handy when implementing more advanced features. One thing that comes to mind is to customize *Infinite Scroll* to show a loading indicator somewhere while loading is going on.
+3. **Automatically request more items:** By default, *Infinite Scroll* will ask you for more items once the user has scrolled near the bottom of the list.
+
+Even though *Infinite Scroll* is useful as is, there are higher level components that build on-top of it. The *[List](./../../api/list)* component is probably the most notably component that wraps *Infinite Scroll*.
 
 ## Examples
 
