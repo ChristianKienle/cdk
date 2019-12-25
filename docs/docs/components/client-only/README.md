@@ -1,12 +1,16 @@
 # Client Only
 
+The `@vue-cdk/client-only`-package contains a single component: `ClientOnly`. This component can be used to wrap non SSR friendly components.
+
 ::: tip API
 The *Client-Only*-component has a dedicated [API documentation](./../../api/client-only).
 :::
 
-The `@vue-cdk/client-only`-package contains a single component: `ClientOnly`. This component can be used to wrap non SSR friendly components.
+**Table of Contents**
 
-**History & Credits**
+[[toc]]
+
+## History & Credits
 
 `@vue-cdk/client-only` is a friendly fork of [egoist/vue-client-only](https://github.com/egoist/vue-client-only). The component was only slightly changed. However, a lot of tests and documentation was added to make it easier to consume. Those additions will be contributed back to the original authors. The original license of [egoist/vue-client-only](https://github.com/egoist/vue-client-only) can be found within the source of `@vue-cdk/client-only`.
 
@@ -29,23 +33,5 @@ Vue.use(ClientOnly)
 If you prefer locally registered components then please refer to the example below which is not using the `@vue-cdk/client-only`-plugin.
 
 ## Examples
-``` markup
-<template>
-  <div>
-    <ClientOnly>
-      <!-- this component will only be rendered on client-side -->
-      <HelloWorld />
-    </ClientOnly>
-  </div>
-</template>
 
-<script>
-import { ClientOnly } from '@vue-cdk/client-only'
-
-export default {
-  components: { ClientOnly }
-}
-</script>
-```
-
-
+<Demo for="client-only/default" />

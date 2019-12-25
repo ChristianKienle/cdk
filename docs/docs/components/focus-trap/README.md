@@ -1,6 +1,8 @@
 # Focus Trap
 The focus trap package makes it easy to trap the focus within a component/element. `@vue-cdk/focus-trap` is a wrapper around the [focus-trap package from @davidtheclark](https://github.com/davidtheclark/focus-trap). The main motivation of this wrapper was to make it more convenient for Vue developers.
 
+**Table of Contents**
+
 [[toc]]
 
 ## Overview

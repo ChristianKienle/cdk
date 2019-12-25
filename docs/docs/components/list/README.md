@@ -1,7 +1,6 @@
 # List
 The *List* component displays a list of items. Internally it is using the *[Infinite Scroll](../infinite-scroll/)* component. Because of that they have a lot of similarities. *List* adds a few convenient, higher-level features to *[Infinite Scroll](../infinite-scroll/)*.
 
-
 ::: tip
 You should prefer *List* over *[Infinite Scroll](../infinite-scroll/)*. You can fall back to *[Infinite Scroll](../infinite-scroll/)* if you have special needs.
 :::
