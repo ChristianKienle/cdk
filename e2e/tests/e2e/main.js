@@ -80,10 +80,13 @@ const router = new Router({
     {
       path: '/focus-trap/component',
       component: () => import('./pages/focus-trap/component.vue')
+    },
+    {
+      path: '/popover/default',
+      component: () => import('./pages/popover/default.vue')
     }
   ]
 })
-
 
 Vue.use(List)
 Vue.use(FocusTrap)

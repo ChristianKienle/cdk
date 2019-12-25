@@ -1,6 +1,6 @@
 <template>
   <div style="display: flex;">
-    <CPopover body-size-mode="at-least-trigger" with-arrow theme="clean">
+    <CPopover placement="bottom-start" body-size-mode="at-least-trigger" with-arrow theme="clean">
       <template #trigger="{toggle}">
         <button @click="toggle">Small Trigger</button>
       </template>
