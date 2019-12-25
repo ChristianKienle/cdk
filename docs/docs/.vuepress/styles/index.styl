@@ -1,3 +1,25 @@
+
+
+@require './prism-theme-minipress.styl'
+
+.navbar
+  border-bottom 1px solid #cccccc
+
+{$contentClass}:not(.custom)
+  a
+    border-bottom none
+    text-decoration none
+
+{$contentClass}:not(.custom)
+  a
+    color lighten($accentColor, 20%)
+    text-decoration none
+    border-bottom 0px dashed lighten($accentColor, 90%)
+    padding-bottom 2px
+    &:hover
+      text-decoration none
+      border-bottom 2px double lighten($accentColor, 80%)
+
 .custom-block
   border-radius 4px 4px
   .custom-block-title
@@ -11,6 +33,11 @@
   &.tip
     background-color lighten(#B2DBBF, 70%)
     border-color #B2DBBF
+    a
+      color darken(#B2DBBF, 50%)
+      padding-bottom 2px
+      &:hover
+        border-bottom 2px double lighten(#B2DBBF, 10%)
   &.warning
     background-color lighten(#FFECBC, 70%)
     border-color #FFECBC
@@ -33,5 +60,3 @@
       &:last-child
         margin-bottom 0
         padding-bottom 0
-
-@require './prism-theme-minipress.styl'
