@@ -1,6 +1,4 @@
 // @ts-check
-// import visitStart from './../utils/visit-start'
-// import goto from './../utils/goto'
 const visitPage = require('./../utils/visit-page')
 const visitStart = require('./../utils/visit-start')
 

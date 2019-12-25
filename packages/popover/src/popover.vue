@@ -69,12 +69,12 @@ export default {
     visible: { type: Boolean, default: false },
     modifiers: {
       type: Object,
-      default: () => {}
+      default: () => ({})
     },
     placement: {
       type: String,
       validator: value => Popper.placements.indexOf(value) >= 0,
-      default: 'bottom'
+      default: 'auto'
     }
   },
   data() {
@@ -119,14 +119,15 @@ export default {
       const { theme, arrowClass } = this
       return normalizedClasses([arrowClass, theme ? 'vcdk-popover--arrow' : null])
     },
+
     bodyStyles_() {
       const result = {
         ...this.bodyStyles,
-        zIndex: this.defaultBodyZIndex
+        zIndex: this.defaultBodyZIndex,
+        display: this.visible_ ? 'block' : 'none'
       }
 
       if (this.theme == null && this.adjustsVisibility) {
-        // We cannot adjust "display" because this will result in the popover body jumping around.
         result.visibility = this.visible_ && this.outOfBoundaries_ === false ? 'visible' : 'hidden'
       }
       return result
@@ -155,13 +156,22 @@ export default {
           fn: this.modifier_bodySizeMode
         },
         flip: {
-          enabled: this.flips
+          order: 600,
+          enabled: this.flips,
+          flipVariations: true,
+          flipVariationsByContent: true,
+          behavior: [this.placement]
         },
         arrow: { enabled: this.withArrow },
         preventOverflow: {
+          order: 300,
           enabled: true,
           escapeWithReference: true,
           boundariesElement: this.boundary
+        },
+        hide: {
+          enabled: true,
+          order: 800
         },
         offset: {
           enabled: true,
@@ -263,7 +273,10 @@ export default {
       if (body == null) {
         return
       }
-      const options = { modifiers, placement }
+      const options = {
+        modifiers,
+        placement
+      }
       this.popperInstance = new Popper(popperReference, body, options)
     },
     scheduleUpdate() {

@@ -1,11 +1,11 @@
 .vcdk-popover-theme-big-arrow[aria-hidden='true'] {
   opacity: 0;
-  transition: opacity 0.25s, visibility 0.25s;
+  /* transition: opacity 0.25s, visibility 0.25s; */
   visibility: hidden; }
 
 .vcdk-popover-theme-big-arrow[aria-hidden='false'] {
   opacity: 1;
-  transition: opacity 0.25s;
+  /* transition: opacity 0.25s; */
   visibility: visible; }
 
 .vcdk-popover-theme-big-arrow.vcdk-popover-body {
