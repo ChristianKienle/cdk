@@ -1,0 +1,17 @@
+{
+  "name": "@vue-cdk/vuepress-plugin-api",
+  "version": "0.1.7",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src/*.js",
+    "src/*.vue"
+  ],
+  "devDependencies": {
+    "@vuese/markdown-render": "^2.5.3",
+    "@vuese/parser": "^2.4.3"
+  }
+}

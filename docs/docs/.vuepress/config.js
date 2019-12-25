@@ -1,5 +1,4 @@
 // @ts-check
-const ApiPlugin = require('./../../api-plugin')
 const ExamplesPlugin = require('./../../examples-plugin')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -14,6 +13,7 @@ const GlobalUIPlugin = {
     'PlaygroundButton'
   ]
 }
+
 const examplesDir = path.resolve(__dirname, '..', '..', '..', 'examples')
 
 console.log(`Using base: '${base}'`)
@@ -23,7 +23,7 @@ module.exports = {
   base,
   extraWatchFiles: [
     `${examplesDir}/**/*.vue`,
-    ...Object.values(ApiPluginOptions)
+    ...ApiPluginOptions.items.map(item => item.localPath)
   ],
   configureWebpack: {
     resolve: {
@@ -35,7 +35,7 @@ module.exports = {
   },
   themeConfig: {
     repo: 'christiankienle/cdk',
-    repoLabel: 'Contribute!',
+    repoLabel: 'GitHub',
     docsDir: 'docs/docs',
     editLinks: true,
     editLinkText: 'Help us improve this page!',
@@ -46,7 +46,13 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Components', link: '/components/' },
-      { text: 'Customizing', link: '/customizing/' }
+      {
+        text: 'Misc',
+        items: [
+          { text: 'VuePress Plugins', link: '/misc/vuepress-plugins/' },
+          { text: 'Customizing', link: '/customizing/' }
+        ]
+      }
     ]
   },
   plugins: [
@@ -64,6 +70,6 @@ module.exports = {
       }
     ],
     [ExamplesPlugin],
-    [ApiPlugin, ApiPluginOptions]
+    ['@vue-cdk/vuepress-plugin-api', ApiPluginOptions]
   ]
 }
