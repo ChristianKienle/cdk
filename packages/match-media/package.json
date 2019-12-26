@@ -32,7 +32,7 @@
     "babel-eslint": "^10.0.3",
     "core-js": "^3.3.2",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^5.0.0",
+    "eslint-plugin-vue": "^6.0.2",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   }
