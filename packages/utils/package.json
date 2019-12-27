@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/utils",
-  "version": "0.1.6",
+  "version": "0.1.10",
   "private": false,
   "publishConfig": {
     "access": "public"
