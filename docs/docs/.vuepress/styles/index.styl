@@ -1,5 +1,3 @@
-
-
 @require './prism-theme-minipress.styl'
 
 .navbar
@@ -20,43 +18,4 @@
       text-decoration none
       border-bottom 2px double lighten($accentColor, 80%)
 
-.custom-block
-  border-radius 4px 4px
-  .custom-block-title
-    font-weight 600
-    margin-bottom -0.4rem
-  &.tip, &.warning, &.danger
-    padding .1rem 1.5rem
-    border-left-width .5rem
-    border-left-style solid
-    margin 1rem 0
-  &.tip
-    background-color lighten(#B2DBBF, 70%)
-    border-color #B2DBBF
-    a
-      color darken(#B2DBBF, 50%)
-      padding-bottom 2px
-      &:hover
-        border-bottom 2px double lighten(#B2DBBF, 10%)
-  &.warning
-    background-color lighten(#FFECBC, 70%)
-    border-color #FFECBC
-    color darken(#ffe564, 70%)
-    .custom-block-title
-      color darken(#ffe564, 50%)
-    a
-      color $textColor
-  &.danger
-    background-color #ffe6e6
-    border-color darken(red, 20%)
-    color darken(red, 70%)
-    .custom-block-title
-      color darken(red, 40%)
-    a
-      color $textColor
-    h4
-      margin-top 0
-    figure, p
-      &:last-child
-        margin-bottom 0
-        padding-bottom 0
+@require './custom-blocks.styl'

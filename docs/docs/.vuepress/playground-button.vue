@@ -8,7 +8,7 @@
   position fixed
   bottom 2rem
   right 2.5rem
-  background-color $accentColor
+  background-color lighten($accentColor, 15%)
   border-radius 3em
   color white
   z-index 1

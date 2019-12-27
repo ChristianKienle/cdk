@@ -1,0 +1,56 @@
+$ScContainer = {
+  border-radius: 4px
+  border-color: #efefef
+  summary: {
+    bg-color: $accentColor
+  }
+}
+.sc-container
+  padding-left 0px
+  margin-top 5px
+  margin-bottom 5px
+  &__body
+    margin-left 0px
+    margin-right 0px
+    padding-top 0px
+    padding-bottom 0px
+  &__details
+    width 100%
+    p
+      margin 0
+  &__details[open] > &__summary
+    border-bottom: 1px solid $ScContainer[border-color]
+    border-bottom-left-radius 0
+    border-bottom-right-radius 0
+  &__summary
+    user-select none
+    background-color: lighten($ScContainer[summary][bg-color], 95%)
+    cursor pointer
+    outline none
+    border-radius: $ScContainer[border-radius]
+    border 1px solid #3c0067
+    font-size 0.80rem
+    padding-left 3.5px
+    padding-top 0.5rem
+    padding-bottom 0.5rem
+    &::-webkit-details-marker
+      display: none
+  &__control
+    margin-top auto
+    margin-bottom auto
+    height 14px
+    margin-right 3.5px
+  &__summary > div > &__control
+    transform: scale(0.5, 0.5) rotate(-90deg)
+  &__details[open] > &__summary > div > &__control
+    transform: scale(0.5, 0.5) rotate(0deg)
+
+div.sc-container__body pre.language-markup
+  margin 0
+  padding 10px
+  max-height 500px
+  overflow auto
+// Hide the border radius of code within summary containers
+div.sc-container__body div.language-markup
+  border-top-left-radius 0
+  border-top-right-radius 0
