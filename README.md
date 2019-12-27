@@ -1,5 +1,5 @@
 # Vue Component Development Kit
-Inspired by [Angular CDK](https://material.angular.io/cdk) – yeah: Not everything Angular does is bad.
+Inspired by [Angular CDK](https://material.angular.io/cdk)  😍.
 
 Everything in VCDK should be in it's own package and consumable as such.
 
