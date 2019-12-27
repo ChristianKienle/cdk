@@ -1,4 +1,5 @@
 <style lang="stylus">
+@require './summary.styl'
 .demo
   &__preview
     border 1px solid #eee
@@ -15,8 +16,6 @@
     background-color #fff
     > div > div > pre
       padding 0
-      margin 1rem
-      margin-top 10px
       max-height 400px
       overflow auto
     h4
@@ -25,16 +24,32 @@
       &:last-child
         margin-bottom 0
         padding-bottom 0
-    summary
-      background-color #eee
-      outline none
-      cursor pointer
-      border-radius 5px
-      margin-top: 10px;
-      padding 0.5rem
 </style>
 
+<template>
+  <div class="demo">
+    <div class="demo__preview">
+      <div><component :is="previewComponentName"/></div>
+    </div>
+    <div class="sc-container">
+      <details class="sc-container__details">
+        <summary class="sc-container__summary">
+          <div style="display:flex;">
+            <ToggleControl class="sc-container__control" />
+            <div>Show Code</div>
+          </div>
+        </summary>
+        <div class="sc-container__body">
+          <Content :pageKey="keyForExampleAtPath" />
+        </div>
+      </details>
+    </div>
+  </div>
+</template>
+
 <script>
+import ToggleControl from './toggle-control.vue'
+
 const titlecase = input => input[0].toLocaleUpperCase() + input.slice(1)
 const toPascalCase = value => {
   if (value === null || value === void 0) return ''
@@ -54,12 +69,14 @@ const toPascalCase = value => {
 
 export default {
   name: 'Demo',
+  components: { ToggleControl },
   props: {
     for: {
-      type: String
+      type: String,
+      required: true
     }
   },
-  methods: {
+  computed: {
     keyForExampleAtPath() {
       const page = this.$site.pages.find(({ frontmatter = {} }) => {
         const { examplePath = '' } = frontmatter
@@ -69,36 +86,14 @@ export default {
         return
       }
       return page.key
+    },
+    previewComponentName() {
+      return `Example-${this.for
+        .replace('.vue', '')
+        .split('/')
+        .map(toPascalCase)
+        .join('-')}`
     }
-  },
-  render(h) {
-    // return h('div')
-    const srcComponent = h('Content', {
-      props: {
-        pageKey: this.keyForExampleAtPath()
-      }
-    })
-    const summary = h('summary', {}, 'Show Code')
-    const details = h(
-      'details',
-      {
-        class: 'custom-block details'
-      },
-      [summary, srcComponent]
-    )
-    const exampleComponentName = `Example-${this.for
-      .replace('.vue', '')
-      .split('/')
-      .map(toPascalCase)
-      .join('-')}`
-    const preview = h('div', { class: 'demo__preview' }, [h('div', {}, [h(exampleComponentName)])])
-    return h(
-      'div',
-      {
-        class: 'demo'
-      },
-      [preview, details]
-    )
   }
 }
 </script>
