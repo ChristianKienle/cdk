@@ -1,6 +1,6 @@
 <template>
   <CList :items="items" style="height: 100px;">
-    <template #default="{item, active, index}">
+    <template #default="{ item, active }">
       <CListItem :item="item" :active="active">{{ item }}</CListItem>
     </template>
   </CList>
