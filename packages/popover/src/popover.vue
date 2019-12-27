@@ -5,10 +5,18 @@
     </CPopoverTrigger>
     <NoSsr>
       <SimplePortal :selector="portalSelector">
-        <div ref="body" :aria-hidden="String(!visible_)" :class="bodyClasses" :style="bodyStyles_">
-          <slot v-bind="slotProps" />
-          <vp-arrow x-arrow :class="arrowClasses" />
-        </div>
+        <transition :name="transition_">
+          <div
+            ref="body"
+            v-show="visible_"
+            :aria-hidden="String(!visible_)"
+            :class="bodyClasses"
+            :style="bodyStyles_"
+          >
+            <slot v-bind="slotProps" />
+            <vp-arrow x-arrow :class="arrowClasses" />
+          </div>
+        </transition>
       </SimplePortal>
     </NoSsr>
   </div>
@@ -59,11 +67,14 @@ export default {
       default: BodySizeMode.defaultMode,
       validator: BodySizeMode.isValid
     },
+    transition: {
+      type: String,
+      default: null
+    },
     theme: { type: String, default: null },
     bodyClass: { type: String, default: '' },
     defaultBodyZIndex: { type: [Number, String], default: 1000 },
     arrowClass: { type: String, default: null },
-    transition: { type: String, default: 'fade' },
     withArrow: { type: Boolean, default: false },
     flips: { type: Boolean, default: true },
     visible: { type: Boolean, default: false },
@@ -84,6 +95,16 @@ export default {
     }
   },
   computed: {
+    transition_() {
+      const { transition, theme } = this
+      if (transition != null) {
+        return transition
+      }
+      if (theme == null) {
+        return null
+      }
+      return `vcdk-popover-theme-${theme}-show`
+    },
     bodySizeMode_() {
       // Handle deprecated first for compatibility
       if (this.adjustsBodyWidth) {
