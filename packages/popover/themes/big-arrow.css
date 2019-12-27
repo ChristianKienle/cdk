@@ -1,13 +1,9 @@
-.vcdk-popover-theme-big-arrow[aria-hidden='true'] {
+.vcdk-popover-theme-big-arrow-show-enter, .vcdk-popover-theme-big-arrow-show-leave-to {
   opacity: 0;
-  transition: opacity 0.25s, visibility 0.25s;
-  visibility: hidden; }
-
-.vcdk-popover-theme-big-arrow[aria-hidden='false'] {
-  opacity: 1;
-  transition: opacity 0.25s;
-  visibility: visible; }
-
+}
+.vcdk-popover-theme-big-arrow {
+  transition: opacity .2s;
+}
 .vcdk-popover-theme-big-arrow.vcdk-popover-body {
   background-color: #fff;
   border: 1px solid #f1f3f8;
