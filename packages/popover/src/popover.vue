@@ -123,8 +123,8 @@ export default {
     bodyStyles_() {
       const result = {
         ...this.bodyStyles,
-        zIndex: this.defaultBodyZIndex,
-        display: this.visible_ ? 'block' : 'none'
+        zIndex: this.defaultBodyZIndex
+        // we cannot set "display" to "none" and/or "block" because then the transitions that may be applied to the popovers (by a theme) will have no effect and thus the popover will jum around.
       }
 
       if (this.theme == null && this.adjustsVisibility) {
