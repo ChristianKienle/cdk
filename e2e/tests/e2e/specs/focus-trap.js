@@ -21,5 +21,14 @@ describe('focus trap', () => {
     cy.dataCy('deactivate').click()
     cy.dataCy('inputOutside').click()
     cy.focused().should('have.attr', 'data-cy', 'inputOutside')
+
+    // one more thing:
+    // activate the trap again, make sure we are trapped, then hit esc and make sure we are no longer trapped
+    cy.dataCy('activate').click()
+    cy.dataCy('inputInside').click()
+    cy.focused().should('have.attr', 'data-cy', 'inputInside')
+    cy.focused().type('{esc}')
+    cy.dataCy('inputOutside').click()
+    cy.focused().should('have.attr', 'data-cy', 'inputOutside')
   })
 })

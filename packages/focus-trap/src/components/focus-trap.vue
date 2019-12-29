@@ -10,11 +10,12 @@ export default {
     // Whether or not the focus trap is active. An active focus trap ensures that the focus never leaves the wrapped element/component.
     active: {
       type: Boolean,
-      // `false` – by default a focus trap is not active.
+      // By default a focus trap is not active.
       default: false
     },
     // Specify how the focus trap should be deactivated. If set to `manual` you have to explicitely deactivate the focus trap (either by setting `active` to `false` or by calling `deactivate`).
     deactivationMode: {
+      // Valid values are `on-esc` and `manual`.
       type: String,
       // 'on-esc' – by default the trap is deactivated when the user hits `ESC` (of if you trigger the deactivation manually). You can also set `deactivationMode` to `manual`. In that case you have to deactivate the trap manually by setting `active` to `false` or by calling deactivate.
       default: 'on-esc',
