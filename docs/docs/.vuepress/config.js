@@ -3,15 +3,10 @@ const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const toPascalCase = require('@vue-cdk/node-utils/to-pascal-case')
 const ApiPluginOptions = require('./api-plugin.config')
+const getComponents = require('./get-components')
+const plugins = require('./plugins')
 
 const base = process.env.VCDK_BASE || '/cdk/'
-
-const GlobalUIPlugin = {
-  name: 'Global UI Plugin',
-  globalUIComponents: [
-    'PlaygroundButton'
-  ]
-}
 
 const examplesDir = path.resolve(__dirname, '..', '..', '..', 'examples')
 
@@ -72,6 +67,7 @@ module.exports = {
     ["meta", { name: "theme-color", content: "#ffffff" }]
   ],
   themeConfig: {
+    smoothScroll: true,
     search: false,
     repo: 'christiankienle/cdk',
     repoLabel: 'GitHub',
@@ -84,7 +80,14 @@ module.exports = {
     sidebar: 'auto',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Components', link: '/components/' },
+      {
+        text: 'Components',
+        link: '/components/',
+        items: getComponents().map(item => ({
+          text: item.name,
+          link: `/components/${item.slug}/`
+        }))
+      },
       { text: 'API', link: '/api/' },
       {
         text: 'Misc',
@@ -96,7 +99,7 @@ module.exports = {
     ]
   },
   plugins: [
-    GlobalUIPlugin,
+    ...plugins.all,
     ['@vue-cdk/vuepress-plugin-demo', {
       dir: path.resolve(__dirname, '..', '..', '..', 'examples')
     }],

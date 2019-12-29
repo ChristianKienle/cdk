@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "devalue": "^2.0.1",
     "@linusborg/vue-simple-portal": "^0.1.4",
     "@vue-cdk/client-only": "^0.1.10",
     "@vue-cdk/infinite-scroll": "^0.1.10",
