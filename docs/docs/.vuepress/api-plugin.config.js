@@ -1,35 +1,33 @@
 // @ts-check
 // This file exports the options passed to the VuePress API Plugin
+
 /**
  * @param {string} name
+ * @param {string} slug
  * @param {string} id
- * @returns {{path: string, localPath: string}}
+ * @returns {{href: string, path: string, name: string, localPath: string}}
  */
-const createEntry = (name, id) => ({
-  path: `api/${name}/README.md`,
+const createEntry = (name, slug, id) => ({
+  name,
+  path: `api/${slug}/README.md`,
+  href: `/api/${slug}/`,
   localPath: require.resolve(id)
 })
 
-/** @param {Array<[string, string]>} namesAndIds */
-const createEntries = (...namesAndIds) => namesAndIds.map(([name, id]) => createEntry(name, id))
-
-const toObject = entries => {
-  const result = {}
-  entries.forEach(([name, path]) => result[name] = path)
-  return result
-}
+/** @param {Array<[string, string, string]>} rawEntries */
+const createEntries = (...rawEntries) => rawEntries.map(([name, slug, id]) => createEntry(name, slug, id))
 
 module.exports = {
   indexPath: 'api/README.md',
   items: createEntries(
-    ['list', '@vue-cdk/list/src/list.vue'],
-    ['list-item', '@vue-cdk/list/src/item.vue'],
-    ['infinite-scroll', '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'],
-    ['infinite-scroll-item', '@vue-cdk/infinite-scroll/src/item.vue'],
-    ['scroll-container', '@vue-cdk/scroll-container/src/scroll-container.vue'],
-    ['link', '@vue-cdk/link/src/link.vue'],
-    ['popover', '@vue-cdk/popover/src/popover.vue'],
-    ['client-only', '@vue-cdk/client-only/src/client-only.vue'],
-    ['focus-trap', '@vue-cdk/focus-trap/src/components/focus-trap.vue']
+    ['List', 'list', '@vue-cdk/list/src/list.vue'],
+    ['ListItem', 'list-item', '@vue-cdk/list/src/item.vue'],
+    ['InfiniteScroll', 'infinite-scroll', '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'],
+    ['InfiniteScrollItem', 'infinite-scroll-item', '@vue-cdk/infinite-scroll/src/item.vue'],
+    ['ScrollContainer', 'scroll-container', '@vue-cdk/scroll-container/src/scroll-container.vue'],
+    ['Link', 'link', '@vue-cdk/link/src/link.vue'],
+    ['Popover', 'popover', '@vue-cdk/popover/src/popover.vue'],
+    ['ClientOnly', 'client-only', '@vue-cdk/client-only/src/client-only.vue'],
+    ['FocusTrap', 'focus-trap', '@vue-cdk/focus-trap/src/components/focus-trap.vue']
   )
 }

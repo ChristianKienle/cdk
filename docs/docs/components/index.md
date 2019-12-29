@@ -2,16 +2,15 @@
 
 The following components/plugins/mixins are available:
 
-- [List](./list)
-- [Infinite Scroll](./infinite-scroll)
-- [Link](./link)
-- [Popover](./popover)
-- [Client Only](./client-only)
-- [Match Media](./match-media)
-- [Scroll Container](./scroll-container)
-- [Focus Trap](./focus-trap)
+<ul>
+  <template v-for="componentPage in $vcdkDocsComponentPages">
+    <li>
+      <router-link :to="{ name: componentPage.key }" :key="componentPage.key">{{componentPage.title}}</router-link>
+    </li>
+  </template>
+</ul>
 
-## Usage
+## General Usage Instructions
 In general, components/plugins/mixins are grouped into packages that can be consumed individually. This allows you to incrementally adopt _Vue Component Development Kit_.
 
 Usually a package exposes a _Vue plugin_ that can installed by using `Vue.use(…)`. For example:

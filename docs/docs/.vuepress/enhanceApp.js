@@ -6,12 +6,10 @@ import InfiniteScroll from '@vue-cdk/infinite-scroll'
 import List from '@vue-cdk/list'
 import '@vue-cdk/infinite-scroll/style/index.css'
 import vue from 'vue'
-import PlaygroundButton from './playground-button.vue'
 
 vue.config.devtools = true
 
 export default ({ Vue }) => {
-  Vue.component('PlaygroundButton', PlaygroundButton)
   Vue.use(Link)
   Vue.use(Popover)
   Vue.use(List)
