@@ -1,4 +1,4 @@
-# Popover
+# Popover <Badge vertical="middle" text="beta" type="warning"/>
 
 ::: tip API
 The *Popover*-component has a dedicated [API documentation](./../../api/popover).

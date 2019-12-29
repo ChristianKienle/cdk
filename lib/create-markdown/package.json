@@ -1,0 +1,12 @@
+{
+  "name": "@vue-cdk/create-markdown",
+  "version": "0.1.10",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src/*.js"
+  ]
+}

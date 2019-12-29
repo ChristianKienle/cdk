@@ -1,0 +1,16 @@
+{
+  "name": "@vue-cdk/create-element",
+  "version": "0.1.10",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src/*.js"
+  ],
+  "typings": "index.d.ts",
+  "dependencies": {
+    "stringify-attributes": "^2.0.0"
+  }
+}

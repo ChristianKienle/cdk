@@ -40,9 +40,8 @@
         <summary class="sc-container__summary">
           <div style="display:flex;">
             <div style="display:flex;">
-
-            <ToggleControl class="sc-container__control" />
-            <div class="sc-container__title">Show Code</div>
+              <ToggleControl class="sc-container__control" />
+              <div class="sc-container__title">Show Code</div>
             </div>
             <div style="margin-left: auto;">
               <CopyCodeButton @click="copyCode" />

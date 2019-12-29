@@ -20,6 +20,7 @@ const toObject = entries => {
 }
 
 module.exports = {
+  indexPath: 'api/README.md',
   items: createEntries(
     ['list', '@vue-cdk/list/src/list.vue'],
     ['list-item', '@vue-cdk/list/src/item.vue'],

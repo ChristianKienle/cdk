@@ -10,7 +10,9 @@
     "src/*.js",
     "src/*.vue"
   ],
-  "devDependencies": {
+  "dependencies": {
+    "@vue-cdk/create-markdown": "^0.1.10",
+    "@vue-cdk/create-element": "^0.1.10",
     "@vuese/markdown-render": "^2.5.3",
     "@vuese/parser": "^2.4.3"
   }

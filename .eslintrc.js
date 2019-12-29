@@ -21,7 +21,6 @@ module.exports = {
         jest: true
       }
     }
-
   ],
   ignorePatterns: ['node_modules/'],
   extends: ["plugin:vue/essential", "@vue/prettier"]
