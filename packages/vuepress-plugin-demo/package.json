@@ -11,6 +11,7 @@
     "src/*.vue"
   ],
   "dependencies": {
+    "vue-clipboard2": "^0.3.1",
     "@vue-cdk/node-utils": "^0.1.10",
     "@vuepress/plugin-register-components": "^1.2.0",
     "fs-extra": "^8.1.0",

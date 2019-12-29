@@ -7,7 +7,7 @@ $ScContainer = {
 }
 .sc-container
   padding-left 0px
-  margin-top 5px
+  margin-top 0px
   margin-bottom 5px
   &__body
     margin-left 0px
@@ -21,17 +21,23 @@ $ScContainer = {
   &__details[open] > &__summary
     border-bottom-left-radius 0
     border-bottom-right-radius 0
+  &__title
+    position relative
+    top 2px
   &__summary
     user-select none
     background-color: lighten($ScContainer[summary][bg-color], 95%)
     cursor pointer
     outline none
     border-radius: $ScContainer[border-radius]
-    border 1px solid #3c0067
+    border-top-left-radius 0
+    border-top-right-radius 0
+    border 1px solid $code-accent-color
     font-size 0.80rem
     padding-left 3.5px
-    padding-top 0.5rem
-    padding-bottom 0.5rem
+    padding-right 7px
+    padding-top 0.2rem
+    padding-bottom 0.2rem
     &::-webkit-details-marker
       display: none
   &__control
@@ -39,9 +45,9 @@ $ScContainer = {
     margin-bottom auto
     height 14px
     margin-right 3.5px
-  &__summary > div > &__control
+  &__summary > div > div > &__control
     transform: scale(0.5, 0.5) rotate(-90deg)
-  &__details[open] > &__summary > div > &__control
+  &__details[open] > &__summary > div > div > &__control
     transform: scale(0.5, 0.5) rotate(0deg)
 
 div.sc-container__body pre.language-markup
