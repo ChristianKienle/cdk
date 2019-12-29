@@ -1,8 +1,8 @@
 // @ts-check
 /* eslint-env node */
 const assert = require('assert').strict
-const CreateMarkdown = require('./create-md')
-const createElement = require('../create-element')
+const { createMarkdown } = require('@vue-cdk/create-markdown')
+const { createElement } = require('@vue-cdk/create-element')
 
 const classPrefix = 'component-documentation'
 /**
@@ -35,7 +35,7 @@ const renderHeading = (level, text) => {
   }
   const textNode = createElement(null, {}, [], text)
   const raw = createElement('div', { attrs }, [textNode], null).render()
-  return new CreateMarkdown().raw(raw)
+  return createMarkdown().raw(raw)
 }
 
 /**
@@ -45,18 +45,18 @@ const renderHeading = (level, text) => {
 const renderDivWithScopedClass = (text, cssClass) => {
   const scopedClass =
     cssClass == null ? 'component-documentation' : `component-documentation__${cssClass}`
-  return new CreateMarkdown().raw(`<div class="${scopedClass}">${text}</div>`)
+  return createMarkdown().raw(`<div class="${scopedClass}">${text}</div>`)
 }
 
 const renderWithScopedClass = (cssClass, children = []) => {
   const scopedClass = createScopedClass(cssClass)
   const attrs = { class: scopedClass }
-  return new CreateMarkdown().div({ attrs }, children)
+  return createMarkdown().div({ attrs }, children)
 }
 
 /** @param {PropsResult} prop */
 const renderProp = prop => {
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .nl()
     .nl()
     .strong('Name:')
@@ -112,7 +112,7 @@ const renderComputedProps = computed => {
   if (computed.length === 0) {
     return ''
   }
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .nl(2)
     .raw(renderDivWithScopedClass('Computed', 'computed-props-heading'))
     .nl(2)
@@ -126,7 +126,7 @@ const renderMethods = (methods = []) => {
   if (methods.length === 0) {
     return ''
   }
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .nl(2)
     .raw(renderDivWithScopedClass('Methods', 'methods-heading'))
     .nl(2)
@@ -167,7 +167,7 @@ const renderSlots = slots => {
   if (slots.length === 0) {
     return ''
   }
-  const md = new CreateMarkdown().nl(2)
+  const md = createMarkdown().nl(2)
   renderDivWithScopedClass('Slots', 'slots-heading')
     .nl(2)
     .raw(slots.map(renderSlot), { wrap: true })
@@ -181,7 +181,7 @@ const renderEvents = events => {
   if (events.length === 0) {
     return ''
   }
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .nl(2)
     .raw(renderDivWithScopedClass('Events', 'events-heading'))
     .nl(2)
@@ -195,7 +195,7 @@ const renderProps = (props = []) => {
   if (props.length === 0) {
     return ''
   }
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .nl(2)
     .raw(renderDivWithScopedClass('Props', 'props-heading'))
     .nl(2)
@@ -208,7 +208,7 @@ const renderProps = (props = []) => {
 const render = componentApi => {
   assert(componentApi != null)
   assert(typeof componentApi === 'object')
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .raw('<div class="component-documentation">')
     .nl(2)
     .lines(getDescription(componentApi), { wrap: true })

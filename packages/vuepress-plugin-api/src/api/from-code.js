@@ -1,13 +1,14 @@
 /* eslint-env node */
 // @ts-check
 const { parser } = require('@vuese/parser')
+const { $getDescription } = require('./parser-result-utils')
 
 /**
  * Two things happen here:
  *    1. We ensure that there is a kebab-cased name-prop in the result we export.
  *    2. We ensure that there are no duplicate slots.
  * @param {string} code
- * @returns {import("@vuese/parser").ParserResult}
+ * @returns {import("./types").ImprovedResult}
  */
 module.exports = code => {
   try {
@@ -26,14 +27,18 @@ module.exports = code => {
         slots.splice(index, 1, slotToAdd)
       }
     }
+    const $description = $getDescription(result)
     return {
       ...result,
       slots,
-      name
+      name,
+      $description
     }
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Failed to parse code: %s', code)
-    return {}
+    return {
+      $description: ''
+    }
   }
 }

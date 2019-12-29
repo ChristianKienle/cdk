@@ -1,8 +1,9 @@
 // @ts-check
 /* eslint-env node */
 const assert = require('assert').strict
-const CreateMarkdown = require('./create-md')
-const createMd = () => new CreateMarkdown()
+const { createMarkdown } = require('@vue-cdk/create-markdown')
+const { getDescription } = require('./../parser-result-utils')
+
 /**
  * @typedef {import("@vuese/parser").ParserResult} ParserResult
  * @typedef {import("@vuese/parser").PropsResult} PropsResult
@@ -12,15 +13,9 @@ const createMd = () => new CreateMarkdown()
  * @typedef {import("@vuese/parser").ComputedResult} ComputedResult
  */
 
-/** @param {ParserResult} result */
-const getDescription = result => {
-  const { componentDesc = { default: [] } } = result
-  return componentDesc.default
-}
-
 /** @param {PropsResult} prop */
 const renderProp = prop => {
-  return createMd()
+  return createMarkdown()
     .nl()
     .nl()
     .h(3, prop.name)
@@ -44,7 +39,7 @@ const renderProp = prop => {
 
 /** @param {EventResult} event */
 const renderEvent = event => {
-  const md = createMd()
+  const md = createMarkdown()
     .h(3, event.name)
     .nl()
     .lines(event.describe, { wrap: true })
@@ -63,7 +58,7 @@ const renderEvent = event => {
 
 /** @param {ComputedResult} computed */
 const renderComputed = ({ name, describe }) =>
-  createMd()
+  createMarkdown()
     .h(3, name)
     .nl()
     .lines(describe, { wrap: true })
@@ -74,7 +69,7 @@ const renderComputedProps = computed => {
   if (computed.length === 0) {
     return ''
   }
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .nl(2)
     .h(2, 'Computed')
     .nl(2)
@@ -88,7 +83,7 @@ const renderMethods = (methods = []) => {
   if (methods.length === 0) {
     return ''
   }
-  return new CreateMarkdown()
+  return createMarkdown()
     .nl(2)
     .h(2, 'Methods')
     .nl(2)
@@ -98,7 +93,7 @@ const renderMethods = (methods = []) => {
 
 /** @param {MethodResult} method */
 const renderMethod = method => {
-  const md = createMd()
+  const md = createMarkdown()
     .h(3, method.name)
     .nl()
     .lines(method.describe, { wrap: true })
@@ -115,7 +110,7 @@ const renderMethod = method => {
 
 /** @param {SlotResult} slot */
 const renderSlot = slot => {
-  const md = createMd()
+  const md = createMarkdown()
     .h(3, slot.name)
     .nl()
   if (slot.scoped) {
@@ -130,7 +125,7 @@ const renderSlots = slots => {
   if (slots.length === 0) {
     return ''
   }
-  return new CreateMarkdown()
+  return createMarkdown()
     .nl(2)
     .h(2, 'Slots')
     .nl(2)
@@ -144,7 +139,7 @@ const renderEvents = events => {
   if (events.length === 0) {
     return ''
   }
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .nl(2)
     .h(2, 'Events')
     .nl(2)
@@ -158,7 +153,7 @@ const renderProps = (props = []) => {
   if (props.length === 0) {
     return ''
   }
-  return new CreateMarkdown()
+  return createMarkdown()
     .nl(2)
     .h(2, 'Props')
     .nl(2)
@@ -170,7 +165,7 @@ const renderProps = (props = []) => {
 const render = componentApi => {
   assert(componentApi != null)
   assert(typeof componentApi === 'object')
-  const md = new CreateMarkdown()
+  const md = createMarkdown()
     .h(1, componentApi.name)
     .nl(2)
     .lines(getDescription(componentApi), { wrap: true })

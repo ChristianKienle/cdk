@@ -11,21 +11,24 @@ describe('normalize options', () => {
   it('normalizes undefined', () => {
     expect(normalize()).toMatchObject({
       items: [],
-      renderer: defaultOptions.renderer
+      renderer: defaultOptions.renderer,
+      indexPath: null
     })
   })
 
   it('normalizes null', () => {
     expect(normalize(null)).toMatchObject({
       items: [],
-      renderer: defaultOptions.renderer
+      renderer: defaultOptions.renderer,
+      indexPath: null
     })
   })
 
   it('normalizes {}', () => {
     expect(normalize({})).toMatchObject({
       items: [],
-      renderer: defaultOptions.renderer
+      renderer: defaultOptions.renderer,
+      indexPath: null
     })
   })
 
@@ -33,7 +36,17 @@ describe('normalize options', () => {
     const items = []
     expect(normalize({ items })).toMatchObject({
       items: [],
-      renderer: defaultOptions.renderer
+      renderer: defaultOptions.renderer,
+      indexPath: null
+    })
+  })
+
+  it('respects indexPath', () => {
+    const items = []
+    expect(normalize({ indexPath: '/api/index.html' })).toMatchObject({
+      items: [],
+      renderer: defaultOptions.renderer,
+      indexPath: '/api/index.html'
     })
   })
 })

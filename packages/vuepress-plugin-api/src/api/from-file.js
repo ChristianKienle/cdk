@@ -6,7 +6,7 @@ const assert = require('assert')
 
 /**
  * @param {string} file
- * @returns {import("@vuese/parser").ParserResult=}
+ * @returns {import("./types").ImprovedResult=}
  */
 module.exports = file => {
   assert(typeof file === 'string')

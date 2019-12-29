@@ -85,6 +85,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Components', link: '/components/' },
+      { text: 'API', link: '/api/' },
       {
         text: 'Misc',
         items: [

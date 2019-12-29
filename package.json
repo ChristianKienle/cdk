@@ -7,7 +7,8 @@
     "docs",
     "storybook",
     "e2e",
-    "examples"
+    "examples",
+    "lib/*"
   ],
   "scripts": {
     "build": "bili --bundle-node-modules --file-name FundamentalVue.[format].js --format cjs --format umd-min --format es --module-name FundamentalVue --env.NODE_ENV production -d dist",

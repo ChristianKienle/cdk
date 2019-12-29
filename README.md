@@ -37,6 +37,24 @@ The API reference is realized by a custom VuePress plugin which is using [vuese]
 - You document your component by using comments. Refer to already existing components to get an idea how the components should look like.
 - You have to tell the API plugin where to find your documented component. To do this add an entry to `docs/docs/.vuepress/config.js` (to the `APIPlugin`-options-object). For each and every file the plugin will create a new page at `/api/$component-name/index.html` that contains the rendered API documentation. You can then link to that site from within your guide/main component documentation.
 
+**Building the user–facing Documentation**
+
+You can create a production build by executing:
+
+```sh
+$ cd docs # skip if you are already in the docs-dir
+$ yarn build
+```
+
+If you want to change the `base` of the statically generated site simply set the `VCDK_BASE` environment variable to the `base` you want:
+
+```sh
+$ cd docs # skip if you are already in the docs-dir
+$ ./../node_modules/.bin/cross-env VCDK_BASE=/ yarn build
+```
+
+This also works when building the whole documentation (see below).
+
 #### Running the Storybook
 The storybook is mainly used during the development of *Vue Component Development Kit*. You can run it by executing:
 
@@ -45,6 +63,15 @@ $ yarn storybook
 ```
 
 The storybook is not the main documentation. It is intended to be used by people who are contributing to *Vue Component Development Kit*.
+
+#### Building the whole Documentation
+You can create a production build of the whole documentation by executing
+
+```sh
+$ yarn docs:build
+```
+
+from the root of the project. This will create a static production–ready build of both, the user facing documentation (`/docs`) and the Storybook (`/storybook`).
 
 ## Making a Release
 ```sh

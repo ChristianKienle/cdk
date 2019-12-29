@@ -3,7 +3,8 @@
     "packages/*",
     "docs",
     "storybook",
-    "e2e"
+    "e2e",
+    "lib"
   ],
   "parallel": false,
   "npmClient": "yarn",
