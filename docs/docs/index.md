@@ -19,14 +19,13 @@ footer: MIT Licensed | Copyright © 2019-present Christian Kienle
 The *Vue Component Development Kit* is a set of low-level components, mixins and utilities that act as a foundation for other component libraries and applications. Kickstart your project with a *well-tested*, *incrementally adoptable* and *minimally invasive* framework. Everything that is part of *Vue Component Development Kit* solves an actual problem that you may stumble upon sooner or later.
 
 ## What is in the Box
-- **[Client Only](./components/client-only):** A component to wrap non SSR friendly components/markup.
-- **[Focus Trap](./components/focus-trap):** Allows you to conveniently trap the focus within an element/component.
-- **[Infinite Scroll](./components/infinite-scroll):** A component that makes to easy to have a infintely scrolling list of item.
-- **[Link](./components/link):** A universal component for links to internal and external resources.
-- **[List](./components/list):** A high–level component to render an infintely scrolling list of selectable items.
-- **[Match Media](./components/match-media):** Use media queries the Vue way.
-- **[Popover](./components/popover):** A low–level, generic popover component that can be used to implement dropdowns, menus, tooltips and much more.
-- **[Scroll Container](./components/scroll-container):** A convenient way to create scrollable elements.
+<ul>
+  <template v-for="componentPage in $vcdkDocsComponentPages">
+    <li>
+      <router-link :to="{ name: componentPage.key }" :key="componentPage.key">{{componentPage.title}}</router-link>
+    </li>
+  </template>
+</ul>
 
 ## Philosophy
 Everything that is part of the *Vue Component Development Kit* (abbr. **CDK**) tries to conform to a certain philisophy.
