@@ -12,6 +12,7 @@ const Wrapper = {
   }
 }
 
+// A component to conveniently create scrolling HTML elements.
 export default {
   name: 'ScrollContainer',
   components: { Wrapper },

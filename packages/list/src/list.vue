@@ -35,6 +35,7 @@ import CInifiniteScroll from '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'
 import CListLoadingIndicator from './loading-indicator.vue'
 import NoneSelectionMode from './selection/none'
 
+// The `List` component allows you to render an indefinetely long list of items. Under the hood `List` uses `InifiniteScroll`. This means that much of what applies to `InifiniteScroll` also applies to `List`. You can think of `List´ as a high–level version of `InifiniteScroll`.
 export default {
   name: 'List',
   components: { CInifiniteScroll, CListLoadingIndicator },
