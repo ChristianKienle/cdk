@@ -1,9 +1,7 @@
 <template>
   <div style="display: flex; align-items: center; justify-content: center; height: 200px;">
-    <CPopover theme="v2">
-      <template #trigger>
-        <button>Show 'dark' Popover</button>
-      </template>
+    <button ref="button" @click="toggle">Toggle 'v2' Popover</button>
+    <CPopover trigger="$refs.button" ref="popover" theme="v2" withArrow>
       <div>I am a Popover. Wheeee. 😉</div>
     </CPopover>
   </div>
@@ -11,5 +9,11 @@
 
 <script>
 import '@vue-cdk/popover/themes/v2.css'
-export default {}
+export default {
+  methods: {
+    toggle() {
+      this.$refs.popover.toggle()
+    }
+  }
+}
 </script>

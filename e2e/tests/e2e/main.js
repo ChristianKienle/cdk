@@ -79,6 +79,10 @@ const router = new Router({
     {
       path: '/popover/default',
       component: () => import('./pages/popover/default.vue')
+    },
+    {
+      path: '/popover/prop',
+      component: () => import('./pages/popover/prop.vue')
     }
   ]
 })

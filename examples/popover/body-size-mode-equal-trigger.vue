@@ -1,18 +1,26 @@
 <template>
   <div style="display: flex;">
-    <CPopover body-size-mode="equal-trigger" with-arrow theme="clean">
-      <template #trigger="{toggle}">
-        <button @click="toggle">Small Trigger</button>
-      </template>
+    <button ref="buttonA" @click="toggleA">Small Trigger</button>
+    <button ref="buttonB" @click="toggleB" style="width: 250px;">Show Trigger</button>
+    <CPopover
+      ref="popoverA"
+      trigger="$refs.buttonA"
+      body-size-mode="equal-trigger"
+      with-arrow
+      theme="clean"
+    >
       <template #default>
         <div>I am a Popover Body.</div>
       </template>
     </CPopover>
 
-    <CPopover body-size-mode="equal-trigger" with-arrow theme="clean">
-      <template #trigger="{toggle}">
-        <button @click="toggle" style="width: 250px;">Show Trigger</button>
-      </template>
+    <CPopover
+      ref="popoverB"
+      trigger="$refs.buttonB"
+      body-size-mode="equal-trigger"
+      with-arrow
+      theme="clean"
+    >
       <template #default>
         <div>I am a Popover Body.</div>
       </template>
@@ -22,5 +30,14 @@
 
 <script>
 import '@vue-cdk/popover/themes/index.css'
-export default {}
+export default {
+  methods: {
+    toggleA() {
+      this.$refs.popoverA.toggle()
+    },
+    toggleB() {
+      this.$refs.popoverB.toggle()
+    }
+  }
+}
 </script>

@@ -115,4 +115,4 @@ This will display a demo for an example located in `$dir/buttons/normal.vue`.
 
 A demo looks like this:
 
-<Demo for="popover-theme/clean" />
+<Demo for="popover/theme/clean" />

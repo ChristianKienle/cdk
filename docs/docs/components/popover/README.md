@@ -26,29 +26,29 @@ Vue.use(Popover)
 This will globally register a popover component called `CPopover`.
 
 ## Guide
-You have to render a `trigger`-element and the actual popover content. The following example shows how to render a *hello-world* popover using `@vue-cdk/popover`:
+In a typical scenario you would have some kind of *trigger*–element (a button, a link, …) that, when clicked will toggle the popover. `CPopover` expects you to render such a *trigger* yourself.
 
-<Demo for="popover/hello-world" />
+The following example shows how to render a button that toggles the visibility of a popover.
 
-This will render a button that toggles the visibility of the *Popover Body*. No worries: There are a lot of options you can play with in order to customize almost anything. By default, `CPopover` does not style the appearance of the rendered popover. It is up to you to make it nice (using CSS). However, `CPopover` comes with a set of stylesheets that you can use to get started quickly.
+<Demo for="popover/prop" />
 
-Before we dig deeper into `CPopover`, let's make it just a little nicer:
-
-<Demo for="popover-theme/clean" />
-
-Just setting the `theme`-prop is not enough.
+You can omit `theme` (or set it to `null`) to disable all styling.
 
 ::: warning CSS Required
 Themes only work with the corresponding styles. You can import individual themes or all themes by importing `@vue-cdk/popover/themes/index.css`.
 :::
 
-Now it should look much better.
-
 ## Examples
 
 ### Hello World
 
-This is the a classical *Hello World* example:
+This is the a classical *Hello World* example. You control the visibility of the popover by simply setting `visible` to `true` or `false`. You have to tell `CPopover` where it should attach itself to. This is done by using `trigger` and setting it to `$refs.button`. By doing so `CPopover` will search for a `ref` called `button`.
+
+<Demo for="popover/prop" />
+
+
+### Manually showing the Popover
+Instead of using the `visible`–prop to show and/or hide the popover you can manually change the visibility. You get a reference to the popover and call its methods (`show()`/`hide()`/`toggle()`) directly.
 
 <Demo for="popover/hello-world" />
 
