@@ -2073,16 +2073,16 @@
   dependencies:
     global "^4.3.2"
 
-"@storybook/addon-storysource@5.3.0-rc.4":
-  version "5.3.0-rc.4"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-5.3.0-rc.4.tgz#df1d2051e6f5e78bce33a6a273797a63e39a5202"
-  integrity sha512-wYUD2utVGVeXWCOXv36YLC7SmU0asmS6nFnDfqGMcpd4PAtwhOYBi90/cTj/MRC1zOaXBO1NNP5y0m6JDgjmdA==
+"@storybook/addon-storysource@5.3.0-rc.8":
+  version "5.3.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-5.3.0-rc.8.tgz#f16e3645a116b759ed538a8a23b470ee2122b783"
+  integrity sha512-ee/GfcuXAyug6KYd+3+GCVqj8LTZBdHY4HM5VNwiI94a3N7LMjN5m6FoUB3Rhnvpt4RQzeaTxTtMkuMcD6G15A==
   dependencies:
-    "@storybook/addons" "5.3.0-rc.4"
-    "@storybook/components" "5.3.0-rc.4"
-    "@storybook/router" "5.3.0-rc.4"
-    "@storybook/source-loader" "5.3.0-rc.4"
-    "@storybook/theming" "5.3.0-rc.4"
+    "@storybook/addons" "5.3.0-rc.8"
+    "@storybook/components" "5.3.0-rc.8"
+    "@storybook/router" "5.3.0-rc.8"
+    "@storybook/source-loader" "5.3.0-rc.8"
+    "@storybook/theming" "5.3.0-rc.8"
     core-js "^3.0.1"
     estraverse "^4.2.0"
     loader-utils "^1.2.3"
@@ -2560,13 +2560,13 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
 
-"@storybook/source-loader@5.3.0-rc.4":
-  version "5.3.0-rc.4"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-rc.4.tgz#7f71e32d948b07e181ab17e885fd05b94e30feff"
-  integrity sha512-W03RdTNvKVA1vfK1clk7kTNpvOfthVnFeRXS8GEWA9Bd24PT95LK75dcepXaFHLWVWzSKEOKCYBbDj0GL+jw9Q==
+"@storybook/source-loader@5.3.0-rc.8":
+  version "5.3.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-5.3.0-rc.8.tgz#a300b5d4da472d3f04808cda571292794b052858"
+  integrity sha512-7vyP9w4go4l/9k84lFv80n24+i4Q7TVGcAOZkmoMlVR0k3mM/NYPUF3R1nCgGoRr+4sKh1jVFcp8vwzrzjnD8g==
   dependencies:
-    "@storybook/addons" "5.3.0-rc.4"
-    "@storybook/client-logger" "5.3.0-rc.4"
+    "@storybook/addons" "5.3.0-rc.8"
+    "@storybook/client-logger" "5.3.0-rc.8"
     "@storybook/csf" "0.0.1"
     core-js "^3.0.1"
     estraverse "^4.2.0"
