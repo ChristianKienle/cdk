@@ -1,4 +1,4 @@
 // @ts-check
-
-import visitStart from './visit-start'
-export { visitStart }
+const visitStart = require('./visit-start')
+const visitPage = require('./visit-page')
+module.exports = { visitStart, visitPage }

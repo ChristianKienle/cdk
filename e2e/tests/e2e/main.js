@@ -69,11 +69,6 @@ const router = new Router({
       component: () => import('./pages/list/size-dependencies.vue')
     },
     {
-      path: '/list/selection-single/:batchSize/:numberOfInitialItems',
-      component: () => import('./pages/list/selection-single.vue'),
-      props: true
-    },
-    {
       path: '/focus-trap/default',
       component: () => import('./pages/focus-trap/default.vue')
     },
