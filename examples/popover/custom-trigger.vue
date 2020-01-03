@@ -1,15 +1,24 @@
 <template>
-  <CPopover placement="bottom" withArrow theme="clean">
-    <template #trigger="{ show, hide }">
-      <button @mouseenter="show" @mouseleave="hide">Tooltip shows hover</button>
-    </template>
-    <template #default>
-      <div>Popover Body</div>
-    </template>
-  </CPopover>
+  <div>
+    <button ref="button" @mouseenter="show" @mouseleave="hide">Tooltip shows hover</button>
+    <CPopover ref="popover" trigger="$refs.button" placement="bottom" withArrow theme="clean">
+      <template #default>
+        <div>Popover Body</div>
+      </template>
+    </CPopover>
+  </div>
 </template>
 
 <script>
 import '@vue-cdk/popover/themes/index.css'
-export default {}
+export default {
+  methods: {
+    show() {
+      this.$refs.popover.show()
+    },
+    hide() {
+      this.$refs.popover.hide()
+    }
+  }
+}
 </script>

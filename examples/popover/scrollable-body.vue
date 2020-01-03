@@ -1,30 +1,36 @@
 <template>
-  <CPopover
-    with-arrow
-    theme="clean"
-    :flips="false"
-    :body-styles="{
-      overflowY: 'scroll',
-      maxWidth: '350px',
-      maxHeight: '200px'
-    }"
-  >
-    <template #trigger="{toggle}">
-      <button @click="toggle">Show Popover</button>
-    </template>
-    <template #default>
-      <div>
-        <div v-for="idx in indices" :key="String(idx)"
-          >I am part {{ idx + 1 }} of a wonderful popover.</div
-        >
-      </div>
-    </template>
-  </CPopover>
+  <div>
+    <button ref="button" @click="toggle">Toggle Popover</button>
+    <CPopover
+      ref="popover"
+      trigger="$refs.button"
+      withArrow
+      theme="clean"
+      :flips="false"
+      :bodyStyles="{
+        overflowY: 'scroll',
+        maxWidth: '350px',
+        maxHeight: '200px'
+      }"
+    >
+      <template #default>
+        <div>
+          <p v-for="index in 35" :key="String(index)">
+            I am part {{ index }} of a wonderful popover.
+          </p>
+        </div>
+      </template>
+    </CPopover>
+  </div>
 </template>
 
 <script>
 import '@vue-cdk/popover/themes/index.css'
 export default {
-  data: () => ({ indices: Array.from({ length: 35 }).map((_, idx) => idx) })
+  methods: {
+    toggle() {
+      this.$refs.popover.toggle()
+    }
+  }
 }
 </script>

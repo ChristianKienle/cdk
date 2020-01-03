@@ -1,28 +1,24 @@
 <template>
-  <div>
-    <CPopoverTrigger ref="trigger" @click.native="handleClickOnTrigger">
-      <slot name="trigger" v-bind="slotProps" />
-    </CPopoverTrigger>
-    <NoSsr>
-      <SimplePortal :selector="portalSelector">
-        <transition :name="transition_">
-          <div
-            ref="body"
-            v-show="visible_"
-            :aria-hidden="String(!visible_)"
-            :class="bodyClasses"
-            :style="bodyStyles_"
-          >
-            <slot v-bind="slotProps" />
-            <vp-arrow x-arrow :class="arrowClasses" />
-          </div>
-        </transition>
-      </SimplePortal>
-    </NoSsr>
-  </div>
+  <NoSsr>
+    <SimplePortal :selector="portalSelector">
+      <transition :name="transition_" appear @enter="enter">
+        <div
+          ref="body"
+          :aria-hidden="String(!visible_)"
+          v-if="showsBody_"
+          :class="bodyClasses"
+          :style="bodyStyles_"
+        >
+          <slot v-bind="slotProps" />
+          <CPopoverArrow x-arrow :class="arrowClasses" />
+        </div>
+      </transition>
+    </SimplePortal>
+  </NoSsr>
 </template>
 
 <script>
+const REFS_PREFIX = '$refs.'
 import NoSsr from './helper/no-ssr'
 import { normalizedClasses, shortId } from './helper'
 import Popper from 'popper.js'
@@ -30,31 +26,28 @@ import { inBrowser } from '@vue-cdk/utils'
 import { defaultBoundary, isValidBoundary } from './boundary'
 import * as BodySizeMode from './body-size-mode'
 import { Portal as SimplePortal } from '@linusborg/vue-simple-portal'
-const CPopoverTrigger = {
-  mounted() {
-    this.$parent.popperReference = this.$el
-    this.$parent.updatePopperInstance()
-  },
-  render() {
-    return this.$slots.default
-  }
-}
+import getTrigger from './helper/get-trigger'
 
 // You can use the `Popover` component to render popovers with any kind of content.
 export default {
   name: 'Popover',
   components: {
     NoSsr,
-    CPopoverTrigger,
     SimplePortal,
-    VpArrow: { render: h => h('span') }
+    CPopoverArrow: { render: h => h('span') }
   },
   props: {
     bodyStyles: {
       type: Object,
-      default: () => {}
+      default: () => ({})
     },
-    portalId: { default: () => 'vcdk-popover-portal-container', type: String },
+    trigger: {
+      default: null
+    },
+    portalId: {
+      default: 'vcdk-popover-portal-container',
+      type: String
+    },
     offset: { type: Number, default: 0 },
     adjustsBodyWidth: { type: Boolean, default: false },
     adjustsVisibility: { type: Boolean, default: true },
@@ -91,11 +84,18 @@ export default {
   },
   data() {
     return {
+      showsBody_: false,
       visible_: this.visible,
       outOfBoundaries_: false
     }
   },
   computed: {
+    isVisible() {
+      return this.visible_
+    },
+    showsBody() {
+      return this.showsBody_
+    },
     transition_() {
       const { transition, theme } = this
       if (transition != null) {
@@ -124,24 +124,10 @@ export default {
     portalSelector() {
       return `#${this.portalId}`
     },
-    // This computed prop simply references every prop that, when changed
-    // should cause the Popper-instance to be recreated.
-    stateThatRequiredPopperInstanceUpdate() {
-      return {
-        offset: this.offset,
-        flips: this.flips,
-        withArrow: this.withArrow,
-        placement: this.placement
-      }
-    },
-    hasCustomTriggerLogic() {
-      return this.$slots.trigger == null && this.$scopedSlots.trigger != null
-    },
     arrowClasses() {
       const { theme, arrowClass } = this
       return normalizedClasses([arrowClass, theme ? 'vcdk-popover--arrow' : null])
     },
-
     bodyStyles_() {
       const result = {
         ...this.bodyStyles,
@@ -204,30 +190,37 @@ export default {
     }
   },
   watch: {
-    adjustsBodyWidth() {
-      this.updatePopperInstance()
-    },
-    stateThatRequiredPopperInstanceUpdate: {
-      deep: true,
-      handler() {
-        this.updatePopperInstance()
+    visible(visible, oldVisible) {
+      if (visible === oldVisible) {
+        return
       }
-    },
-    visible(visible) {
-      this.visible_ = visible
-      if (visible && this.popperInstance == null) {
-        this.updatePopperInstance()
+      if (visible === true && (oldVisible === false || oldVisible === null)) {
+        this.show()
       }
-      this.scheduleUpdate()
+      if (visible === false && oldVisible === true) {
+        this.hide()
+      }
     }
   },
   beforeDestroy() {
     this.destroyPopperInstance(true)
   },
-  mounted() {
-    this.$forceUpdate()
-  },
   methods: {
+    getTrigger() {
+      const { trigger, $parent } = this
+      return getTrigger({ vm: $parent, trigger })
+    },
+    enter(el) {
+      const modifiers = this.modifiers_
+      const { placement } = this
+      const options = {
+        modifiers,
+        placement
+      }
+      this.$forceUpdate()
+      const trigger = this.getTrigger()
+      this.popperInstance = new Popper(trigger, el, options)
+    },
     modifier_bodySizeMode(data) {
       const mode = this.bodySizeMode_
       if (mode === BodySizeMode.AUTO) {
@@ -257,12 +250,6 @@ export default {
       this.outOfBoundaries_ = isOutOfBoundaries
       return data
     },
-    handleClickOnTrigger() {
-      if (this.hasCustomTriggerLogic) {
-        return
-      }
-      this.toggle()
-    },
     destroyPopperInstance(isBeforeDestroy = false) {
       if (this.popperInstance == null) {
         return
@@ -272,59 +259,25 @@ export default {
         this.popperInstance = null
         return
       }
-      const popoverNode = this.$refs.body
-      const trigger = this.$refs.trigger
-      if (this.visible_ === false) {
-        if (popoverNode != null && popoverNode.parentNode != null) {
-          popoverNode.parentNode.removeChild(popoverNode)
-        }
-      } else if (trigger) {
-        trigger.$el.appendChild(popoverNode)
-      }
-    },
-    updatePopperInstance() {
-      if (inBrowser() === false) {
-        return
-      }
-      this.destroyPopperInstance()
-      const { placement, modifiers_: modifiers, popperReference } = this
-      if (popperReference == null) {
-        return
-      }
-      const body = this.$refs.body
-      if (body == null) {
-        return
-      }
-      const options = {
-        modifiers,
-        placement
-      }
-      this.popperInstance = new Popper(popperReference, body, options)
-    },
-    scheduleUpdate() {
-      if (inBrowser() === false) {
-        return
-      }
-      if (this.popperInstance) {
-        this.popperInstance.scheduleUpdate()
-      }
     },
     setVisible(newVisible) {
       this.visible_ = newVisible
       this.$emit('update:visible', this.visible_)
-      if (this.visible_ && this.popperInstance == null) {
-        this.updatePopperInstance()
-      }
-      setTimeout(this.scheduleUpdate)
     },
     show() {
+      const trigger = this.getTrigger()
+      if (this.showsBody) {
+        return
+      }
+      this.showsBody_ = true
       this.setVisible(true)
     },
-    hide(event) {
+    hide() {
       this.setVisible(false)
+      this.showsBody_ = false
     },
     toggle() {
-      this.setVisible(!this.visible_)
+      this.isVisible ? this.hide() : this.show()
     }
   }
 }
