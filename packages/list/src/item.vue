@@ -1,6 +1,7 @@
 <script>
 import InifiniteScrollItem from '@vue-cdk/infinite-scroll/src/item.vue'
 
+// The `ListItem` component is used within the `List` component to render a single item.
 export default {
   name: 'ListItem',
   inject: {

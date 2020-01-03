@@ -61,6 +61,7 @@ const renderRouterLink = h => context => {
   return h('router-link', { props, scopedSlots })
 }
 
+// A component that can be used to render links to internal routes or external resources. Depends on [Vue Router](https://router.vuejs.org/)
 export default {
   name: 'Link',
   functional: true,

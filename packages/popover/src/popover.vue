@@ -40,6 +40,7 @@ const CPopoverTrigger = {
   }
 }
 
+// You can use the `Popover` component to render popovers with any kind of content.
 export default {
   name: 'Popover',
   components: {
