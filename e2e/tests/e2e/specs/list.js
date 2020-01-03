@@ -1,10 +1,7 @@
 // @ts-check
-const visitPage = require('./../utils/visit-page')
-const visitStart = require('./../utils/visit-start')
+const { visitPage, visitStart } = require('./../utils')
 
-/**
- * @param {number} index
- */
+/** @param {number} index */
 const getItemWithIndex = index => cy.get(`[data-cy-index=${index}]`)
 
 describe('list component', () => {
@@ -15,7 +12,7 @@ describe('list component', () => {
 
   // This test verifies that sizeDependencies are respected. This is done by loading a list that displays items. The height of each item is a prop of the item. By filling out a form the test changes the height of the first item so that most other items should disappear. If sizeDependencies were not respected the height of the item would change but List would not apply a new transform and not move the other items out of the way.
   it('respects size-dependencies', () => {
-    cy.visit('/list/size-dependencies')
+    visitPage('/list/size-dependencies')
     cy.dataCy('list').should('exist')
     cy.dataCy('list').get('[data-cy=item] div:visible').should('have.length.gte', 10)
     cy.dataCy('item-id-input').clear().type('1')
