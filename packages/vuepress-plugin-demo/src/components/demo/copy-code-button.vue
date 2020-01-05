@@ -2,11 +2,7 @@
   <button class="copy-code-button" v-on="$listeners">Copy</button>
 </template>
 
-<script>
-export default {}
-</script>
-
-<style lang="stylus" scoped>
+<style lang="stylus">
 .copy-code-button
   cursor pointer
   background-color saturate(lighten($accentColor, 85%), 10%)

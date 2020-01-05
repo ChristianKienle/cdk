@@ -21,6 +21,8 @@ module.exports = {
   indexPath: 'api/README.md',
   items: createEntries(
     ['List', 'list', '@vue-cdk/list/src/list.vue'],
+    ['Modal', 'modal', '@vue-cdk/modal/src/modal.vue'],
+    ['ModalOverlay', 'modal-overlay', '@vue-cdk/modal/src/overlay.vue'],
     ['ListItem', 'list-item', '@vue-cdk/list/src/item.vue'],
     ['InfiniteScroll', 'infinite-scroll', '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'],
     ['InfiniteScrollItem', 'infinite-scroll-item', '@vue-cdk/infinite-scroll/src/item.vue'],

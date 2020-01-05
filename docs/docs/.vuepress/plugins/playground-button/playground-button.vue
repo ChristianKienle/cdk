@@ -5,9 +5,7 @@
 <style>
 .playground-button {
   background:
-    linear-gradient(141deg, rgba(255,255,255,0.50) 6%, rgba(0,0,0,0.50) 100%),
-    linear-gradient(-46deg, #5A66A7 0%, #4B9DF7 49%, #FF307D 100%);
-  background-blend-mode: color-burn;
+    linear-gradient(-90deg, rgb(13, 26, 102) 0%, #1A63BA 50%, #FF307D 100%);
 }
 </style>
 <style lang="stylus">

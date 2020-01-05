@@ -6,5 +6,6 @@ module.exports = () => [
   { name: 'List', slug: 'list' },
   { name: 'Match Media', slug: 'match-media' },
   { name: 'Popover', slug: 'popover' },
-  { name: 'Scroll Container', slug: 'scroll-container' }
-]
+  { name: 'Scroll Container', slug: 'scroll-container' },
+  { name: 'Modal', slug: 'modal' }
+].sort((lhs, rhs) => rhs.name.localeCompare(lhs.name))

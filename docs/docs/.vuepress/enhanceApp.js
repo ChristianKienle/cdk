@@ -3,6 +3,7 @@ import FocusTrap from '@vue-cdk/focus-trap'
 import Popover from '@vue-cdk/popover'
 import ScrollContainer from '@vue-cdk/scroll-container'
 import InfiniteScroll from '@vue-cdk/infinite-scroll'
+import Modal from '@vue-cdk/modal'
 import List from '@vue-cdk/list'
 import '@vue-cdk/infinite-scroll/style/index.css'
 import vue from 'vue'
@@ -14,6 +15,7 @@ export default ({ Vue }) => {
   Vue.use(Popover)
   Vue.use(List)
   Vue.use(FocusTrap)
+  Vue.use(Modal)
   Vue.use(InfiniteScroll)
   Vue.use(ScrollContainer)
 }
