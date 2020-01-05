@@ -15,26 +15,38 @@ const { getDescription } = require('./../parser-result-utils')
 
 /** @param {PropsResult} prop */
 const renderProp = prop => {
-  return createMarkdown()
-    .nl()
-    .nl()
-    .h(3, prop.name)
-    .nl()
-    .nl()
+  const md = createMarkdown()
+  const propName = `${prop.name}${prop.required === true ? ' <Badge text="required" />' : ''}`
+
+  const defaultValue = (() => {
+    if (prop.required === true) {
+      return 'not applicable'
+    }
+    if (prop.default === null) {
+      return 'null'
+    }
+    if (prop.default === undefined) {
+      return 'not specified'
+    }
+    return prop.default
+  })()
+
+  return md
+    .nl(2)
+    .h(3, propName)
+    .nl(2)
     .strong('Type:')
     .raw('&nbsp;')
     .code(prop.type, { defaultValue: 'not specified' })
-    .nl()
-    .nl()
+    .nl(2)
     .lines(prop.typeDesc, { wrap: true })
     .strong('Default:')
     .raw('&nbsp;')
-    .code(prop.default || '–')
+    .code(defaultValue)
     .nl()
     .lines(prop.defaultDesc, { wrap: true })
     .lines(prop.describe, { wrap: true })
-    .nl()
-    .nl()
+    .nl(2)
 }
 
 /** @param {EventResult} event */
@@ -51,7 +63,11 @@ const renderEvent = event => {
     .strong('Arguments:')
     .nl()
   const args = (event.argumentsDesc || []).map(arg => `- ${arg}`)
-  md.lines(args, { wrap: true })
+  if (args.length === 0) {
+    md.lines(['none'], { wrap: true })
+  } else {
+    md.lines(args, { wrap: true })
+  }
   md.nl()
   return md
 }
@@ -110,13 +126,10 @@ const renderMethod = method => {
 
 /** @param {SlotResult} slot */
 const renderSlot = slot => {
+  const name = `${slot.name}${slot.scoped === true ? ' <Badge text="scoped" />' : ''}`
   const md = createMarkdown()
-    .h(3, slot.name)
+    .h(3, name)
     .nl()
-  if (slot.scoped) {
-    // TODO: Remove this
-    md.raw(`<span style="color: blue;">scoped</span>`).nl()
-  }
   md.lines([slot.describe], { wrap: true }).nl()
   return md
 }

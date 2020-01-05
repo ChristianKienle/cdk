@@ -37,13 +37,18 @@ export default {
     CPopoverArrow: { render: h => h('span') }
   },
   props: {
+    // CSS styles applied to the body element that wraps the contents of the popover.
     bodyStyles: {
       type: Object,
+      // `{}` – no styles
       default: () => ({})
     },
+    // The trigger that the popover will be attached to.
     trigger: {
-      default: null
+      required: true,
+      type: String
     },
+    // The id of an `HTMLElement` that will act as a container for all popovers.
     portalId: {
       default: 'vcdk-popover-portal-container',
       type: String
@@ -65,13 +70,34 @@ export default {
       type: String,
       default: null
     },
-    theme: { type: String, default: null },
-    bodyClass: { type: String, default: '' },
-    defaultBodyZIndex: { type: [Number, String], default: 1000 },
-    arrowClass: { type: String, default: null },
-    withArrow: { type: Boolean, default: false },
-    flips: { type: Boolean, default: true },
-    visible: { type: Boolean, default: false },
+    theme: {
+      type: String,
+      default: null
+    },
+    bodyClass: {
+      type: String,
+      default: ''
+    },
+    defaultBodyZIndex: {
+      type: [Number, String],
+      default: 1000
+    },
+    arrowClass: {
+      type: String,
+      default: null
+    },
+    withArrow: {
+      type: Boolean,
+      default: true
+    },
+    flips: {
+      type: Boolean,
+      default: true
+    },
+    visible: {
+      type: Boolean,
+      default: false
+    },
     modifiers: {
       type: Object,
       default: () => ({})
@@ -262,6 +288,8 @@ export default {
     },
     setVisible(newVisible) {
       this.visible_ = newVisible
+      // Fires when the value for `visible` changes.
+      // @arg The new value of `visible`.
       this.$emit('update:visible', this.visible_)
     },
     show() {
