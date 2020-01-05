@@ -1,0 +1,9 @@
+.vcdk-modal-fade-enter-active,
+.vcdk-modal-fade-leave-active {
+  transition: opacity 0.25s ease-out;
+}
+
+.vcdk-modal-fade-enter,
+.vcdk-modal-fade-leave-to {
+  opacity: 0;
+}

@@ -36,13 +36,14 @@
     </SettingRow>
     <SettingRow label="Offset">
       <div style="display: flex;">
-        <input type="range" v-model.number="offset" min="0" max="100" value="0" />
+        <input class="input" type="range" v-model.number="offset" min="0" max="100" value="0" />
         <label style="">{{ offset }}px</label>
       </div>
     </SettingRow>
     <SettingRow label="Trigger Width">
       <div style="display: flex;">
         <input
+          class="input"
           type="range"
           v-model.number="triggerWidth"
           @input="$emit('update:triggerWidth', $event.target.value)"
@@ -55,12 +56,13 @@
     </SettingRow>
 
     <SettingRow label="Options">
-      <label> <input type="checkbox" v-model="flips" />Flip </label>
+      <label> <input class="input" type="checkbox" v-model="flips" />Flip </label>
       <br />
-      <label> <input type="checkbox" v-model="withArrow" />Arrow </label>
+      <label> <input class="input" type="checkbox" v-model="withArrow" />Arrow </label>
       <br />
       <label>
         <input
+          class="input"
           type="checkbox"
           v-model="useNativeButton"
           @change="$emit('update:useNativeButton', $event.target.checked)"
@@ -128,7 +130,7 @@ export default {
 </script>
 
 <style scoped>
-input {
+.input {
   margin: 0;
   margin-right: 5px;
 }
