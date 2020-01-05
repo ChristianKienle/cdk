@@ -14,6 +14,7 @@ console.log(`Using base: '${base}'`)
 
 module.exports = {
   title: 'Vue Component Development Kit',
+  description: 'Vue Components to make Vue Components',
   base,
   extraWatchFiles: [
     `${examplesDir}/**/*.vue`,
