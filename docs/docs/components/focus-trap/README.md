@@ -1,10 +1,6 @@
 # Focus Trap
 The focus trap package makes it easy to trap the focus within a component/element. `@vue-cdk/focus-trap` is a wrapper around the [focus-trap package from @davidtheclark](https://github.com/davidtheclark/focus-trap). The main motivation of this wrapper was to make it more convenient for Vue developers.
 
-**Table of Contents**
-
-[[toc]]
-
 ## Overview
 The main objective of `@vue-cdk/focus-trap` is to make focus trapping more convenient. In order to serve different needs `@vue-cdk/focus-trap` comes with both, high– and low–level ways to accomplish focus trapping.
 
@@ -43,6 +39,10 @@ trap.activate()
 If you want to know how the low–level utilities should be used in more detail, please refer to the examples below.
 
 ## Examples
+
+::: warning
+On iOS the user can escape an active trap by tapping on the down arrow/up arrow buttons in Safari. This is a [known issue](https://github.com/twbs/bootstrap/issues/26770). Safari does not emit any events when tappingon the down arrow and/or up arrow. A future modal component should fix that issue though.
+:::
 
 ### Using `CFocusTrap`
 <Demo for="focus-trap/component" />
