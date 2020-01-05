@@ -1,21 +1,29 @@
 @require './prism-theme-minipress.styl'
 
 .navbar
-  border-bottom 1px solid #cccccc
-
-{$contentClass}:not(.custom)
-  a
-    border-bottom none
-    text-decoration none
-
-{$contentClass}:not(.custom)
-  a
-    color lighten($accentColor, 20%)
-    text-decoration none
-    border-bottom 0px dashed lighten($accentColor, 90%)
-    padding-bottom 2px
-    &:hover
-      text-decoration none
-      border-bottom 2px double lighten($accentColor, 80%)
+  border-bottom 1px solid lighten(#cccccc, 50%)
 
 @require './custom-blocks.styl'
+
+$linkColorStart = #4B9DF7
+$linkColorEnd = #9C4FAF
+
+{$contentClass}:not(.custom)
+  a
+    background: -webkit-gradient(linear,left top,right top, from($linkColorStart), to($linkColorEnd));
+    background: 'linear-gradient(90deg, %s, %s)' % ($linkColorStart $linkColorEnd);
+    -webkit-background-clip text
+    -webkit-text-fill-color transparent
+    -webkit-box-decoration-break clone
+    box-decoration-break clone
+    font-weight 600
+    border-bottom 1px solid #4B9DF7 !important
+    padding-bottom .15rem
+    text-decoration none
+    &:hover
+      background: -webkit-gradient(linear,left top,right top, from($linkColorStart), to($linkColorEnd));
+      background: 'linear-gradient(90deg, %s, %s)' % (darken($linkColorStart, 35%) darken($linkColorEnd, 35%));
+      -webkit-background-clip text
+      -webkit-text-fill-color transparent
+      -webkit-box-decoration-break clone
+      box-decoration-break clone
