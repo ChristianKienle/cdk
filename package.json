@@ -45,7 +45,7 @@
     "cross-env": "^6.0.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-vue": "^5.1.4",
+    "rollup-plugin-vue": "^5.1.5",
     "rollup": "^1.28.0"
   }
 }
