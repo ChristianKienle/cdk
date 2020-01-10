@@ -14,7 +14,7 @@
     "@vue-cdk/node-utils": "^0.2.0",
     "@vuepress/plugin-register-components": "^1.2.0",
     "fs-extra": "^8.1.0",
-    "globby": "^10.0.1",
+    "globby": "^11.0.0",
     "vue-clipboard2": "^0.3.1"
   }
 }
