@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/storybook",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "start": "start-storybook --ci --port 9999",
@@ -8,16 +8,16 @@
     "serve": "http-server dist"
   },
   "dependencies": {
-    "@vue-cdk/client-only": "^0.2.0",
-    "@vue-cdk/examples": "^0.2.0",
-    "@vue-cdk/focus-trap": "^0.2.0",
-    "@vue-cdk/infinite-scroll": "^0.2.0",
-    "@vue-cdk/link": "^0.2.0",
-    "@vue-cdk/list": "^0.2.0",
-    "@vue-cdk/match-media": "^0.2.0",
-    "@vue-cdk/popover": "^0.2.0",
-    "@vue-cdk/portal": "^0.2.0",
-    "@vue-cdk/scroll-container": "^0.2.0",
+    "@vue-cdk/client-only": "^0.3.0",
+    "@vue-cdk/examples": "^0.3.0",
+    "@vue-cdk/focus-trap": "^0.3.0",
+    "@vue-cdk/infinite-scroll": "^0.3.0",
+    "@vue-cdk/link": "^0.3.0",
+    "@vue-cdk/list": "^0.3.0",
+    "@vue-cdk/match-media": "^0.3.0",
+    "@vue-cdk/popover": "^0.3.0",
+    "@vue-cdk/portal": "^0.3.0",
+    "@vue-cdk/scroll-container": "^0.3.0",
     "core-js": "^3.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"

@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/e2e",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -18,11 +18,11 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue-cdk/client-only": "^0.2.0",
-    "@vue-cdk/list": "^0.2.0",
-    "@vue-cdk/match-media": "^0.2.0",
-    "@vue-cdk/popover": "^0.2.0",
-    "@vue-cdk/utils": "^0.2.0",
+    "@vue-cdk/client-only": "^0.3.0",
+    "@vue-cdk/list": "^0.3.0",
+    "@vue-cdk/match-media": "^0.3.0",
+    "@vue-cdk/popover": "^0.3.0",
+    "@vue-cdk/utils": "^0.3.0",
     "@vue/cli-plugin-babel": "^4.1.1",
     "@vue/cli-plugin-e2e-cypress": "^4.1.1",
     "@vue/cli-plugin-eslint": "^4.1.1",
