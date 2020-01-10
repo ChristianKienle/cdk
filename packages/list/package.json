@@ -24,7 +24,7 @@
     "@vue-cdk/pluginify": "^0.2.0"
   },
   "peerDependencies": {
-    "core-js": "^3.3.2",
+    "core-js": "^3.6.2",
     "vue": "^2.6.10",
     "vue-observe-visibility": "^0.4.6",
     "vue-virtual-scroller": "^1.0.0-rc.2"
@@ -36,7 +36,7 @@
     "@vue/cli-service": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
-    "core-js": "^3.3.2",
+    "core-js": "^3.6.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "vue": "^2.6.10",
