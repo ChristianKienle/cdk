@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "5.3.0-rc.12",
-    "@storybook/addon-backgrounds": "5.3.0-rc.12",
+    "@storybook/addon-backgrounds": "5.3.2",
     "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-storysource": "5.3.0-rc.12",
     "@storybook/addon-viewport": "5.3.0-rc.12",
