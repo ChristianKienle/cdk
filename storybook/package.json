@@ -18,7 +18,7 @@
     "@vue-cdk/popover": "^0.3.0",
     "@vue-cdk/portal": "^0.3.0",
     "@vue-cdk/scroll-container": "^0.3.0",
-    "core-js": "^3.6.2",
+    "core-js": "^3.6.4",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   },
