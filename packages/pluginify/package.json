@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/pluginify",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -17,7 +17,7 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@vue-cdk/utils": "^0.3.0"
+    "@vue-cdk/utils": "^0.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.1",

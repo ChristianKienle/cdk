@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/focus-trap",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -17,7 +17,7 @@
     "src/*.vue"
   ],
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.3.0",
+    "@vue-cdk/pluginify": "^0.4.0",
     "focus-trap": "^5.1.0"
   },
   "peerDependencies": {
