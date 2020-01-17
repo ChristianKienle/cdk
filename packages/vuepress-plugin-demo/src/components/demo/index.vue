@@ -1,33 +1,6 @@
 <style lang="stylus">
-@require './../summary.styl'
-.demo
-  &__preview
-    border 1px solid $code-accent-color
-    border-bottom 0
-    border-top-left-radius 4px
-    border-top-right-radius 4px
-    padding: 10px;
-    margin-bottom 0
-.custom-block
-  .custom-block-title
-    font-weight 600
-  &.details
-    display block
-    position relative
-    border-radius 0px
-    margin 0
-    padding 0em
-    background-color #fff
-    > div > div > pre
-      padding 0
-      max-height 400px
-      overflow auto
-    h4
-      margin-top 0
-    figure, p
-      &:last-child
-        margin-bottom 0
-        padding-bottom 0
+@import './../summary'
+@import './../demo'
 </style>
 
 <template>
