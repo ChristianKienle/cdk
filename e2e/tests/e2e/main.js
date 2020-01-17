@@ -87,6 +87,10 @@ const router = new Router({
     {
       path: '/modal/default',
       component: () => import('./pages/modal/default.vue')
+    },
+    {
+      path: '/modal/cleanup',
+      component: () => import('./pages/modal/cleanup.vue')
     }
   ]
 })

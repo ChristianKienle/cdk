@@ -2,7 +2,7 @@
   <Portal :selector="portalSelector">
     <transition name="vcdk-modal-fade">
       <slot name="overlay">
-        <Overlay v-show="open_" class="vcdk-modal__overlay">
+        <Overlay v-if="open_" class="vcdk-modal__overlay">
           <div :aria-hidden="String(!open_)" v-show="open_" style="outline: none">
             <CFocusTrap :active="open_">
               <div role="dialog" aria-modal="true" tabindex="-1" style="outline: none">
@@ -21,6 +21,7 @@ import CFocusTrap from '@vue-cdk/focus-trap'
 import Overlay from './overlay.vue'
 import { Portal } from '@linusborg/vue-simple-portal'
 import shortId from './short-id'
+import onServer from '@vue-cdk/utils/on-server'
 
 export default {
   name: 'Modal',
@@ -35,6 +36,16 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  beforeDestroy() {
+    if (onServer()) {
+      return
+    }
+    const portalEl = document.querySelector(this.portalSelector)
+    if (portalEl == null) {
+      return
+    }
+    portalEl.parentNode.removeChild(portalEl)
   },
   watch: {
     open(open) {
