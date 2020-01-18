@@ -6,10 +6,6 @@ The `@vue-cdk/client-only`-package contains a single component: `ClientOnly`. Th
 The *Client-Only*-component has a dedicated [API documentation](./../../api/client-only).
 :::
 
-**Table of Contents**
-
-[[toc]]
-
 ## History & Credits
 
 `@vue-cdk/client-only` is a friendly fork of [egoist/vue-client-only](https://github.com/egoist/vue-client-only). The component was only slightly changed. However, a lot of tests and documentation was added to make it easier to consume. Those additions will be contributed back to the original authors. The original license of [egoist/vue-client-only](https://github.com/egoist/vue-client-only) can be found within the source of `@vue-cdk/client-only`.

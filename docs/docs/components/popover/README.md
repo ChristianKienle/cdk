@@ -4,10 +4,6 @@
 The *Popover*-component has a dedicated [API documentation](./../../api/popover).
 :::
 
-**Table of Contents**
-
-[[toc]]
-
 ## Installation
 ``` sh
 $ npm install @vue-cdk/popover --save

@@ -1,9 +1,5 @@
 # Scroll Container
 
-**Table of Contents**
-
-[[toc]]
-
 ::: tip API
 The *Scroll Container*-component has a dedicated [API documentation](./../../api/scroll-container).
 :::

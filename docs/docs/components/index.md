@@ -1,3 +1,8 @@
+---
+sidebar: false
+---
+
+
 # Components
 
 The following components/plugins/mixins are available:

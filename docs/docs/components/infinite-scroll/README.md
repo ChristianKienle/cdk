@@ -6,10 +6,6 @@ The *Infinite Scroll* component can be used to render an indefintely scrolling l
 The *Infinite Scroll*-component has a dedicated [API documentation](./../../api/infinite-scroll).
 :::
 
-**Table of Contents**
-
-[[toc]]
-
 ## Installation
 ``` sh
 npm install @vue-cdk/infinite-scroll --save

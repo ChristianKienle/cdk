@@ -17,16 +17,31 @@ $linkColorEnd = #9C4FAF
     -webkit-box-decoration-break clone
     box-decoration-break clone
     font-weight 600
-    border-bottom 1px solid #4B9DF7 !important
     padding-bottom .15rem
     text-decoration none
     &:hover
+      text-decoration none
+      border-bottom none !important
       background: -webkit-gradient(linear,left top,right top, from($linkColorStart), to($linkColorEnd));
       background: 'linear-gradient(90deg, %s, %s)' % (darken($linkColorStart, 35%) darken($linkColorEnd, 35%));
       -webkit-background-clip text
       -webkit-text-fill-color transparent
       -webkit-box-decoration-break clone
       box-decoration-break clone
-
 .badge
   -webkit-text-fill-color: initial
+
+.navbar
+  background-color rgba(255,255,255, 0.9)
+  backdrop-filter blur(10px)
+
+.navbar .links
+  background-color transparent !important
+  background none !important
+
+nav .navbar .links
+  background-color transparent !important
+  background none !important
+
+.navbar .site-name
+  font-size 1rem !important
