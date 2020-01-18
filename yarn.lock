@@ -3331,13 +3331,6 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vue-cdk/link@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@vue-cdk/link/-/link-0.4.4.tgz#f420b443376fff37b2f4758a16466834019c94be"
-  integrity sha512-5Ne+2R5F3M5cobYRHedOoBrn86NapFQh6xRAH7LlfEUWQBRtjXU1t2wzJ34B/ysO6qFj8gBoddDDv/InYeZ0ow==
-  dependencies:
-    "@vue-cdk/pluginify" "^0.4.0"
-
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.0.0.tgz#048fe579958da408fb7a8b2a3ec050b50a661040"

@@ -14,9 +14,9 @@
     "prepublishOnly": "build-vue-lib"
   },
   "main": "src/index.js",
-  "module": "dist/vue-cdk/match-media.esm.js",
-  "unpkg": "dist/vue-cdk/match-media.umd.js",
-  "jsdelivr": "dist/vue-cdk/match-media.umd.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
   "sideEffects": [
     "./**/*.scss",
     "./**/*.css",

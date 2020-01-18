@@ -10,9 +10,9 @@
     "prepublishOnly": "build-vue-lib"
   },
   "main": "src/index.js",
-  "module": "dist/vue-cdk/client-only.esm.js",
-  "unpkg": "dist/vue-cdk/client-only.umd.js",
-  "jsdelivr": "dist/vue-cdk/client-only.umd.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
   "sideEffects": [
     "./**/*.scss",
     "./**/*.css",

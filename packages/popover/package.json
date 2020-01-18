@@ -15,9 +15,9 @@
   },
   "style": "themes/index.css",
   "main": "src/index.js",
-  "module": "dist/vue-cdk/popover.esm.js",
-  "unpkg": "dist/vue-cdk/popover.umd.js",
-  "jsdelivr": "dist/vue-cdk/popover.umd.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
   "sideEffects": [
     "./**/*.scss",
     "./**/*.css",
