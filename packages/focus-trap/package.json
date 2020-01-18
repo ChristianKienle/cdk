@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/focus-trap",
-  "version": "0.4.0",
+  "version": "0.4.5",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -27,7 +27,7 @@
     "src/*.vue"
   ],
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.4.0",
+    "@vue-cdk/pluginify": "^0.4.5",
     "focus-trap": "^5.1.0"
   },
   "peerDependencies": {
@@ -35,7 +35,7 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue-cdk/build-vue-lib": "^0.4.0",
+    "@vue-cdk/build-vue-lib": "^0.4.5",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",

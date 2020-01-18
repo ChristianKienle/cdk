@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/popover",
-  "version": "0.4.0",
+  "version": "0.4.5",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -35,13 +35,13 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@vue-cdk/client-only": "^0.4.0",
-    "@vue-cdk/pluginify": "^0.4.0",
-    "@vue-cdk/portal": "^0.4.0",
+    "@vue-cdk/client-only": "^0.4.5",
+    "@vue-cdk/pluginify": "^0.4.5",
+    "@vue-cdk/portal": "^0.4.5",
     "@vue-cdk/utils": "^0.4.0"
   },
   "devDependencies": {
-    "@vue-cdk/build-vue-lib": "^0.4.0",
+    "@vue-cdk/build-vue-lib": "^0.4.5",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",

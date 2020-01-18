@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/infinite-scroll",
-  "version": "0.4.0",
+  "version": "0.4.5",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -32,7 +32,7 @@
   ],
   "style": "style/index.css",
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.4.0"
+    "@vue-cdk/pluginify": "^0.4.5"
   },
   "peerDependencies": {
     "core-js": "^3.6.4",
@@ -41,9 +41,7 @@
     "vue-virtual-scroller": "^1.0.0-rc.2"
   },
   "devDependencies": {
-    "vue-observe-visibility": "^0.4.6",
-    "vue-virtual-scroller": "^1.0.0-rc.2",
-    "@vue-cdk/build-vue-lib": "^0.4.0",
+    "@vue-cdk/build-vue-lib": "^0.4.5",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",
@@ -54,6 +52,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "vue-observe-visibility": "^0.4.6",
+    "vue-template-compiler": "^2.6.11",
+    "vue-virtual-scroller": "^1.0.0-rc.2"
   }
 }
