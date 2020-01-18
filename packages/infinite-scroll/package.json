@@ -14,9 +14,9 @@
     "prepublishOnly": "build-vue-lib"
   },
   "main": "src/index.js",
-  "module": "dist/vue-cdk/infinite-scroll.esm.js",
-  "unpkg": "dist/vue-cdk/infinite-scroll.umd.js",
-  "jsdelivr": "dist/vue-cdk/infinite-scroll.umd.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
   "sideEffects": [
     "./**/*.scss",
     "./**/*.css",
