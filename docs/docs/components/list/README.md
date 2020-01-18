@@ -5,9 +5,6 @@ The *List* component displays a list of items. Internally it is using the *[Infi
 You should prefer *List* over *[Infinite Scroll](../infinite-scroll/)*. You can fall back to *[Infinite Scroll](../infinite-scroll/)* if you have special needs.
 :::
 
-**Table of Contents**
-[[toc]]
-
 ::: tip API
 The *List*-component has a dedicated [API documentation](./../../api/list).
 :::

@@ -1,9 +1,5 @@
 # Match Media
 
-**Table of Contents**
-
-[[toc]]
-
 ## Installation
 
 ```sh

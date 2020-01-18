@@ -5,10 +5,6 @@ A *Link*-component with sensible defaults and [Vue Router](https://router.vuejs.
 The *Link*-component has a dedicated [API documentation](./../../api/link).
 :::
 
-**Table of Contents**
-
-[[toc]]
-
 ## Installation
 ``` sh
 $ npm install @vue-cdk/link --save
