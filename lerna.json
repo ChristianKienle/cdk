@@ -8,6 +8,6 @@
   ],
   "parallel": false,
   "npmClient": "yarn",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "useWorkspaces": true
 }

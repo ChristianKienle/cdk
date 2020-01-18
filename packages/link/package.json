@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/link",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -23,7 +23,7 @@
     "src/**/*.vue"
   ],
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.4.5"
+    "@vue-cdk/pluginify": "^0.4.6"
   },
   "peerDependencies": {
     "core-js": "^3.6.4",
@@ -31,7 +31,7 @@
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
-    "@vue-cdk/build-vue-lib": "^0.4.5",
+    "@vue-cdk/build-vue-lib": "^0.4.6",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",
