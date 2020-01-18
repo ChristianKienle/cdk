@@ -1,7 +1,7 @@
 {
   "name": "@vue-cdk/docs",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.4.4",
   "scripts": {
     "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090 --debug",
     "build": "vuepress build docs --dest ./dist"
@@ -15,7 +15,7 @@
     "@linusborg/vue-simple-portal": "^0.1.4",
     "@vue-cdk/client-only": "^0.4.0",
     "@vue-cdk/infinite-scroll": "^0.4.0",
-    "@vue-cdk/link": "^0.4.0",
+    "@vue-cdk/link": "^0.4.4",
     "@vue-cdk/list": "^0.4.0",
     "@vue-cdk/match-media": "^0.4.0",
     "@vue-cdk/modal": "^0.4.0",

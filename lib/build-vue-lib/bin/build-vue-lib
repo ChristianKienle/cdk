@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+// This is needed to force chalk into using colors
+process.env['FORCE_COLOR'] = true
+
+require('../src/cli')
+  .run()
+  .catch(require('@oclif/errors/handle'))

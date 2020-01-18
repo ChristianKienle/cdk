@@ -3,6 +3,7 @@ node_modules
 /dist
 .saber
 docs/dist
+**/dist
 
 /e2e/tests/e2e/videos/*.*.mp4
 /e2e/tests/e2e/screenshots/*.*.mp4

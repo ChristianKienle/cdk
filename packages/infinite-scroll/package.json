@@ -5,17 +5,30 @@
   "publishConfig": {
     "access": "public"
   },
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "prepublishOnly": "build-vue-lib"
   },
   "main": "src/index.js",
+  "module": "dist/vue-cdk/infinite-scroll.esm.js",
+  "unpkg": "dist/vue-cdk/infinite-scroll.umd.js",
+  "jsdelivr": "dist/vue-cdk/infinite-scroll.umd.js",
+  "sideEffects": [
+    "./**/*.scss",
+    "./**/*.css",
+    "./**/*.sass"
+  ],
   "files": [
+    "dist/",
+    "src/",
     "src/index.js",
-    "src/list.vue",
-    "src/list-item.vue"
+    "src/item.vue",
+    "src/infinite-scroll.vue",
+    "src/scroll-positions-equal.js"
   ],
   "style": "style/index.css",
   "dependencies": {
@@ -28,6 +41,9 @@
     "vue-virtual-scroller": "^1.0.0-rc.2"
   },
   "devDependencies": {
+    "vue-observe-visibility": "^0.4.6",
+    "vue-virtual-scroller": "^1.0.0-rc.2",
+    "@vue-cdk/build-vue-lib": "^0.4.0",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",
@@ -37,9 +53,7 @@
     "core-js": "^3.6.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "vue": "^2.6.10",
-    "vue-observe-visibility": "^0.4.6",
-    "vue-template-compiler": "^2.6.10",
-    "vue-virtual-scroller": "^1.0.0-rc.2"
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   }
 }

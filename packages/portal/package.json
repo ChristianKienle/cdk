@@ -6,10 +6,20 @@
     "access": "public"
   },
   "scripts": {
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "prepublishOnly": "build-vue-lib"
   },
   "main": "src/index.js",
+  "module": "dist/vue-cdk/portal.esm.js",
+  "unpkg": "dist/vue-cdk/portal.umd.js",
+  "jsdelivr": "dist/vue-cdk/portal.umd.js",
+  "sideEffects": [
+    "./**/*.scss",
+    "./**/*.css",
+    "./**/*.sass"
+  ],
   "files": [
+    "dist/",
     "src/**/*.js",
     "src/**/*.vue"
   ],
@@ -24,6 +34,7 @@
     "@vue-cdk/utils": "^0.4.0"
   },
   "devDependencies": {
+    "@vue-cdk/build-vue-lib": "^0.4.0",
     "@linusborg/vue-simple-portal": "^0.1.4",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
