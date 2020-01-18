@@ -91,6 +91,10 @@ const router = new Router({
     {
       path: '/modal/cleanup',
       component: () => import('./pages/modal/cleanup.vue')
+    },
+    {
+      path: '/modal/custom-overlay',
+      component: () => import('./pages/modal/custom-overlay.vue')
     }
   ]
 })

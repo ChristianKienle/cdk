@@ -1,10 +1,10 @@
 <template>
   <div>
-    <button @click="open = true">Open Modal</button>
+    <button data-cy="openModalButton" @click="open = true">Open Modal</button>
     <CModal :open.sync="open">
       <template #overlay>
-        <CModalOverlay v-if="open" class="custom-overlay">
-          <div style="background-color: white;">
+        <CModalOverlay data-cy="overlay" v-if="open" class="custom-overlay">
+          <div data-cy="modal" style="background-color: white;">
             <div>modal</div>
             <button @click="open = false">close</button>
             <div>

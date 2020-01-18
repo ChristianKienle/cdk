@@ -49,6 +49,10 @@ Modals can be nested.
 ### Custom Overlay
 You can customize the overlay by proviing an `overlay`–slot. If you just want to customize the styling adding your own class is all you need to do.
 
+::: warning Lazily render <code>CModalOverlay</code>
+Make sure to use `v-if="open"` on `CModalOverlay`. Otherwise the modal and overlay are not rendered *lazily*. This is not an issue per se but if you have many modals (for example in a long list/table) you may experience performance issues.
+:::
+
 <Demo for="modal/custom-overlay" />
 
 ### Nice Modal

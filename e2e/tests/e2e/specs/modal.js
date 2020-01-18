@@ -58,4 +58,13 @@ describe('modal', () => {
     getDataCy('activateTabB').click()
     cy.get('div[id^="modal-tab-b"]').should('have.length', 1)
   })
+
+  it('renders custom overlay + constens lazily', () => {
+    visitStart()
+    visitPage('/modal/custom-overlay')
+
+    getDataCy('openModalButton').should('be.visible')
+    getDataCy('overlay').should('not.exist')
+    getDataCy('modal').should('not.exist')
+  })
 })
