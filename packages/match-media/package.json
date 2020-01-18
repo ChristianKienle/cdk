@@ -10,10 +10,20 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "prepublishOnly": "build-vue-lib"
   },
   "main": "src/index.js",
+  "module": "dist/vue-cdk/match-media.esm.js",
+  "unpkg": "dist/vue-cdk/match-media.umd.js",
+  "jsdelivr": "dist/vue-cdk/match-media.umd.js",
+  "sideEffects": [
+    "./**/*.scss",
+    "./**/*.css",
+    "./**/*.sass"
+  ],
   "files": [
+    "dist/",
     "src/*.js"
   ],
   "peerDependencies": {
@@ -24,6 +34,7 @@
     "@vue-cdk/utils": "^0.4.0"
   },
   "devDependencies": {
+    "@vue-cdk/build-vue-lib": "^0.4.0",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",

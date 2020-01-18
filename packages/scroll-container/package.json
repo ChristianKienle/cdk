@@ -5,11 +5,22 @@
   "publishConfig": {
     "access": "public"
   },
+  "license": "MIT",
   "scripts": {
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "prepublishOnly": "build-vue-lib"
   },
   "main": "src/index.js",
+  "module": "dist/vue-cdk/scroll-container.esm.js",
+  "unpkg": "dist/vue-cdk/scroll-container.umd.js",
+  "jsdelivr": "dist/vue-cdk/scroll-container.umd.js",
+  "sideEffects": [
+    "./**/*.scss",
+    "./**/*.css",
+    "./**/*.sass"
+  ],
   "files": [
+    "dist/",
     "src/*.js",
     "src/*.vue"
   ],
@@ -21,6 +32,7 @@
     "@vue-cdk/pluginify": "^0.4.0"
   },
   "devDependencies": {
+    "@vue-cdk/build-vue-lib": "^0.4.0",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",

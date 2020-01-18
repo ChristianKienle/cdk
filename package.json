@@ -10,8 +10,8 @@
     "examples",
     "lib/*"
   ],
+  "license": "MIT",
   "scripts": {
-    "build": "bili --bundle-node-modules --file-name FundamentalVue.[format].js --format cjs --format umd-min --format es --module-name FundamentalVue --env.NODE_ENV production -d dist",
     "storybook": "cd storybook && yarn start",
     "bootstrap": "lerna bootstrap --concurrency 1 --use-workspaces",
     "clean": "lerna clean -y",
@@ -29,10 +29,8 @@
   },
   "devDependencies": {
     "rimraf": "^3.0.0",
-    "bili": "^4.8.1",
     "@vue/test-utils": "^1.0.0-beta.30",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10",
+    "vue": "^2.6.11",
     "@vue/cli-service": "^4.1.1",
     "@vue/cli-plugin-unit-jest": "^4.1.1",
     "@vue/cli-plugin-babel": "^4.1.1",
@@ -46,6 +44,6 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-vue": "^5.1.5",
-    "rollup": "^1.29.0"
+    "vue-template-compiler": "^2.6.11"
   }
 }
