@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <input tabindex="-1" ref="inputOutside" />
+      <input ref="inputOutside" tabindex="-1" />
     </div>
     <button @click.prevent.cancel.stop="trap">
       trap
@@ -9,7 +9,7 @@
     <Modal ref="modal">
       <div>
         <p>I am a Modal</p>
-        <input tabindex="0" ref="intialInput" />
+        <input ref="intialInput" tabindex="0" />
         <input />
         <input />
       </div>

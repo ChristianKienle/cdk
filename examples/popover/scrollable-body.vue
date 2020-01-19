@@ -4,10 +4,10 @@
     <CPopover
       ref="popover"
       trigger="$refs.button"
-      withArrow
+      with-arrow
       theme="clean"
       :flips="false"
-      :bodyStyles="{
+      :body-styles="{
         overflowY: 'scroll',
         maxWidth: '350px',
         maxHeight: '200px'

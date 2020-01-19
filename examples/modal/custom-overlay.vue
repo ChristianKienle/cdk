@@ -21,12 +21,12 @@
 import CModal from '@vue-cdk/modal'
 import '@vue-cdk/modal/style/index.css'
 export default {
+  mixins: [CModal()],
   data() {
     return {
       open: false
     }
-  },
-  mixins: [CModal()]
+  }
 }
 </script>
 

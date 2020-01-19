@@ -1,7 +1,7 @@
 <template>
   <div>
-    <input type="number" v-model.number="id" />
-    <input type="number" v-model.number="height" />
+    <input v-model.number="id" type="number" />
+    <input v-model.number="height" type="number" />
     <button data-cy="setHeightButton" @click="setHeight">set height</button>
     <div style="height: 100px; border: 1px solid red;">
       <CList :items="items">
@@ -10,7 +10,7 @@
             :item="item"
             :active="active"
             :data-index="index"
-            :sizeDependencies="[item.height]"
+            :size-dependencies="[item.height]"
           >
             <div class="sized-item" :style="{ height: `${item.height}px` }">
               {{ item }}

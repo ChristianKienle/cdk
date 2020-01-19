@@ -1,7 +1,7 @@
 <template>
-  <CList style="height: 100px;" :selectionMode="selectionMode" :items="items">
+  <CList style="height: 100px;" :selection-mode="selectionMode" :items="items">
     <template #default="{item, active, index, selected}">
-      <CListItem :item="item" :active="active" :sizeDependencies="[item.id]">
+      <CListItem :item="item" :active="active" :size-dependencies="[item.id]">
         {{ selected ? '[x]' : '[ ]' }} {{ item }}
       </CListItem>
     </template>

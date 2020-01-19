@@ -1,7 +1,7 @@
 <template>
   <div>
     <button ref="button" @mouseenter="show" @mouseleave="hide">Tooltip shows hover</button>
-    <CPopover ref="popover" trigger="$refs.button" placement="bottom" withArrow theme="clean">
+    <CPopover ref="popover" trigger="$refs.button" placement="bottom" with-arrow theme="clean">
       <template #default>
         <div>Popover Body</div>
       </template>

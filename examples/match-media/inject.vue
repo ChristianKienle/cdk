@@ -20,8 +20,8 @@ const Consumer = {
 }
 
 export default {
-  mixins: [MatchMedia],
   components: { Consumer },
+  mixins: [MatchMedia],
   vcdkMediaQueriesByName: {
     mini: 'only screen and (max-width: 400px)',
     compact: 'only screen and (min-width: 500px) and (max-width: 600px)',

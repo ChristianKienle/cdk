@@ -4,7 +4,7 @@
       <transition name="vcdk-modal-fade">
         <slot name="overlay">
           <Overlay v-if="open_" class="vcdk-modal__overlay">
-            <div :aria-hidden="String(!open_)" v-show="open_" style="outline: none">
+            <div v-show="open_" :aria-hidden="String(!open_)" style="outline: none">
               <CFocusTrap :active="open_">
                 <div role="dialog" aria-modal="true" tabindex="-1" style="outline: none">
                   <slot :close="close" />
@@ -28,8 +28,8 @@ import ClientOnly from '@vue-cdk/client-only/src/client-only.vue'
 
 export default {
   name: 'Modal',
-  mixins: [CFocusTrap()],
   components: { ClientOnly, Overlay, Portal },
+  mixins: [CFocusTrap()],
   props: {
     portalSelector: {
       default: () => `#${shortId()}`,
@@ -38,6 +38,16 @@ export default {
     open: {
       type: Boolean,
       default: false
+    }
+  },
+  data() {
+    return {
+      open_: this.open
+    }
+  },
+  watch: {
+    open(open) {
+      this.open_ = open
     }
   },
   beforeDestroy() {
@@ -49,16 +59,6 @@ export default {
       return
     }
     portalEl.parentNode.removeChild(portalEl)
-  },
-  watch: {
-    open(open) {
-      this.open_ = open
-    }
-  },
-  data() {
-    return {
-      open_: this.open
-    }
   },
   methods: {
     close() {

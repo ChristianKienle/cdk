@@ -1,5 +1,7 @@
 // @ts-check
 
+/** @typedef {string | null | undefined} Value */
+
 /**
  * @param {any} cls
  * @returns {boolean}
@@ -7,10 +9,8 @@
 const invalidClasses = cls => typeof cls === 'string' && cls.length > 0
 
 /**
- * @typedef {string | null | undefined} Value
- *
- * @returns {Array.<string> | null}
  * @param {Array.<Value>} classes
+ * @returns {Array.<string> | null}
  */
 const _classes = classes => {
   // Filter out null, undefined and ""

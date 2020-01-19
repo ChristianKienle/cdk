@@ -10,12 +10,13 @@ import vue from 'vue'
 
 vue.config.devtools = true
 
+const options = {
+  onDidRegisterComponent({ name, component }) {
+    console.log(`did register component ${name}`)
+  }
+}
+
 export default ({ Vue }) => {
-  Vue.use(Link)
-  Vue.use(Popover)
-  Vue.use(List)
-  Vue.use(FocusTrap)
-  Vue.use(Modal)
-  Vue.use(InfiniteScroll)
-  Vue.use(ScrollContainer)
+  const plugins = [Link, Popover, List, FocusTrap, Modal, InfiniteScroll, ScrollContainer]
+  plugins.forEach(plugin => Vue.use(plugin, options))
 }
