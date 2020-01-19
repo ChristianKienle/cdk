@@ -2,15 +2,10 @@
   <NoSsr>
     <SimplePortal :selector="portalSelector">
       <transition :name="transition_" appear @enter="enter">
-        <div
-          ref="body"
-          :aria-hidden="String(!visible_)"
-          v-if="showsBody_"
-          :class="bodyClasses"
-          :style="bodyStyles_"
-        >
+        <div ref="body" :aria-hidden="String(!visible_)" v-if="showsBody_" :class="bodyClasses">
+          <!-- :style="bodyStyles_" -->
           <slot v-bind="slotProps" />
-          <CPopoverArrow x-arrow :class="arrowClasses" />
+          <CPopoverArrow :class="arrowClasses" />
         </div>
       </transition>
     </SimplePortal>
@@ -21,7 +16,12 @@
 const REFS_PREFIX = '$refs.'
 import NoSsr from './helper/no-ssr'
 import { normalizedClasses, shortId } from './helper'
-import Popper from 'popper.js'
+import { createPopper, defaultModifiers } from '@popperjs/core'
+import { placements } from '@popperjs/core/lib/enums'
+import arrowModifier from '@popperjs/core/lib/modifiers/arrow'
+import offsetModifier from '@popperjs/core/lib/modifiers/offset'
+console.log('placements', placements)
+console.log('arrowModifier', arrowModifier)
 import { inBrowser } from '@vue-cdk/utils'
 import { defaultBoundary, isValidBoundary } from './boundary'
 import * as BodySizeMode from './body-size-mode'
@@ -34,7 +34,7 @@ export default {
   components: {
     NoSsr,
     SimplePortal,
-    CPopoverArrow: { render: h => h('span') }
+    CPopoverArrow: { render: h => h('div', { attrs: { 'data-popper-arrow': 'true' } }) }
   },
   props: {
     // CSS styles applied to the body element that wraps the contents of the popover.
@@ -92,7 +92,7 @@ export default {
     },
     flips: {
       type: Boolean,
-      default: true
+      default: false
     },
     visible: {
       type: Boolean,
@@ -104,9 +104,12 @@ export default {
     },
     placement: {
       type: String,
-      validator: value => Popper.placements.indexOf(value) >= 0,
-      default: 'auto'
+      validator: value => placements.indexOf(value) >= 0,
+      default: 'top'
     }
+  },
+  created() {
+    this.$_popper = null
   },
   data() {
     return {
@@ -237,15 +240,31 @@ export default {
       return getTrigger({ vm: $parent, trigger })
     },
     enter(el) {
-      const modifiers = this.modifiers_
-      const { placement } = this
+      const modifiers = [
+        // ...defaultModifiers,
+        // {
+        //   name: 'arrow',
+        //   enabled: true,
+        //   options: {
+        //     padding: 5
+        //   }
+        // },
+        {
+          name: 'offset',
+          enabled: true,
+          options: {
+            offset: [0, 10]
+          }
+        }
+      ]
+      const placement = 'auto'
       const options = {
         modifiers,
         placement
       }
       this.$forceUpdate()
       const trigger = this.getTrigger()
-      this.popperInstance = new Popper(trigger, el, options)
+      this.$_popper = createPopper(trigger, el, options) //new Popper(trigger, el, options)
     },
     modifier_bodySizeMode(data) {
       const mode = this.bodySizeMode_
@@ -277,12 +296,12 @@ export default {
       return data
     },
     destroyPopperInstance(isBeforeDestroy = false) {
-      if (this.popperInstance == null) {
+      if (this.$_popper == null) {
         return
       }
       if (isBeforeDestroy === true) {
-        this.popperInstance.destroy()
-        this.popperInstance = null
+        this.$_popper.destroy()
+        this.$_popper = null
         return
       }
     },
