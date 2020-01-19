@@ -5,4 +5,3 @@ export default { title: 'Popover/Themes' }
 export const clean = collection.importExample('clean')
 export const bigArrow = collection.importExample('big-arrow')
 export const dark = collection.importExample('dark')
-export const v2 = collection.importExample('v2')

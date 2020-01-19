@@ -3,6 +3,14 @@ import ComponentApiButton from './components/component-api-button.vue'
 export default ({ Vue }) => {
   Vue.component('ComponentApiButton', ComponentApiButton)
   Vue.mixin({
+    computed: {
+      $vcdkApiPages() {
+        return this.$site.pages.filter(page => {
+          const { frontmatter = {} } = page
+          return frontmatter.vcdkComponentApi != null
+        })
+      }
+    },
     methods: {
       $vcdkComponentApiPath(name) {
         const apiPage = this.$vcdkComponentApiPage(name)
@@ -15,14 +23,6 @@ export default ({ Vue }) => {
         return {
           path: this.$vcdkComponentApiPath(name)
         }
-      }
-    },
-    computed: {
-      $vcdkApiPages() {
-        return this.$site.pages.filter(page => {
-          const { frontmatter = {} } = page
-          return frontmatter.vcdkComponentApi != null
-        })
       }
     }
   })

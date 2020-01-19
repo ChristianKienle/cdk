@@ -1,10 +1,10 @@
 <template>
   <VueVirtualDynamicScroller
-    tabindex="0"
     ref="dynamicScroller"
+    tabindex="0"
     style="height: 100%;"
-    :keyField="keyField"
-    :minItemSize="minItemSize"
+    :key-field="keyField"
+    :min-item-size="minItemSize"
     :items="items"
     :prerender="0"
     @scroll.native.passive="handleScroll"

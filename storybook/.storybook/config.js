@@ -24,7 +24,6 @@ addParameters({
   ]
 })
 
-
 Vue.use(VueRouter)
 Vue.use(List)
 Vue.use(InfiniteScroll)

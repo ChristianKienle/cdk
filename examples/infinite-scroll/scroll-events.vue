@@ -4,7 +4,7 @@
     <div style="height: 200px; border: 1px dashed #ccc;">
       <CInfiniteScroll :items="items" @scrollPosition="scrollPosition = $event">
         <template #default="{ item, active }">
-          <CInfiniteScrollItem :item="item" :active="active" :sizeDependencies="[item.id]">
+          <CInfiniteScrollItem :item="item" :active="active" :size-dependencies="[item.id]">
             {{ item }}
           </CInfiniteScrollItem>
         </template>

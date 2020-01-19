@@ -1,12 +1,12 @@
 <template>
-  <CList style="height: 100px;" :selectionMode="selectionMode" :items="items">
+  <CList style="height: 100px;" :selection-mode="selectionMode" :items="items">
     <template #default="{ item, active, index, selected }">
       <CListItem
         class="item"
         :class="classesFor({ selected })"
         :item="item"
         :active="active"
-        :sizeDependencies="[item.id]"
+        :size-dependencies="[item.id]"
       >
         {{ item }}
       </CListItem>

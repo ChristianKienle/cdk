@@ -23,5 +23,5 @@ module.exports = {
     }
   ],
   ignorePatterns: ['node_modules/'],
-  extends: ["plugin:vue/essential", "@vue/prettier"]
+  extends: ["plugin:vue/recommended", "@vue/prettier"]
 }

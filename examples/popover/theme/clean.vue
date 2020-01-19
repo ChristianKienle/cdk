@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex; align-items: center; justify-content: center; height: 200px;">
     <button ref="button" @click="toggle">Toggle 'clean' Popover</button>
-    <CPopover trigger="$refs.button" ref="popover"  withArrow theme="clean">
+    <CPopover ref="popover" placement="bottom" trigger="$refs.button" with-arrow theme="clean">
       <div>I am a Popover. Wheeee. 😉</div>
     </CPopover>
   </div>

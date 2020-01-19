@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="number" v-model.number="itemIndex" />
+    <input v-model.number="itemIndex" type="number" />
     <button data-cy="setHeightButton" @click="scrollToItem">scroll</button>
     <div style="height: 100px; border: 1px solid red;">
       <CInfiniteScroll ref="list" :items="items">
@@ -9,7 +9,7 @@
             :item="item"
             :active="active"
             :data-index="index"
-            :sizeDependencies="[item.height]"
+            :size-dependencies="[item.height]"
           >
             <div class="sized-item">
               {{ item }}

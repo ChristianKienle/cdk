@@ -2,69 +2,50 @@
   <div class="settings">
     <SettingRow label="Placement">
       <select v-model="placement">
-        <option v-for="aPlacement in placements" :value="aPlacement" :key="aPlacement">{{
+        <option v-for="aPlacement in placements" :key="aPlacement" :value="aPlacement">{{
           aPlacement
         }}</option>
       </select>
     </SettingRow>
 
-    <SettingRow label="Boundary">
-      <select v-model="boundary">
-        <option
-          v-for="availableBoundary in boundaries"
-          :value="availableBoundary"
-          :key="availableBoundary"
-          >{{ availableBoundary }}</option
-        >
+    <SettingRow label="Theme">
+      <select v-model="theme">
+        <option v-for="aTheme in themes" :key="aTheme" :value="aTheme">{{ aTheme }}</option>
       </select>
     </SettingRow>
 
-    <SettingRow label="Theme">
-      <select v-model="theme">
-        <option v-for="aTheme in themes" :value="aTheme" :key="aTheme">{{ aTheme }}</option>
-      </select>
-    </SettingRow>
-    <SettingRow label="Body Size Mode">
-      <select v-model="bodySizeMode">
-        <option
-          v-for="aBodySizeMode in bodySizeModes"
-          :value="aBodySizeMode"
-          :key="aBodySizeMode"
-          >{{ aBodySizeMode }}</option
-        >
-      </select>
-    </SettingRow>
     <SettingRow label="Offset">
       <div style="display: flex;">
-        <input class="input" type="range" v-model.number="offset" min="0" max="100" value="0" />
+        <input v-model.number="offset" class="input" type="range" min="0" max="100" value="0" />
         <label style="">{{ offset }}px</label>
       </div>
     </SettingRow>
+
     <SettingRow label="Trigger Width">
       <div style="display: flex;">
         <input
+          v-model.number="triggerWidth"
           class="input"
           type="range"
-          v-model.number="triggerWidth"
-          @input="$emit('update:triggerWidth', $event.target.value)"
           min="200"
           max="400"
           value="250"
+          @input="$emit('update:triggerWidth', $event.target.value)"
         />
         <label>{{ triggerWidth }}px</label>
       </div>
     </SettingRow>
 
     <SettingRow label="Options">
-      <label> <input class="input" type="checkbox" v-model="flips" />Flip </label>
+      <label> <input v-model="flips" class="input" type="checkbox" />Flip </label>
       <br />
-      <label> <input class="input" type="checkbox" v-model="withArrow" />Arrow </label>
+      <label> <input v-model="withArrow" class="input" type="checkbox" />Arrow </label>
       <br />
       <label>
         <input
+          v-model="useNativeButton"
           class="input"
           type="checkbox"
-          v-model="useNativeButton"
           @change="$emit('update:useNativeButton', $event.target.checked)"
         />Native Button
       </label>
@@ -74,41 +55,18 @@
 
 <script>
 import SettingRow from './k-row.vue'
-import * as BodySizeMode from '@vue-cdk/popover/src/body-size-mode'
 
 export default {
   components: { SettingRow },
-  watch: {
-    kPopProps(newProps) {
-      this.$emit('changed', newProps)
-    }
-  },
-  computed: {
-    kPopProps() {
-      return {
-        bodySizeMode: this.bodySizeMode,
-        boundary: this.boundary,
-        offset: this.offset,
-        flips: this.flips,
-        placement: this.placement,
-        withArrow: this.withArrow,
-        theme: this.theme === 'none' ? null : this.theme
-      }
-    }
-  },
   data() {
     return {
-      bodySizeMode: BodySizeMode.defaultMode,
-      bodySizeModes: [...BodySizeMode.all],
       triggerWidth: 250,
       useNativeButton: false,
       offset: 0,
       theme: 'clean',
-      boundary: 'scrollParent',
       placement: 'bottom',
       flips: true,
       withArrow: true,
-      boundaries: ['scrollParent', 'window', 'viewport'],
       placements: [
         'top-start',
         'top',
@@ -123,7 +81,23 @@ export default {
         'bottom',
         'bottom-end'
       ],
-      themes: ['none', 'v2', 'clean', 'big-arrow', 'dark']
+      themes: ['none', 'clean', 'big-arrow', 'dark']
+    }
+  },
+  computed: {
+    kPopProps() {
+      return {
+        offset: this.offset,
+        flips: this.flips,
+        placement: this.placement,
+        withArrow: this.withArrow,
+        theme: this.theme === 'none' ? null : this.theme
+      }
+    }
+  },
+  watch: {
+    kPopProps(newProps) {
+      this.$emit('changed', newProps)
     }
   }
 }

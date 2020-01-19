@@ -16,13 +16,6 @@ const Wrapper = {
 export default {
   name: 'ScrollContainer',
   components: { Wrapper },
-  computed: {
-    styles() {
-      return {
-        overflow: 'auto'
-      }
-    }
-  },
   model: {
     prop: 'scrollPosition',
     event: 'input'
@@ -31,13 +24,26 @@ export default {
     // A tag-name or component that will be rendered instead of the standard `div`-element.
     tag: {
       // By default, `CScrollView` will render a scrollable `div`-element.
-      default: 'div'
+      default: 'div',
+      type: {}
     },
     // The scroll position of the scroll view. `scrollPosition` is also the `v-model`-prop used for this component.
     scrollPosition: {
       type: Number,
       // By default (`null`) the scroll position will not be changed in any way.
       default: null
+    }
+  },
+  data() {
+    return {
+      scrollPosition_: this.scrollPosition
+    }
+  },
+  computed: {
+    styles() {
+      return {
+        overflow: 'auto'
+      }
     }
   },
   watch: {
@@ -55,11 +61,6 @@ export default {
     onScroll(event) {
       this.scrollPosition_ = this.$el.scrollTop
       this.$emit('input', this.scrollPosition_)
-    }
-  },
-  data() {
-    return {
-      scrollPosition_: this.scrollPosition
     }
   }
 }

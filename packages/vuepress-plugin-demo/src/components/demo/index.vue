@@ -22,7 +22,7 @@
           </div>
         </summary>
         <div class="sc-container__body">
-          <Content ref="code" :pageKey="keyForExampleAtPath" />
+          <Content ref="code" :page-key="keyForExampleAtPath" />
         </div>
       </details>
     </div>
@@ -59,13 +59,6 @@ export default {
       required: true
     }
   },
-  methods: {
-    copyCode() {
-      const codeEl = this.$refs.code.$el
-      const code = codeEl.textContent
-      this.$copyText(code, codeEl)
-    }
-  },
   computed: {
     keyForExampleAtPath() {
       const page = this.$site.pages.find(({ frontmatter = {} }) => {
@@ -83,6 +76,13 @@ export default {
         .split('/')
         .map(toPascalCase)
         .join('-')}`
+    }
+  },
+  methods: {
+    copyCode() {
+      const codeEl = this.$refs.code.$el
+      const code = codeEl.textContent
+      this.$copyText(code, codeEl)
     }
   }
 }

@@ -6,12 +6,12 @@
       @update:triggerWidth="triggerWidth = $event"
     />
 
-    <div class="outer" ref="scrollcontainer">
-      <div class="inner" ref="contentview">
+    <div ref="scrollcontainer" class="outer">
+      <div ref="contentview" class="inner">
         <Trigger ref="button" :style="triggerStyle" :native="useNativeButton" @click="toggle"
           >Show Popover</Trigger
         >
-        <CPopover v-bind="popoverProps" ref="popover" trigger="$refs.button">
+        <CPopover ref="popover" v-bind="popoverProps" trigger="$refs.button">
           <template #default>
             <div class="title">Sample Popover Title</div>
             <div class="body">
@@ -37,7 +37,6 @@ export default {
     triggerWidth: 250,
     popoverProps: {
       offset: 0,
-      overflowContainer: 'scrollParent',
       placement: 'bottom',
       flips: true,
       withArrow: true,
@@ -50,6 +49,10 @@ export default {
         width: `${this.triggerWidth}px`
       }
     }
+  },
+  mounted() {
+    this.$forceUpdate()
+    requestAnimationFrame(this.scrollTriggerIntoView)
   },
   methods: {
     show() {
@@ -70,10 +73,6 @@ export default {
       scrollView.scrollTop = y
       scrollView.scrollLeft = x
     }
-  },
-  mounted() {
-    this.$forceUpdate()
-    requestAnimationFrame(this.scrollTriggerIntoView)
   }
 }
 </script>

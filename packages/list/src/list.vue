@@ -1,10 +1,10 @@
 <template>
   <CInifiniteScroll
     ref="inifiniteScroll"
-    :keyField="keyField"
-    :minItemSize="minItemSize"
+    :key-field="keyField"
+    :min-item-size="minItemSize"
     :items="items"
-    :loadMore="loadMore"
+    :load-more="loadMore"
   >
     <template #before>
       <slot name="before" />
@@ -65,6 +65,11 @@ export default {
     // Function to be called when the list needs more items from you. This function is called with a callback parameter that you MUST call at some point with additional items.
     loadMore: { type: Function, default: null }
   },
+  data() {
+    return {
+      selection: []
+    }
+  },
   methods: {
     idOfItem(item) {
       return item[this.keyField]
@@ -87,11 +92,6 @@ export default {
     // @arg index The row index of the item you want to scroll to.
     scrollToIndex(index) {
       this.$refs.inifiniteScroll.scrollToIndex(index)
-    }
-  },
-  data() {
-    return {
-      selection: []
     }
   }
 }

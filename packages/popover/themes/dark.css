@@ -1,81 +1,53 @@
-.vcdk-popover-theme-dark-show-enter, .vcdk-popover-theme-dark-show-leave-to {
+.vcdk-popover-theme-dark-show-enter,
+.vcdk-popover-theme-dark-show-leave-to {
   opacity: 0;
 }
+
 .vcdk-popover-theme-dark {
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
+
 .vcdk-popover-theme-dark.vcdk-popover-body {
-  background-color: #1d2935;
-  border: 1px solid #1d2935;
   border-radius: 5px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   padding: 15px;
-  color: #fff; }
-  .vcdk-popover-theme-dark.vcdk-popover-body.vcdk-popover--no-arrow {
-    margin: 0 !important; }
-    .vcdk-popover-theme-dark.vcdk-popover-body.vcdk-popover--no-arrow .vcdk-popover--arrow {
-      display: none; }
-  .vcdk-popover-theme-dark.vcdk-popover-body[x-out-of-boundaries] {
-    display: none; }
-  .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='bottom'] {
-    margin-top: 15px; }
-    .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='bottom'] .vcdk-popover--arrow {
-      border-bottom-color: #141c25;
-      border-width: 0 7.5px 15px;
-      margin: 0 7.5px;
-      top: -15px; }
-      .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='bottom'] .vcdk-popover--arrow::after {
-        border-bottom-color: #1d2935;
-        border-width: 0 7.5px 15px;
-        margin: 0 -7.5px;
-        top: 1px; }
-  .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='top'] {
-    margin-bottom: 15px; }
-    .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='top'] .vcdk-popover--arrow {
-      border-top-color: #1d2935;
-      border-width: 15px 7.5px 0 7.5px;
-      bottom: -15px;
-      margin: 0 7.5px; }
-      .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='top'] .vcdk-popover--arrow::after {
-        border-top-color: #1d2935;
-        border-width: 15px 7.5px 0 7.5px;
-        bottom: 1px;
-        margin: 0 -7.5px; }
-  .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='left'] {
-    margin-right: 15px; }
-    .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='left'] .vcdk-popover--arrow {
-      border-left-color: #141c25;
-      border-width: 7.5px 0 7.5px 15px;
-      margin: 7.5px 0;
-      right: -15px; }
-      .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='left'] .vcdk-popover--arrow::after {
-        border-left-color: #1d2935;
-        border-width: 7.5px 0 7.5px 15px;
-        margin: -7.5px 0;
-        right: 1px; }
-  .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='right'] {
-    margin-left: 15px; }
-    .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='right'] .vcdk-popover--arrow {
-      border-right-color: #141c25;
-      border-width: 7.5px 15px 7.5px 0;
-      left: -15px;
-      margin: 7.5px 0; }
-      .vcdk-popover-theme-dark.vcdk-popover-body[x-placement^='right'] .vcdk-popover--arrow::after {
-        border-right-color: #1d2935;
-        border-width: 7.5px 15px 7.5px 0;
-        left: 1px;
-        margin: -7.5px 0; }
-  .vcdk-popover-theme-dark.vcdk-popover-body .vcdk-popover--arrow {
-    border-color: transparent;
-    border-style: solid;
-    height: 0;
-    position: absolute;
-    width: 0; }
-    .vcdk-popover-theme-dark.vcdk-popover-body .vcdk-popover--arrow::after {
-      border-color: transparent;
-      border-style: solid;
-      content: '';
-      position: absolute; }
+  background-color: #1d2935;
+  color: white;
+  z-index: 19;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
-/*# sourceMappingURL=dark.css.map */
+.vcdk-popover-theme-dark > .vcdk-popover--arrow,
+.vcdk-popover-theme-dark > .vcdk-popover--arrow::before {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+.vcdk-popover-theme-dark > .vcdk-popover--arrow::before {
+  content: '';
+  transform: rotate(45deg);
+  background: #1d2935;
+  border: none;
+  z-index: -1;
+}
+
+.vcdk-popover-theme-dark.vcdk-popover-body[data-popper-placement^='top'] .vcdk-popover--arrow {
+  bottom: -5px;
+}
+
+.vcdk-popover-theme-dark.vcdk-popover-body[data-popper-placement^='bottom'] .vcdk-popover--arrow {
+  top: -5px;
+}
+
+.vcdk-popover-theme-dark.vcdk-popover-body[data-popper-placement^='left'] .vcdk-popover--arrow {
+  right: -5px;
+}
+
+.vcdk-popover-theme-dark.vcdk-popover-body[data-popper-placement^='right'] .vcdk-popover--arrow {
+  left: -5px;
+}

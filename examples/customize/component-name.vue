@@ -6,7 +6,7 @@
   >
 </template>
 <script>
-import Link from '@vue-cdk/link'
+import * as Link from '@vue-cdk/link'
 
 export default {
   mixins: [

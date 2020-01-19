@@ -14,8 +14,8 @@ describe('ClientOnly Component', () => {
     </div>
     `
     const app = new Vue({
-      template,
-      components: { ClientOnly }
+      components: { ClientOnly },
+      template
     })
     const html = await renderer.renderToString(app)
     expect(html).toContain('hello everyone')
@@ -36,8 +36,8 @@ describe('ClientOnly Component', () => {
     </div>
     `
     const app = new Vue({
-      template,
-      components: { ClientOnly }
+      components: { ClientOnly },
+      template
     })
     const html = await renderer.renderToString(app)
     expect(html).toContain('hello everyone')
@@ -56,8 +56,8 @@ describe('ClientOnly Component', () => {
     </div>
     `
     const app = new Vue({
-      template,
-      components: { ClientOnly }
+      components: { ClientOnly },
+      template
     })
     const html = await renderer.renderToString(app)
     expect(html).toContain('hello everyone')
