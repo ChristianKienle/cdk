@@ -5,6 +5,7 @@
     <MyPrefixLink href="https://example.org">https://example.org</MyPrefixLink></p
   >
 </template>
+
 <script>
 import Link from '@vue-cdk/link'
 

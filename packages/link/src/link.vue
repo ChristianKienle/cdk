@@ -69,7 +69,10 @@ export default {
     // Setting `disabled` prop will cancel all `click`-events from being emitted.
     disabled: { type: Boolean, default: false },
     // Denotes the target route of the link: The value will be passed – as is – to the `RouterLink` that will be rendered on your behalf.
-    to: {},
+    to: {
+      type: [String, Object],
+      default: null
+    },
     // Configure the resolved path/url should be used as the value for the `href`-attribute. You can only specify either `to` or `href` – not both.
     href: {
       type: String,

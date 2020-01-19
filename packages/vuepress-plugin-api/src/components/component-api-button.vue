@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="location" v-slot="{ href, route, navigate }">
+  <router-link v-slot="{ href, route, navigate }" :to="location">
     <button class="component-api-button" :class="classes" @click="navigate">
       <ArrowRight class="icon-right" />
       <span class="component-api-button__title">more</span>

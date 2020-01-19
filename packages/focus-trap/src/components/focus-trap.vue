@@ -23,12 +23,6 @@ export default {
       validator: value => ['on-esc', 'manual'].indexOf(value) > -1
     }
   },
-  render(h) {
-    return this.$slots.default
-  },
-  created() {
-    this.trap = createTrap(this)
-  },
   watch: {
     active: {
       immediate: true,
@@ -54,6 +48,12 @@ export default {
         }
       }
     }
+  },
+  created() {
+    this.trap = createTrap(this)
+  },
+  render(h) {
+    return this.$slots.default
   }
 }
 </script>

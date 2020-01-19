@@ -16,7 +16,7 @@
         }"
       >
         <p>I am a Modal</p>
-        <input tabindex="0" ref="intialInput" />
+        <input ref="intialInput" tabindex="0" />
         <input />
         <input />
         <button @click="active = false">Deactivate Trap</button>

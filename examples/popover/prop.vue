@@ -2,7 +2,7 @@
   <div>
     <button ref="button" @click="visible = !visible">Toggle</button>
 
-    <CPopover trigger="$refs.button" :visible="visible" theme="clean" withArrow>
+    <CPopover placement="bottom" trigger="$refs.button" :visible="visible" theme="clean" with-arrow>
       <template #default>
         <div>Popover Body</div>
       </template>

@@ -17,8 +17,7 @@ export default ({ vm, trigger }) => {
   if (typeof trigger === 'string') {
     if (trigger.startsWith(REFS_PREFIX)) {
       const refName = trigger.substring(REFS_PREFIX.length)
-      const triggerEl = vm.$refs[refName]
-      return triggerEl
+      return vm.$refs[refName]
     }
   }
 }

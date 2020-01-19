@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex;">
     <button ref="buttonA" @click="toggleA">Small Trigger</button>
-    <button ref="buttonB" @click="toggleB" style="width: 250px;">Show Trigger</button>
+    <button ref="buttonB" style="width: 250px;" @click="toggleB">Show Trigger</button>
     <CPopover
       ref="popoverA"
       trigger="$refs.buttonA"

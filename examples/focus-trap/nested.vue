@@ -3,21 +3,21 @@
     <button @click="showModal">
       Show Modal
     </button>
-    <Modal ref="modal" v-show="modalVisible">
+    <Modal v-show="modalVisible" ref="modal">
       <div>
         <p>I am a Modal</p>
         <button @click="nestedTrap">Show nested Modal</button>
         <button @click="closeModal">Close Modal</button>
-        <input tabindex="0" ref="intialInput" />
+        <input ref="intialInput" tabindex="0" />
         <input />
         <input />
       </div>
     </Modal>
-    <Modal ref="nestedModal" v-show="nestedModalVisible">
+    <Modal v-show="nestedModalVisible" ref="nestedModal">
       <div>
         <p>I am <strong>nested</strong> a Modal</p>
         <button @click="closeNestedModal">Close nested Modal</button>
-        <input tabindex="0" ref="nestedInitialInput" />
+        <input ref="nestedInitialInput" tabindex="0" />
         <input />
         <input />
       </div>
