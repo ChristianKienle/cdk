@@ -37,7 +37,6 @@
   "peerDependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.10",
-    "vue-observe-visibility": "^0.4.6",
     "vue-virtual-scroller": "^1.0.0-rc.2"
   },
   "devDependencies": {
@@ -52,7 +51,6 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "vue": "^2.6.11",
-    "vue-observe-visibility": "^0.4.6",
     "vue-template-compiler": "^2.6.11",
     "vue-virtual-scroller": "^1.0.0-rc.2"
   }
