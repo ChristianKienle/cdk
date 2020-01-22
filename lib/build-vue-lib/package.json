@@ -17,7 +17,7 @@
     "bili": "^4.8.1",
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
-    "rollup-plugin-vue": "^5.1.5",
+    "rollup-plugin-vue": "^5.1.6",
     "vue-template-compiler": "^2.6.11"
   }
 }
