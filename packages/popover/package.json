@@ -31,7 +31,7 @@
   ],
   "peerDependencies": {
     "core-js": "^3.6.4",
-    "@popperjs/core": "^2.0.0-rc.3",
+    "@popperjs/core": "^2.0.0",
     "vue": "^2.6.10"
   },
   "dependencies": {
@@ -41,7 +41,7 @@
     "@vue-cdk/utils": "^0.4.0"
   },
   "devDependencies": {
-    "@popperjs/core": "^2.0.0-rc.3",
+    "@popperjs/core": "^2.0.0",
     "@vue-cdk/build-vue-lib": "^0.4.7",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
