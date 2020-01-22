@@ -2,7 +2,13 @@
   <div>
     <button ref="button" @click="toggle">Toggle</button>
 
-    <CPopover ref="popover" placement="bottom" target="$refs.button" theme="clean">
+    <CPopover
+      ref="popover"
+      :with-arrow="false"
+      placement="bottom"
+      target="$refs.button"
+      theme="clean"
+    >
       <template #default>
         <div>Popover Body</div>
       </template>

@@ -3,6 +3,7 @@ import App from './app.vue'
 import Router from 'vue-router'
 import List from '@vue-cdk/list'
 import FocusTrap from '@vue-cdk/focus-trap'
+import Tooltip from '@vue-cdk/tooltip'
 import createRouter from './create-router'
 
 Vue.config.devtools = true
@@ -11,6 +12,7 @@ const router = createRouter()
 
 Vue.use(List)
 Vue.use(FocusTrap)
+Vue.use(Tooltip)
 Vue.use(Router)
 
 const vm = new Vue({

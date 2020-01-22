@@ -17,6 +17,7 @@
     "@vue-cdk/infinite-scroll": "^0.4.7",
     "@vue-cdk/link": "^0.4.7",
     "@vue-cdk/list": "^0.4.7",
+    "@vue-cdk/tooltip": "^0.4.7",
     "@vue-cdk/match-media": "^0.4.7",
     "@vue-cdk/modal": "^0.4.7",
     "@vue-cdk/node-utils": "^0.4.0",
@@ -32,7 +33,7 @@
     "devalue": "^2.0.1",
     "fs-extra": "^8.1.0",
     "globby": "^11.0.0",
-    "@popperjs/core": "^2.0.0-rc.3",
+    "@popperjs/core": "^2.0.0",
     "stringify-attributes": "^2.0.0",
     "vuepress-plugin-clean-urls": "^1.1.1"
   },

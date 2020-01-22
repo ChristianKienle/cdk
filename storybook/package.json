@@ -14,6 +14,7 @@
     "@vue-cdk/infinite-scroll": "^0.4.7",
     "@vue-cdk/link": "^0.4.7",
     "@vue-cdk/list": "^0.4.7",
+    "@vue-cdk/tooltip": "^0.4.7",
     "@vue-cdk/match-media": "^0.4.7",
     "@vue-cdk/popover": "^0.4.7",
     "@vue-cdk/portal": "^0.4.7",

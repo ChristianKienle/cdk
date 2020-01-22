@@ -10,7 +10,7 @@
           :style="bodyStyles_"
         >
           <slot v-bind="slotProps" />
-          <CPopoverArrow :class="arrowClasses" :style="arrowStyles_" />
+          <CPopoverArrow ref="arrow" v-if="withArrow" :class="arrowClasses" :style="arrowStyles_" />
         </div>
       </transition>
     </SimplePortal>
@@ -25,7 +25,7 @@ import { createPopper } from '@popperjs/core'
 import { placements } from '@popperjs/core/lib/enums'
 import { inBrowser } from '@vue-cdk/utils'
 import { Portal as SimplePortal } from '@linusborg/vue-simple-portal'
-import getTrigger from './helper/get-trigger'
+import getTarget from './helper/get-target'
 import ClientOnly from '@vue-cdk/client-only/src/client-only.vue'
 import CPopoverArrow from './arrow.vue'
 
@@ -44,21 +44,21 @@ export default {
       // `{}` – no styles
       default: () => ({})
     },
-    // The trigger that the popover will be attached to.
-    trigger: {
+    // The target element that the popover will be attached to.
+    target: {
       required: true,
-      type: String
+      type: [String, Function]
     },
     // The id of an `HTMLElement` that will act as a container for all popovers.
     portalId: {
       default: 'vcdk-popover-portal-container',
       type: String
     },
-    // The distance between the popover body and the trigger element.
+    // The distance between the popover body and the target element.
     offset: {
       type: Number,
-      // `13px`
-      default: 13
+      // `5px`
+      default: 5
     },
     transition: {
       type: String,
@@ -183,12 +183,15 @@ export default {
     this.$_popper = null
   },
   methods: {
-    getTrigger() {
-      const { trigger, $parent } = this
-      return getTrigger({ vm: $parent, trigger })
+    getTarget() {
+      const { target, $parent } = this
+      return getTarget({ vm: $parent, target })
     },
     async enter(el) {
-      const { offset, flips, placement } = this
+      const { $refs, offset, flips, placement, withArrow } = this
+      // const arrowElement = $refs.arrow != null ? $refs.arrow.$el : null
+      // console.log({arrowElement})
+      // const arrowOptions = arrowElement != null ? { element: arrowElement, padding: 10 }: {}
       const modifiers = [
         {
           name: 'offset',
@@ -200,14 +203,19 @@ export default {
         {
           name: 'flip',
           enabled: flips
+        },
+        {
+          name: 'arrow',
+          enabled: withArrow
+          // options:
         }
       ]
       const options = {
         modifiers,
         placement
       }
-      const trigger = this.getTrigger()
-      this.$_popper = createPopper(trigger, el, options)
+      const target = this.getTarget()
+      this.$_popper = createPopper(target, el, options)
     },
     setVisible(newVisible) {
       this.visible_ = newVisible
@@ -216,7 +224,7 @@ export default {
       this.$emit('update:visible', this.visible_)
     },
     show() {
-      const trigger = this.getTrigger()
+      const target = this.getTarget()
       if (this.showsBody_) {
         return
       }

@@ -10,6 +10,24 @@ describe('popover component', () => {
     getDataCy('popoverBody').should('be.visible')
   })
 
+  it('renders arrow when with-arrow is true', () => {
+    visitStart()
+    visitPage('/popover/with-arrow')
+    getDataCy('popoverBody').should('not.be.visible')
+    getDataCy('toggleButton').click()
+    getDataCy('popoverBody').should('be.visible')
+    cy.get('.vcdk-popover--arrow').should('be.visible')
+  })
+
+  it('renders no arrow when with-arrow is false', () => {
+    visitStart()
+    visitPage('/popover/without-arrow')
+    getDataCy('popoverBody').should('not.be.visible')
+    getDataCy('toggleButton').click()
+    getDataCy('popoverBody').should('be.visible')
+    cy.get('.vcdk-popover--arrow').should('not.exist')
+  })
+
   it('creates a container without any height', () => {
     visitStart()
     visitPage('/popover/default')

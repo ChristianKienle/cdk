@@ -1,7 +1,7 @@
-import getTrigger from './../get-trigger'
+import getTarget from './../get-target'
 import { mount } from '@vue/test-utils'
 
-describe('get-trigger', () => {
+describe('get-target', () => {
   it('works with $ref.button', () => {
     const Popover = {
       name: 'Popover',
@@ -11,17 +11,17 @@ describe('get-trigger', () => {
     const wrapper = mount({
       template: `
       <div>
-        <button data-trigger ref="button">toggle</button>
+        <button data-target ref="button">toggle</button>
       </div>
       `
     })
 
-    const trigger = getTrigger({
+    const target = getTarget({
       vm: wrapper.vm,
-      trigger: '$refs.button'
+      target: '$refs.button'
     })
 
-    expect(trigger).toBeDefined()
-    expect(trigger.dataset.trigger).toBeDefined()
+    expect(target).toBeDefined()
+    expect(target.dataset.target).toBeDefined()
   })
 })
