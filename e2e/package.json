@@ -19,6 +19,7 @@
     "@vue-cdk/list": "^0.4.7",
     "@vue-cdk/match-media": "^0.4.7",
     "@vue-cdk/popover": "^0.4.7",
+    "@vue-cdk/tooltip": "^0.4.7",
     "@vue-cdk/utils": "^0.4.0",
     "@vue/cli-plugin-babel": "^4.1.2",
     "@vue/cli-plugin-e2e-cypress": "^4.1.2",

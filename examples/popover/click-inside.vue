@@ -2,7 +2,7 @@
   <div>
     <button ref="button" @click="toggle">Show Popover</button>
 
-    <CPopover ref="popover" trigger="$refs.button" boundary="viewport" with-arrow theme="clean">
+    <CPopover ref="popover" target="$refs.button" boundary="viewport" with-arrow theme="clean">
       <template #default>
         <div>
           I am a Popover Body.

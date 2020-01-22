@@ -14,6 +14,7 @@ import Portal from '@vue-cdk/portal'
 import ScrollContainer from '@vue-cdk/scroll-container'
 import ClientOnly from '@vue-cdk/client-only'
 import FocusTrap from '@vue-cdk/focus-trap'
+import Tooltip from '@vue-cdk/tooltip'
 
 addParameters({
   backgrounds: [
@@ -33,5 +34,6 @@ Vue.use(Portal)
 Vue.use(ScrollContainer)
 Vue.use(ClientOnly)
 Vue.use(FocusTrap)
+Vue.use(Tooltip)
 
 configure(require.context('../src', true, /\.*.stories.js/), module)

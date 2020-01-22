@@ -1,0 +1,53 @@
+.vcdk-popover-theme-tooltip-dark-show-enter,
+.vcdk-popover-theme-tooltip-dark-show-leave-to {
+  opacity: 0;
+}
+
+.vcdk-popover-theme-tooltip-dark {
+  transition: opacity 0.2s;
+}
+
+.vcdk-popover-theme-tooltip-dark.vcdk-popover-body {
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 5px;
+  color: rgb(250,250,250);
+  background-color: rgba(50, 50, 50);
+  z-index: 19;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.75rem;
+}
+
+.vcdk-popover-theme-tooltip-dark > .vcdk-popover--arrow,
+.vcdk-popover-theme-tooltip-dark > .vcdk-popover--arrow::before {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  z-index: -1;
+}
+
+.vcdk-popover-theme-tooltip-dark > .vcdk-popover--arrow::before {
+  content: '';
+  transform: rotate(45deg);
+  background-color: rgb(50,50,50);
+  border: none;
+  z-index: -1;
+}
+
+.vcdk-popover-theme-tooltip-dark.vcdk-popover-body[data-popper-placement^='top'] .vcdk-popover--arrow {
+  bottom: -3px;
+}
+
+.vcdk-popover-theme-tooltip-dark.vcdk-popover-body[data-popper-placement^='bottom'] .vcdk-popover--arrow {
+  top: -3px;
+}
+
+.vcdk-popover-theme-tooltip-dark.vcdk-popover-body[data-popper-placement^='left'] .vcdk-popover--arrow {
+  right: -3px;
+}
+
+.vcdk-popover-theme-tooltip-dark.vcdk-popover-body[data-popper-placement^='right'] .vcdk-popover--arrow {
+  left: -3px;
+}

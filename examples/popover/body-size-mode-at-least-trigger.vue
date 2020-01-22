@@ -4,7 +4,7 @@
     <button ref="buttonB" style="width: 250px;" @click="toggleB">Show Trigger</button>
     <CPopover
       ref="popoverA"
-      trigger="$refs.buttonA"
+      target="$refs.buttonA"
       body-size-mode="at-least-trigger"
       with-arrow
       theme="clean"
@@ -16,7 +16,7 @@
 
     <CPopover
       ref="popoverB"
-      trigger="$refs.buttonB"
+      target="$refs.buttonB"
       body-size-mode="at-least-trigger"
       with-arrow
       theme="clean"

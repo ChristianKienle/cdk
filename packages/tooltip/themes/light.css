@@ -1,0 +1,73 @@
+.vcdk-popover-theme-tooltip-light-show-enter,
+.vcdk-popover-theme-tooltip-light-show-leave-to {
+  opacity: 0;
+}
+
+.vcdk-popover-theme-tooltip-light {
+  transition: opacity 0.2s;
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body {
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 5px;
+  color: rgb(50,50,50);
+  border: 1px solid rgb(220,220,220);
+  background-color: rgb(245,245,245);
+  z-index: 19;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.75rem;
+}
+
+.vcdk-popover-theme-tooltip-light > .vcdk-popover--arrow,
+.vcdk-popover-theme-tooltip-light > .vcdk-popover--arrow::before {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  z-index: -1;
+}
+
+.vcdk-popover-theme-tooltip-light > .vcdk-popover--arrow::before {
+  content: '';
+  transform: rotate(45deg);
+  background: rgb(245,245,245);
+  z-index: -1;
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body[data-popper-placement^='top'] > .vcdk-popover--arrow::before {
+  border-right: 1px solid rgb(220,220,220);
+  border-bottom: 1px solid rgb(220,220,220);
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body[data-popper-placement^='bottom'] > .vcdk-popover--arrow::before {
+  border-left: 1px solid rgb(220,220,220);
+  border-top: 1px solid rgb(220,220,220);
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body[data-popper-placement^='left'] > .vcdk-popover--arrow::before {
+  border-top: 1px solid rgb(220,220,220);
+  border-right: 1px solid rgb(220,220,220);
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body[data-popper-placement^='right'] > .vcdk-popover--arrow::before {
+  border-bottom: 1px solid rgb(220,220,220);
+  border-left: 1px solid rgb(220,220,220);
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body[data-popper-placement^='top'] .vcdk-popover--arrow {
+  bottom: -2px;
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body[data-popper-placement^='bottom'] .vcdk-popover--arrow {
+  top: -4px;
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body[data-popper-placement^='left'] .vcdk-popover--arrow {
+  right: -3px;
+}
+
+.vcdk-popover-theme-tooltip-light.vcdk-popover-body[data-popper-placement^='right'] .vcdk-popover--arrow {
+  left: -4px;
+}

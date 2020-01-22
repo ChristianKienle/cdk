@@ -3,7 +3,7 @@
     <button ref="button" @click="toggle">Toggle Popover</button>
     <CPopover
       ref="popover"
-      trigger="$refs.button"
+      target="$refs.button"
       with-arrow
       theme="clean"
       :flips="false"

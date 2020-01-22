@@ -20,6 +20,7 @@ const createEntries = (...rawEntries) => rawEntries.map(([name, slug, id]) => cr
 module.exports = {
   indexPath: 'api/README.md',
   items: createEntries(
+    ['Tooltip', 'tooltip', '@vue-cdk/tooltip/src/tooltip.vue'],
     ['List', 'list', '@vue-cdk/list/src/list.vue'],
     ['Modal', 'modal', '@vue-cdk/modal/src/modal.vue'],
     ['ModalOverlay', 'modal-overlay', '@vue-cdk/modal/src/overlay.vue'],

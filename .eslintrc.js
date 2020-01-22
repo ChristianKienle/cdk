@@ -25,7 +25,7 @@ module.exports = {
       plugins: [
         "cypress"
       ],
-      files: ["**/__tests__/*.test.e2e.js"],
+      files: ["packages/**/__tests__/*.e2e.js"],
       env: {
         mocha: true,
         "cypress/globals": true
