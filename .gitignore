@@ -5,8 +5,8 @@ node_modules
 docs/dist
 **/dist
 
-/e2e/tests/e2e/videos/*.*.mp4
-/e2e/tests/e2e/screenshots/*.*.mp4
+**/__tests__/*.*.mp4
+e2e/videos/**
 
 # local env files
 .env.local
