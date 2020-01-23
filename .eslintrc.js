@@ -20,6 +20,16 @@ module.exports = {
       env: {
         jest: true
       }
+    },
+    {
+      plugins: [
+        "cypress"
+      ],
+      files: ["**/__tests__/*.test.e2e.js"],
+      env: {
+        mocha: true,
+        "cypress/globals": true
+      }
     }
   ],
   ignorePatterns: ['node_modules/'],

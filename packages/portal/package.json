@@ -34,6 +34,7 @@
     "@vue-cdk/utils": "^0.4.0"
   },
   "devDependencies": {
+    "@vue-cdk/e2e-utils": "^0.4.7",
     "@linusborg/vue-simple-portal": "^0.1.4",
     "@vue-cdk/build-vue-lib": "^0.4.7",
     "@vue/cli-plugin-babel": "^4.0.0",
