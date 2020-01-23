@@ -21,13 +21,15 @@
     "test": "vue-cli-service test:unit --no-collect-coverage && lerna run test --concurrency 1",
     "test:unit": "vue-cli-service test:unit --no-collect-coverage",
     "test:unit:watch": "cross-env BASE_URL='/' vue-cli-service test:unit --no-collect-coverage --watch",
-    "test:e2e": "cd e2e && yarn start",
-    "test:e2e:ci": "cd e2e && yarn start  --headless",
-    "poor-ci": "yarn test && yarn lint && yarn test:e2e && yarn docs:build",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:e2e:ci": "yarn test:e2e --headless",
+    "poor-ci": "yarn test && yarn lint && yarn test:e2e:ci && yarn docs:build",
     "lint": "eslint --ext .js,.vue packages examples storybook e2e",
     "postinstall": "yarn bootstrap"
   },
   "devDependencies": {
+    "@vue/cli-plugin-e2e-cypress": "^4.1.2",
+    "cypress": "^3.8.2",
     "eslint-plugin-cypress": "^2.8.1",
     "eslint-plugin-import": "^2.20.0",
     "@vue/test-utils": "^1.0.0-beta.31",

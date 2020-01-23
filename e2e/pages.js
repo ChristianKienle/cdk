@@ -1,5 +1,5 @@
 // @ts-check
-const pagesContext = require.context('./../../../packages/', true, /\.page.vue$/)
+const pagesContext = require.context('./../packages/', true, /\.page.vue$/)
 const Path = require('path')
 
 // A single page key looks like this:

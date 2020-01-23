@@ -13,11 +13,8 @@
   "files": [
     "src/*.js"
   ],
-  "peerDependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.10"
-  },
   "devDependencies": {
+    "cypress": "^3.8.2",
     "@vue-cdk/client-only": "^0.4.7",
     "@vue-cdk/list": "^0.4.7",
     "@vue-cdk/match-media": "^0.4.7",
