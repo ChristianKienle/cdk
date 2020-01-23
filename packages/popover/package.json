@@ -41,6 +41,7 @@
     "@vue-cdk/utils": "^0.4.0"
   },
   "devDependencies": {
+    "@vue-cdk/e2e-utils": "^0.4.7",
     "@popperjs/core": "^2.0.0-rc.3",
     "@vue-cdk/build-vue-lib": "^0.4.7",
     "@vue/cli-plugin-babel": "^4.0.0",

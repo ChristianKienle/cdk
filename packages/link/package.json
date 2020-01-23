@@ -31,6 +31,7 @@
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
+    "@vue-cdk/e2e-utils": "^0.4.7",
     "@vue-cdk/build-vue-lib": "^0.4.7",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",

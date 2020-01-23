@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "allowJs": true,
-    "noEmit": true,
-    "lib": ["ES2017"],
-    "types": ["cypress"]
-  }
-}

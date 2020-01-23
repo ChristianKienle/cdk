@@ -1,0 +1,16 @@
+{
+  "name": "@vue-cdk/e2e-utils",
+  "version": "0.4.7",
+  "private": true,
+  "main": "src/index.js",
+  "files": [
+    "src/**/*.js",
+    "src/**/*.vue"
+  ],
+  "peerDependencies": {
+    "cypress": "^3.8.2"
+  },
+  "devDependencies": {
+    "cypress": "^3.8.2"
+  }
+}

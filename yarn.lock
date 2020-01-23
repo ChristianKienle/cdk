@@ -3449,7 +3449,7 @@
   resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-4.1.2.tgz#d5da88139a522d98a60edcc6f61c0a06cdfa97f1"
   integrity sha512-d+joLTtthj6l1JnCeFyJRKoISBQeqKZQY0EIYnJBcPPR3/dEKctMRkh5Sy1MR0H1JQQIko9CPrFjT/NHFW48Mg==
 
-"@vue/cli-plugin-babel@^4.0.0", "@vue/cli-plugin-babel@^4.1.1":
+"@vue/cli-plugin-babel@^4.0.0", "@vue/cli-plugin-babel@^4.1.1", "@vue/cli-plugin-babel@^4.1.2":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-4.1.2.tgz#b03880617727fe786b28cef43ef53d47b83b0c28"
   integrity sha512-/j998Q16h8gbYcYf2sE+CYobCpIzDYtOJ76JuhJZnCfy5H8gh4g+x5fepbLs0gOW/cZ2OQxJFx7Jd/yT2/G/qQ==
@@ -3462,7 +3462,7 @@
     thread-loader "^2.1.3"
     webpack "^4.0.0"
 
-"@vue/cli-plugin-e2e-cypress@^4.1.1":
+"@vue/cli-plugin-e2e-cypress@^4.1.2":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-e2e-cypress/-/cli-plugin-e2e-cypress-4.1.2.tgz#7bd7cf67d5b9c78b7af47360c7b83fea3a544934"
   integrity sha512-F3vve5zAIp8FkMa7kRPCVwRSnubQDjEnD5EfJ1YuFXDkSJ4Y3lwDlA4TKRLZ+SZPbB/1IUMDwEUzBuogYgjCnQ==
@@ -3471,7 +3471,7 @@
     cypress "^3.3.1"
     eslint-plugin-cypress "^2.7.0"
 
-"@vue/cli-plugin-eslint@^4.0.0", "@vue/cli-plugin-eslint@^4.1.1":
+"@vue/cli-plugin-eslint@^4.0.0", "@vue/cli-plugin-eslint@^4.1.1", "@vue/cli-plugin-eslint@^4.1.2":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.1.2.tgz#173d2a40beb7debc03a217db3bb4c67cbf255bd6"
   integrity sha512-j6Z6tyhas7AFBwSvQ8JdKPLfaakZbwmK0+Xk8H6BK1/GrEpSCsb8pzBV8faStbKCPUO9vlKEuO319kHypUTJ1g==
@@ -3489,7 +3489,7 @@
   dependencies:
     "@vue/cli-shared-utils" "^4.1.2"
 
-"@vue/cli-plugin-unit-jest@^4.0.0", "@vue/cli-plugin-unit-jest@^4.1.1":
+"@vue/cli-plugin-unit-jest@^4.0.0", "@vue/cli-plugin-unit-jest@^4.1.1", "@vue/cli-plugin-unit-jest@^4.1.2":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-unit-jest/-/cli-plugin-unit-jest-4.1.2.tgz#cd6f5ba5e63666b7287082ae3c6c8b1c2782583c"
   integrity sha512-9DbN/JA37RmZgEczowDJE2pZjS/6nqMoP21hiT2ZgGq0rcfbqtH7/gDjzqkNX/1URaaPPT0PYSNS6lMMur6eAA==
@@ -3515,7 +3515,7 @@
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-vuex/-/cli-plugin-vuex-4.1.2.tgz#5e728b56ad9de2f062a8944f838affa0297ccb99"
   integrity sha512-qsf8sfUUtTuFf24iB6vbdapvCTCt4FqLj7r66POutGWmBCTlPHsMaAXMaD2ZD53/hqr8QHd/557IUensSwj5wA==
 
-"@vue/cli-service@^4.0.0", "@vue/cli-service@^4.1.1":
+"@vue/cli-service@^4.0.0", "@vue/cli-service@^4.1.1", "@vue/cli-service@^4.1.2":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-4.1.2.tgz#005f1dbd4626237eec79b256f3d928081884c325"
   integrity sha512-ljJ3qoR5NNHuG0HPqQyfO3xa4Ti5zCSmHp0tDYxgiVz1vMDvzPXBhGBGsc2Y1HH71BUyx3Ei+H7mWdML/+Bm9Q==
@@ -6822,6 +6822,45 @@ cypress@^3.3.1:
     url "0.11.0"
     yauzl "2.10.0"
 
+cypress@^3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-3.8.2.tgz#58fa96e1e7dae712403b0f4e8af1efe35442ff7a"
+  integrity sha512-aTs0u3+dfEuLe0Ct0FVO5jD1ULqxbuqWUZwzBm0rxdLgLxIAOI/A9f/WkgY5Cfy1TEXe8pKC6Wal0ZpnkdGRSw==
+  dependencies:
+    "@cypress/listr-verbose-renderer" "0.4.1"
+    "@cypress/xvfb" "1.2.4"
+    "@types/sizzle" "2.3.2"
+    arch "2.1.1"
+    bluebird "3.5.0"
+    cachedir "1.3.0"
+    chalk "2.4.2"
+    check-more-types "2.24.0"
+    commander "2.15.1"
+    common-tags "1.8.0"
+    debug "3.2.6"
+    eventemitter2 "4.1.2"
+    execa "0.10.0"
+    executable "4.1.1"
+    extract-zip "1.6.7"
+    fs-extra "5.0.0"
+    getos "3.1.1"
+    is-ci "1.2.1"
+    is-installed-globally "0.1.0"
+    lazy-ass "1.6.0"
+    listr "0.12.0"
+    lodash "4.17.15"
+    log-symbols "2.2.0"
+    minimist "1.2.0"
+    moment "2.24.0"
+    ramda "0.24.1"
+    request "2.88.0"
+    request-progress "3.0.0"
+    supports-color "5.5.0"
+    tmp "0.1.0"
+    untildify "3.0.3"
+    url "0.11.0"
+    yauzl "2.10.0"
+
 dargs@^4.0.1:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/dargs/-/dargs-4.1.0.tgz#03a9dbb4b5c2f139bf14ae53f0b8a2a6a86f4e17"
@@ -7640,7 +7679,7 @@ eslint-module-utils@^2.4.1:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-cypress@^2.7.0:
+eslint-plugin-cypress@^2.7.0, eslint-plugin-cypress@^2.8.1:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-cypress/-/eslint-plugin-cypress-2.8.1.tgz#981a0f3658b40de430bcf05cabc96b396487c91f"
   integrity sha512-jDpcP+MmjmqQO/x3bwIXgp4cl7Q66RYS5/IsuOQP4Qo2sEqE3DI8tTxBQ1EhnV5qEDd2Z2TYHR+5vYI6oCN4uw==
@@ -7808,6 +7847,11 @@ event-pubsub@4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/event-pubsub/-/event-pubsub-4.3.0.tgz#f68d816bc29f1ec02c539dc58c8dd40ce72cb36e"
   integrity sha512-z7IyloorXvKbFx9Bpie2+vMJKKx1fH1EN5yiTfp8CiLOTptSYy1g8H4yDpGlEdshL1PBiFtBHepF2cNsqeEeFQ==
+
+eventemitter2@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-4.1.2.tgz#0e1a8477af821a6ef3995b311bf74c23a5247f15"
+  integrity sha1-DhqEd6+CGm7zmVsxG/dMI6UkfxU=
 
 eventemitter3@^3.1.0:
   version "3.1.2"
