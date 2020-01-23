@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/e2e",
-  "version": "0.4.7",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -14,13 +14,12 @@
     "src/*.js"
   ],
   "devDependencies": {
-    "cypress": "^3.8.2",
-    "@vue-cdk/client-only": "^0.4.7",
-    "@vue-cdk/list": "^0.4.7",
-    "@vue-cdk/match-media": "^0.4.7",
-    "@vue-cdk/popover": "^0.4.7",
-    "@vue-cdk/tooltip": "^0.4.7",
-    "@vue-cdk/utils": "^0.4.0",
+    "@vue-cdk/client-only": "^0.5.0",
+    "@vue-cdk/list": "^0.5.0",
+    "@vue-cdk/match-media": "^0.5.0",
+    "@vue-cdk/popover": "^0.5.0",
+    "@vue-cdk/tooltip": "^0.5.0",
+    "@vue-cdk/utils": "^0.5.0",
     "@vue/cli-plugin-babel": "^4.1.2",
     "@vue/cli-plugin-e2e-cypress": "^4.1.2",
     "@vue/cli-plugin-eslint": "^4.1.2",
@@ -29,6 +28,7 @@
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-eslint": "^10.0.3",
     "core-js": "^3.6.4",
+    "cypress": "^3.8.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "vue": "^2.6.11",
