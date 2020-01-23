@@ -43,7 +43,7 @@
     "core-js": "^3.6.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "vue": "^2.6.10",
     "vue-server-renderer": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
