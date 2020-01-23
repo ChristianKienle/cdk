@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[61],{508:function(t,e,n){"use strict";n.r(e);var o=n(2),l=Object(o.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("CTooltip",{attrs:{text:"I am a Tooltip"}},[e("button",[this._v("Hover")])])}),[],!1,null,null,null);e.default=l.exports}}]);
