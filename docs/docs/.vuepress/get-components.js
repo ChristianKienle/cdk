@@ -8,4 +8,4 @@ module.exports = () => [
   { name: 'Popover', slug: 'popover' },
   { name: 'Scroll Container', slug: 'scroll-container' },
   { name: 'Modal', slug: 'modal' }
-].sort((lhs, rhs) => rhs.name.localeCompare(lhs.name))
+].sort((lhs, rhs) => lhs.name.localeCompare(rhs.name))
