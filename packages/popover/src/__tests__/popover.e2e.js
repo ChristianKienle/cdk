@@ -6,8 +6,12 @@ describe('popover component', () => {
     visitStart()
     visitPage('/popover/default')
     getDataCy('popoverBody').should('not.be.visible')
+    cy.get('.vcdk-popover-body').should('not.be.visible')
     getDataCy('toggleButton').click()
     getDataCy('popoverBody').should('be.visible')
+    cy.get('.vcdk-popover-body')
+      .should('be.visible')
+      .and('have.attr', 'data-test-attr', 'attr-value')
   })
 
   it('renders arrow when with-arrow is true', () => {

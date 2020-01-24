@@ -39,3 +39,6 @@ Everything that is considered *public* is documented. If it isn't please create 
 <div style="margin: 1.5rem 0; text-align:center; font-size:0.8rem;">
   <a href="https://www.netlify.com/">This site is powered by Netlify</a>
 </div>
+
+## Changelog
+…
