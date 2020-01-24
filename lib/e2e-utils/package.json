@@ -8,9 +8,9 @@
     "src/**/*.vue"
   ],
   "peerDependencies": {
-    "cypress": "^3.8.2"
+    "cypress": "^3.8.3"
   },
   "devDependencies": {
-    "cypress": "^3.8.2"
+    "cypress": "^3.8.3"
   }
 }
