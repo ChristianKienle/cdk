@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.5.0",
   "scripts": {
-    "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090 --debug",
+    "dev": "vuepress dev docs --no-clear-screen --no-cache --port 9090",
+    "dev:debug": "yarn dev --debug",
     "build": "vuepress build docs --dest ./dist"
   },
   "description": "",
@@ -38,6 +39,7 @@
     "vuepress-plugin-clean-urls": "^1.1.1"
   },
   "devDependencies": {
+    "webpack": "^4.41.5",
     "@vuese/markdown-render": "^2.5.3",
     "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",

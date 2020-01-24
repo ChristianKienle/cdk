@@ -22,8 +22,7 @@
     "src/*.js"
   ],
   "peerDependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.10"
+    "vue": "^2.6.11"
   },
   "dependencies": {
     "@vue-cdk/utils": "^0.5.0"
@@ -40,7 +39,7 @@
     "core-js": "^3.6.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   }
 }

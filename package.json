@@ -13,7 +13,6 @@
   "license": "MIT",
   "scripts": {
     "storybook": "cd storybook && yarn start",
-    "bootstrap": "lerna bootstrap --concurrency 1 --use-workspaces",
     "clean": "lerna clean -y",
     "docs": "cd docs && yarn dev",
     "docs:build": "cd storybook && yarn build && cd ../docs && yarn build && mkdir dist/storybook && cp -R ../storybook/dist/* dist/storybook",
@@ -25,12 +24,15 @@
     "test:e2e:ci": "yarn test:e2e --headless",
     "poor-ci": "yarn test && yarn lint && yarn test:e2e:ci && yarn docs:build",
     "lint": "eslint --ext .js,.vue packages examples storybook e2e",
-    "postinstall": "yarn bootstrap"
+    "postinstall": "lerna bootstrap --concurrency 1 --use-workspaces"
   },
   "devDependencies": {
+    "vue-router": "^3.1.5",
     "@vue/cli-plugin-e2e-cypress": "^4.1.2",
+    "@babel/core": "^7.8.3",
     "cypress": "^3.8.2",
     "eslint-plugin-cypress": "^2.8.1",
+    "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.0",
     "@vue/test-utils": "^1.0.0-beta.31",
     "vue": "^2.6.11",
@@ -44,9 +46,11 @@
     "babel-jest": "^25.1.0",
     "lerna": "^3.20.2",
     "cross-env": "^6.0.3",
+    "rollup": "^1.29.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-vue": "^5.1.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "postcss": "^7.0.26"
   }
 }

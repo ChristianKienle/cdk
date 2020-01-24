@@ -24,11 +24,10 @@
     "src/**/*.vue"
   ],
   "peerDependencies": {
-    "@linusborg/vue-simple-portal": "^0.1.4",
-    "core-js": "^3.6.4",
-    "vue": "^2.6.10"
+    "vue": "^2.6.11"
   },
   "dependencies": {
+    "@linusborg/vue-simple-portal": "^0.1.4",
     "@vue-cdk/client-only": "^0.5.0",
     "@vue-cdk/pluginify": "^0.5.0",
     "@vue-cdk/utils": "^0.5.0"
@@ -46,7 +45,7 @@
     "core-js": "^3.6.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   }
 }
