@@ -8,9 +8,10 @@
           :aria-hidden="String(!visible_)"
           :class="bodyClasses"
           :style="bodyStyles_"
+          v-bind="bodyAttributes"
         >
           <slot v-bind="slotProps" />
-          <CPopoverArrow ref="arrow" v-if="withArrow" :class="arrowClasses" :style="arrowStyles_" />
+          <CPopoverArrow v-if="withArrow" ref="arrow" :class="arrowClasses" :style="arrowStyles_" />
         </div>
       </transition>
     </SimplePortal>
@@ -42,6 +43,10 @@ export default {
     bodyStyles: {
       type: Object,
       // `{}` – no styles
+      default: () => ({})
+    },
+    bodyAttributes: {
+      type: Object,
       default: () => ({})
     },
     // The target element that the popover will be attached to.
