@@ -116,7 +116,6 @@ export default {
       popperStyles_: {},
       arrowStyles_: {},
       popover: Vue.observable({
-        transitionState: TRANSITION_STATE.inactive,
         showsContent: false,
         // We need to know the current visibility in order to implement toggle(…)
         visible: this.visible,
@@ -150,7 +149,6 @@ export default {
     },
     slotProps() {
       return {
-        transitionState: this.popover.transitionState,
         entering: this.entering,
         visible: this.popover.visible,
         show: this.show,
@@ -209,11 +207,9 @@ export default {
     // Transition related Methods
     beforeEnter() {
       this.destroyPopperIfPossible()
-      this.popover.transitionState = TRANSITION_STATE.entering
       this.entering = true
     },
     async enter(el) {
-      this.popover.transitionState = TRANSITION_STATE.entering
       this.entering = true
       const { $refs, offset, flips, placement, withArrow } = this
       const modifiers = [
@@ -242,27 +238,21 @@ export default {
     },
     afterEnter() {
       this.entering = false
-      this.popover.transitionState = TRANSITION_STATE.active
     },
     enterCancelled() {
       this.entering = false
-      this.popover.transitionState = TRANSITION_STATE.inactive
     },
     beforeLeave() {
       this.leaving = true
-      this.popover.transitionState = TRANSITION_STATE.leaving
     },
     leave() {
       this.leaving = true
-      this.popover.transitionState = TRANSITION_STATE.leaving
     },
     leaveCancelled() {
-      this.popover.transitionState = TRANSITION_STATE.active
       this.leaving = false
     },
     afterLeave() {
       this.disablePortal = true
-      this.popover.transitionState = TRANSITION_STATE.inactive
       this.destroyPopperIfPossible()
     },
     getTarget() {
