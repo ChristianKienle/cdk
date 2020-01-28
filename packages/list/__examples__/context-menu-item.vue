@@ -7,17 +7,16 @@
     <div>
       <CPopover
         placement="bottom-end"
-        :body-styles="{ padding: 0 }"
         theme="clean"
         :visible="idState.menuOpen"
-        target="$refs.target"
+        :target="() => $refs.target"
       >
-        <div class="vcdk-text menu">
+        <CPopoverContent class="vcdk-text menu">
           <div class="menu-item">Delete Item</div>
           <div class="menu-item">Duplicate Item</div>
           <div class="menu-item">Share Item</div>
           <div class="menu-item">Move Item</div>
-        </div>
+        </CPopoverContent>
       </CPopover>
       <button ref="target" class="context-button" @click="idState.menuOpen = !idState.menuOpen"
         >more…</button
@@ -28,6 +27,8 @@
 
 <script>
 import { IdState } from 'vue-virtual-scroller'
+import '@vue-cdk/popover/themes/clean.css'
+
 const colors = [
   '#BF5BAB',
   '#D6648C',
@@ -83,8 +84,10 @@ export default {
   display: flex;
   flex-direction: column;
   font-size: 0.75rem;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 .menu-item {
   padding-top: 10px;

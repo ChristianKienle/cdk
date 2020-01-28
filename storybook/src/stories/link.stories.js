@@ -1,11 +1,11 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('link')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('link')
 
 export default { title: 'Link' };
 
-export const external = collection.importExample('external')
-export const internal = collection.importExample('internal')
-export const internalDisabled = collection.importExample('internal-disabled')
-export const externalDisabled = collection.importExample('external-disabled')
-export const routerDisabled = collection.importExample('router-disabled')
-export const router = collection.importExample('router')
+export const external = _package.importExample('external')
+export const internal = _package.importExample('internal')
+export const internalDisabled = _package.importExample('internal-disabled')
+export const externalDisabled = _package.importExample('external-disabled')
+export const routerDisabled = _package.importExample('router-disabled')
+export const router = _package.importExample('router')

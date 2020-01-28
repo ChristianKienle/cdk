@@ -5,6 +5,7 @@ module.exports = {
     es6: true
   },
   rules: {
+    "no-unused-vars": "error",
     "max-len": "off",
     "no-console": "error",
     "no-debugger": "error",

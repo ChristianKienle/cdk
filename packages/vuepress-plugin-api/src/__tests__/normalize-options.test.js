@@ -42,7 +42,6 @@ describe('normalize options', () => {
   })
 
   it('respects indexPath', () => {
-    const items = []
     expect(normalize({ indexPath: '/api/index.html' })).toMatchObject({
       items: [],
       renderer: defaultOptions.renderer,

@@ -8,7 +8,7 @@ const plugins = require('./plugins')
 
 const base = process.env.VCDK_BASE || '/cdk/'
 
-const examplesDir = path.resolve(__dirname, '..', '..', '..', 'examples')
+const packagesDir = path.posix.join(__dirname, '..', '..', '..', 'packages')
 
 console.log(`Using base: '${base}'`)
 
@@ -17,7 +17,7 @@ module.exports = {
   description: 'Vue Components to make Vue Components',
   base,
   extraWatchFiles: [
-    `${examplesDir}/**/*.vue`,
+    `${packagesDir}/**/__examples__/**/*.vue`,
     ...ApiPluginOptions.items.map(item => item.localPath)
   ],
   configureWebpack: {
@@ -102,7 +102,8 @@ module.exports = {
   plugins: [
     ...plugins.all,
     ['@vue-cdk/vuepress-plugin-demo', {
-      dir: path.resolve(__dirname, '..', '..', '..', 'examples')
+      examplesPattern: '**/__examples__/**/*.vue',
+      cwd: path.resolve(__dirname, '..', '..', '..', 'packages')
     }],
     ['@vue-cdk/vuepress-plugin-api', ApiPluginOptions]
   ]

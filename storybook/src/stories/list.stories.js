@@ -1,13 +1,13 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('list')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('list')
 
 export default { title: 'List' };
-export const defaultList = collection.importExample('default')
-export const endlessLoadingList = collection.importExample('endless')
-export const endlessLoadingListWithLoadingState = collection.importExample('endless-with-loading')
-export const sizeDependencies = collection.importExample('size-dependencies')
-export const scrollTo = collection.importExample('scroll-to')
-export const singleSelectionMode = collection.importExample('selection-single')
-export const multipleSelectionMode = collection.importExample('selection-multiple')
-export const multipleSelectionModeStyled = collection.importExample('selection-multiple-styled')
-export const contextMenuStyled = collection.importExample('context-menu-styled')
+export const defaultList = _package.importExample('default')
+export const endlessLoadingList = _package.importExample('endless')
+export const endlessLoadingListWithLoadingState = _package.importExample('endless-with-loading')
+export const sizeDependencies = _package.importExample('size-dependencies')
+export const scrollTo = _package.importExample('scroll-to')
+export const singleSelectionMode = _package.importExample('selection-single')
+export const multipleSelectionMode = _package.importExample('selection-multiple')
+export const multipleSelectionModeStyled = _package.importExample('selection-multiple-styled')
+export const contextMenuStyled = _package.importExample('context-menu-styled')

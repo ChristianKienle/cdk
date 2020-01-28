@@ -25,7 +25,6 @@ import { createPopper } from '@popperjs/core'
 import { placements } from '@popperjs/core/lib/enums'
 import { Portal as SimplePortal } from '@linusborg/vue-simple-portal'
 import ClientOnly from '@vue-cdk/client-only/src/client-only.vue'
-import CPopoverArrow from './arrow.vue'
 import Vue from 'vue'
 
 // You can use the `Popover` component to render popovers with any kind of content.
@@ -163,7 +162,7 @@ export default {
       this.destroyPopperIfPossible()
     },
     async enter(el) {
-      const { $refs, offset, flips, placement, withArrow, target } = this
+      const { offset, flips, placement, withArrow, target } = this
       const modifiers = [
         {
           name: 'offset',

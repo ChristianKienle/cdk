@@ -1,5 +1,4 @@
 // @ts-check
-import isBrowser from '@vue-cdk/utils/is-browser'
 import createEventListener from './create-event-listener'
 
 /** @param {() => {}} callback */

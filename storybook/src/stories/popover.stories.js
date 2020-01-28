@@ -1,13 +1,12 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('popover')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('popover')
 
 export default { title: 'Popover' }
 
-export const defaultPopover = collection.importExample('hello-world')
-export const customTrigger = collection.importExample('custom-trigger')
-export const playground = collection.importExample('playground/index')
-export const bodySizeModeAtLeastTrigger = collection.importExample('body-size-mode-at-least-trigger')
-export const prop = collection.importExample('prop')
-export const withArrow = collection.importExample('with-arrow')
-export const withoutArrow = collection.importExample('without-arrow')
-export const styledContent = collection.importExample('styled-content')
+export const defaultPopover = _package.importExample('hello-world')
+export const customTrigger = _package.importExample('custom-trigger')
+export const playground = _package.collection('playground').importExample('index')
+export const prop = _package.importExample('prop')
+export const withArrow = _package.importExample('with-arrow')
+export const withoutArrow = _package.importExample('without-arrow')
+export const styledContent = _package.importExample('styled-content')

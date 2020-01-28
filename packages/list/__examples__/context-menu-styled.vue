@@ -22,7 +22,6 @@
 
 <script>
 import '@vue-cdk/list/style/index.css'
-import '@vue-cdk/popover/themes/clean.css'
 import { SelectionMode } from '@vue-cdk/list'
 import CustomItem from './context-menu-item.vue'
 
@@ -52,6 +51,7 @@ export default {
   }
 }
 </script>
+
 <style>
 *::-webkit-scrollbar {
   width: 0 !important;
@@ -60,6 +60,7 @@ body {
   margin: 0;
 }
 </style>
+
 <style scoped>
 .item {
   -webkit-font-smoothing: antialiased;

@@ -1,21 +1,31 @@
 // @ts-check
 export default class Collection {
   /**
-   * @param {string} collectionName
-   * @param {any} examplesContext
+   * @param {string} packageName
+   * @param {string[]} collection
    */
-  constructor(collectionName, examplesContext) {
-    this.collectionName = collectionName
-    this.examplesContext = examplesContext
+  constructor(packageName, collection = []) {
+    this._packageName = packageName
+    this._collection = collection
   }
 
-  /** @param {string} exampleName */
-  importExample(exampleName) {
-    return () => {
-      const { collectionName, examplesContext } = this
-      const exampleModule = require(`./${collectionName}/${exampleName}.vue`)
-      const example = exampleModule.default
-      return example
+  /** @param {string} name */
+  importExample(name) {
+    const { _packageName, _collection } = this
+    let exampleModule
+    if (_collection.length === 0) {
+      exampleModule = require(`./../packages/${_packageName}/__examples__/${name}.vue`)
+    } else {
+      exampleModule = require(`./../packages/${_packageName}/__examples__/${_collection.join(
+        '/'
+      )}/${name}.vue`)
     }
+    return exampleModule.default
+  }
+
+  /** @param {string} name */
+  collection(name) {
+    const { _collection } = this
+    return new Collection(this._packageName, [..._collection, name])
   }
 }

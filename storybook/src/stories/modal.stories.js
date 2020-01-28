@@ -1,9 +1,9 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('modal')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('modal')
 
 export default { title: 'Modal' }
 
-export const simple = collection.importExample('default')
-export const nested = collection.importExample('nested')
-export const customOverlay = collection.importExample('custom-overlay')
-export const nice = collection.importExample('nice')
+export const simple = _package.importExample('default')
+export const nested = _package.importExample('nested')
+export const customOverlay = _package.importExample('custom-overlay')
+export const nice = _package.importExample('nice')

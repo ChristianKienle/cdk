@@ -29,7 +29,6 @@ module.exports = (options, context) => {
       })
       const createIndexPage = () => {
         const md = createMarkdown()
-        const listItems = apiPages.map(page => page.relative)
         const list = apiPages
           .map(apiPage => {
             const renderApiButton = style =>

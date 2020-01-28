@@ -58,7 +58,7 @@ export default {
         this.$el.scrollTop = scrollPosition
       }
     },
-    onScroll(event) {
+    onScroll() {
       this.scrollPosition_ = this.$el.scrollTop
       this.$emit('input', this.scrollPosition_)
     }

@@ -1,4 +1,3 @@
-
 export default { title: 'Portal' }
 
 export const defaultPortal = () => ({
