@@ -17,7 +17,6 @@ export default {
   inject: {
     $_popover: {
       default: {
-        visible: false,
         theme: null,
         withArrow: false,
         arrowClasses: []
@@ -25,12 +24,12 @@ export default {
     }
   },
   computed: {
-    popoverArrowClasses() {
+    injectedArrowClasses() {
       return this.$_popover.arrowClasses
     },
     arrowClasses() {
-      const { theme, popoverArrowClasses } = this
-      return normalizedClasses([popoverArrowClasses, theme ? 'vcdk-popover--arrow' : null])
+      const { theme, injectedArrowClasses } = this
+      return normalizedClasses([injectedArrowClasses, theme ? 'vcdk-popover--arrow' : null])
     },
     theme() {
       return this.$_popover.theme
@@ -45,9 +44,6 @@ export default {
     },
     withArrow() {
       return this.$_popover.withArrow
-    },
-    visible() {
-      return this.$_popover.visible
     }
   }
 }

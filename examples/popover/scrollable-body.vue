@@ -3,7 +3,7 @@
     <button ref="button" @click="toggle">Toggle Popover</button>
     <CPopover ref="popover" :target="() => $refs.button" with-arrow theme="clean" :flips="false">
       <CPopoverContent class="scroll-container">
-        <p class="text" v-for="index in 35" :key="String(index)">
+        <p v-for="index in 35" :key="String(index)" class="text">
           I am part {{ index }} of a wonderful popover.
         </p>
       </CPopoverContent>

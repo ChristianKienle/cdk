@@ -1,6 +1,6 @@
 // @ts-check
 
-import { normalizedClasses } from './../'
+import normalizedClasses from './../normalized-classes'
 
 describe('classes', () => {
   it('returns null for empty array', () => {

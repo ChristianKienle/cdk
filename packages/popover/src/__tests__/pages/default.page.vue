@@ -1,15 +1,10 @@
 <template>
   <div data-cy="popover">
     <button ref="button" data-cy="toggleButton" @click="toggle">Toggle</button>
-    <CPopover
-      ref="popover"
-      :body-attributes="{ 'data-test-attr': 'attr-value' }"
-      theme="clean"
-      trigger="$refs.button"
-    >
-      <template #default>
-        <div data-cy="popoverBody">Popover Body</div>
-      </template>
+    <CPopover ref="popover" theme="clean" :target="() => $refs.button">
+      <CPopoverContent data-cy="popoverBody" data-test-attr="attr-value"
+        >Popover Body</CPopoverContent
+      >
     </CPopover>
   </div>
 </template>

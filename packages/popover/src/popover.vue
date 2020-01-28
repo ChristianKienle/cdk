@@ -13,7 +13,13 @@
         @before-leave="beforeLeave"
         @leave="leave"
       >
-        <slot v-if="popover.showsContent" v-bind="slotProps" />
+        <slot
+          v-if="popover.showsContent"
+          v-bind="contentSlotProps"
+          :show="show"
+          :hide="hide"
+          :toggle="toggle"
+        />
       </transition>
     </SimplePortal>
   </ClientOnly>
@@ -111,8 +117,10 @@ export default {
       arrowStyles_: {},
       popover: Vue.observable({
         transitionState: TRANSITION_STATE.inactive,
-        visible: this.visible,
         showsContent: false,
+        // We need to know the current visibility in order to implement toggle(…)
+        visible: this.visible,
+        // The following props are injected into PopoverContent. They are needed to determine the CSS classes.
         theme: this.theme,
         withArrow: this.withArrow,
         arrowClasses: this.arrowClasses
@@ -120,6 +128,13 @@ export default {
     }
   },
   computed: {
+    contentSlotProps() {
+      return {
+        theme: this.theme,
+        withArrow: this.withArrow,
+        arrowClasses: this.arrowClasses
+      }
+    },
     isVisible() {
       return this.popover.visible
     },
@@ -148,6 +163,15 @@ export default {
     }
   },
   watch: {
+    contentSlotProps: {
+      immediate: true,
+      deep: true,
+      handler({ theme, withArrow, arrowClasses }) {
+        this.popover.theme = theme
+        this.popover.withArrow = withArrow
+        this.popover.arrowClasses = arrowClasses
+      }
+    },
     slotProps: {
       deep: true,
       initial: true,
@@ -236,11 +260,11 @@ export default {
       this.popover.transitionState = TRANSITION_STATE.active
       this.leaving = false
     },
-      afterLeave() {
-        this.disablePortal = true
-        this.popover.transitionState = TRANSITION_STATE.inactive
-        this.destroyPopperIfPossible()
-      },
+    afterLeave() {
+      this.disablePortal = true
+      this.popover.transitionState = TRANSITION_STATE.inactive
+      this.destroyPopperIfPossible()
+    },
     getTarget() {
       return this.target()
     },

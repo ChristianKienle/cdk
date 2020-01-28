@@ -1,10 +1,8 @@
 <template>
   <div data-cy="popover">
     <button ref="button" data-cy="toggleButton" @click="toggle">Toggle</button>
-    <CPopover ref="popover" with-arrow theme="clean" trigger="$refs.button">
-      <template #default>
-        <div data-cy="popoverBody">Popover Body</div>
-      </template>
+    <CPopover ref="popover" with-arrow theme="clean" :target="() => $refs.button">
+      <CPopoverContent data-cy="popoverBody">Popover Body</CPopoverContent>
     </CPopover>
   </div>
 </template>

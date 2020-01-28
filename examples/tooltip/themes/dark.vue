@@ -1,8 +1,8 @@
 <template>
-  <CTooltip theme="dark">
+  <CTooltip theme="dark" placement="bottom">
     <button>Hover to show Tooltip</button>
     <template #content>
-      <div>I am a tooltip</div>
+      <CTooltipContent>I am a tooltip</CTooltipContent>
     </template>
   </CTooltip>
 </template>

@@ -2,7 +2,7 @@
   <CTooltip>
     <button data-cy="button">Hover</button>
     <template #content>
-      <div data-cy="content">custom content</div>
+      <CTooltipContent data-cy="content">custom content</CTooltipContent>
     </template>
   </CTooltip>
 </template>
