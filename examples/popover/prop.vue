@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button ref="button" @click="visible = !visible">Toggle</button>
+    <button ref="button" @click="toggle">Toggle</button>
 
     <CPopover
       placement="bottom"
@@ -10,7 +10,7 @@
       with-arrow
     >
       <CPopoverContent>
-        <div>Popover Body</div>
+        Popover Body
       </CPopoverContent>
     </CPopover>
   </div>
@@ -23,6 +23,11 @@ export default {
   data() {
     return {
       visible: false
+    }
+  },
+  methods: {
+    toggle() {
+      this.visible = !this.visible
     }
   }
 }

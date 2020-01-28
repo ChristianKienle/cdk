@@ -4,17 +4,12 @@
       <transition
         :name="transition_"
         appear
-        @leave-cancelled="leaveCancelled"
-        @enter-cancelled="enterCancelled"
         @after-leave="afterLeave"
-        @after-enter="afterEnter"
         @enter="enter"
         @before-enter="beforeEnter"
-        @before-leave="beforeLeave"
-        @leave="leave"
       >
         <slot
-          v-if="popover.showsContent"
+          v-if="showsContent"
           v-bind="contentSlotProps"
           :show="show"
           :hide="hide"
@@ -26,19 +21,8 @@
 </template>
 
 <script>
-const TRANSITION_STATE = Object.freeze({
-  entering: 'entering',
-  leaving: 'leaving',
-  active: 'active',
-  inactive: 'inactive'
-})
-
-const REFS_PREFIX = '$refs.'
-import shortId from './helper/short-id'
-import normalizedClasses from './helper/normalized-classes'
 import { createPopper } from '@popperjs/core'
 import { placements } from '@popperjs/core/lib/enums'
-import { inBrowser } from '@vue-cdk/utils'
 import { Portal as SimplePortal } from '@linusborg/vue-simple-portal'
 import ClientOnly from '@vue-cdk/client-only/src/client-only.vue'
 import CPopoverArrow from './arrow.vue'
@@ -98,8 +82,8 @@ export default {
       default: false
     },
     modifiers: {
-      type: Object,
-      default: () => ({})
+      type: Array,
+      default: () => []
     },
     placement: {
       type: String,
@@ -109,16 +93,10 @@ export default {
   },
   data() {
     return {
-      queue: [],
-      entering: false,
-      leaving: false,
-      disablePortal: false,
-      popperStyles_: {},
-      arrowStyles_: {},
+      // We need to know the current visibility in order to implement toggle(…)
+      visible_: this.visible,
+      showsContent: false,
       popover: Vue.observable({
-        showsContent: false,
-        // We need to know the current visibility in order to implement toggle(…)
-        visible: this.visible,
         // The following props are injected into PopoverContent. They are needed to determine the CSS classes.
         theme: this.theme,
         withArrow: this.withArrow,
@@ -134,9 +112,6 @@ export default {
         arrowClasses: this.arrowClasses
       }
     },
-    isVisible() {
-      return this.popover.visible
-    },
     transition_() {
       const { transition, theme } = this
       if (transition != null) {
@@ -146,15 +121,6 @@ export default {
         return null
       }
       return `vcdk-popover-theme-${theme}-show`
-    },
-    slotProps() {
-      return {
-        entering: this.entering,
-        visible: this.popover.visible,
-        show: this.show,
-        hide: this.hide,
-        toggle: this.toggle
-      }
     },
     portalSelector() {
       return `#${this.portalId}`
@@ -170,23 +136,11 @@ export default {
         this.popover.arrowClasses = arrowClasses
       }
     },
-    slotProps: {
-      deep: true,
-      initial: true,
-      handler(slotProps) {
-        this.$emit('slotProps', slotProps)
-      }
-    },
     visible(visible, oldVisible) {
       if (visible === oldVisible) {
         return
       }
-      if (visible === true && (oldVisible === false || oldVisible === null)) {
-        this.show()
-      }
-      if (visible === false && oldVisible === true) {
-        this.hide()
-      }
+      this.setVisible(visible, { emitUpdate: false })
     }
   },
   created() {
@@ -207,11 +161,9 @@ export default {
     // Transition related Methods
     beforeEnter() {
       this.destroyPopperIfPossible()
-      this.entering = true
     },
     async enter(el) {
-      this.entering = true
-      const { $refs, offset, flips, placement, withArrow } = this
+      const { $refs, offset, flips, placement, withArrow, target } = this
       const modifiers = [
         {
           name: 'offset',
@@ -227,55 +179,41 @@ export default {
         {
           name: 'arrow',
           enabled: withArrow
-        }
+        },
+        ...this.modifiers
       ]
       const options = {
         modifiers,
         placement
       }
-      const target = this.getTarget()
-      this.$_popper = createPopper(target, el, options)
-    },
-    afterEnter() {
-      this.entering = false
-    },
-    enterCancelled() {
-      this.entering = false
-    },
-    beforeLeave() {
-      this.leaving = true
-    },
-    leave() {
-      this.leaving = true
-    },
-    leaveCancelled() {
-      this.leaving = false
+      this.$_popper = createPopper(target(), el, options)
     },
     afterLeave() {
-      this.disablePortal = true
       this.destroyPopperIfPossible()
+      this.showsContent = false
     },
-    getTarget() {
-      return this.target()
+    // Public Instance Methods
+    setVisible(newVisible, { emitUpdate = true } = { emitUpdate: true }) {
+      this.visible_ = newVisible
+      this.showsContent = newVisible
+      if (emitUpdate === true) {
+        // Fires when the value for `visible` changes.
+        // @arg The new value of `visible`.
+        this.$emit('update:visible', this.visible_)
+      }
     },
-    setVisible(newVisible) {
-      this.popover.visible = newVisible
-      // Fires when the value for `visible` changes.
-      // @arg The new value of `visible`.
-      this.$emit('update:visible', this.popover.visible)
+    show({ emitUpdate = true } = { emitUpdate: true }) {
+      this.setVisible(true, { emitUpdate })
     },
-    show() {
-      this.queue = [...this.queue, true]
-      this.popover.showsContent = true
-      this.popover.visible = true
+    hide({ emitUpdate = true } = { emitUpdate: true }) {
+      this.setVisible(false, { emitUpdate })
     },
-    hide() {
-      this.queue = [...this.queue, false]
-      this.popover.showsContent = false
-      this.popover.visible = false
-    },
-    toggle() {
-      this.isVisible ? this.hide() : this.show()
+    toggle({ emitUpdate = true } = { emitUpdate: true }) {
+      if (this.visible_ === true) {
+        this.hide({ emitUpdate })
+      } else {
+        this.show({ emitUpdate })
+      }
     }
   }
 }
