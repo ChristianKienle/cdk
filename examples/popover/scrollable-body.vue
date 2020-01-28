@@ -13,13 +13,13 @@
         maxHeight: '200px'
       }"
     >
-      <template #default>
+      <CPopoverContent>
         <div>
           <p v-for="index in 35" :key="String(index)">
             I am part {{ index }} of a wonderful popover.
           </p>
         </div>
-      </template>
+      </CPopoverContent>
     </CPopover>
   </div>
 </template>

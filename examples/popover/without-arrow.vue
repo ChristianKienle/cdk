@@ -9,9 +9,9 @@
       target="$refs.button"
       theme="clean"
     >
-      <template #default>
+      <CPopoverContent>
         <div>Popover Body</div>
-      </template>
+      </CPopoverContent>
     </CPopover>
   </div>
 </template>

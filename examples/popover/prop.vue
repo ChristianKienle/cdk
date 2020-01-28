@@ -3,9 +3,9 @@
     <button ref="button" @click="visible = !visible">Toggle</button>
 
     <CPopover placement="bottom" target="$refs.button" :visible="visible" theme="clean" with-arrow>
-      <template #default>
+      <CPopoverContent>
         <div>Popover Body</div>
-      </template>
+      </CPopoverContent>
     </CPopover>
   </div>
 </template>
