@@ -9,9 +9,9 @@
       with-arrow
       theme="clean"
     >
-      <template #default>
+      <CPopoverContent>
         <div>I am a Popover Body.</div>
-      </template>
+      </CPopoverContent>
     </CPopover>
 
     <CPopover
@@ -21,9 +21,9 @@
       with-arrow
       theme="clean"
     >
-      <template #default>
+      <CPopoverContent>
         <div>I am a Popover Body.</div>
-      </template>
+      </CPopoverContent>
     </CPopover>
   </div>
 </template>

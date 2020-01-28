@@ -1,8 +1,8 @@
 <template>
-  <div style="display: flex; align-items: center; justify-content: center; height: 200px;">
+  <div class="box">
     <button ref="button" @click="toggle">Toggle 'big-arrow' Popover</button>
-    <CPopover ref="popover" target="$refs.button" theme="big-arrow" with-arrow>
-      <div>I am a Popover. Wheeee. 😉</div>
+    <CPopover ref="popover" :target="() => $refs.button" theme="big-arrow" with-arrow>
+      <CPopoverContent>I am a Popover. Wheeee. 😉</CPopoverContent>
     </CPopover>
   </div>
 </template>
@@ -17,3 +17,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+</style>

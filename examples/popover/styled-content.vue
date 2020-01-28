@@ -1,16 +1,9 @@
 <template>
   <div>
     <button ref="button" @click="toggle">Toggle</button>
-
-    <CPopover
-      ref="popover"
-      with-arrow
-      placement="bottom"
-      :target="() => $refs.button"
-      theme="clean"
-    >
-      <CPopoverContent>
-        <div>Popover Body</div>
+    <CPopover ref="popover" placement="bottom" :target="() => $refs.button">
+      <CPopoverContent class="vcdk-example-popover__styled-content__content">
+        <div>this is a popover content. yay.</div>
       </CPopoverContent>
     </CPopover>
   </div>
@@ -30,3 +23,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.vcdk-example-popover__styled-content__content {
+  background-color: red;
+}
+</style>

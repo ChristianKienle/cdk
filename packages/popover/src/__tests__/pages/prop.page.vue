@@ -2,10 +2,8 @@
   <div>
     <button ref="button" data-cy="button" @click="visible = !visible">Toggle</button>
 
-    <CPopover trigger="$refs.button" :visible="visible" theme="clean">
-      <template #default>
-        <div data-cy="popover">Popover Body</div>
-      </template>
+    <CPopover :target="() => $refs.button" :visible="visible" theme="clean">
+      <CPopoverContent data-cy="popover">Popover Body</CPopoverContent>
     </CPopover>
   </div>
 </template>

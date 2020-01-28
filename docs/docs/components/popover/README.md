@@ -19,7 +19,13 @@ import Popover from '@vue-cdk/popover'
 Vue.use(Popover)
 ```
 
-This will globally register a popover component called `CPopover`.
+This will globally register the following components:
+- `CPopover`: Use this component to specify **how** a popover should be rendered. Some of the available props are:
+  - `withArrow`: If set to `true`, the popover will also render an arrow.
+  - `theme`: Set a theme for your popover. You can create custom themes.
+  - `placement`: How to place the actual popover.
+- `CPopoverContent`: Use this component to specify **what** the popover should render. You use this component within `CPopover`. The element/component wrapped with `CPopoverContent` will appear inside the popover.
+- `CPopoverArrow`: Use this component to customize the arrow. You usually do not need this component since the arrow can be customized by several props and themes. If you need to render a custom arrow use this component inside the `arrow`-slot of `CPopoverContent`.
 
 ## Guide
 
@@ -73,7 +79,7 @@ The popover component is very flexible: This example shows how to show the popov
 
 If you have a popover with a (potentially) large body then you might want to make it scrollable. You do that by setting custom styles on the popover's body that constraint it's size and adjust it's overflow settings.
 
-`bodyStyles` can be used to do just that.
+To make this work you have to apply custom styles to your `CPopoverContent`.
 
 ::: warning IMPORTANT
 It is probably a good idea to also disable flipping by setting `flips` to `false`.

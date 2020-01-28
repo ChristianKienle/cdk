@@ -1,11 +1,41 @@
-.vcdk-popover-theme-clean-show-enter,
-.vcdk-popover-theme-clean-show-leave-to {
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 
-.vcdk-popover-theme-clean {
-  transition: opacity 0.2s;
+.vcdk-popover-theme-clean-show-enter-active,
+.vcdk-popover-theme-clean-show-leave-active {
+  transition: opacity 0.4s;
 }
+
+.vcdk-popover-theme-clean-show-enter,
+.vcdk-popover-theme-clean-show-leave-to
+ {
+  opacity: 0;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    /* background-color: #cccccc; */
+  }
+  50% {
+    opacity: 0.5;
+    /* background-color: #cccccc; */
+  }
+  100% {
+    opacity: 1.0;
+    /* background-color: #cccccc; */
+  }
+}
+
+/* .vcdk-popover-theme-clean {
+  transition: opacity 1s;
+} */
 
 .vcdk-popover-theme-clean.vcdk-popover-body {
   border-radius: 5px;

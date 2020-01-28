@@ -1,5 +1,5 @@
 # Tooltip
-You can use `@vue-cdk/tooltip` to attach tooltips to any element/component. You simply whatever you want with `CTooltip` and et voilà: A tooltip appears when the user hovers over the enclosed child.
+You can use `@vue-cdk/tooltip` to attach tooltips to any element/component. You simply wrap whatever you want with `CTooltip` and et voilà: A tooltip appears when the user hovers over the enclosed child.
 
 ## Installation
 ```sh
@@ -16,7 +16,10 @@ import Tooltip from '@vue-cdk/tooltip'
 Vue.use(Tooltip)
 ```
 
-The plugin exposes a tooltip component called `CTooltip`. You can use it to wrap any component and element. `CTooltip` attaches a tooltip to anything that is enclosed by it.
+The plugin exposes two components:
+
+- `CTooltip`: You can use it to wrap any component and element. `CTooltip` attaches a tooltip to anything that is enclosed by it. In most circumstances you will wrap something like a `button`. Use the `text`–prop to set the text of the tooltip.
+- `CTooltipContent`: If you want to render custom content inside the tooltip you have to provide a `content`–slot inside `CTooltip`. Inside the `content`–slot you should use `CTooltipContent`. Otherwise the tooltip might not work properly. This also allows you to customize almost any aspect of the tooltip.
 
 ## Examples
 

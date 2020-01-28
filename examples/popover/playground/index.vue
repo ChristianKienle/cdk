@@ -12,13 +12,13 @@
           >Show Popover</Trigger
         >
         <CPopover ref="popover" v-bind="popoverProps" target="$refs.button">
-          <template #default>
+          <CPopoverContent>
             <div class="title">Sample Popover Title</div>
             <div class="body">
               <p class="text">Not like the brazen giant of Greek fame,</p>
               <p class="text">With conquering limbs astride from land to land.</p>
             </div>
-          </template>
+          </CPopoverContent>
         </CPopover>
       </div>
     </div>

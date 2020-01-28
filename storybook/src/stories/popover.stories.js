@@ -10,3 +10,4 @@ export const bodySizeModeAtLeastTrigger = collection.importExample('body-size-mo
 export const prop = collection.importExample('prop')
 export const withArrow = collection.importExample('with-arrow')
 export const withoutArrow = collection.importExample('without-arrow')
+export const styledContent = collection.importExample('styled-content')

@@ -3,6 +3,7 @@ import Popover from '@vue-cdk/popover/src/popover'
 import Vue from 'vue'
 import createOnEscListener from './on-esc-listener'
 import createEventListener from './create-event-listener'
+import TooltipContent from './content.vue'
 
 export default {
   name: 'Tooltip',
@@ -74,27 +75,19 @@ export default {
   },
   mounted() {
     const target = () => this.$el
-    const parent = this
     const theme = this.popoverTheme
-    this.$_escListener = createOnEscListener(() => {
-      this.handleESC()
-    })
+    this.$_escListener = createOnEscListener(() => this.handleESC())
+    const tooltipVM = this
 
-    const renderContent = (h, props) => {
-      const { text, $scopedSlots } = this
-      if (text != null) {
-        return h('div', [text])
-      }
-      return $scopedSlots.content(props)
-    }
+    const renderContent = (h, props) => {}
     this.$_popover = new Vue({
       components: { Popover },
       data() {
         return {
           theme,
-          noArrow: parent.noArrow,
-          visible: parent.visible,
-          placement: parent.placement
+          noArrow: tooltipVM.noArrow,
+          visible: tooltipVM.visible,
+          placement: tooltipVM.placement
         }
       },
       methods: {
@@ -111,17 +104,18 @@ export default {
           withArrow: !this.noArrow,
           visible: this.visible,
           theme: this.theme,
-          placement: this.placement,
-          bodyAttributes: {
-            role: 'tooltip'
-          }
+          placement: this.placement
         }
         const scopedSlots = {
           default(popoverProps) {
-            return renderContent(h, popoverProps)
+            const { text, $scopedSlots } = tooltipVM
+            if (text != null) {
+              return h(TooltipContent, {}, [text])
+            }
+            return $scopedSlots.content(props)
           }
         }
-        return h(Popover, { parent, props, scopedSlots })
+        return h(Popover, { parent: tooltipVM, props, scopedSlots })
       }
     }).$mount()
     this.$forceUpdate()
@@ -154,7 +148,6 @@ export default {
       this.$_focusListener.isOn() === false && this.$_focusListener.on()
     },
     handleMouseEnter() {
-      // console.log('handleMouseEnter')
       this.$_popover.show()
       this.$_escListener.isOn() === false && this.$_escListener.on()
     },

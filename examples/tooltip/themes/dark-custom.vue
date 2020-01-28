@@ -1,10 +1,10 @@
 <template>
-  <CTooltip theme="dark">
+  <CTooltip theme="dark" placement="bottom">
     <button>Hover to show Tooltip</button>
     <template #content>
-      <div>
+      <CTooltipContent>
         <img src="./../logo-small@1x.png" width="100" height="100" />
-      </div>
+      </CTooltipContent>
     </template>
   </CTooltip>
 </template>

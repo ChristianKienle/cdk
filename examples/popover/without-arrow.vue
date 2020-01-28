@@ -6,12 +6,12 @@
       ref="popover"
       :with-arrow="false"
       placement="bottom"
-      target="$refs.button"
+      :target="() => $refs.button"
       theme="clean"
     >
-      <template #default>
+      <CPopoverContent>
         <div>Popover Body</div>
-      </template>
+      </CPopoverContent>
     </CPopover>
   </div>
 </template>

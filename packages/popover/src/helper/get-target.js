@@ -3,7 +3,7 @@ const REFS_PREFIX = '$refs.'
 
 /**
  * @typedef {object} Options
- * @prop {string | (() => Element)} target
+ * @prop {(() => Element)} target
  * @prop {any} vm
  */
 

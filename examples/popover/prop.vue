@@ -1,11 +1,17 @@
 <template>
   <div>
-    <button ref="button" @click="visible = !visible">Toggle</button>
+    <button ref="button" @click="toggle">Toggle</button>
 
-    <CPopover placement="bottom" target="$refs.button" :visible="visible" theme="clean" with-arrow>
-      <template #default>
-        <div>Popover Body</div>
-      </template>
+    <CPopover
+      placement="bottom"
+      :target="() => $refs.button"
+      :visible="visible"
+      theme="clean"
+      with-arrow
+    >
+      <CPopoverContent>
+        Popover Body
+      </CPopoverContent>
     </CPopover>
   </div>
 </template>
@@ -17,6 +23,11 @@ export default {
   data() {
     return {
       visible: false
+    }
+  },
+  methods: {
+    toggle() {
+      this.visible = !this.visible
     }
   }
 }

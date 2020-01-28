@@ -2,13 +2,19 @@
   <div>
     <button ref="button" @click="toggle">Show Popover</button>
 
-    <CPopover ref="popover" target="$refs.button" boundary="viewport" with-arrow theme="clean">
-      <template #default>
+    <CPopover
+      ref="popover"
+      :target="() => $refs.button"
+      boundary="viewport"
+      with-arrow
+      theme="clean"
+    >
+      <CPopoverContent>
         <div>
           I am a Popover Body.
           <button @click="toggle">Click here to Hide the Popover</button>
         </div>
-      </template>
+      </CPopoverContent>
     </CPopover>
   </div>
 </template>
