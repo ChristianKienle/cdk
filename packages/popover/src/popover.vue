@@ -75,17 +75,9 @@ export default {
       type: String,
       default: null
     },
-    bodyClass: {
-      type: String,
-      default: ''
-    },
-    defaultBodyZIndex: {
-      type: [Number, String],
-      default: 1000
-    },
-    arrowClass: {
-      type: String,
-      default: null
+    arrowClasses: {
+      type: [String, Array, Object],
+      default: () => []
     },
     withArrow: {
       type: Boolean,
@@ -123,7 +115,7 @@ export default {
         showsContent: false,
         theme: this.theme,
         withArrow: this.withArrow,
-        arrowClass: this.arrowClass
+        arrowClasses: this.arrowClasses
       })
     }
   },

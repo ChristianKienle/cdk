@@ -18,29 +18,26 @@ export default {
     $_popover: {
       default: {
         visible: false,
-        showsContent: false,
         theme: null,
         withArrow: false,
-        arrowClass: null
+        arrowClasses: []
       }
     }
   },
   computed: {
-    arrowClass() {
-      return this.$_popover.arrowClass
+    popoverArrowClasses() {
+      return this.$_popover.arrowClasses
     },
     arrowClasses() {
-      const { theme, arrowClass } = this
-      return normalizedClasses([arrowClass, theme ? 'vcdk-popover--arrow' : null])
+      const { theme, popoverArrowClasses } = this
+      return normalizedClasses([popoverArrowClasses, theme ? 'vcdk-popover--arrow' : null])
     },
     theme() {
       return this.$_popover.theme
     },
     classes() {
-      const { theme, bodyClass = '', withArrow } = this
-      const bodyClassAsArray = bodyClass.split(' ')
+      const { theme, withArrow } = this
       return normalizedClasses([
-        ...bodyClassAsArray,
         'vcdk-popover-body',
         theme ? `vcdk-popover-theme-${this.theme}` : null,
         !withArrow ? 'vcdk-popover--no-arrow' : null
@@ -51,9 +48,6 @@ export default {
     },
     visible() {
       return this.$_popover.visible
-    },
-    showsContent() {
-      return this.$_popover.showsContent
     }
   }
 }

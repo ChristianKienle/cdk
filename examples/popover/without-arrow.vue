@@ -6,7 +6,7 @@
       ref="popover"
       :with-arrow="false"
       placement="bottom"
-      target="$refs.button"
+      :target="() => $refs.button"
       theme="clean"
     >
       <CPopoverContent>

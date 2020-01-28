@@ -1,7 +1,7 @@
 <template>
   <div>
     <button ref="button" @click="toggle">Toggle</button>
-    <CPopover ref="popover" placement="bottom" target="$refs.button">
+    <CPopover ref="popover" placement="bottom" :target="() => $refs.button">
       <CPopoverContent class="vcdk-example-popover__styled-content__content">
         <div>this is a popover content. yay.</div>
       </CPopoverContent>

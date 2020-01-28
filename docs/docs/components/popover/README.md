@@ -79,7 +79,7 @@ The popover component is very flexible: This example shows how to show the popov
 
 If you have a popover with a (potentially) large body then you might want to make it scrollable. You do that by setting custom styles on the popover's body that constraint it's size and adjust it's overflow settings.
 
-`bodyStyles` can be used to do just that.
+To make this work you have to apply custom styles to your `CPopoverContent`.
 
 ::: warning IMPORTANT
 It is probably a good idea to also disable flipping by setting `flips` to `false`.
