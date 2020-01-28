@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/storybook",
-  "version": "0.5.0",
+  "version": "0.6.0-alpha.0",
   "private": true,
   "scripts": {
     "start": "start-storybook --ci --port 9999",
@@ -8,21 +8,21 @@
     "serve": "http-server dist"
   },
   "dependencies": {
-    "@vue-cdk/client-only": "^0.5.0",
-    "@vue-cdk/examples": "^0.5.0",
-    "@vue-cdk/focus-trap": "^0.5.0",
-    "@vue-cdk/infinite-scroll": "^0.5.0",
-    "@vue-cdk/link": "^0.5.0",
-    "@vue-cdk/list": "^0.5.0",
-    "@vue-cdk/match-media": "^0.5.0",
-    "@vue-cdk/popover": "^0.5.0",
-    "@vue-cdk/portal": "^0.5.0",
-    "@vue-cdk/scroll-container": "^0.5.0",
-    "@vue-cdk/tooltip": "^0.5.0",
+    "@vue-cdk/client-only": "^0.6.0-alpha.0",
+    "@vue-cdk/examples": "^0.6.0-alpha.0",
+    "@vue-cdk/focus-trap": "^0.6.0-alpha.0",
+    "@vue-cdk/infinite-scroll": "^0.6.0-alpha.0",
+    "@vue-cdk/link": "^0.6.0-alpha.0",
+    "@vue-cdk/list": "^0.6.0-alpha.0",
+    "@vue-cdk/match-media": "^0.6.0-alpha.0",
+    "@vue-cdk/popover": "^0.6.0-alpha.0",
+    "@vue-cdk/portal": "^0.6.0-alpha.0",
+    "@vue-cdk/scroll-container": "^0.6.0-alpha.0",
+    "@vue-cdk/tooltip": "^0.6.0-alpha.0",
     "core-js": "^3.6.4",
+    "react": "^16.12.0",
     "vue": "^2.6.11",
-    "vue-router": "^3.1.5",
-    "react": "^16.12.0"
+    "vue-router": "^3.1.5"
   },
   "devDependencies": {
     "@storybook/addon-actions": "5.3.9",
@@ -39,8 +39,8 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
-    "eslint-plugin-vue": "^6.1.2",
     "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
     "http-server": "^0.12.1",
     "react-dom": "^16.12.0",
     "regenerator-runtime": "^0.13.3",

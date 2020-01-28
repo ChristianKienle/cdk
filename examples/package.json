@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/examples",
-  "version": "0.5.0",
+  "version": "0.6.0-alpha.0",
   "private": true,
   "main": "index.js",
   "files": [
