@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@linusborg/vue-simple-portal": "^0.1.4",
-    "@popperjs/core": "^2.0.0",
+    "@popperjs/core": "^2.0.4",
     "@vue-cdk/client-only": "^0.6.0-alpha.0",
     "@vue-cdk/infinite-scroll": "^0.6.0-alpha.0",
     "@vue-cdk/link": "^0.6.0-alpha.0",
