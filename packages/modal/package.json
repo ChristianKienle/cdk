@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/modal",
-  "version": "0.6.0-alpha.0",
+  "version": "0.6.1-alpha.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -24,10 +24,10 @@
   },
   "dependencies": {
     "@linusborg/vue-simple-portal": "^0.1.4",
-    "@vue-cdk/client-only": "^0.6.0-alpha.0",
-    "@vue-cdk/focus-trap": "^0.6.0-alpha.0",
-    "@vue-cdk/pluginify": "^0.6.0-alpha.0",
-    "@vue-cdk/utils": "^0.6.0-alpha.0"
+    "@vue-cdk/client-only": "^0.6.1-alpha.0",
+    "@vue-cdk/focus-trap": "^0.6.1-alpha.0",
+    "@vue-cdk/pluginify": "^0.6.1-alpha.0",
+    "@vue-cdk/utils": "^0.6.1-alpha.0"
   },
   "devDependencies": {
     "@vue-cdk/build-vue-lib": "^0.5.0",

@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/vuepress-plugin-demo",
-  "version": "0.6.0-alpha.0",
+  "version": "0.6.1-alpha.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -11,8 +11,8 @@
     "src/*.vue"
   ],
   "devDependencies": {
-    "@types/hapi__joi": "^16.0.8",
-    "@types/fs-extra": "^8.0.1"
+    "@types/fs-extra": "^8.0.1",
+    "@types/hapi__joi": "^16.0.8"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.0",
