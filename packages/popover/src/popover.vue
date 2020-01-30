@@ -179,6 +179,13 @@ export default {
           name: 'arrow',
           enabled: withArrow
         },
+        {
+          // See:
+          // https://github.com/popperjs/popper-core/pull/985/files
+          name: 'computeStyles',
+          options: { adaptive: false },
+          enabled: true
+        },
         ...this.modifiers
       ]
       const options = {
