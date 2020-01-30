@@ -1,7 +1,7 @@
 // @ts-check
 /** @typedef {import('./selection').MutlipleSelectionMode} Mode */
 
-export const create = /** @type {Mode} */ _ => ({ selection, affected }) => {
+export const create = /** @type {Mode} */ () => ({ selection, affected }) => {
   const newSelection = [...selection]
   const index = selection.indexOf(affected)
   if (index > -1) {

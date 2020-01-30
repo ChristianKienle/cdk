@@ -1,5 +1,5 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('customize')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('pluginify')
 
 export default { title: 'Customize' };
-export const componentName = collection.importExample('component-name')
+export const componentName = _package.importExample('component-name')

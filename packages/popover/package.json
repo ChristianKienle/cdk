@@ -18,16 +18,12 @@
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
-  "sideEffects": [
-    "./**/*.scss",
-    "./**/*.css",
-    "./**/*.sass"
-  ],
   "files": [
     "dist/",
     "src/**/*.js",
     "src/**/*.vue",
-    "themes/**/*.css"
+    "themes/**/*.css",
+    "__examples__/**/*"
   ],
   "peerDependencies": {
     "vue": "^2.6.11"

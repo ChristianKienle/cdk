@@ -11,7 +11,7 @@
         <Trigger ref="button" :style="triggerStyle" :native="useNativeButton" @click="toggle"
           >Show Popover</Trigger
         >
-        <CPopover ref="popover" v-bind="popoverProps" target="$refs.button">
+        <CPopover ref="popover" v-bind="popoverProps" :target="() => $refs.button">
           <CPopoverContent>
             <div class="title">Sample Popover Title</div>
             <div class="body">

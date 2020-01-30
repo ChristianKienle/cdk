@@ -1,10 +1,12 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('tooltip/themes')
+import { getPackage } from '@vue-cdk/examples'
+
+const _package = getPackage('tooltip')
+const themes = _package.collection('themes')
 
 export default { title: 'Tooltip/Themes' }
 
-export const light = collection.importExample('light')
-export const lightWithCustomContent = collection.importExample('light-custom')
-export const dark = collection.importExample('dark')
-export const darkWithCustomContent = collection.importExample('dark-custom')
-export const darkWithoutArrow = collection.importExample('dark-no-arrow')
+export const light = themes.importExample('light')
+export const lightWithCustomContent = themes.importExample('light-custom')
+export const dark = themes.importExample('dark')
+export const darkWithCustomContent = themes.importExample('dark-custom')
+export const darkWithoutArrow = themes.importExample('dark-no-arrow')

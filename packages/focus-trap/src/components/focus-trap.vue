@@ -52,7 +52,7 @@ export default {
   created() {
     this.trap = createTrap(this)
   },
-  render(h) {
+  render() {
     return this.$slots.default
   }
 }

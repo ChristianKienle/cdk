@@ -12,7 +12,7 @@ import Link from '@vue-cdk/link'
 export default {
   mixins: [
     Link({
-      componentName({ name, component }) {
+      componentName({ name }) {
         return `MyPrefix${name}`
       }
     })

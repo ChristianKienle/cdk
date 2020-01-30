@@ -1,9 +1,9 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('infinite-scroll')
+import { getPackage } from '@vue-cdk/examples'
+const examplesPackage = getPackage('infinite-scroll')
 
 export default { title: 'Infinite Scroll' };
-export const defaultInfiniteScroll = collection.importExample('default')
-export const sizeDependencies = collection.importExample('size-dependencies')
-export const scrollTo = collection.importExample('scroll-to')
-export const scrollEvents = collection.importExample('scroll-events')
-export const loadMore = collection.importExample('load-more')
+export const defaultInfiniteScroll = examplesPackage.importExample('default')
+export const sizeDependencies = examplesPackage.importExample('size-dependencies')
+export const scrollTo = examplesPackage.importExample('scroll-to')
+export const scrollEvents = examplesPackage.importExample('scroll-events')
+export const loadMore = examplesPackage.importExample('load-more')

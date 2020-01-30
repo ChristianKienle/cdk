@@ -8,7 +8,9 @@
         :active="active"
         :size-dependencies="[item.id]"
       >
-        {{ item }}
+        <div :class="classesFor({ selected })">
+          {{ item }}
+        </div>
       </CListItem>
     </template>
   </CList>
@@ -33,12 +35,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .item {
   cursor: pointer;
 }
 
 .item--selected {
-  background-color: #d8ecfe;
+  background-color: #d8ecfe !important;
 }
 </style>

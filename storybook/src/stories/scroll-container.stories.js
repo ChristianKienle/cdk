@@ -1,7 +1,7 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('scroll-container')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('scroll-container')
 
 export default { title: 'Scroll Container' };
 
-export const vmodel = collection.importExample('vmodel')
+export const vmodel = _package.importExample('vmodel')
 

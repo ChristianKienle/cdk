@@ -1,5 +1,5 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('client-only')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('client-only')
 
 export default { title: 'Client Only' };
-export const helloWorld = collection.importExample('default')
+export const helloWorld = _package.importExample('default')

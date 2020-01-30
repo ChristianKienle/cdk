@@ -1,9 +1,9 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('tooltip')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('tooltip')
 
 export default { title: 'Tooltip' }
 
-export const defaultTooltip = collection.importExample('default')
-export const defaultWithCustomContent = collection.importExample('default-custom')
-export const prop = collection.importExample('prop')
-export const placement = collection.importExample('placement')
+export const defaultTooltip = _package.importExample('default')
+export const defaultWithCustomContent = _package.importExample('default-custom')
+export const prop = _package.importExample('prop')
+export const placement = _package.importExample('placement')

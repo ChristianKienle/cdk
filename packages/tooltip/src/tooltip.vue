@@ -79,7 +79,6 @@ export default {
     this.$_escListener = createOnEscListener(() => this.handleESC())
     const tooltipVM = this
 
-    const renderContent = (h, props) => {}
     this.$_popover = new Vue({
       components: { Popover },
       data() {
@@ -112,7 +111,7 @@ export default {
             if (text != null) {
               return h(TooltipContent, {}, [text])
             }
-            return $scopedSlots.content(props)
+            return $scopedSlots.content(popoverProps)
           }
         }
         return h(Popover, { parent: tooltipVM, props, scopedSlots })
@@ -168,7 +167,7 @@ export default {
       this.$_escListener.isOn() && this.$_escListener.off()
     }
   },
-  render(h) {
+  render() {
     return this.$slots.default
   }
 }

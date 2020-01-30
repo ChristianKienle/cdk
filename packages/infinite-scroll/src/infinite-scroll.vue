@@ -83,7 +83,7 @@ export default {
     scrollToIndex(index) {
       this.$refs.dynamicScroller.scrollToItem(index)
     },
-    handleScroll(event) {
+    handleScroll() {
       const { scrollPosition, $el, minItemSize, $refs } = this
       const bounds = $el.getBoundingClientRect()
       const scroller = $refs.dynamicScroller.$refs.scroller

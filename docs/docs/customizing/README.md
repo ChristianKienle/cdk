@@ -31,7 +31,7 @@ Vue.use(Link)
 
 You can use the mixin factory exported by `@vue-cdk/link` like this:
 
-<Demo for="customize/component-name" />
+<Demo for="pluginify/component-name" />
 
 Using the mixin can be great for testing, wrapping *Vue Component Development Kit* or whenever you prefer local over global registration.
 

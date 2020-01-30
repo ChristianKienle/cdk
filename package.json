@@ -15,6 +15,7 @@
     "storybook": "cd storybook && yarn start",
     "clean": "lerna clean -y",
     "docs": "cd docs && yarn dev",
+    "build-packages": "lerna run prepublishOnly",
     "docs:build": "cd storybook && yarn build && cd ../docs && yarn build && mkdir dist/storybook && cp -R ../storybook/dist/* dist/storybook",
     "docs:publish": "node docs/tools/publish.js",
     "test": "vue-cli-service test:unit --no-collect-coverage && lerna run test --concurrency 1",

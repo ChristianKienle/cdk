@@ -1,7 +1,7 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('match-media')
+import { getPackage } from '@vue-cdk/examples'
+const _package = getPackage('match-media')
 
 export default { title: 'Match Media' };
 
-export const helloWorld = collection.importExample('default')
-export const inject = collection.importExample('inject')
+export const helloWorld = _package.importExample('default')
+export const inject = _package.importExample('inject')

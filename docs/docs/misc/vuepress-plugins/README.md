@@ -42,6 +42,8 @@ module.exports = {
 }
 ```
 
+
+
 #### `items`–Option
 `items` must be an array of objects. Each item must have the following shape:
 
@@ -94,13 +96,13 @@ Now you have to add `@vue-cdk/vuepress-plugin-demo` to your `.vuepress/config.js
 module.exports = {
   plugins: [
     [
-      '@vue-cdk/vuepress-plugin-demo', {
-        dir: 'path/to/your/examples' // should contain *.vue-files
-      }
+      '@vue-cdk/vuepress-plugin-demo', { /* options (see below) */ }
     ]
   ]
 }
 ```
+
+By default, `@vue-cdk/vuepress-plugin-demo` will recursively look for files in the current working directory that match the pattern  `**/__examples__/**/*.vue`.
 
 ### Displaying a Demo
 You can display a demo for your any of your examples by using the `Demo`–component:
@@ -111,8 +113,33 @@ You can display a demo for your any of your examples by using the `Demo`–compo
 <Demo for="buttons/normal.vue" />
 ```
 
-This will display a demo for an example located in `$dir/buttons/normal.vue`.
-
 A demo looks like this:
 
 <Demo for="popover/theme/clean" />
+
+If you are using the default options then this assumes the following directory structure:
+
+```
+.
+├── packages
+│   ├── buttons
+│   │   ├── __examples__
+│   │   │   ├── normal.vue
+│   │   │   └── …
+│   │   └── …
+│   └── …
+└── …
+```
+
+::: tip Nesting
+The assumed directory structure above is not telling the whole story. For example the directory `packages` can have any name. It does not matter.
+
+The example from above will work with any directory structure that has (anywhere) a directory called `buttons` that has a child directory called `__examples__` in which is a file called `normal.vue`.
+:::
+
+You can have more directories inside any `__examples__` directory.
+
+### Options
+If you don't like the defaults you can tweak the options of `@vue-cdk/vuepress-plugin-demo`. The options–object should conform to the following shape:
+
+<<< @/../packages/vuepress-plugin-demo/src/options/types.ts

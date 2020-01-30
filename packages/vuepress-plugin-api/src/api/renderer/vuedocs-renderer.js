@@ -2,7 +2,6 @@
 /* eslint-env node */
 const assert = require('assert').strict
 const { createMarkdown } = require('@vue-cdk/create-markdown')
-const { createElement } = require('@vue-cdk/create-element')
 
 const classPrefix = 'component-documentation'
 /**
@@ -23,19 +22,6 @@ const createScopedClass = child => `${classPrefix}${child}`
 const getDescription = result => {
   const { componentDesc = { default: [] } } = result
   return componentDesc.default
-}
-
-/**
- * @param {number} level
- * @param {string} text
- */
-const renderHeading = (level, text) => {
-  const attrs = {
-    class: `component-documentation__title component-documentation__title--${level}`
-  }
-  const textNode = createElement(null, {}, [], text)
-  const raw = createElement('div', { attrs }, [textNode], null).render()
-  return createMarkdown().raw(raw)
 }
 
 /**

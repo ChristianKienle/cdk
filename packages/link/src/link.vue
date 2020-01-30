@@ -53,7 +53,7 @@ const renderNativeAnchor = h =>
 
 const renderRouterLink = h => context => {
   const scopedSlots = {
-    default({ href, route, navigate }) {
+    default({ href }) {
       return renderNativeAnchor(h)(href, context)
     }
   }
@@ -80,8 +80,8 @@ export default {
     }
   },
   render(h, context) {
-    const { props, children } = context
-    const { to, href, disabled } = props
+    const { props } = context
+    const { to, href } = props
     if (to != null && href != null) {
       throw Error(
         `[Error] Serious programmer error: You cannot set values for href and to at the same time.`

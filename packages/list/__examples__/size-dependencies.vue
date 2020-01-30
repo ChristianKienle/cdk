@@ -4,9 +4,9 @@
     <input v-model.number="height" type="number" />
     <button data-cy="setHeightButton" @click="setHeight">set height</button>
     <div style="height: 100px; border: 1px solid red;">
-      <CInfiniteScroll :items="items">
+      <CList :items="items">
         <template #default="{item, active, index}">
-          <CInfiniteScrollItem
+          <CListItem
             :item="item"
             :active="active"
             :data-index="index"
@@ -15,9 +15,9 @@
             <div class="sized-item" :style="{ height: `${item.height}px` }">
               {{ item }}
             </div>
-          </CInfiniteScrollItem>
+          </CListItem>
         </template>
-      </CInfiniteScroll>
+      </CList>
     </div>
   </div>
 </template>
@@ -48,7 +48,6 @@ export default {
       item.height = height
     },
     loadMore(done) {
-      const count = 10
       const currentCount = this.items.length
       const ids = [...Array(10).keys()].map(index => index + currentCount)
       const newItems = ids.map(createItem)

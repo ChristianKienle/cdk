@@ -1,28 +1,39 @@
 // @ts-check
-// @ts-ignore
-const { resolve, relative } = require('path')
-const toPascalCase = require('@vue-cdk/node-utils/to-pascal-case')
-const normalizeOptions = require('./normalize-options')
+const globby = require('globby')
+const componentNameFromComponents = require('./../component-name-from-components')
 
-// @ts-ignore
-const name = /** @type {string} */ (require('./../../../package.json').name + '-examples')
+const Options = require('./../../options')
 
+/** @param {import('./../../options/types').Options} options */
 module.exports = options => {
-  const _options = normalizeOptions(options)
+  const _options = Options.normalize(options)
+
+  const files = globby.sync(_options.examplesPattern, {
+    ignore: ['**/__tests__/**'],
+    absolute: true,
+    cwd: _options.cwd
+  })
+
+  const { collectionPathComponentsFromPath, packageNameFromPath, exampleNameFromPath } = _options
+
+  const exampleComponentNameComponentsFromPath = path => [
+    'example',
+    packageNameFromPath(path),
+    ...collectionPathComponentsFromPath(path),
+    exampleNameFromPath(path)
+  ]
+
+  const exampleComponentNameFromPath = path =>
+    componentNameFromComponents(exampleComponentNameComponentsFromPath(path))
+  const components = files.map(path => {
+    return {
+      path,
+      name: exampleComponentNameFromPath(path)
+    }
+  })
   return {
-    name,
-    plugins: [
-      [
-        '@vuepress/register-components',
-        {
-          componentsDir: _options.dir,
-          getComponentName(file) {
-            const defaultName = file.replace(/\/|\\/g, '-')
-            const components = file.split('/')
-            return `Example-${components.map(toPascalCase).join('-')}`
-          }
-        }
-      ]
-    ]
+    // @ts-ignore
+    name: require('./../../../package.json').name + '-examples',
+    plugins: [['@vuepress/register-components', { components }]]
   }
 }

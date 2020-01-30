@@ -1,7 +1,7 @@
-import { getCollection } from '@vue-cdk/examples'
-const collection = getCollection('focus-trap')
+import { getPackage } from '@vue-cdk/examples'
+const examplesPackage = getPackage('focus-trap')
 
 export default { title: 'Focus Trap' }
-export const helloTrap = collection.importExample('default')
-export const nested = collection.importExample('nested')
-export const component = collection.importExample('component')
+export const helloTrap = examplesPackage.importExample('default')
+export const nested = examplesPackage.importExample('nested')
+export const component = examplesPackage.importExample('component')
