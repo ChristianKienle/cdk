@@ -17,18 +17,11 @@
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
-  "sideEffects": [
-    "./**/*.scss",
-    "./**/*.css",
-    "./**/*.sass"
-  ],
   "files": [
     "dist/",
-    "src/",
-    "src/index.js",
-    "src/item.vue",
-    "src/infinite-scroll.vue",
-    "src/scroll-positions-equal.js"
+    "src/**/*.js",
+    "src/**/*.vue",
+    "__examples__/**/*"
   ],
   "style": "style/index.css",
   "dependencies": {

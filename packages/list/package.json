@@ -17,17 +17,13 @@
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
-  "sideEffects": [
-    "./**/*.scss",
-    "./**/*.css",
-    "./**/*.sass"
-  ],
   "files": [
     "dist/",
-    "style/*.css",
-    "src/index.js",
-    "src/list.vue",
-    "src/list-item.vue"
+    "style/**/*.css",
+    "src/**/*.js",
+    "src/**/*.vue",
+    "__examples__/**/*.vue",
+    "__examples__/**/*.css"
   ],
   "dependencies": {
     "@vue-cdk/infinite-scroll": "^0.6.0-alpha.0",

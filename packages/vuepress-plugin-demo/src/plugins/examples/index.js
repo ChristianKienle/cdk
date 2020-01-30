@@ -25,11 +25,12 @@ module.exports = options => {
 
   const exampleComponentNameFromPath = path =>
     componentNameFromComponents(exampleComponentNameComponentsFromPath(path))
-
-  const components = files.map(path => ({
-    path,
-    name: exampleComponentNameFromPath(path)
-  }))
+  const components = files.map(path => {
+    return {
+      path,
+      name: exampleComponentNameFromPath(path)
+    }
+  })
   return {
     // @ts-ignore
     name: require('./../../../package.json').name + '-examples',

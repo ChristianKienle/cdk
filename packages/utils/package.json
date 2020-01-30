@@ -14,7 +14,10 @@
   },
   "main": "index.js",
   "files": [
-    "*.js"
+    "dist/",
+    "**/*.js",
+    "**/*.vue",
+    "__examples__/**/*"
   ],
   "peerDependencies": {
     "vue": "^2.6.11"
