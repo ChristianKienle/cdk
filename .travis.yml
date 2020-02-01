@@ -3,7 +3,7 @@ node_js:
   - lts/*
 script:
   - yarn install
-  - yarn test
+  - yarn test:unit
   - yarn lint
   - yarn docs:build
   - yarn test:e2e:ci
