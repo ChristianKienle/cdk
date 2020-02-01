@@ -4,9 +4,11 @@
       <transition
         :name="transition_"
         appear
-        @after-leave="afterLeave"
-        @enter="enter"
         @before-enter="beforeEnter"
+        @enter="enter"
+        @after-enter="afterEnter"
+        @before-leave="beforeLeave"
+        @after-leave="afterLeave"
       >
         <slot
           v-if="showsContent"
@@ -92,6 +94,8 @@ export default {
   },
   data() {
     return {
+      isTransitioning: false,
+      isVisibleWhileTransitioning: null,
       // We need to know the current visibility in order to implement toggle(…)
       visible_: this.visible,
       showsContent: false,
@@ -135,10 +139,7 @@ export default {
         this.popover.arrowClasses = arrowClasses
       }
     },
-    visible(visible, oldVisible) {
-      if (visible === oldVisible) {
-        return
-      }
+    visible(visible) {
       this.setVisible(visible, { emitUpdate: false })
     }
   },
@@ -146,7 +147,7 @@ export default {
     this.$_popper = null
   },
   beforeDestroy() {
-    this.destroyPopperIfPossible()
+    // this.destroyPopperIfPossible()
   },
   methods: {
     destroyPopperIfPossible() {
@@ -159,7 +160,7 @@ export default {
     },
     // Transition related Methods
     beforeEnter() {
-      this.destroyPopperIfPossible()
+      this.isTransitioning = true
     },
     async enter(el) {
       const { offset, flips, placement, withArrow, target } = this
@@ -194,12 +195,38 @@ export default {
       }
       this.$_popper = createPopper(target(), el, options)
     },
+    afterEnter() {
+      this.isTransitioning = false
+      if (this.isVisibleWhileTransitioning === false) {
+        this.isVisibleWhileTransitioning = null
+        this.visible_ = false
+        this.setVisible(false, { emitUpdate: true })
+      }
+    },
+    beforeLeave() {
+      this.isTransitioning = true
+    },
     afterLeave() {
+      this.isTransitioning = false
       this.destroyPopperIfPossible()
       this.showsContent = false
+      if (this.isVisibleWhileTransitioning === true) {
+        this.isVisibleWhileTransitioning = null
+        this.visible_ = true
+        this.setVisible(true, { emitUpdate: true })
+      }
+      if (this.isVisibleWhileTransitioning === false) {
+        this.isVisibleWhileTransitioning = null
+        this.visible_ = false
+        this.setVisible(false, { emitUpdate: true })
+      }
     },
     // Public Instance Methods
     setVisible(newVisible, { emitUpdate = true } = { emitUpdate: true }) {
+      if (this.isTransitioning === true) {
+        this.isVisibleWhileTransitioning = newVisible
+        return
+      }
       this.visible_ = newVisible
       this.showsContent = newVisible
       if (emitUpdate === true) {

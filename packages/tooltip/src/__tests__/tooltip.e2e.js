@@ -35,7 +35,7 @@ describe('Tooltip', () => {
     popoverBody()
       .should('exist')
       .and('be.visible')
-    tooltipTarget().type('{esc}')
+    tooltipTarget().trigger('keyup', { key: 'Escape' })
     popoverBody().should('not.exist')
   })
 
