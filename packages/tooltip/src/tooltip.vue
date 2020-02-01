@@ -15,7 +15,7 @@ export default {
     },
     visible: {
       type: Boolean,
-      default: false
+      default: null
     },
     theme: {
       type: String,
@@ -45,7 +45,11 @@ export default {
       if ($_popover == null) {
         return
       }
-      $_popover.visible = visible
+      if (visible) {
+        $_popover.show()
+      } else {
+        $_popover.hide()
+      }
     },
     popoverTheme(popoverTheme) {
       const { $_popover } = this
@@ -91,9 +95,11 @@ export default {
       },
       methods: {
         show() {
+          this.$refs.popover.show()
           this.visible = true
         },
         hide() {
+          this.$refs.popover.hide()
           this.visible = false
         }
       },
@@ -101,9 +107,16 @@ export default {
         const props = {
           target,
           withArrow: !this.noArrow,
-          visible: this.visible,
           theme: this.theme,
           placement: this.placement
+        }
+        const on = {
+          'update:visible': newVisible => {
+            if (this.visible != null) {
+              return
+            }
+            this.visible = newVisible
+          }
         }
         const scopedSlots = {
           default(popoverProps) {
@@ -114,13 +127,17 @@ export default {
             return $scopedSlots.content(popoverProps)
           }
         }
-        return h(Popover, { parent: tooltipVM, props, scopedSlots })
+        return h(Popover, { ref: 'popover', on, parent: tooltipVM, props, scopedSlots })
       }
     }).$mount()
     this.$forceUpdate()
   },
   methods: {
     setupListeners() {
+      const { visible } = this
+      if (visible != null) {
+        // return
+      }
       this.$_mouseEnterListener = createEventListener('mouseenter', this.$el, () => {
         this.handleMouseEnter()
       })
@@ -141,6 +158,10 @@ export default {
       this.$_focusListener != null && this.$_focusListener.isOn() && this.$_focusListener.off()
     },
     turnListenersOn() {
+      const { visible } = this
+      if (visible != null) {
+        // return
+      }
       this.$_mouseEnterListener.isOn() === false && this.$_mouseEnterListener.on()
       this.$_mouseLeaveListener.isOn() === false && this.$_mouseLeaveListener.on()
       this.$_blurListener.isOn() === false && this.$_blurListener.on()
