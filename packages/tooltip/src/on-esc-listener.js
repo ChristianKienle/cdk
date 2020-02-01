@@ -1,9 +1,13 @@
 // @ts-check
 import createEventListener from './create-event-listener'
 
-/** @param {() => {}} callback */
-export default callback => {
-  return createEventListener('keyup', document, event => {
+/**
+ * @param {() => {}} callback
+ * @param {{element?: HTMLElement }} options
+ */
+export default (callback, options = {}) => {
+  const element = options.element || document
+  return createEventListener('keyup', element, event => {
     if (event.key === 'Escape') {
       callback()
     }
