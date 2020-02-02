@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/pluginify",
-  "version": "0.6.1-alpha.0",
+  "version": "0.7.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -23,10 +23,10 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@vue-cdk/utils": "^0.6.1-alpha.0"
+    "@vue-cdk/utils": "^0.7.0"
   },
   "devDependencies": {
-    "@vue-cdk/build-vue-lib": "^0.5.0",
+    "@vue-cdk/build-vue-lib": "^0.7.0",
     "@vue/cli-plugin-babel": "^4.1.1",
     "@vue/cli-plugin-eslint": "^4.1.1",
     "@vue/cli-plugin-unit-jest": "^4.1.1",
