@@ -34,7 +34,7 @@
     "cypress": "^3.8.3",
     "eslint-plugin-cypress": "^2.9.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-import": "^2.20.1",
     "@vue/test-utils": "^1.0.0-beta.31",
     "vue": "^2.6.11",
     "@vue/cli-service": "^4.1.2",
