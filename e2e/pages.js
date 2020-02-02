@@ -30,6 +30,18 @@ const pageNameFromKey = key => {
   return `${baseName}/${name}`
 }
 
+/**
+ * @param {string} key
+ */
+const pageFromKey = key => {
+  const name = pageNameFromKey(key)
+  return {
+    name,
+    key,
+    path: `/pages/${name}`
+  }
+}
+
 /** @param {string} key */
 const importPage = key => {
   const pageModule = importPageModule(key)
@@ -46,4 +58,4 @@ const importPage = key => {
   }
 }
 
-export { importPageModule, pageKeys, importPage, pageNameFromKey }
+export { importPageModule, pageFromKey, pageKeys, importPage, pageNameFromKey }

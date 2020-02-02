@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vue-cdk/client-only": "^0.6.1-alpha.0",
+    "@vue-cdk/interaction-outside": "^0.0.1-alpha.0",
     "@vue-cdk/examples": "^0.6.1-alpha.0",
     "@vue-cdk/focus-trap": "^0.6.1-alpha.0",
     "@vue-cdk/infinite-scroll": "^0.6.1-alpha.0",

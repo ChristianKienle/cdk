@@ -4,6 +4,7 @@ import Popover from '@vue-cdk/popover'
 import ScrollContainer from '@vue-cdk/scroll-container'
 import InfiniteScroll from '@vue-cdk/infinite-scroll'
 import Modal from '@vue-cdk/modal'
+import InteractionOutside from '@vue-cdk/interaction-outside'
 import Tooltip from '@vue-cdk/tooltip'
 import List from '@vue-cdk/list'
 import '@vue-cdk/infinite-scroll/style/index.css'
@@ -18,6 +19,6 @@ const options = {
 }
 
 export default ({ Vue }) => {
-  const plugins = [Tooltip, Link, Popover, List, FocusTrap, Modal, InfiniteScroll, ScrollContainer]
+  const plugins = [InteractionOutside, Tooltip, Link, Popover, List, FocusTrap, Modal, InfiniteScroll, ScrollContainer]
   plugins.forEach(plugin => Vue.use(plugin, options))
 }
