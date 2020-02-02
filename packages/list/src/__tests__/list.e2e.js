@@ -46,8 +46,8 @@ describe('list component', () => {
   it('supports single selection mode', () => {
     visitStart()
     visitPage('/list/configurable', {
-      height: '200px',
-      itemHeight: '20px',
+      height: 200,
+      itemHeight: 20,
       numberOfInitialItems: 10,
       selectionMode: 'single'
     })
@@ -85,8 +85,8 @@ describe('list component', () => {
   it('supports multiple selection mode', () => {
     visitStart()
     visitPage('/list/configurable', {
-      height: '200px',
-      itemHeight: '20px',
+      height: 200,
+      itemHeight: 20,
       numberOfInitialItems: 10,
       selectionMode: 'multiple'
     })

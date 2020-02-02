@@ -19,6 +19,7 @@
     "@vue-cdk/link": "^0.6.1-alpha.0",
     "@vue-cdk/list": "^0.6.1-alpha.0",
     "@vue-cdk/match-media": "^0.6.1-alpha.0",
+    "@vue-cdk/interaction-outside": "^0.0.1-alpha.0",
     "@vue-cdk/modal": "^0.6.1-alpha.0",
     "@vue-cdk/node-utils": "^0.6.0-alpha.0",
     "@vue-cdk/pluginify": "^0.6.1-alpha.0",

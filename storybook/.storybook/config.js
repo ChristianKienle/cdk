@@ -6,14 +6,15 @@ import VueRouter from 'vue-router'
 // Vue Component Development Kit Imports – Styles
 import '@vue-cdk/list/style/index.css'
 // Vue Component Development Kit Imports – Components
-import List from '@vue-cdk/list'
-import InfiniteScroll from '@vue-cdk/infinite-scroll'
-import Popover from '@vue-cdk/popover'
-import Link from '@vue-cdk/link'
-import Portal from '@vue-cdk/portal'
-import ScrollContainer from '@vue-cdk/scroll-container'
 import ClientOnly from '@vue-cdk/client-only'
 import FocusTrap from '@vue-cdk/focus-trap'
+import InfiniteScroll from '@vue-cdk/infinite-scroll'
+import InteractionOutside from '@vue-cdk/interaction-outside'
+import Link from '@vue-cdk/link'
+import List from '@vue-cdk/list'
+import Popover from '@vue-cdk/popover'
+import Portal from '@vue-cdk/portal'
+import ScrollContainer from '@vue-cdk/scroll-container'
 import Tooltip from '@vue-cdk/tooltip'
 
 addParameters({
@@ -26,14 +27,15 @@ addParameters({
 })
 
 Vue.use(VueRouter)
-Vue.use(List)
-Vue.use(InfiniteScroll)
-Vue.use(Popover)
-Vue.use(Link)
-Vue.use(Portal)
-Vue.use(ScrollContainer)
 Vue.use(ClientOnly)
 Vue.use(FocusTrap)
+Vue.use(InfiniteScroll)
+Vue.use(InteractionOutside)
+Vue.use(Link)
+Vue.use(List)
+Vue.use(Popover)
+Vue.use(Portal)
+Vue.use(ScrollContainer)
 Vue.use(Tooltip)
 
 configure(require.context('../src', true, /\.*.stories.js/), module)

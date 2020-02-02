@@ -3,6 +3,7 @@ import App from './app.vue'
 import Router from 'vue-router'
 import List from '@vue-cdk/list'
 import FocusTrap from '@vue-cdk/focus-trap'
+import InteractionOutside from '@vue-cdk/interaction-outside'
 import Tooltip from '@vue-cdk/tooltip'
 import createRouter from './create-router'
 
@@ -13,6 +14,7 @@ const router = createRouter()
 Vue.use(List)
 Vue.use(FocusTrap)
 Vue.use(Tooltip)
+Vue.use(InteractionOutside)
 Vue.use(Router)
 
 const vm = new Vue({
