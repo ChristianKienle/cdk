@@ -23,6 +23,7 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
+    "body-scroll-lock": "^2.6.4",
     "@linusborg/vue-simple-portal": "^0.1.4",
     "@vue-cdk/client-only": "^0.6.1-alpha.0",
     "@vue-cdk/focus-trap": "^0.6.1-alpha.0",
