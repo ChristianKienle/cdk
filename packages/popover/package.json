@@ -29,7 +29,7 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@popperjs/core": "^2.0.4",
+    "@popperjs/core": "^2.0.5",
     "@vue-cdk/client-only": "^0.7.0",
     "@vue-cdk/pluginify": "^0.7.0",
     "@vue-cdk/portal": "^0.7.0",
