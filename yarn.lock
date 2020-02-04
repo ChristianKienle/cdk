@@ -2320,10 +2320,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@popperjs/core@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.0.4.tgz#50fb4d10c712a7da4b64dc0add8d8ecaefa13bfa"
-  integrity sha512-uFsFsZjz/FyNpAW4pnbKBT50Jwe+5YwM0bYUfbArM1myDr7LtMrNScOFTxiwgf1TBNA2wFXW7/RRRlwjS+ILyQ==
+"@popperjs/core@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.0.5.tgz#90ff3013c747c499c8b1d9684b63a7334a057f7d"
+  integrity sha512-YOV1TitTNzJDXe/14sDJO/M/aL12Jhind0EkQRnqTX2167fqJsAICJfi0vsDdapPI1WaYsheyYYgy6PO02Nqqg==
 
 "@reach/router@^1.2.1":
   version "1.2.1"
