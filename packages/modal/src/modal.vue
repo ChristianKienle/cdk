@@ -25,7 +25,7 @@ import { Portal } from '@linusborg/vue-simple-portal'
 import shortId from './short-id'
 import onServer from '@vue-cdk/utils/on-server'
 import ClientOnly from '@vue-cdk/client-only/src/client-only.vue'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock/lib/bodyScrollLock.es6'
 export default {
   name: 'Modal',
   components: { ClientOnly, Overlay, Portal },
