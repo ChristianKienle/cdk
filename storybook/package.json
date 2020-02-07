@@ -32,7 +32,7 @@
     "@storybook/addon-storysource": "5.3.9",
     "@storybook/addon-viewport": "5.3.12",
     "@storybook/core": "^5.3.8",
-    "@storybook/source-loader": "^5.3.8",
+    "@storybook/source-loader": "^5.3.12",
     "@storybook/vue": "^5.3.12",
     "@vue/cli-plugin-babel": "^4.1.2",
     "@vue/cli-plugin-eslint": "^4.1.2",
