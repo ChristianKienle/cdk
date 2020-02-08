@@ -29,7 +29,7 @@
     "@storybook/addon-actions": "5.3.12",
     "@storybook/addon-backgrounds": "5.3.12",
     "@storybook/addon-console": "^1.2.1",
-    "@storybook/addon-storysource": "5.3.9",
+    "@storybook/addon-storysource": "5.3.12",
     "@storybook/addon-viewport": "5.3.12",
     "@storybook/core": "^5.3.8",
     "@storybook/source-loader": "^5.3.12",
