@@ -142,4 +142,4 @@ You can have more directories inside any `__examples__` directory.
 ### Options
 If you don't like the defaults you can tweak the options of `@vue-cdk/vuepress-plugin-demo`. The options–object should conform to the following shape:
 
-<<< @/../packages/vuepress-plugin-demo/src/options/types.ts
+<<< @/../vuepress-plugins/demo/src/options/types.ts
