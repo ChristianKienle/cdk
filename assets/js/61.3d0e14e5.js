@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[61],{555:function(e,t,n){"use strict";n.r(t);var r=n(2),l=Object(r.a)({},(function(){var e=this.$createElement;return(this._self._c||e)("CLink",{attrs:{href:"https://example.org"}},[this._v("External Link (example.org)")])}),[],!1,null,null,null);t.default=l.exports}}]);
