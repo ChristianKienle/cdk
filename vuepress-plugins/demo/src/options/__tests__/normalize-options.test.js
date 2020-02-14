@@ -6,7 +6,8 @@ describe('normalize options', () => {
   it('normalizes undefined', () => {
     const options = normalize()
     expect(options).toMatchObject({
-      examplesPattern: '**/__examples__/**/*.vue'
+      examplesPattern: '**/__examples__/**/*.vue',
+      playground: false
     })
   })
 
@@ -15,7 +16,8 @@ describe('normalize options', () => {
     const options = normalize({ cwd })
     expect(options).toMatchObject({
       cwd,
-      examplesPattern: '**/__examples__/**/*.vue'
+      examplesPattern: '**/__examples__/**/*.vue',
+      playground: false
     })
     expect(
       options.packageNameFromPath(join(cwd, 'package-a', '__examples__', 'hello.vue'))
@@ -31,7 +33,8 @@ describe('normalize options', () => {
     const options = normalize({ cwd })
     expect(options).toMatchObject({
       cwd,
-      examplesPattern: '**/__examples__/**/*.vue'
+      examplesPattern: '**/__examples__/**/*.vue',
+      playground: false
     })
     expect(
       options.exampleNameFromPath(join(cwd, 'package-a', '__examples__', 'hello.vue'))
@@ -45,7 +48,8 @@ describe('normalize options', () => {
   it('normalizes {}', () => {
     expect(normalize({})).toMatchObject({
       cwd: process.cwd(),
-      examplesPattern: '**/__examples__/**/*.vue'
+      examplesPattern: '**/__examples__/**/*.vue',
+      playground: false
     })
   })
 
@@ -53,7 +57,26 @@ describe('normalize options', () => {
     const dir = '/hello/world'
     expect(normalize({ cwd: dir })).toMatchObject({
       cwd: dir,
-      examplesPattern: '**/__examples__/**/*.vue'
+      examplesPattern: '**/__examples__/**/*.vue',
+      playground: false
+    })
+  })
+
+  it('respects playground', () => {
+    const dir = '/hello/world'
+    expect(
+      normalize({
+        cwd: dir,
+        playground: {
+          package: {}
+        }
+      })
+    ).toMatchObject({
+      cwd: dir,
+      examplesPattern: '**/__examples__/**/*.vue',
+      playground: {
+        package: {}
+      }
     })
   })
 
@@ -61,7 +84,8 @@ describe('normalize options', () => {
     const examplesPattern = '**/xxx/*.vue'
     expect(normalize({ examplesPattern })).toMatchObject({
       examplesPattern,
-      cwd: process.cwd()
+      cwd: process.cwd(),
+      playground: false
     })
   })
 })
