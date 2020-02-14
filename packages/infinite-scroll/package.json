@@ -35,7 +35,7 @@
   "devDependencies": {
     "@vue-cdk/build-vue-lib": "^0.9.0",
     "@vue-cdk/e2e-utils": "^0.9.0",
-    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-babel": "^4.2.2",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",
     "@vue/cli-service": "^4.2.2",
