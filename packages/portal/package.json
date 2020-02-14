@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/portal",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -24,9 +24,9 @@
   },
   "dependencies": {
     "@linusborg/vue-simple-portal": "^0.1.4",
-    "@vue-cdk/client-only": "^0.9.0",
-    "@vue-cdk/pluginify": "^0.9.0",
-    "@vue-cdk/utils": "^0.9.0"
+    "@vue-cdk/client-only": "^0.9.1",
+    "@vue-cdk/pluginify": "^0.9.1",
+    "@vue-cdk/utils": "^0.9.1"
   },
   "devDependencies": {
     "@linusborg/vue-simple-portal": "^0.1.4",

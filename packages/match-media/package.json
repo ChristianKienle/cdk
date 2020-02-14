@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/match-media",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -22,7 +22,7 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@vue-cdk/utils": "^0.9.0"
+    "@vue-cdk/utils": "^0.9.1"
   },
   "devDependencies": {
     "@vue-cdk/build-vue-lib": "^0.9.0",

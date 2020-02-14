@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/infinite-scroll",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -26,7 +26,7 @@
   ],
   "style": "style/index.css",
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.9.0",
+    "@vue-cdk/pluginify": "^0.9.1",
     "vue-virtual-scroller": "^1.0.0-rc.2"
   },
   "peerDependencies": {
