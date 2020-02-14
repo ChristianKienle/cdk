@@ -12,7 +12,16 @@ const SCHEMA = (() => {
       collectionPathComponentsFromPath: joi
         .function()
         .default(() => defaultOptions.collectionPathComponentsFromPath),
-      examplesPattern: joi.string().default(defaultOptions.examplesPattern)
+      examplesPattern: joi.string().default(defaultOptions.examplesPattern),
+      playground: joi.alternatives([
+        false,
+        joi.object({
+          package: joi.object().default({}),
+          setupModule: joi.object({
+            code: joi.string()
+          })
+        })
+      ])
     })
     .default(defaultOptions)
 })()

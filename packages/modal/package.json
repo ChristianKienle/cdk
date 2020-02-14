@@ -15,6 +15,7 @@
   "jsdelivr": "dist/index.umd.js",
   "files": [
     "dist/",
+    "style/**/*.css",
     "src/**/*.js",
     "src/**/*.vue",
     "__examples__/**/*"

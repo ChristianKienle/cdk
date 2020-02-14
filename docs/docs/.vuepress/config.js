@@ -103,7 +103,42 @@ module.exports = {
     ...plugins.all,
     ['@vue-cdk/vuepress-plugin-demo', {
       examplesPattern: '**/__examples__/**/*.vue',
-      cwd: path.resolve(__dirname, '..', '..', '..', 'packages')
+      cwd: path.resolve(__dirname, '..', '..', '..', 'packages'),
+      playground: {
+        package: require('./playground-package'),
+        setupModule: {
+          code:
+            `import Link from '@vue-cdk/link'
+import FocusTrap from '@vue-cdk/focus-trap'
+import ClientOnly from '@vue-cdk/client-only'
+import InfiniteScroll from '@vue-cdk/infinite-scroll'
+import InteractionOutside from '@vue-cdk/interaction-outside'
+import List from '@vue-cdk/list'
+import Modal from '@vue-cdk/modal'
+import Popover from '@vue-cdk/popover'
+import Portal from '@vue-cdk/portal'
+import ScrollContainer from '@vue-cdk/scroll-container'
+import Tooltip from '@vue-cdk/tooltip'
+import VueRouter from 'vue-router'
+
+export default ({ Vue }) => {
+  Vue.use(VueRouter)
+  Vue.config.productionTip = false
+  Vue.use(Link)
+  Vue.use(FocusTrap)
+  Vue.use(ClientOnly)
+  Vue.use(InfiniteScroll)
+  Vue.use(List)
+  Vue.use(InteractionOutside)
+  Vue.use(Modal)
+  Vue.use(Popover)
+  Vue.use(Portal)
+  Vue.use(ScrollContainer)
+  Vue.use(Tooltip)
+}
+`
+        }
+      }
     }],
     ['@vue-cdk/vuepress-plugin-api', ApiPluginOptions]
   ]

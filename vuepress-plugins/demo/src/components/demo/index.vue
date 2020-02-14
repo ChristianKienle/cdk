@@ -16,7 +16,8 @@
               <ToggleControl class="sc-container__control" />
               <div class="sc-container__title">Show Code</div>
             </div>
-            <div style="margin-left: auto;">
+            <div style="display: flex; margin-left: auto;">
+              <PlaygroundButton v-if="playgroundEnabled" :get-code="codeTextContent" />
               <CopyCodeButton @click="copyCode" />
             </div>
           </div>
@@ -32,6 +33,8 @@
 <script>
 import ToggleControl from './../toggle-control.vue'
 import CopyCodeButton from './copy-code-button.vue'
+import PlaygroundButton from './playground-button.vue'
+import PlaygroundOptions from '@dynamic/vue-cdk-demo-playground'
 
 const titlecase = input => input[0].toLocaleUpperCase() + input.slice(1)
 const toPascalCase = value => {
@@ -52,11 +55,16 @@ const toPascalCase = value => {
 
 export default {
   name: 'Demo',
-  components: { CopyCodeButton, ToggleControl },
+  components: { PlaygroundButton, CopyCodeButton, ToggleControl },
   props: {
     for: {
       type: String,
       required: true
+    }
+  },
+  data() {
+    return {
+      playgroundEnabled: PlaygroundOptions !== false
     }
   },
   computed: {
@@ -79,9 +87,11 @@ export default {
     }
   },
   methods: {
+    codeTextContent() {
+      return this.$refs.code.$el.textContent
+    },
     copyCode() {
-      const codeEl = this.$refs.code.$el
-      const code = codeEl.textContent
+      const code = this.codeTextContent()
       this.$copyText(code, codeEl)
     }
   }

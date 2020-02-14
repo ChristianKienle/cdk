@@ -62,7 +62,8 @@ const create = () => {
     examplesPattern: '**/__examples__/**/*.vue',
     exampleNameFromPath,
     packageNameFromPath,
-    collectionPathComponentsFromPath
+    collectionPathComponentsFromPath,
+    playground: false
   }
 }
 

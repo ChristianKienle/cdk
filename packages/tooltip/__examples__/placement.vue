@@ -33,7 +33,8 @@
 </template>
 
 <script>
-import '@vue-cdk/tooltip/themes/index.css'
+import '@vue-cdk/tooltip/themes/light.css'
+import '@vue-cdk/tooltip/themes/dark.css'
 export default {
   data() {
     return {

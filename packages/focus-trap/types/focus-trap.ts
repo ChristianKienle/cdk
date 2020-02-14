@@ -17,4 +17,3 @@ export interface _ActivateOptions {
 export type ActivateOptions = Partial<_ActivateOptions>
 
 export type Trapable = Vue
-

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MatchMedia from './../src'
+import MatchMedia from '@vue-cdk/match-media'
 export default {
   mixins: [
     MatchMedia({
