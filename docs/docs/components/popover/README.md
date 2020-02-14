@@ -55,6 +55,7 @@ This is the a classical *Hello World* example. You control the visibility of the
 
 
 ### Manually showing the Popover
+
 Instead of using the `visible`–prop to show and/or hide the popover you can manually change the visibility. You get a reference to the popover and call its methods (`show()`/`hide()`/`toggle()`) directly.
 
 <Demo for="popover/hello-world" />
@@ -62,6 +63,17 @@ Instead of using the `visible`–prop to show and/or hide the popover you can ma
 ::: tip
 The example above is not using any theme or custom styles. For this reason it looks like a bit boring. Most of the following examples are using a theme.
 :::
+
+### Automatically Hide the Popover
+
+You can combine `CPopover` with [@vue-cdk/interaction-outside](./../interaction-outside/README.md') to automatically hide the popover when clicks outside of it are detected.
+
+
+<Demo for="integration/dropdown" />
+
+You can also use this for more complex scenarios:
+
+<Demo for="integration/popover-with-input-as-target" />
 
 ### Close on Click Inside
 
