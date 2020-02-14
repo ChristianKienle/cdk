@@ -16,15 +16,13 @@
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
-  "sideEffects": [
-    "./**/*.scss",
-    "./**/*.css",
-    "./**/*.sass"
-  ],
   "files": [
     "dist/",
-    "src/*.js",
-    "src/*.vue"
+    "types/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.vue",
+    "__examples__/**/*.vue",
+    "__examples__/**/*.css"
   ],
   "dependencies": {
     "@vue-cdk/pluginify": "^0.8.0",
