@@ -10,7 +10,7 @@ const EVENTS = ['click', 'touchstart']
 // For example:
 // ```markup
 // <CInteractionOutside @do="handleClickOutside">
-//   hello world
+//   Hello World
 // </CInteractionOutside>
 // ```
 // This detects all clicks outside of CInteractionOutside.
