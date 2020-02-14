@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/vuepress-plugin-api",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -11,8 +11,8 @@
     "src/*.vue"
   ],
   "dependencies": {
-    "@vue-cdk/create-element": "^0.8.0",
-    "@vue-cdk/create-markdown": "^0.8.0",
+    "@vue-cdk/create-element": "^0.9.0",
+    "@vue-cdk/create-markdown": "^0.9.0",
     "@vuese/markdown-render": "^2.5.3",
     "@vuese/parser": "^2.4.3"
   }
