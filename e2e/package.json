@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/e2e",
-  "version": "0.7.0",
+  "version": "0.7.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -22,8 +22,8 @@
     "@vue-cdk/interaction-outside": "^0.7.0",
     "@vue-cdk/list": "^0.7.0",
     "@vue-cdk/match-media": "^0.7.0",
-    "@vue-cdk/popover": "^0.7.0",
-    "@vue-cdk/tooltip": "^0.7.0",
+    "@vue-cdk/popover": "^0.7.2",
+    "@vue-cdk/tooltip": "^0.7.2",
     "@vue-cdk/utils": "^0.7.0",
     "@vue/cli-plugin-babel": "^4.1.2",
     "@vue/cli-plugin-e2e-cypress": "^4.1.2",
