@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/tooltip",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -29,13 +29,13 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.7.0",
-    "@vue-cdk/popover": "^0.7.2",
-    "@vue-cdk/utils": "^0.7.0"
+    "@vue-cdk/pluginify": "^0.8.0",
+    "@vue-cdk/popover": "^0.8.0",
+    "@vue-cdk/utils": "^0.8.0"
   },
   "devDependencies": {
-    "@vue-cdk/build-vue-lib": "^0.7.0",
-    "@vue-cdk/e2e-utils": "^0.7.0",
+    "@vue-cdk/build-vue-lib": "^0.8.0",
+    "@vue-cdk/e2e-utils": "^0.8.0",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",
