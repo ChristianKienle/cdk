@@ -15,7 +15,7 @@
     "src/*.js"
   ],
   "dependencies": {
-    "query-string": "^6.10.1"
+    "query-string": "^6.11.0"
   },
   "devDependencies": {
     "@vue-cdk/client-only": "^0.9.1",

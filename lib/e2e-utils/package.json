@@ -11,7 +11,7 @@
     "cypress": "^3.8.3"
   },
   "dependencies": {
-    "query-string": "^6.10.1"
+    "query-string": "^6.11.0"
   },
   "devDependencies": {
     "cypress": "^3.8.3"
