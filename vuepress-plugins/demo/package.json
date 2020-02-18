@@ -11,7 +11,7 @@
     "src/*.vue"
   ],
   "devDependencies": {
-    "@types/fs-extra": "^8.0.1",
+    "@types/fs-extra": "^8.1.0",
     "@types/hapi__joi": "^16.0.10"
   },
   "dependencies": {
