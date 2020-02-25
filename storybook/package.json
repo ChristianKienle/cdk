@@ -33,7 +33,7 @@
     "@storybook/addon-viewport": "5.3.13",
     "@storybook/core": "^5.3.13",
     "@storybook/source-loader": "^5.3.12",
-    "@storybook/vue": "^5.3.12",
+    "@storybook/vue": "^5.3.14",
     "@vue/cli-plugin-babel": "^4.2.2",
     "@vue/cli-plugin-eslint": "^4.1.2",
     "@vue/cli-service": "^4.2.2",
