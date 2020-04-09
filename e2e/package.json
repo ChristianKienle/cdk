@@ -25,7 +25,7 @@
     "@vue-cdk/popover": "^0.9.1",
     "@vue-cdk/tooltip": "^0.9.1",
     "@vue-cdk/utils": "^0.9.1",
-    "@vue/cli-plugin-babel": "^4.2.2",
+    "@vue/cli-plugin-babel": "^4.3.1",
     "@vue/cli-plugin-e2e-cypress": "^4.2.2",
     "@vue/cli-plugin-eslint": "^4.1.2",
     "@vue/cli-plugin-unit-jest": "^4.2.3",
