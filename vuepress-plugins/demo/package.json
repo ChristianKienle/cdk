@@ -12,7 +12,7 @@
   ],
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
-    "@types/hapi__joi": "^16.0.10"
+    "@types/hapi__joi": "^17.1.0"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.0",
