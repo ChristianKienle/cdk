@@ -8,12 +8,12 @@
     "src/**/*.vue"
   ],
   "peerDependencies": {
-    "cypress": "^3.8.3"
+    "cypress": "^4.8.0"
   },
   "dependencies": {
-    "query-string": "^6.11.0"
+    "query-string": "^6.13.1"
   },
   "devDependencies": {
-    "cypress": "^3.8.3"
+    "cypress": "^4.8.0"
   }
 }
