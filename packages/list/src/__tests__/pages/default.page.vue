@@ -3,25 +3,30 @@
     <button data-cy-reset @click="reset">reset</button>
     <CList
       data-cy="list"
-      :min-item-size="30"
+      :minItemSize="20"
       :items="items"
-      :total-item-count="1000"
-      :load-more-items="loadMoreItems"
-      style="height: 400px;"
-      key-field="id"
+      :loadMore="loadMore"
+      keyField="id"
     >
       <template #loading>
         <div data-cy="loading">Loading Indicator</div>
       </template>
-      <template #default="{ item, index }">
-        <CListItem :item="item" :size-dependencies="[item.title]" :data-cy-item="item.id">
-          <div>{{ item.title }}[{{ index }}]</div>
+      <template #default="{ selected, active, item, index }">
+        <CListItem
+          :item="item"
+          :active="active"
+          data-cy="item"
+          :data-cy-id="item.id"
+          :data-cy-index="index"
+          :data-cy-selected="String(selected)"
+          :style="itemStyles"
+        >
+          <div> {{ selected ? '[x]' : '[ ]' }} {{ item }} – {{ item.index }} </div>
         </CListItem>
       </template>
     </CList>
   </div>
 </template>
-
 <script>
 import '@vue-cdk/list/style/index.css'
 

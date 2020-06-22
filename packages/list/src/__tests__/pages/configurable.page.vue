@@ -5,7 +5,7 @@
       data-cy="list"
       :min-item-size="itemHeight"
       :items="items"
-      :load-more="loadMore"
+      :loadMore="loadMore"
       :selection-mode="selectionMode_"
       :style="listStyles"
       key-field="id"

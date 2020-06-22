@@ -1,10 +1,10 @@
 <template>
   <CInifiniteScroll
     ref="inifiniteScroll"
-    :key-field="keyField"
-    :min-item-size="minItemSize"
+    :keyField="keyField"
+    :minItemSize="minItemSize"
     :items="items"
-    :load-more="loadMore"
+    :loadMore="loadMore"
   >
     <template #before>
       <slot name="before" />
