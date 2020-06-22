@@ -34,7 +34,7 @@
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.0.3",
     "core-js": "^3.6.4",
-    "eslint": "^6.7.2",
+    "eslint": "^7.3.0",
     "eslint-plugin-vue": "^6.2.1",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
