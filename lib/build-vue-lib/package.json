@@ -14,7 +14,7 @@
   "typings": "index.d.ts",
   "dependencies": {
     "@oclif/errors": "^1.2.2",
-    "bili": "^4.10.1",
+    "bili": "^5.0.5",
     "chalk": "^4.1.0",
     "eslint": "^7.3.0",
     "rollup-plugin-visualizer": "^4.0.4",
