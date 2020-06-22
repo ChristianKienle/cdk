@@ -27,7 +27,7 @@
   "style": "style/index.css",
   "dependencies": {
     "@vue-cdk/pluginify": "^0.9.1",
-    "vue-virtual-scroller": "^1.0.0-rc.2"
+    "vue-virtual-scroller": "^1.0.10"
   },
   "peerDependencies": {
     "vue": "^2.6.11"
@@ -35,12 +35,12 @@
   "devDependencies": {
     "@vue-cdk/build-vue-lib": "^0.9.0",
     "@vue-cdk/e2e-utils": "^0.9.0",
-    "@vue/cli-plugin-babel": "^4.2.2",
-    "@vue/cli-plugin-eslint": "^4.3.1",
-    "@vue/cli-plugin-unit-jest": "^4.2.3",
-    "@vue/cli-service": "^4.2.3",
-    "@vue/test-utils": "1.0.0-beta.31",
-    "babel-eslint": "^10.0.3",
+    "@vue/cli-plugin-babel": "^4.4.4",
+    "@vue/cli-plugin-eslint": "^4.4.4",
+    "@vue/cli-plugin-unit-jest": "^4.4.4",
+    "@vue/cli-service": "^4.4.4",
+    "@vue/test-utils": "^1.0.3",
+    "babel-eslint": "^10.1.0",
     "core-js": "^3.6.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.1",
