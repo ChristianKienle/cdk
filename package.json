@@ -27,6 +27,9 @@
     "lint": "eslint --ext .js,.vue packages examples storybook e2e",
     "postinstall": "lerna bootstrap --concurrency 1 --use-workspaces"
   },
+  "resolutions": {
+    "cypress": "4.8.0" 
+  },
   "devDependencies": {
     "cross-env": "^7.0.0",
     "vue-router": "^3.3.4",
