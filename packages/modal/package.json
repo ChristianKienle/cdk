@@ -29,7 +29,7 @@
     "@vue-cdk/focus-trap": "^0.9.2",
     "@vue-cdk/pluginify": "^0.9.2",
     "@vue-cdk/utils": "^0.9.2",
-    "body-scroll-lock": "^2.6.4"
+    "body-scroll-lock": "^3.0.3"
   },
   "devDependencies": {
     "@vue-cdk/build-vue-lib": "^0.9.2",
