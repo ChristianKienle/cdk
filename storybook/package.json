@@ -45,7 +45,7 @@
     "http-server": "^0.12.3",
     "react-dom": "^16.13.1",
     "regenerator-runtime": "^0.13.5",
-    "vue-loader": "^15.9.2",
+    "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
