@@ -9,7 +9,7 @@ import createRouter from './create-router'
 
 Vue.config.devtools = true
 
-const router = createRouter()
+const router = createRouter(/* nothing */)
 
 Vue.use(List)
 Vue.use(FocusTrap)
