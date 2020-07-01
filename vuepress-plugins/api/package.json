@@ -14,6 +14,6 @@
     "@vue-cdk/create-element": "^0.9.0",
     "@vue-cdk/create-markdown": "^0.9.0",
     "@vuese/markdown-render": "^2.5.3",
-    "@vuese/parser": "^2.4.3"
+    "@vuese/parser": "^2.9.1"
   }
 }
