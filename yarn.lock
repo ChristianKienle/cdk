@@ -3695,10 +3695,10 @@
     vuepress-plugin-container "^2.0.2"
     vuepress-plugin-smooth-scroll "^0.0.3"
 
-"@vuese/markdown-render@^2.5.3", "@vuese/markdown-render@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@vuese/markdown-render/-/markdown-render-2.7.0.tgz#9a9c454f453355ef12799c2fd7078a703da9c9d9"
-  integrity sha512-DtDtknAvEFeqPStUH8GC+dQA0ZzwB++DZqull+M0W7gDTChVXffntxhx9ta3CZH55T1UnaEAFxIFiikpuex/uA==
+"@vuese/markdown-render@^2.10.1":
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/@vuese/markdown-render/-/markdown-render-2.10.1.tgz#42542aee2d27fc36fb9452a8709624391a6d467f"
+  integrity sha512-NbDciF+AzLJsIf39j9+7xp8rEEYbpzPm44JbG/LUKsR+qG1zSU2lfk5HP+gcZd9rZ/f9rYS7fAiMMN/vmqjDQQ==
 
 "@vuese/parser@^2.4.3", "@vuese/parser@^2.6.0":
   version "2.6.0"
