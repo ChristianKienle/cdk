@@ -248,6 +248,11 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.10.3.tgz#60d9847f98c4cea1b279e005fdb7c28be5412d15"
   integrity sha512-bU8JvtlYpJSBPuj1VUmKpFGaDZuLxASky3LhaKj3bmpSTY6VWooSM8msk+Z0CZoErFye2tlABF6yDkT3FOPAXw==
 
+"@babel/helper-validator-identifier@^7.10.4":
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.10.4.tgz#a78c7a7251e01f616512d31b10adcf52ada5e0d2"
+  integrity sha512-3U9y+43hz7ZM+rzG24Qe2mufW5KhvFg/NhnNph+i9mgCtdTCtMJuI1TMkrIUiK7Ix4PYlRF9I5dhqaLYA/ADXw==
+
 "@babel/helper-wrap-function@^7.10.1":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/helper-wrap-function/-/helper-wrap-function-7.10.1.tgz#956d1310d6696257a7afd47e4c42dfda5dfcedc9"
@@ -281,10 +286,10 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.2.3.tgz#32f5df65744b70888d17872ec106b02434ba1489"
   integrity sha512-0LyEcVlfCoFmci8mXx8A5oIkpkOgyo8dRHtxBnK9RRBwxO2+JZPNsqtVEZQ7mJFPxnXF9lfmU24mHOPI0qnlkA==
 
-"@babel/parser@^7.1.0", "@babel/parser@^7.10.3", "@babel/parser@^7.4.3", "@babel/parser@^7.7.0", "@babel/parser@^7.8.6":
-  version "7.10.3"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.10.3.tgz#7e71d892b0d6e7d04a1af4c3c79d72c1f10f5315"
-  integrity sha512-oJtNJCMFdIMwXGmx+KxuaD7i3b8uS7TTFYW/FNG2BT8m+fmGHoiPYoH0Pe3gya07WuFmM5FCDIr1x0irkD/hyA==
+"@babel/parser@^7.1.0", "@babel/parser@^7.10.3", "@babel/parser@^7.10.4", "@babel/parser@^7.4.3", "@babel/parser@^7.7.0":
+  version "7.10.5"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.10.5.tgz#e7c6bf5a7deff957cec9f04b551e2762909d826b"
+  integrity sha512-wfryxy4bE1UivvQKSQDU4/X6dr+i8bctjUjj8Zyt3DQy7NtPizJXT8M52nqpNKL+nq2PW8lxk4ZqLj0fD4B4hQ==
 
 "@babel/plugin-proposal-async-generator-functions@^7.10.3":
   version "7.10.3"
@@ -904,13 +909,13 @@
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/types@^7.0.0", "@babel/types@^7.1.3", "@babel/types@^7.10.1", "@babel/types@^7.10.3", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.7.0", "@babel/types@^7.8.6":
-  version "7.10.3"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.10.3.tgz#6535e3b79fea86a6b09e012ea8528f935099de8e"
-  integrity sha512-nZxaJhBXBQ8HVoIcGsf9qWep3Oh3jCENK54V4mRF7qaJabVsAYdbTtmSD8WmAp1R6ytPiu5apMwSXyxB1WlaBA==
+"@babel/types@^7.0.0", "@babel/types@^7.1.3", "@babel/types@^7.10.1", "@babel/types@^7.10.3", "@babel/types@^7.10.4", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.7.0":
+  version "7.10.5"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.10.5.tgz#d88ae7e2fde86bfbfe851d4d81afa70a997b5d15"
+  integrity sha512-ixV66KWfCI6GKoA/2H9v6bQdbfXEwwpOdQ8cRvb4F+eyvhlaHxWFMQB4+3d9QFJXZsiiiqVrewNV0DFEQpyT4Q==
   dependencies:
-    "@babel/helper-validator-identifier" "^7.10.3"
-    lodash "^4.17.13"
+    "@babel/helper-validator-identifier" "^7.10.4"
+    lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
 "@bcoe/v8-coverage@^0.2.3":
@@ -3474,50 +3479,54 @@
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
-"@vue/compiler-core@3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.0.0-beta.15.tgz#8710a8e3ba15ba1a8b62bd17609d26bd27fdcc45"
-  integrity sha512-NLNW7tAMHl8ybRgTPTIWLsi8aXHbFngY2x95eEHAdxhNasTY5NsgmQBBH9TBAUQEn6Wo8ybmuvQoNzgcw979Zg==
+"@vue/compiler-core@3.0.0-beta.24":
+  version "3.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.0.0-beta.24.tgz#7b62a24a9b6bb0d98c1e22149ba4cc67bd676d6a"
+  integrity sha512-hBPMU/8NtxkrL2utPzCdsB3Jebe1gUR0ijl5nUyE0iGejt+ONq9pBX68dktFzcrJxbf/n41wcN1tI2iFC3osvA==
   dependencies:
-    "@babel/parser" "^7.8.6"
-    "@babel/types" "^7.8.6"
-    "@vue/shared" "3.0.0-beta.15"
-    estree-walker "^0.8.1"
+    "@babel/parser" "^7.10.4"
+    "@babel/types" "^7.10.4"
+    "@vue/shared" "3.0.0-beta.24"
+    estree-walker "^2.0.1"
     source-map "^0.6.1"
 
-"@vue/compiler-dom@3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.0.0-beta.15.tgz#ee6dc9ae1dabb5c5c257d7cc20c5f3e95d5e5f4f"
-  integrity sha512-0qVaCosZ6XrkmlSOndGlNh33JQ2oao82uWxC/qw4QWBGm6a1DcKkZFIZFYLQWg5ZIcSrEQrR1VzUidBaZw9AIg==
+"@vue/compiler-dom@3.0.0-beta.24":
+  version "3.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.0.0-beta.24.tgz#287c1c80686824a56b6d8b246def9f7d86d534d3"
+  integrity sha512-Nav5CqiOf4aIWnxJ+8+lSquAQccF1nRe7VzGrwigX8/pb0rMyNlRgxRRa+xnHJ+q5aNZEKlCHCxNQDKVzxP2Zw==
   dependencies:
-    "@vue/compiler-core" "3.0.0-beta.15"
-    "@vue/shared" "3.0.0-beta.15"
+    "@vue/compiler-core" "3.0.0-beta.24"
+    "@vue/shared" "3.0.0-beta.24"
 
-"@vue/compiler-sfc@^3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.0.0-beta.15.tgz#8a8cc309fd56d5ceca76160743a4eb4e8a43281b"
-  integrity sha512-ZNHwUCbhGJHNmUQ51Q/Er7kvPUWru00DlWTGC3u/C1wbcqx/bwgzJ6YENbFq0rcGwrUCo7H6nP6ZSAhE2Euiog==
+"@vue/compiler-sfc@^3.0.0-beta.24":
+  version "3.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.0.0-beta.24.tgz#0ecc8b682a3688c41ada23a6db1ad4b4547aae25"
+  integrity sha512-okWJnk2yiJEVUMbrm+RT7gMRBFtkNqSnAqFQFvQzJgbjzDccMAnH0Y3B4oYU88t0+4xGyl6xxtHGRVmP93JTCA==
   dependencies:
-    "@vue/compiler-core" "3.0.0-beta.15"
-    "@vue/compiler-dom" "3.0.0-beta.15"
-    "@vue/compiler-ssr" "3.0.0-beta.15"
-    "@vue/shared" "3.0.0-beta.15"
+    "@babel/parser" "^7.10.4"
+    "@babel/types" "^7.10.4"
+    "@vue/compiler-core" "3.0.0-beta.24"
+    "@vue/compiler-dom" "3.0.0-beta.24"
+    "@vue/compiler-ssr" "3.0.0-beta.24"
+    "@vue/shared" "3.0.0-beta.24"
     consolidate "^0.15.1"
+    estree-walker "^2.0.1"
     hash-sum "^2.0.0"
     lru-cache "^5.1.1"
+    magic-string "^0.25.7"
     merge-source-map "^1.1.0"
     postcss "^7.0.27"
-    postcss-modules "^2.0.0"
+    postcss-modules "^3.1.0"
     postcss-selector-parser "^6.0.2"
     source-map "^0.6.1"
 
-"@vue/compiler-ssr@3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.0.0-beta.15.tgz#516c9f34060eaf088a31e9cbe17ff974dc94cbe8"
-  integrity sha512-c5qZXJgJL4NEly1utrZ6ftzziGVCvw9XRuwKJ8C7CDi78wqB/Zl4zMvuyN6YnQGUS1WL+xkjFCgNwHddF1coAQ==
+"@vue/compiler-ssr@3.0.0-beta.24":
+  version "3.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.0.0-beta.24.tgz#3bdeaee92cb7b83515d270e0f52a3de623642638"
+  integrity sha512-mierRRq4fc8Im0+qS5tY+HJhgpWAGXjgA8yii1okw/S2IYTrPJvoVq2zgso/24R1d0ygv4CZUVwy2xpdOKBb0w==
   dependencies:
-    "@vue/compiler-dom" "3.0.0-beta.15"
-    "@vue/shared" "3.0.0-beta.15"
+    "@vue/compiler-dom" "3.0.0-beta.24"
+    "@vue/shared" "3.0.0-beta.24"
 
 "@vue/component-compiler-utils@^3.1.0", "@vue/component-compiler-utils@^3.1.2":
   version "3.1.2"
@@ -3547,10 +3556,10 @@
   resolved "https://registry.yarnpkg.com/@vue/preload-webpack-plugin/-/preload-webpack-plugin-1.1.1.tgz#18723530d304f443021da2292d6ec9502826104a"
   integrity sha512-8VCoJeeH8tCkzhkpfOkt+abALQkS11OIHhte5MBzYaKMTqK0A3ZAKEUVAffsOklhEv7t0yrQt696Opnu9oAx+w==
 
-"@vue/shared@3.0.0-beta.15":
-  version "3.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.0-beta.15.tgz#77444ab234e229c3fdcc9f394678e167a55757af"
-  integrity sha512-wViILT5GgxMtnXVQ1xupj43wvnZ41g3NLWaBObs7l+eTxz5vq5yx72qH6HRpsfhR2Mg39jE0cfNLFEpC4lJIUQ==
+"@vue/shared@3.0.0-beta.24":
+  version "3.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.0-beta.24.tgz#ca09ebd324ce30cc2ef8b729fe2cead5602f9c54"
+  integrity sha512-E41lsRKH9KnMuqkpJTSGZSqWDxy77/j2VXXo5BDFjU8h1sEiVAb/nQ4c3nXe3JmksFLlwQMXAT4+MxUhw8D+vA==
 
 "@vue/test-utils@^1.0.3":
   version "1.0.3"
@@ -8022,15 +8031,15 @@ estree-walker@^0.6.1:
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.6.1.tgz#53049143f40c6eb918b23671d1fe3219f3a1b362"
   integrity sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==
 
-estree-walker@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.8.1.tgz#6230ce2ec9a5cb03888afcaf295f97d90aa52b79"
-  integrity sha512-H6cJORkqvrNziu0KX2hqOMAlA2CiuAxHeGJXSIoKA/KLv229Dw806J3II6mKTm5xiDX1At1EXCfsOQPB+tMB+g==
-
 estree-walker@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-1.0.1.tgz#31bc5d612c96b704106b477e6dd5d8aa138cb700"
   integrity sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==
+
+estree-walker@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.1.tgz#f8e030fb21cefa183b44b7ad516b747434e7a3e0"
+  integrity sha512-tF0hv+Yi2Ot1cwj9eYHtxC0jB9bmjacjQs6ZBTj82H8JwUywFuc+7E83NWfNMwHXZc11mjfFcVXPe9gEP4B8dg==
 
 esutils@^2.0.2:
   version "2.0.3"
@@ -12269,6 +12278,11 @@ lodash@4.17.15, lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
+lodash@^4.17.19:
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
+
 log-symbols@3.0.0, log-symbols@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-3.0.0.tgz#f3a08516a5dea893336a7dee14d18a1cfdab77c4"
@@ -14563,6 +14577,21 @@ postcss-modules@^2.0.0:
     generic-names "^2.0.1"
     lodash.camelcase "^4.3.0"
     postcss "^7.0.1"
+    string-hash "^1.1.1"
+
+postcss-modules@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/postcss-modules/-/postcss-modules-3.2.0.tgz#1ca870d197cd09a7964253e12de2aac906c94256"
+  integrity sha512-ceodlVbBypGD3R7EI1xM7gz28J0syaXq0VKd7rJVXVlOSkxUIRBRJQjBgpoKnKVFNAcCjtLVgZqBA3mUNntWPA==
+  dependencies:
+    generic-names "^2.0.1"
+    icss-replace-symbols "^1.1.0"
+    lodash.camelcase "^4.3.0"
+    postcss "^7.0.32"
+    postcss-modules-extract-imports "^2.0.0"
+    postcss-modules-local-by-default "^3.0.2"
+    postcss-modules-scope "^2.2.0"
+    postcss-modules-values "^3.0.0"
     string-hash "^1.1.1"
 
 postcss-normalize-charset@^4.0.1:
