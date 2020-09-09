@@ -3,9 +3,9 @@ const _package = getPackage('link')
 
 export default { title: 'Link' };
 
-export const external = _package.importExample('external')
-export const internal = _package.importExample('internal')
-export const internalDisabled = _package.importExample('internal-disabled')
-export const externalDisabled = _package.importExample('external-disabled')
-export const routerDisabled = _package.importExample('router-disabled')
-export const router = _package.importExample('router')
+export const external = _package.storyFor('external')
+export const internal = _package.storyFor('internal')
+export const internalDisabled = _package.storyFor('internal-disabled')
+export const externalDisabled = _package.storyFor('external-disabled')
+export const routerDisabled = _package.storyFor('router-disabled')
+export const router = _package.storyFor('router')

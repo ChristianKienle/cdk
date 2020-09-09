@@ -1,5 +1,3 @@
-import { configure, addParameters } from '@storybook/vue';
-
 // Dependencies
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -17,15 +15,6 @@ import Portal from '@vue-cdk/portal'
 import ScrollContainer from '@vue-cdk/scroll-container'
 import Tooltip from '@vue-cdk/tooltip'
 
-addParameters({
-  backgrounds: [
-    { name: 'dark', value: '#241A30' },
-    { name: 'light', value: '#F0F0F0' },
-    { name: 'black', value: '#000' },
-    { name: 'white', value: '#FFF' }
-  ]
-})
-
 Vue.use(VueRouter)
 Vue.use(ClientOnly)
 Vue.use(FocusTrap)
@@ -38,4 +27,15 @@ Vue.use(Portal)
 Vue.use(ScrollContainer)
 Vue.use(Tooltip)
 
-configure(require.context('../src', true, /\.*.stories.js/), module)
+export const parameters = {
+  viewport: {},
+  backgrounds: {
+    default: 'white',
+    values: [
+      { name: 'dark', value: '#241A30' },
+      { name: 'light', value: '#F0F0F0' },
+      { name: 'black', value: '#000' },
+      { name: 'white', value: '#FFF' },
+    ],
+  },
+}
