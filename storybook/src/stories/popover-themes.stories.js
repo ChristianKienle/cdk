@@ -3,6 +3,6 @@ const _package = getPackage('popover')
 const collection = _package.collection('theme')
 
 export default { title: 'Popover/Themes' }
-export const clean = collection.importExample('clean')
-export const bigArrow = collection.importExample('big-arrow')
-export const dark = collection.importExample('dark')
+export const clean = collection.storyFor('clean')
+export const bigArrow = collection.storyFor('big-arrow')
+export const dark = collection.storyFor('dark')

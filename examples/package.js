@@ -10,6 +10,16 @@ export default class Package {
     return new Collection(this.packageName, []).importExample(exampleName)
   }
 
+  // The way stories are written changes with Storybook 6.
+  // This method is new and supposed to be used with Storyboard 6+.
+  // It returns a story, that renders the example named `exampleName`.
+  storyFor(exampleName) {
+    return () => ({
+      components: { Example: this.importExample(exampleName) },
+      template: '<Example />'
+    })
+  }
+
   collection(name) {
     return new Collection(this.packageName, [name])
   }
