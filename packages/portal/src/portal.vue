@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VueSimplePortal selector="#helloworld">
+    <VueSimplePortal :selector="selector">
       <div>
         <slot />
       </div>
@@ -13,6 +13,9 @@ import { Portal as VueSimplePortal } from '@linusborg/vue-simple-portal'
 
 export default {
   name: 'Portal',
+  props: {
+    selector: String,
+  },
   components: {
     VueSimplePortal
   }
