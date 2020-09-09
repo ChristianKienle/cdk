@@ -1,7 +1,6 @@
 // @ts-check
-import createFocusTrap from 'focus-trap'
+import { createFocusTrap } from 'focus-trap'
 import normalizeActivationOptions from './normalize/activation-options'
-
 /** @typedef {import('./../../types/focus-trap').Trapable} Trapable */
 
 export default class FocusTrap {
