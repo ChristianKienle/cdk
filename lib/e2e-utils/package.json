@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/e2e-utils",
-  "version": "0.9.2",
+  "version": "0.9.4",
   "private": true,
   "main": "src/index.js",
   "files": [
