@@ -7,8 +7,11 @@
     "src/**/*.js",
     "src/**/*.vue"
   ],
+  "resolutions": {
+    "cypress": "5.1.0"
+  },
   "peerDependencies": {
-    "cypress": "^4.8.0"
+    "cypress": "^5.1.0"
   },
   "dependencies": {
     "query-string": "^6.13.1"
