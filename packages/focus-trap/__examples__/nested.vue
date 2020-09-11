@@ -1,12 +1,10 @@
 <template>
   <div>
-    <button @click="showModal">
-      Show Modal
-    </button>
-    <Modal v-show="modalVisible" ref="modal">
+    <button @click="showModal"> Show Modal </button>
+    <Modal v-if="modalVisible" ref="modal">
       <div>
         <p>I am a Modal</p>
-        <button @click="nestedTrap">Show nested Modal</button>
+        <button @click="showNestedTrap">Show nested Modal</button>
         <button @click="closeModal">Close Modal</button>
         <input ref="intialInput" tabindex="0" />
         <input />
@@ -34,10 +32,10 @@ const Modal = {
       width: '200px',
       height: '200px',
       border: '1px solid #ccc',
-      backgroundColor: '#fefefe'
+      backgroundColor: '#fefefe',
     }
     return h('div', { style }, this.$slots.default)
-  }
+  },
 }
 
 export default {
@@ -45,7 +43,15 @@ export default {
   data() {
     return {
       modalVisible: false,
-      nestedModalVisible: false
+      nestedModalVisible: false,
+    }
+  },
+  beforeDestroy() {
+    if (this.nestedTrap != null) {
+      this.nestedTrap.deactivate()
+    }
+    if (this.trap != null) {
+      this.trap.deactivate()
     }
   },
   methods: {
@@ -60,10 +66,10 @@ export default {
         onDeactivate: () => {
           this.modalVisible = false
         },
-        initialFocus: this.$refs.intialInput
+        initialFocus: this.$refs.intialInput,
       })
     },
-    async nestedTrap() {
+    async showNestedTrap() {
       this.nestedModalVisible = true
       await this.$nextTick()
       this.nestedTrap = createFocusTrap(this.$refs.nestedModal)
@@ -71,12 +77,12 @@ export default {
         onDeactivate: () => {
           this.nestedModalVisible = false
         },
-        initialFocus: this.$refs.nestedInitialInput
+        initialFocus: this.$refs.nestedInitialInput,
       })
     },
     async closeNestedModal() {
       this.nestedTrap.deactivate()
-    }
-  }
+    },
+  },
 }
 </script>

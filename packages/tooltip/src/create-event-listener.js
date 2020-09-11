@@ -24,7 +24,7 @@ const createEventListener = (type, subject, handler) => {
       isOn = false
       subject.removeEventListener(type, handler)
       return this
-    }
+    },
   }
 }
 
