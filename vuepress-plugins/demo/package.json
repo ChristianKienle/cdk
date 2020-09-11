@@ -18,7 +18,7 @@
     "@hapi/joi": "^17.1.1",
     "@vue-cdk/node-utils": "^0.9.0",
     "@vuepress/plugin-register-components": "^1.5.0",
-    "codesandbox": "^2.1.12",
+    "codesandbox": "^2.2.0",
     "devalue": "^2.0.1",
     "eslint": "^7.3.0",
     "globby": "^11.0.0",
