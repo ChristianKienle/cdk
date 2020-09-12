@@ -45,7 +45,7 @@
     "node-sass": "^4.13.1",
     "sass-loader": "^10.0.2",
     "stringify-attributes": "^2.0.0",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vuepress": "^1.5.4",
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^3.8.0"

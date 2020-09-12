@@ -21,7 +21,7 @@
     "__examples__/**/*"
   ],
   "peerDependencies": {
-    "vue": "^2.6.11"
+    "vue": "^2.6.12"
   },
   "dependencies": {
     "@linusborg/vue-simple-portal": "^0.1.4",
@@ -43,7 +43,7 @@
     "core-js": "^3.6.4",
     "eslint": "^7.3.0",
     "eslint-plugin-vue": "^6.2.1",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
   }
 }
