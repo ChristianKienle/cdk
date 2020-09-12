@@ -24,7 +24,7 @@
     "@vue-cdk/tooltip": "^0.9.5",
     "core-js": "^3.6.4",
     "react": "^16.13.1",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
@@ -55,7 +55,7 @@
     "react-is": "^16.13.1",
     "regenerator-runtime": "^0.13.5",
     "vue-loader": "^15.9.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
