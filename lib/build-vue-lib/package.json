@@ -14,7 +14,7 @@
   "typings": "index.d.ts",
   "dependencies": {
     "@oclif/errors": "^1.2.2",
-    "@vue/babel-preset-app": "^4.4.5",
+    "@vue/babel-preset-app": "^4.4.6",
     "bili": "^5.0.5",
     "chalk": "^4.1.0",
     "eslint": "^7.3.0",
