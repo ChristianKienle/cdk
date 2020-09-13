@@ -20,12 +20,12 @@ export default {
   props: {
     getCode: {
       type: Function,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      code: ''
+      code: '',
     }
   },
   computed: {
@@ -36,19 +36,19 @@ export default {
       return {
         files: {
           'src/setup.js': {
-            content: this.setupJs
+            content: this.setupJs,
           },
           'package.json': {
-            content: Options.package
+            content: Options.package,
           },
           'src/main.js': {
-            content: this.mainJs
+            content: this.mainJs,
           },
           'src/example.vue': {
-            content: this.code
+            content: this.code,
           },
           'public/index.html': {
-            content: this.indexHtml
+            content: this.indexHtml,
           }
         }
       }
