@@ -1,6 +1,6 @@
 {
   "name": "@vue-cdk/e2e",
-  "version": "0.9.5",
+  "version": "0.10.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -21,13 +21,13 @@
     "cypress": "5.1.0"
   },
   "devDependencies": {
-    "@vue-cdk/client-only": "^0.9.5",
-    "@vue-cdk/interaction-outside": "^0.9.5",
-    "@vue-cdk/list": "^0.9.5",
-    "@vue-cdk/match-media": "^0.9.5",
-    "@vue-cdk/popover": "^0.9.5",
-    "@vue-cdk/tooltip": "^0.9.5",
-    "@vue-cdk/utils": "^0.9.2",
+    "@vue-cdk/client-only": "^0.10.0",
+    "@vue-cdk/interaction-outside": "^0.10.0",
+    "@vue-cdk/list": "^0.10.0",
+    "@vue-cdk/match-media": "^0.10.0",
+    "@vue-cdk/popover": "^0.10.0",
+    "@vue-cdk/tooltip": "^0.10.0",
+    "@vue-cdk/utils": "^0.10.0",
     "@vue/cli-plugin-babel": "^4.4.6",
     "@vue/cli-plugin-e2e-cypress": "^4.5.4",
     "@vue/cli-plugin-eslint": "^4.4.6",
