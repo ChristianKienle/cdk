@@ -16,7 +16,7 @@ export default class Package {
   storyFor(exampleName) {
     return () => ({
       components: { Example: this.importExample(exampleName) },
-      template: '<Example />'
+      template: '<Example />',
     })
   }
 

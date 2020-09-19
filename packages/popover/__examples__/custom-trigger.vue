@@ -24,7 +24,7 @@ export default {
     },
     hide() {
       this.$refs.popover.hide()
-    }
-  }
+    },
+  },
 }
 </script>

@@ -40,15 +40,15 @@ export default {
       placement: 'bottom',
       flips: true,
       withArrow: true,
-      theme: 'clean'
-    }
+      theme: 'clean',
+    },
   }),
   computed: {
     triggerStyle() {
       return {
-        width: `${this.triggerWidth}px`
+        width: `${this.triggerWidth}px`,
       }
-    }
+    },
   },
   mounted() {
     this.$forceUpdate()
@@ -72,8 +72,8 @@ export default {
       const x = 0.5 * (contentView.clientWidth - scrollView.clientWidth)
       scrollView.scrollTop = y
       scrollView.scrollLeft = x
-    }
-  }
+    },
+  },
 }
 </script>
 

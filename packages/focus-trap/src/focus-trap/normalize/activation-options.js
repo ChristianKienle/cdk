@@ -8,10 +8,10 @@
  * @param {Trapable} trapable
  * @returns {_ActivateOptions}
  */
-const createDefaultOptions = trapable => ({
+const createDefaultOptions = (trapable) => ({
   initialFocus: trapable.$el,
   deactivation: 'on-esc',
-  onDeactivate: () => {}
+  onDeactivate: () => {},
 })
 
 /**
@@ -22,6 +22,6 @@ const createDefaultOptions = trapable => ({
 export default (trapable, options = {}) => {
   return {
     ...createDefaultOptions(trapable),
-    ...options
+    ...options,
   }
 }

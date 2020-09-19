@@ -2,7 +2,7 @@
 const { visitPage, visitStart, getDataCy } = require('@vue-cdk/e2e-utils')
 
 /** @param {number} index */
-const getItemWithIndex = index => cy.get(`[data-cy-index=${index}]`)
+const getItemWithIndex = (index) => cy.get(`[data-cy-index=${index}]`)
 
 describe('list component', () => {
   it('renders something', () => {
@@ -14,19 +14,11 @@ describe('list component', () => {
   it('respects size-dependencies', () => {
     visitPage('/list/size-dependencies')
     getDataCy('list').should('exist')
-    getDataCy('list')
-      .get('[data-cy=item] div:visible')
-      .should('have.length.gte', 10)
-    getDataCy('item-id-input')
-      .clear()
-      .type('1')
-    getDataCy('item-height')
-      .clear()
-      .type('100')
+    getDataCy('list').get('[data-cy=item] div:visible').should('have.length.gte', 10)
+    getDataCy('item-id-input').clear().type('1')
+    getDataCy('item-height').clear().type('100')
     getDataCy('set-height-button').click()
-    getDataCy('list')
-      .get('[data-cy=item] div:visible')
-      .should('have.length.gte', 6)
+    getDataCy('list').get('[data-cy=item] div:visible').should('have.length.gte', 6)
   })
 
   it('works with 1 initial item (eg. does not show loading indicator)', () => {
@@ -49,7 +41,7 @@ describe('list component', () => {
       height: 200,
       itemHeight: 20,
       numberOfInitialItems: 10,
-      selectionMode: 'single'
+      selectionMode: 'single',
     })
     getDataCy('list').should('exist')
     getDataCy('item').should('have.length', 10)
@@ -58,27 +50,19 @@ describe('list component', () => {
 
     // Now we get and item and select it and assert:
     // – that the selection is actually there…
-    getItemWithIndex(1)
-      .click()
-      .should('have.attr', 'data-cy-selected', 'true')
+    getItemWithIndex(1).click().should('have.attr', 'data-cy-selected', 'true')
     // - and that there is only a single selected item
     cy.get('[data-cy-selected="true"]').should('have.have.length', 1)
     getItemWithIndex(1).should('have.attr', 'data-cy-selected', 'true')
 
     // Now we click it again and hope that the selection is removed and that there is no selection in the list
-    getItemWithIndex(1)
-      .click()
-      .should('have.attr', 'data-cy-selected', 'false')
+    getItemWithIndex(1).click().should('have.attr', 'data-cy-selected', 'false')
     cy.get('[data-cy-selected="true"]').should('have.have.length', 0)
 
     // Now we click two different items and assert that there is only a single selected item
-    getItemWithIndex(5)
-      .click()
-      .should('have.attr', 'data-cy-selected', 'true')
+    getItemWithIndex(5).click().should('have.attr', 'data-cy-selected', 'true')
     cy.get('[data-cy-selected="true"]').should('have.have.length', 1)
-    getItemWithIndex(6)
-      .click()
-      .should('have.attr', 'data-cy-selected', 'true')
+    getItemWithIndex(6).click().should('have.attr', 'data-cy-selected', 'true')
     cy.get('[data-cy-selected="true"]').should('have.have.length', 1)
   })
 
@@ -88,7 +72,7 @@ describe('list component', () => {
       height: 200,
       itemHeight: 20,
       numberOfInitialItems: 10,
-      selectionMode: 'multiple'
+      selectionMode: 'multiple',
     })
     getDataCy('list').should('exist')
     getDataCy('item').should('have.length', 10)
@@ -97,27 +81,19 @@ describe('list component', () => {
 
     // Now we get and item and select it and assert:
     // – that the selection is actually there…
-    getItemWithIndex(1)
-      .click()
-      .should('have.attr', 'data-cy-selected', 'true')
+    getItemWithIndex(1).click().should('have.attr', 'data-cy-selected', 'true')
     // - and that there is only a single selected item
     cy.get('[data-cy-selected="true"]').should('have.have.length', 1)
     getItemWithIndex(1).should('have.attr', 'data-cy-selected', 'true')
 
     // Now we click it again and hope that the selection is removed and that there is no selection in the list
-    getItemWithIndex(1)
-      .click()
-      .should('have.attr', 'data-cy-selected', 'false')
+    getItemWithIndex(1).click().should('have.attr', 'data-cy-selected', 'false')
     cy.get('[data-cy-selected="true"]').should('have.have.length', 0)
 
     // Now we click two different items and assert that those items are in fact selected
-    getItemWithIndex(5)
-      .click()
-      .should('have.attr', 'data-cy-selected', 'true')
+    getItemWithIndex(5).click().should('have.attr', 'data-cy-selected', 'true')
     cy.get('[data-cy-selected="true"]').should('have.have.length', 1)
-    getItemWithIndex(6)
-      .click()
-      .should('have.attr', 'data-cy-selected', 'true')
+    getItemWithIndex(6).click().should('have.attr', 'data-cy-selected', 'true')
     cy.get('[data-cy-selected="true"]').should('have.have.length', 2)
   })
 })

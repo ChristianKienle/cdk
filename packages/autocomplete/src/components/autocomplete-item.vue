@@ -1,5 +1,5 @@
 <script>
-import textBlocksFromRanges from './helper/text-blocks-from-ranges'
+import textBlocksFromRanges from '../helper/text-blocks-from-ranges'
 
 export default {
   name: 'AutocompleteItem',

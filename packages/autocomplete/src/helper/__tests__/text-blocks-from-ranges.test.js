@@ -31,4 +31,28 @@ describe('textBlocksFromRanges', () => {
     expect(sut[2]).toEqual({ text: 'wo', highlighted: true })
     expect(sut[3]).toEqual({ text: 'rld', highlighted: false })
   })
+  it('works with short query and lot of repetition', () => {
+    const sut = textBlocksFromRanges('aaa', [
+      { start: 0, length: 1 },
+      { start: 1, length: 1 },
+      { start: 2, length: 1 },
+    ])
+
+    expect(sut).toHaveLength(3)
+    expect(sut[0]).toEqual({ text: 'a', highlighted: true })
+    expect(sut[1]).toEqual({ text: 'a', highlighted: true })
+    expect(sut[2]).toEqual({ text: 'a', highlighted: true })
+  })
+
+  it('works with short query and lot of repetition (aab)', () => {
+    const sut = textBlocksFromRanges('aab', [
+      { start: 0, length: 1 },
+      { start: 1, length: 1 },
+    ])
+
+    expect(sut).toHaveLength(3)
+    expect(sut[0]).toEqual({ text: 'a', highlighted: true })
+    expect(sut[1]).toEqual({ text: 'a', highlighted: true })
+    expect(sut[2]).toEqual({ text: 'b', highlighted: false })
+  })
 })

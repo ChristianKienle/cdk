@@ -1,7 +1,21 @@
-import Autocomplete from './autocomplete.vue'
-import AutocompleteItem from './autocomplete-item.vue'
-import AutocompleteItemText from './autocomplete-item-text.vue'
 import pluginify from '@vue-cdk/pluginify'
+import Autocomplete from './components/autocomplete.vue'
+import AutocompleteItem from './components/autocomplete-item.vue'
+import AutocompleteInput from './components/autocomplete-input.vue'
+import AutocompleteSuggestions from './components/autocomplete-suggestions.vue'
+import AutocompleteItemText from './components/autocomplete-item-text.vue'
 
-export default pluginify(Autocomplete, AutocompleteItem, AutocompleteItemText)
-export { Autocomplete, AutocompleteItem, AutocompleteItemText }
+export default pluginify(
+  Autocomplete,
+  AutocompleteItem,
+  AutocompleteItemText,
+  AutocompleteInput,
+  AutocompleteSuggestions
+)
+export {
+  Autocomplete,
+  AutocompleteItem,
+  AutocompleteItemText,
+  AutocompleteInput,
+  AutocompleteSuggestions,
+}

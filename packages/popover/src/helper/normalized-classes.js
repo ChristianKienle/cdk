@@ -6,13 +6,13 @@
  * @param {any} cls
  * @returns {boolean}
  */
-const invalidClasses = cls => typeof cls === 'string' && cls.length > 0
+const invalidClasses = (cls) => typeof cls === 'string' && cls.length > 0
 
 /**
  * @param {Array.<Value>} classes
  * @returns {Array.<string> | null}
  */
-const _classes = classes => {
+const _classes = (classes) => {
   // Filter out null, undefined and ""
   const onlyClasses = classes.filter(invalidClasses)
   if (onlyClasses.length === 0) {

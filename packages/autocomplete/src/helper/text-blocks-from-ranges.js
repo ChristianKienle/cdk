@@ -34,7 +34,7 @@ export default (text, ranges) => {
     pos += range.length
   }
 
-  if (pos + 1 < text.length) {
+  if (pos < text.length) {
     blocks.push({
       text: text.substring(pos),
       highlighted: false,

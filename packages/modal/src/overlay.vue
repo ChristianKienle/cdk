@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'ModalOverlay'
+  name: 'ModalOverlay',
 }
 </script>

@@ -6,7 +6,7 @@ describe('createEscListener', () => {
     const localVue = createLocalVue()
     return mount(
       {
-        template: '<div />'
+        template: '<div />',
       },
       { localVue }
     ).element
@@ -15,7 +15,7 @@ describe('createEscListener', () => {
     element.dispatchEvent(new KeyboardEvent(type, options))
   }
 
-  const dispatchEscEvent = element => {
+  const dispatchEscEvent = (element) => {
     dispatchKeyboardEvent(element, 'keyup', { key: 'Escape' })
   }
 

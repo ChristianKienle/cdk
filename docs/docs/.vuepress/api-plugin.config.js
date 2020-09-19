@@ -20,17 +20,18 @@ const createEntries = (...rawEntries) => rawEntries.map(([name, slug, id]) => cr
 module.exports = {
   indexPath: 'api/README.md',
   items: createEntries(
-    ['Tooltip', 'tooltip', '@vue-cdk/tooltip/src/tooltip.vue'],
-    ['List', 'list', '@vue-cdk/list/src/list.vue'],
-    ['Modal', 'modal', '@vue-cdk/modal/src/modal.vue'],
-    ['ModalOverlay', 'modal-overlay', '@vue-cdk/modal/src/overlay.vue'],
-    ['ListItem', 'list-item', '@vue-cdk/list/src/item.vue'],
+    ['Autocomplete', 'autocomplete', '@vue-cdk/autocomplete/src/components/autocomplete.vue'],
+    ['ClientOnly', 'client-only', '@vue-cdk/client-only/src/client-only.vue'],
+    ['FocusTrap', 'focus-trap', '@vue-cdk/focus-trap/src/components/focus-trap.vue'],
     ['InfiniteScroll', 'infinite-scroll', '@vue-cdk/infinite-scroll/src/infinite-scroll.vue'],
     ['InfiniteScrollItem', 'infinite-scroll-item', '@vue-cdk/infinite-scroll/src/item.vue'],
-    ['ScrollContainer', 'scroll-container', '@vue-cdk/scroll-container/src/scroll-container.vue'],
     ['Link', 'link', '@vue-cdk/link/src/link.vue'],
+    ['List', 'list', '@vue-cdk/list/src/list.vue'],
+    ['ListItem', 'list-item', '@vue-cdk/list/src/item.vue'],
+    ['Modal', 'modal', '@vue-cdk/modal/src/modal.vue'],
+    ['ModalOverlay', 'modal-overlay', '@vue-cdk/modal/src/overlay.vue'],
     ['Popover', 'popover', '@vue-cdk/popover/src/popover.vue'],
-    ['ClientOnly', 'client-only', '@vue-cdk/client-only/src/client-only.vue'],
-    ['FocusTrap', 'focus-trap', '@vue-cdk/focus-trap/src/components/focus-trap.vue']
+    ['ScrollContainer', 'scroll-container', '@vue-cdk/scroll-container/src/scroll-container.vue'],
+    ['Tooltip', 'tooltip', '@vue-cdk/tooltip/src/tooltip.vue'],
   )
 }

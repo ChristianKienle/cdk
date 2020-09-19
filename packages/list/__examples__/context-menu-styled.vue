@@ -1,7 +1,7 @@
 <template>
   <CList
     :load-more="loadMore"
-    style="height: 100vh; outline: none;"
+    style="height: 100vh; outline: none"
     :selection-mode="selectionMode"
     :items="items"
     :min-item-size="40"
@@ -29,14 +29,14 @@ export default {
   components: { CustomItem },
   data: () => ({
     selectionMode: SelectionMode.Single,
-    items: [...Array(100).keys()].map(id => ({ index: id, id }))
+    items: [...Array(100).keys()].map((id) => ({ index: id, id })),
   }),
   methods: {
     loadMore(done) {
       const count = 100
       const currentCount = this.items.length
       const ids = Array.from({ length: count }).map((_, index) => index + currentCount)
-      const newItems = ids.map(id => ({ id, index: id }))
+      const newItems = ids.map((id) => ({ id, index: id }))
       this.items.push(...newItems)
       done()
     },
@@ -45,10 +45,10 @@ export default {
     },
     classesFor({ selected }) {
       return {
-        'item--selected': selected
+        'item--selected': selected,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

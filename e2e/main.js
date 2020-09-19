@@ -5,6 +5,7 @@ import List from '@vue-cdk/list'
 import FocusTrap from '@vue-cdk/focus-trap'
 import InteractionOutside from '@vue-cdk/interaction-outside'
 import Tooltip from '@vue-cdk/tooltip'
+import Autocomplete from '@vue-cdk/autocomplete'
 import createRouter from './create-router'
 
 Vue.config.devtools = true
@@ -16,6 +17,7 @@ Vue.use(FocusTrap)
 Vue.use(Tooltip)
 Vue.use(InteractionOutside)
 Vue.use(Router)
+Vue.use(Autocomplete)
 
 const vm = new Vue({
   router,

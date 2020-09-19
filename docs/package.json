@@ -19,6 +19,7 @@
     "@vue-cdk/infinite-scroll": "^0.10.0",
     "@vue-cdk/interaction-outside": "^0.10.0",
     "@vue-cdk/link": "^0.10.0",
+    "@vue-cdk/autocomplete": "^0.10.0",
     "@vue-cdk/list": "^0.10.0",
     "@vue-cdk/match-media": "^0.10.0",
     "@vue-cdk/modal": "^0.10.0",

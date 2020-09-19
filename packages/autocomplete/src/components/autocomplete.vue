@@ -1,55 +1,24 @@
 <template>
   <div>
-    <input
-      ref="input"
-      autocomplete="off"
-      type="text"
-      :value="value"
-      @input="handleInput"
-      @focus="handleFocus"
-      @blur="handleBlur"
-    />
-
+    <slot name="input" />
     <CPopover
       placement="bottom"
-      :target="() => $refs.input"
+      :target="popoverTarget"
       :visible="showsItems_"
       body-size-mode="same-as-trigger"
-      theme="clean"
-      with-arrow
+      :theme="popoverTheme"
+      :with-arrow="false"
     >
-      <CPopoverContent ref="content">
-        <CList tabindex="-1" :items="filteredItems_" style="max-height: 200px" :key-field="`text`">
-          <template #default="{ item, active }">
-            <CListItem data-vcdk-is-item="true" :item="item" :active="active">
-              <slot name="item" :item="item" />
-            </CListItem>
-          </template>
-        </CList>
-      </CPopoverContent>
+      <slot />
     </CPopover>
   </div>
 </template>
 
 <script>
 import CPopover from '@vue-cdk/popover/src/popover.vue'
-import CPopoverContent from '@vue-cdk/popover/src/content.vue'
-import CList from '@vue-cdk/list/src/list.vue'
-import '@vue-cdk/popover/themes/clean.css'
-import rangesInSubstring from './helper/ranges-in-string'
+import rangesInSubstring from '../helper/ranges-in-string'
+import { AUTOCOMPLETE_KEY } from '../provide'
 
-/**
- * @param {HTMLElement} node
- */
-const hasACItemAsParent = (node) => {
-  if (node == null) {
-    return false
-  }
-  if (node.dataset.vcdkIsItem != null) {
-    return true
-  }
-  return hasACItemAsParent(node.parentElement)
-}
 /** @type {import('./../types/autocomplete').AutocompleteFilter}*/
 const defaultFilter = (value, items) =>
   items
@@ -67,9 +36,21 @@ const defaultFilter = (value, items) =>
 
 export default {
   name: 'Autocomplete',
-  components: { CList, CPopover, CPopoverContent },
+  components: { CPopover },
+  provide() {
+    return {
+      [AUTOCOMPLETE_KEY]: this,
+    }
+  },
   props: {
-    showsItems: { type: Boolean, required: false, default: null },
+    popoverTheme: {
+      type: String,
+      default: null,
+    },
+    showsItems: {
+      type: Boolean,
+      default: null,
+    },
     value: {
       required: true,
       type: String,
@@ -99,6 +80,25 @@ export default {
     },
   },
   methods: {
+    popoverTarget() {
+      const { $el } = this
+      if ($el == null) {
+        // eslint-disable-next-line no-console
+        console.error(
+          'Tried to determine the popover target for a list of autocomplete items. $el is null'
+        )
+        return
+      }
+      const input = $el.querySelector('input[data-vcdk-autocomplete-input]')
+      if (input == null) {
+        // eslint-disable-next-line no-console
+        console.error(
+          'Tried to determine the popover target for a list of autocomplete items. Unable to find the corresponding input element. Have you provided an input-slot?'
+        )
+        return
+      }
+      return input
+    },
     showItems_() {
       this.showsItems_ = true
       this.emitShowsItemsUpdate_()
@@ -121,12 +121,9 @@ export default {
       if (hasACItemAsParent(relatedTarget)) {
         return
       }
-
       this.hideItems_()
     },
-    /**
-     * @param {InputEvent} event
-     */
+    /** @param {InputEvent} event */
     handleInput(event) {
       this.$emit('input', event.target.value)
     },

@@ -29,9 +29,9 @@ export default {
   mixins: [CModal()],
   data() {
     return {
-      open: false
+      open: false,
     }
-  }
+  },
 }
 </script>
 

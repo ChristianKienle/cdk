@@ -16,8 +16,8 @@ export default {
     MatchMedia({
       mini: '(max-width: 200px)',
       compact: '(min-width: 200px) and (max-width: 400px)',
-      regular: '(min-width: 400px)'
-    })
-  ]
+      regular: '(min-width: 400px)',
+    }),
+  ],
 }
 </script>

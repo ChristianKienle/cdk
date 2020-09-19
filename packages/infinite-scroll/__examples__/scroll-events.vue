@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div style="margin-bottom: 1rem;">Scroll Position: {{ scrollPosition }}</div>
-    <div style="height: 200px; border: 1px dashed #ccc;">
+    <div style="margin-bottom: 1rem">Scroll Position: {{ scrollPosition }}</div>
+    <div style="height: 200px; border: 1px dashed #ccc">
       <CInfiniteScroll :items="items" @scrollPosition="scrollPosition = $event">
         <template #default="{ item, active }">
           <CInfiniteScrollItem :item="item" :active="active" :size-dependencies="[item.id]">
@@ -20,10 +20,10 @@ export default {
     return {
       scrollPosition: {
         nearTop: null,
-        nearBottom: null
+        nearBottom: null,
       },
-      items: [...Array(50).keys()].map(index => ({ id: index }))
+      items: [...Array(50).keys()].map((index) => ({ id: index })),
     }
-  }
+  },
 }
 </script>

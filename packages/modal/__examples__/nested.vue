@@ -6,7 +6,7 @@
 
     <CModal :open.sync="open">
       <template #default="{ close }">
-        <div style="background-color: white;">
+        <div style="background-color: white">
           <div>modal</div>
           <button @click="close">Close</button>
           <button @click="nestedOpen = true">Open Nested Modal</button>
@@ -19,7 +19,7 @@
 
     <CModal :open.sync="nestedOpen">
       <template #default="{ close }">
-        <div style="background-color: white;">
+        <div style="background-color: white">
           <div>modal</div>
           <button @click="close">close</button>
           <button @keydown.esc="close">x</button>
@@ -43,8 +43,8 @@ export default {
   data() {
     return {
       open: false,
-      nestedOpen: false
+      nestedOpen: false,
     }
-  }
+  },
 }
 </script>

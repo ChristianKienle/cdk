@@ -1,13 +1,7 @@
 <template>
   <div>
     <button data-cy-reset @click="reset">reset</button>
-    <CList
-      data-cy="list"
-      :minItemSize="20"
-      :items="items"
-      :loadMore="loadMore"
-      keyField="id"
-    >
+    <CList data-cy="list" :min-item-size="20" :items="items" :load-more="loadMore" key-field="id">
       <template #loading>
         <div data-cy="loading">Loading Indicator</div>
       </template>
@@ -30,10 +24,10 @@
 <script>
 import '@vue-cdk/list/style/index.css'
 
-const createItem = index => ({
+const createItem = (index) => ({
   index,
   id: `${index}`,
-  title: `item ${index}`
+  title: `item ${index}`,
 })
 
 const createItems = (startIndex, count) => {
@@ -45,7 +39,7 @@ const createItems = (startIndex, count) => {
 export default {
   data() {
     return {
-      items: createItems(0, 30)
+      items: createItems(0, 30),
     }
   },
   methods: {
@@ -59,7 +53,7 @@ export default {
         items.push(...createItems(items.length, 5))
         done()
       }, 2000)
-    }
-  }
+    },
+  },
 }
 </script>

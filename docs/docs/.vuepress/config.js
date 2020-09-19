@@ -1,7 +1,5 @@
 // @ts-check
 const path = require('path')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const toPascalCase = require('@vue-cdk/node-utils/to-pascal-case')
 const ApiPluginOptions = require('./api-plugin.config')
 const getComponents = require('./get-components')
 const plugins = require('./plugins')
@@ -110,6 +108,7 @@ module.exports = {
           code:
             `import Link from '@vue-cdk/link'
 import FocusTrap from '@vue-cdk/focus-trap'
+import Autocomplete from '@vue-cdk/autocomplete'
 import ClientOnly from '@vue-cdk/client-only'
 import InfiniteScroll from '@vue-cdk/infinite-scroll'
 import InteractionOutside from '@vue-cdk/interaction-outside'
@@ -125,6 +124,7 @@ export default ({ Vue }) => {
   Vue.use(VueRouter)
   Vue.config.productionTip = false
   Vue.use(Link)
+  Vue.use(Autocomplete)
   Vue.use(FocusTrap)
   Vue.use(ClientOnly)
   Vue.use(InfiniteScroll)

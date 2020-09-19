@@ -13,10 +13,10 @@ const Consumer = {
       h('li', String($vcdkMq.mini)),
       h('li', String($vcdkMq.compact)),
       h('li', String($vcdkMq.regular)),
-      h('li', String($vcdkMq.$all))
+      h('li', String($vcdkMq.$all)),
     ]
     return h('ul', items)
-  }
+  },
 }
 
 export default {
@@ -25,7 +25,7 @@ export default {
   vcdkMediaQueriesByName: {
     mini: 'only screen and (max-width: 400px)',
     compact: 'only screen and (min-width: 500px) and (max-width: 600px)',
-    regular: 'only screen and (min-width: 600px)'
-  }
+    regular: 'only screen and (min-width: 600px)',
+  },
 }
 </script>

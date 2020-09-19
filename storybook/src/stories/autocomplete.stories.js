@@ -7,3 +7,6 @@ export default {
 };
 
 export const Default = _package.storyFor('default')
+export const Simple = _package.storyFor('simple')
+export const AutoHide = _package.storyFor('auto-hide')
+export const Themed = _package.storyFor('themed')

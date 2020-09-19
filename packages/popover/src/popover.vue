@@ -28,8 +28,10 @@ import { placements } from '@popperjs/core/lib/enums'
 import { Portal as SimplePortal } from '@linusborg/vue-simple-portal'
 import ClientOnly from '@vue-cdk/client-only/src/client-only.vue'
 import Vue from 'vue'
-import * as BodySizeMode from './helper/body-size-mode'
-
+import { BODY_SIZE_MODE_AUTO, BODY_SIZE_MODE_SAME_AS_TRIGGER, BODY_SIZE_MODE_AT_LEAST_AS_TRIGGER } from './helper/body-size-mode'
+console.log({BODY_SIZE_MODE_AUTO, BODY_SIZE_MODE_SAME_AS_TRIGGER, BODY_SIZE_MODE_AT_LEAST_AS_TRIGGER})
+const BODY_SIZE_MODES = [BODY_SIZE_MODE_AUTO, BODY_SIZE_MODE_SAME_AS_TRIGGER, BODY_SIZE_MODE_AT_LEAST_AS_TRIGGER]
+const isValidBodySizeMode = (mode) => BODY_SIZE_MODES.indexOf(mode) >= 0
 // You can use the `Popover` component to render popovers with any kind of content.
 export default {
   name: 'Popover',
@@ -65,8 +67,8 @@ export default {
     },
     bodySizeMode: {
       type: String,
-      default: BodySizeMode.defaultMode,
-      validator: BodySizeMode.isValid,
+      default: BODY_SIZE_MODE_AUTO,
+      validator: isValidBodySizeMode,
     },
     theme: {
       type: String,
@@ -155,18 +157,18 @@ export default {
   methods: {
     modifier_bodySizeMode(data) {
       const mode = this.bodySizeMode_
-      if (mode === BodySizeMode.AUTO) {
+      if (mode === BODY_SIZE_MODE_AUTO) {
         return data
       }
       const { instance, offsets } = data
       const { reference, popper } = instance
       const referenceWidth = reference.clientWidth
-      if (mode === BodySizeMode.AT_LEAST_TRIGGER) {
+      if (mode === BODY_SIZE_MODE_AT_LEAST_TRIGGER) {
         popper.style.minWidth = referenceWidth + 'px'
         return data
       }
 
-      if (mode === BodySizeMode.EQUALS_TRIGGER) {
+      if (mode === BODY_SIZE_MODE_SAME_AS_TRIGGER) {
         const delta = referenceWidth - offsets.popper.width
         popper.style.width = referenceWidth + 'px'
         offsets.popper.width = referenceWidth
@@ -196,20 +198,20 @@ export default {
         requires: ['computeStyles'],
         fn: ({ state }) => {
           const widthInPx = `${state.rects.reference.width}px`
-          if (bodySizeMode === BodySizeMode.SAME_AS_TRIGGER) {
+          if (bodySizeMode === BODY_SIZE_MODE_SAME_AS_TRIGGER) {
             state.styles.popper.width = widthInPx
           }
 
-          if (bodySizeMode === BodySizeMode.AT_LEAST_AS_TRIGGER) {
+          if (bodySizeMode === BODY_SIZE_MODE_AT_LEAST_AS_TRIGGER) {
             state.styles.popper.minWidth = widthInPx
           }
         },
         effect: ({ state }) => {
           const widthInPx = `${state.elements.reference.offsetWidth}px`
-          if (bodySizeMode === BodySizeMode.SAME_AS_TRIGGER) {
+          if (bodySizeMode === BODY_SIZE_MODE_SAME_AS_TRIGGER) {
             state.elements.popper.style.width = widthInPx
           }
-          if (bodySizeMode === BodySizeMode.AT_LEAST_AS_TRIGGER) {
+          if (bodySizeMode === BODY_SIZE_MODE_AT_LEAST_AS_TRIGGER) {
             state.elements.popper.style.minWidth = widthInPx
           }
         },

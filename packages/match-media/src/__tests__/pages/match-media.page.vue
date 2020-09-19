@@ -16,8 +16,8 @@ export default {
   vcdkMediaQueriesByName: {
     mini: 'only screen and (max-width: 400px)',
     compact: 'only screen and (min-width: 500px) and (max-width: 600px)',
-    regular: 'only screen and (min-width: 600px)'
+    regular: 'only screen and (min-width: 600px)',
   },
-  mixins: [MatchMedia]
+  mixins: [MatchMedia],
 }
 </script>

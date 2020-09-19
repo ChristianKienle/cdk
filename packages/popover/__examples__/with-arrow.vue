@@ -26,7 +26,7 @@ export default {
     },
     toggle() {
       this.$refs.popover.toggle()
-    }
-  }
+    },
+  },
 }
 </script>

@@ -5,9 +5,9 @@
     <p>After Portal Target</p>
     <p>Before Portal</p>
 
-      <CPortal selector="#target">
-        <div>Will be placed inside the #target-div.</div>
-      </CPortal>
+    <CPortal selector="#target">
+      <div>Will be placed inside the #target-div.</div>
+    </CPortal>
     <p>After Portal</p>
   </div>
 </template>

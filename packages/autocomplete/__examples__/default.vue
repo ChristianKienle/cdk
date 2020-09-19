@@ -6,21 +6,52 @@
       :items="items"
       @input="handleInput"
     >
-      <template #item="{ item }">
-        <CAutocompleteItem
-          class="example-default__item"
-          href="#"
-          :item="item"
-          @click.prevent="pickItem(item)"
-          @keyup.enter.prevent="pickItem(item)"
-        >
-          <template #default="{ blocks }">
-            <CAutocompleteItemText :blocks="blocks" />
-          </template>
-        </CAutocompleteItem>
+      <template #input>
+        <CAutocompleteInput v-model="value" />
       </template>
+
+      <CAutocompleteSuggestions style="background-color: white; z-index: 2; max-height: 200px">
+        <template #item="{ item }">
+          <CAutocompleteItem
+            class="example-default__item"
+            href="#"
+            :item="item"
+            @click.prevent="pickItem(item)"
+            @keyup.enter.prevent="pickItem(item)"
+          >
+            <template #default="{ blocks }">
+              <CAutocompleteItemText :blocks="blocks" />
+            </template>
+          </CAutocompleteItem>
+        </template>
+      </CAutocompleteSuggestions>
     </CAutocomplete>
   </div>
+
+  <!-- <div>
+    <CAutocomplete
+      :shows-items.sync="showsItems"
+      :value="value"
+      :items="items"
+      @input="handleInput"
+    >
+      <CAutocompleteSuggestions style="background-color: white; z-index: 2; max-height: 200px">
+        <template #item="{ item }">
+          <CAutocompleteItem
+            class="example-default__item"
+            href="#"
+            :item="item"
+            @click.prevent="pickItem(item)"
+            @keyup.enter.prevent="pickItem(item)"
+          >
+            <template #default="{ blocks }">
+              <CAutocompleteItemText :blocks="blocks" />
+            </template>
+          </CAutocompleteItem>
+        </template>
+      </CAutocompleteSuggestions>
+    </CAutocomplete>
+  </div> -->
 </template>
 
 <script>

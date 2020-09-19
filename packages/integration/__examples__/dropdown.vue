@@ -11,9 +11,7 @@
     >
       <CPopoverContent>
         <CInteractionOutside @detected="visible = false">
-          <div class="inside">
-            Try to click outside
-          </div>
+          <div class="inside"> Try to click outside </div>
         </CInteractionOutside>
       </CPopoverContent>
     </CPopover>
@@ -23,13 +21,13 @@
 export default {
   data() {
     return {
-      visible: false
+      visible: false,
     }
   },
   methods: {
     toggle() {
       this.visible = !this.visible
-    }
-  }
+    },
+  },
 }
 </script>

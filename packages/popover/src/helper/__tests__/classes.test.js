@@ -44,7 +44,7 @@ describe('classes', () => {
 
   it('removes undefined, empty strings and null from array', () => {
     expect(normalizedClasses([undefined, '', null, 'hello', undefined, '', null])).toEqual([
-      'hello'
+      'hello',
     ])
   })
 })

@@ -1,5 +1,5 @@
 <template>
-  <CList style="height: 100px;" :selection-mode="selectionMode" :items="items">
+  <CList style="height: 100px" :selection-mode="selectionMode" :items="items">
     <template #default="{ item, active, index, selected }">
       <CListItem
         class="item"
@@ -23,15 +23,15 @@ import { SelectionMode } from '@vue-cdk/list'
 export default {
   data: () => ({
     selectionMode: SelectionMode.Multiple,
-    items: [...Array(10).keys()].map(id => ({ id }))
+    items: [...Array(10).keys()].map((id) => ({ id })),
   }),
   methods: {
     classesFor({ selected }) {
       return {
-        'item--selected': selected
+        'item--selected': selected,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

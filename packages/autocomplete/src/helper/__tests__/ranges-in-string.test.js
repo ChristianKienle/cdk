@@ -21,6 +21,36 @@ describe('rangesInString', () => {
     })
   })
 
+  it('correctly handles repeating strings', () => {
+    const sut = rangesInString('a', 'aaa')
+    expect(sut).toHaveLength(3)
+    expect(sut[0]).toEqual({
+      start: 0,
+      length: 1,
+    })
+    expect(sut[1]).toEqual({
+      start: 1,
+      length: 1,
+    })
+    expect(sut[2]).toEqual({
+      start: 2,
+      length: 1,
+    })
+  })
+
+  it('correctly handles repeating strings (aab)', () => {
+    const sut = rangesInString('a', 'aab')
+    expect(sut).toHaveLength(2)
+    expect(sut[0]).toEqual({
+      start: 0,
+      length: 1,
+    })
+    expect(sut[1]).toEqual({
+      start: 1,
+      length: 1,
+    })
+  })
+
   it('finds multiple substrings', () => {
     const sut = rangesInString('ll', 'hello worlld')
     expect(sut).toHaveLength(2)

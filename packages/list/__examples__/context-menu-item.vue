@@ -3,7 +3,7 @@
     <div class="vcdk-text identifier" :style="identifierStyle">
       {{ item.index }}
     </div>
-    <div class="vcdk-text main" style="flex: 2 0 0;"> Item with ID {{ item.id }} </div>
+    <div class="vcdk-text main" style="flex: 2 0 0"> Item with ID {{ item.id }} </div>
     <div>
       <CPopover
         placement="bottom-end"
@@ -39,25 +39,25 @@ const colors = [
   '#7564D6',
   '#9D69E5',
   '#CE82ED',
-  '#F98EE7'
+  '#F98EE7',
 ]
 export default {
   mixins: [
     IdState({
       // You can customize this
-      idProp: vm => vm.item.id
-    })
+      idProp: (vm) => vm.item.id,
+    }),
   ],
   idState() {
     return {
-      menuOpen: false
+      menuOpen: false,
     }
   },
   props: {
     item: {
       type: Object,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   computed: {
     color() {
@@ -70,11 +70,11 @@ export default {
       return {
         width: '30px',
         height: '30px',
-        'background-color': this.color
+        'background-color': this.color,
       }
-    }
+    },
   },
-  methods: {}
+  methods: {},
 }
 </script>
 
