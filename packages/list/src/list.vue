@@ -1,16 +1,16 @@
 <template>
   <CInifiniteScroll
     ref="inifiniteScroll"
-    :keyField="keyField"
-    :minItemSize="minItemSize"
+    :key-field="keyField"
+    :min-item-size="minItemSize"
     :items="items"
-    :loadMore="loadMore"
+    :load-more="loadMore"
   >
     <template #before>
       <slot name="before" />
     </template>
 
-    <template #default="{item, active, index}">
+    <template #default="{ item, active, index }">
       <slot
         :item="item"
         :active="active"
@@ -41,7 +41,7 @@ export default {
   components: { CInifiniteScroll, CListLoadingIndicator },
   provide() {
     return {
-      vcdkList: this
+      vcdkList: this,
     }
   },
   props: {
@@ -49,25 +49,25 @@ export default {
     keyField: {
       type: String,
       // `id` – by default each of your item **must** have a property called `id`. You can change this by setting the value of this prop to something else.
-      default: 'id'
+      default: 'id',
     },
     // Selection mode of the List. The value of this prop determines how `CList` reacts to the user selecting items.
     selectionMode: {
       // A `Function` that tells `CList` how to handle selections. Please refer to the `CList` documentation to find out how to actually implement a custom selection mode.
       type: Function,
       // `NoneSelectionMode` – by default selecting an item does nothing. `@vue-cdk/list` exports more selection modes. Please refer to the `List` guide to see how that is done.
-      default: NoneSelectionMode
+      default: NoneSelectionMode,
     },
     // Minimal size of the items. Will be passed onto DynamicScroller.
     minItemSize: { type: Number, default: 30 },
     // Items to be rendered by the virtualized list. Each item must have a unique identifier. You can specify the name of the identifying property by using the `keyField`-prop.
     items: { type: Array, default: () => [] },
     // Function to be called when the list needs more items from you. This function is called with a callback parameter that you MUST call at some point with additional items.
-    loadMore: { type: Function, default: null }
+    loadMore: { type: Function, default: null },
   },
   data() {
     return {
-      selection: []
+      selection: [],
     }
   },
   methods: {
@@ -92,7 +92,7 @@ export default {
     // @arg index The row index of the item you want to scroll to.
     scrollToIndex(index) {
       this.$refs.inifiniteScroll.scrollToIndex(index)
-    }
-  }
+    },
+  },
 }
 </script>

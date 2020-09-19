@@ -2,7 +2,7 @@
   <VueVirtualDynamicScroller
     ref="dynamicScroller"
     tabindex="0"
-    style="height: 100%;"
+    style="height: 100%"
     :key-field="keyField"
     :min-item-size="minItemSize"
     :items="items"

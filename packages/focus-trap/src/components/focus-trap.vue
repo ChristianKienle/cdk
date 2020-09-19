@@ -11,7 +11,7 @@ export default {
     active: {
       type: Boolean,
       // By default a focus trap is not active.
-      default: false
+      default: false,
     },
     // Specify how the focus trap should be deactivated. If set to `manual` you have to explicitely deactivate the focus trap (either by setting `active` to `false` or by calling `deactivate`).
     deactivationMode: {

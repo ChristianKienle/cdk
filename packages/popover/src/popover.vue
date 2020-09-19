@@ -28,69 +28,75 @@ import { placements } from '@popperjs/core/lib/enums'
 import { Portal as SimplePortal } from '@linusborg/vue-simple-portal'
 import ClientOnly from '@vue-cdk/client-only/src/client-only.vue'
 import Vue from 'vue'
+import * as BodySizeMode from './helper/body-size-mode'
 
 // You can use the `Popover` component to render popovers with any kind of content.
 export default {
   name: 'Popover',
   components: {
+    SimplePortal,
     ClientOnly,
-    SimplePortal
   },
   provide() {
     return {
-      $_popover: this.popover
+      $_popover: this.popover,
     }
   },
   props: {
     // The target element that the popover will be attached to.
     target: {
       required: true,
-      type: Function
+      type: Function,
     },
     // The id of an `HTMLElement` that will act as a container for all popovers.
     portalId: {
       default: 'vcdk-popover-portal-container',
-      type: String
+      type: String,
     },
     // The distance between the popover body and the target element.
     offset: {
       type: Number,
       // `5px`
-      default: 5
+      default: 5,
     },
     transition: {
       type: String,
-      default: null
+      default: null,
+    },
+    bodySizeMode: {
+      type: String,
+      default: BodySizeMode.defaultMode,
+      validator: BodySizeMode.isValid,
     },
     theme: {
       type: String,
-      default: null
+      default: null,
     },
     arrowClasses: {
       type: [String, Array, Object],
-      default: () => []
+      default: () => [],
     },
     withArrow: {
       type: Boolean,
-      default: true
+      default: true,
     },
     flips: {
       type: Boolean,
-      default: false
+      default: false,
     },
     visible: {
       type: Boolean,
-      default: false
+      default: false,
     },
     modifiers: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     placement: {
       type: String,
-      validator: value => placements.indexOf(value) >= 0,
-      default: 'bottom'
-    }
+      validator: (value) => placements.indexOf(value) >= 0,
+      default: 'bottom',
+    },
   },
   data() {
     return {
@@ -103,8 +109,8 @@ export default {
         // The following props are injected into PopoverContent. They are needed to determine the CSS classes.
         theme: this.theme,
         withArrow: this.withArrow,
-        arrowClasses: this.arrowClasses
-      })
+        arrowClasses: this.arrowClasses,
+      }),
     }
   },
   computed: {
@@ -112,7 +118,7 @@ export default {
       return {
         theme: this.theme,
         withArrow: this.withArrow,
-        arrowClasses: this.arrowClasses
+        arrowClasses: this.arrowClasses,
       }
     },
     transition_() {
@@ -127,7 +133,7 @@ export default {
     },
     portalSelector() {
       return `#${this.portalId}`
-    }
+    },
   },
   watch: {
     contentSlotProps: {
@@ -137,19 +143,38 @@ export default {
         this.popover.theme = theme
         this.popover.withArrow = withArrow
         this.popover.arrowClasses = arrowClasses
-      }
+      },
     },
     visible(visible) {
       this.setVisible(visible, { emitUpdate: false })
-    }
+    },
   },
   created() {
     this.$_popper = null
   },
-  beforeDestroy() {
-    // this.destroyPopperIfPossible()
-  },
   methods: {
+    modifier_bodySizeMode(data) {
+      const mode = this.bodySizeMode_
+      if (mode === BodySizeMode.AUTO) {
+        return data
+      }
+      const { instance, offsets } = data
+      const { reference, popper } = instance
+      const referenceWidth = reference.clientWidth
+      if (mode === BodySizeMode.AT_LEAST_TRIGGER) {
+        popper.style.minWidth = referenceWidth + 'px'
+        return data
+      }
+
+      if (mode === BodySizeMode.EQUALS_TRIGGER) {
+        const delta = referenceWidth - offsets.popper.width
+        popper.style.width = referenceWidth + 'px'
+        offsets.popper.width = referenceWidth
+        offsets.popper.left = offsets.popper.left - 0.5 * delta
+        return data
+      }
+      return data
+    },
     destroyPopperIfPossible() {
       const { $_popper } = this
       if ($_popper == null) {
@@ -163,35 +188,68 @@ export default {
       this.isTransitioning = true
     },
     async enter(el) {
+      const { bodySizeMode } = this
+      const bodySizeModifier = {
+        name: 'bodySizeMode',
+        enabled: true,
+        phase: 'beforeWrite',
+        requires: ['computeStyles'],
+        fn: ({ state }) => {
+          const widthInPx = `${state.rects.reference.width}px`
+          if (bodySizeMode === BodySizeMode.SAME_AS_TRIGGER) {
+            state.styles.popper.width = widthInPx
+          }
+
+          if (bodySizeMode === BodySizeMode.AT_LEAST_AS_TRIGGER) {
+            state.styles.popper.minWidth = widthInPx
+          }
+        },
+        effect: ({ state }) => {
+          const widthInPx = `${state.elements.reference.offsetWidth}px`
+          if (bodySizeMode === BodySizeMode.SAME_AS_TRIGGER) {
+            state.elements.popper.style.width = widthInPx
+          }
+          if (bodySizeMode === BodySizeMode.AT_LEAST_AS_TRIGGER) {
+            state.elements.popper.style.minWidth = widthInPx
+          }
+        },
+      }
+
       const { offset, flips, placement, withArrow, target } = this
       const modifiers = [
+        // {
+        //   name: 'bodySizeMode',
+        //   enabled: true,
+        //   fn: this.modifier_bodySizeMode,
+        // },
+        bodySizeModifier,
         {
           name: 'offset',
           enabled: true,
           options: {
-            offset: [0, offset]
-          }
+            offset: [0, offset],
+          },
         },
         {
           name: 'flip',
-          enabled: flips
+          enabled: flips,
         },
         {
           name: 'arrow',
-          enabled: withArrow
+          enabled: withArrow,
         },
         {
           // See:
           // https://github.com/popperjs/popper-core/pull/985/files
           name: 'computeStyles',
           options: { adaptive: false },
-          enabled: true
+          enabled: true,
         },
-        ...this.modifiers
+        ...this.modifiers,
       ]
       const options = {
         modifiers,
-        placement
+        placement,
       }
       this.$_popper = createPopper(target(), el, options)
     },
@@ -247,7 +305,7 @@ export default {
       } else {
         this.show({ emitUpdate })
       }
-    }
-  }
+    },
+  },
 }
 </script>
