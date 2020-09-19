@@ -17,6 +17,7 @@
     "@vue-cdk/interaction-outside": "^0.10.0",
     "@vue-cdk/link": "^0.10.0",
     "@vue-cdk/list": "^0.10.0",
+    "@vue-cdk/autocomplete": "^0.10.0",
     "@vue-cdk/match-media": "^0.10.0",
     "@vue-cdk/popover": "^0.10.0",
     "@vue-cdk/portal": "^0.10.0",

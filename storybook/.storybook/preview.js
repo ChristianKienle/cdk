@@ -14,8 +14,11 @@ import Popover from '@vue-cdk/popover'
 import Portal from '@vue-cdk/portal'
 import ScrollContainer from '@vue-cdk/scroll-container'
 import Tooltip from '@vue-cdk/tooltip'
+import Autocomplete from '@vue-cdk/autocomplete'
 
 Vue.use(VueRouter)
+
+Vue.use(Autocomplete)
 Vue.use(ClientOnly)
 Vue.use(FocusTrap)
 Vue.use(InfiniteScroll)
