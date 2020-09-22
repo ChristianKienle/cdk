@@ -28,14 +28,14 @@
     "postinstall": "lerna bootstrap --concurrency 1 --use-workspaces"
   },
   "resolutions": {
-    "cypress": "5.1.0"
+    "cypress": "5.2.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.0",
     "vue-router": "^3.3.4",
     "@vue/cli-plugin-e2e-cypress": "^4.5.4",
     "@babel/core": "^7.10.3",
-    "cypress": "^5.1.0",
+    "cypress": "^5.2.0",
     "eslint-plugin-cypress": "^2.11.1",
     "eslint": "^7.3.0",
     "eslint-plugin-import": "^2.21.2",
