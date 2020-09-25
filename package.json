@@ -55,7 +55,7 @@
     "@rollup/plugin-node-resolve": "^9.0.0",
     "rollup-plugin-vue": "^6.0.0-beta.6",
     "vue-template-compiler": "^2.6.12",
-    "postcss": "^7.0.32",
+    "postcss": "^8.0.9",
     "@vue/compiler-sfc": "^3.0.0-beta.15"
   }
 }
