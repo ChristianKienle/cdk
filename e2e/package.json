@@ -15,7 +15,7 @@
     "src/*.js"
   ],
   "dependencies": {
-    "query-string": "^6.13.1"
+    "query-string": "^6.13.4"
   },
   "resolutions": {
     "cypress": "5.1.0"
