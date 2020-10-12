@@ -48,7 +48,7 @@
     "vue": "^2.6.12",
     "vuepress": "^1.5.4",
     "webpack": "^4.44.2",
-    "webpack-bundle-analyzer": "^3.8.0"
+    "webpack-bundle-analyzer": "^3.9.0"
   },
   "gitHead": "36202b88600d43c88654acb1a92b8cc005bd7970"
 }
