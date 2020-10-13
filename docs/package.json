@@ -31,7 +31,7 @@
     "@vue-cdk/utils": "^0.10.0",
     "@vue-cdk/vuepress-plugin-api": "^0.10.0",
     "@vue-cdk/vuepress-plugin-demo": "^0.10.0",
-    "@vuepress/plugin-register-components": "^1.5.2",
+    "@vuepress/plugin-register-components": "^1.6.0",
     "@vuese/parser": "^2.6.0",
     "devalue": "^2.0.1",
     "eslint": "^7.3.0",

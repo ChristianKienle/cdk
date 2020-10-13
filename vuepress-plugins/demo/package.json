@@ -17,7 +17,7 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "@vue-cdk/node-utils": "^0.10.0",
-    "@vuepress/plugin-register-components": "^1.5.0",
+    "@vuepress/plugin-register-components": "^1.6.0",
     "codesandbox": "^2.2.0",
     "devalue": "^2.0.1",
     "eslint": "^7.3.0",
