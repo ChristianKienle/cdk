@@ -8,15 +8,15 @@
     "src/**/*.vue"
   ],
   "resolutions": {
-    "cypress": "5.2.0"
+    "cypress": "5.5.0"
   },
   "peerDependencies": {
-    "cypress": "^5.2.0"
+    "cypress": "^5.5.0"
   },
   "dependencies": {
     "query-string": "^6.13.4"
   },
   "devDependencies": {
-    "cypress": "^5.2.0"
+    "cypress": "^5.5.0"
   }
 }

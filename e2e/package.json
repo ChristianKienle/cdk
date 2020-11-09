@@ -18,7 +18,7 @@
     "query-string": "^6.13.4"
   },
   "resolutions": {
-    "cypress": "5.2.0"
+    "cypress": "5.5.0"
   },
   "devDependencies": {
     "@vue-cdk/client-only": "^0.10.0",
@@ -36,7 +36,7 @@
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.0.3",
     "core-js": "^3.6.4",
-    "cypress": "^5.2.0",
+    "cypress": "^5.5.0",
     "eslint": "^7.3.0",
     "eslint-plugin-vue": "^6.2.2",
     "vue": "^2.6.12",
