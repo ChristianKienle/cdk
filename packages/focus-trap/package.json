@@ -26,7 +26,7 @@
   ],
   "dependencies": {
     "@vue-cdk/pluginify": "^0.10.0",
-    "focus-trap": "^6.0.1"
+    "focus-trap": "^6.2.3"
   },
   "peerDependencies": {
     "vue": "^2.6.12"
