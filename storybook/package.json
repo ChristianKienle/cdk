@@ -5,7 +5,7 @@
   "scripts": {
     "start": "start-storybook --ci --port 9999",
     "build": "build-storybook -c .storybook -o dist",
-    "serve": "http-server dist",
+    "serve": "serve dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -51,7 +51,7 @@
     "cypress": "^5.2.0",
     "eslint": "^7.3.0",
     "eslint-plugin-vue": "^6.2.2",
-    "http-server": "^0.12.3",
+    "serve": "^11.3.2",
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
     "regenerator-runtime": "^0.13.5",
