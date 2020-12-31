@@ -28,3 +28,4 @@ yarn-error.log*
 .minipress
 stats.html
 /lerna-debug.log
+*.map
