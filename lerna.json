@@ -7,7 +7,7 @@
     "lib"
   ],
   "parallel": false,
-  "npmClient": "yarn",
+  "npmClient": "npm",
   "version": "0.10.0",
   "useWorkspaces": true
 }
