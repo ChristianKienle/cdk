@@ -7,7 +7,7 @@ import createEventListener from './create-event-listener'
  */
 export default (callback, options = {}) => {
   const element = options.element || document
-  return createEventListener('keyup', element, event => {
+  return createEventListener('keyup', element, (event) => {
     if (event.key === 'Escape') {
       callback()
     }

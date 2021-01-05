@@ -17,16 +17,16 @@ import TabB from './cleanup/tab-b.vue'
 export default {
   components: {
     TabA,
-    TabB
+    TabB,
   },
   data() {
     return {
-      component: null
+      component: null,
     }
   },
   methods: {
     tabAClicked() {},
-    tabBClicked() {}
-  }
+    tabBClicked() {},
+  },
 }
 </script>

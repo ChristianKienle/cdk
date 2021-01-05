@@ -4,11 +4,11 @@ import isExternal from './is-external'
 
 const EXTERNAL_ATTRS = {
   target: '_blank',
-  rel: 'noopener noreferrer'
+  rel: 'noopener noreferrer',
 }
 
 /** @param {import('vue').CreateElement} h */
-const renderNativeAnchor = h =>
+const renderNativeAnchor = (h) =>
   /**
    * @param {string} href
    * @param {import('vue').RenderContext} context
@@ -19,18 +19,18 @@ const renderNativeAnchor = h =>
     const attrs = {
       ...(isExternal(href) ? EXTERNAL_ATTRS : {}),
       ...data.attrs,
-      href
+      href,
     }
     const _class = [
       data.class,
       {
-        'is-disabled': props.disabled
-      }
+        'is-disabled': props.disabled,
+      },
     ]
 
     const on = {
       /** @param {Event} event */
-      click: event => {
+      click: (event) => {
         if (props.disabled === true) {
           event.preventDefault()
         } else {
@@ -40,22 +40,22 @@ const renderNativeAnchor = h =>
             emitClick()
           }
         }
-      }
+      },
     }
     const _data = {
       ...context.data,
       attrs,
       class: _class,
-      on
+      on,
     }
     return h('a', _data, context.children || '')
   }
 
-const renderRouterLink = h => context => {
+const renderRouterLink = (h) => (context) => {
   const scopedSlots = {
     default({ href }) {
       return renderNativeAnchor(h)(href, context)
-    }
+    },
   }
   const props = context.props
   return h('router-link', { props, scopedSlots })
@@ -71,13 +71,13 @@ export default {
     // Denotes the target route of the link: The value will be passed – as is – to the `RouterLink` that will be rendered on your behalf.
     to: {
       type: [String, Object],
-      default: null
+      default: null,
     },
     // Configure the resolved path/url should be used as the value for the `href`-attribute. You can only specify either `to` or `href` – not both.
     href: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   render(h, context) {
     const { props } = context
@@ -97,6 +97,6 @@ export default {
       return renderNativeAnchor(h)(to, context)
     }
     return renderRouterLink(h)(context)
-  }
+  },
 }
 </script>

@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       outside: null,
-      active: false
+      active: false,
     }
   },
   computed: {
@@ -42,15 +42,15 @@ export default {
     },
     insideClasses() {
       return {
-        'is-active': this.outside === false
+        'is-active': this.outside === false,
       }
     },
     outsideClasses() {
       return {
-        'is-active': this.outside === true
+        'is-active': this.outside === true,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

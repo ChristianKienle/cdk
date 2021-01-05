@@ -5,14 +5,14 @@
  * @param {string[]} selection
  * @returns {string[]}
  */
-const repair = selection => {
+const repair = (selection) => {
   const [first] = selection
   return first == null ? [] : [first]
 }
 
 export const create = /** @type {Mode} */ (options = { allowsEmpty: true }) => ({
   selection,
-  affected
+  affected,
 }) => {
   const { allowsEmpty } = options
   const isSelected = selection.indexOf(affected) >= 0

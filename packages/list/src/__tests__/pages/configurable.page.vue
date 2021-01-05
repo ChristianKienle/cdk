@@ -5,7 +5,7 @@
       data-cy="list"
       :min-item-size="itemHeight"
       :items="items"
-      :loadMore="loadMore"
+      :load-more="loadMore"
       :selection-mode="selectionMode_"
       :style="listStyles"
       key-field="id"
@@ -34,44 +34,44 @@
 import '@vue-cdk/list/style/index.css'
 import { SelectionMode } from '@vue-cdk/list'
 
-const createItem = index => ({
+const createItem = (index) => ({
   index,
   id: `${index}`,
-  title: `item ${index}`
+  title: `item ${index}`,
 })
 
 const createItems = (startIndex, count) =>
-  [...Array(count).keys()].map(index => createItem(index + startIndex))
+  [...Array(count).keys()].map((index) => createItem(index + startIndex))
 
 export default {
   props: {
     height: {
       type: Number,
-      default: 200
+      default: 200,
     },
     itemHeight: {
       type: Number,
-      default: 20
+      default: 20,
     },
     numberOfInitialItems: {
       type: Number,
-      default: 0
+      default: 0,
     },
     batchSize: {
       type: Number,
-      default: 10
+      default: 10,
     },
     selectionMode: {
       type: String,
       default: 'single',
       validator(value) {
         return ['single', 'multiple'].includes(value)
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      items: createItems(0, this.numberOfInitialItems)
+      items: createItems(0, this.numberOfInitialItems),
     }
   },
   computed: {
@@ -86,14 +86,14 @@ export default {
     },
     listStyles() {
       return {
-        height: `${this.height}px`
+        height: `${this.height}px`,
       }
     },
     itemStyles() {
       return {
-        height: `${this.itemHeight}px`
+        height: `${this.itemHeight}px`,
       }
-    }
+    },
   },
   methods: {
     reset() {
@@ -106,7 +106,7 @@ export default {
         items.concat(createItems(items.length, batchSize))
         done()
       }, 1000)
-    }
-  }
+    },
+  },
 }
 </script>

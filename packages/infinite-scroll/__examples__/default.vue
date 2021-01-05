@@ -12,7 +12,7 @@
 import '@vue-cdk/infinite-scroll/style/index.css'
 export default {
   data: () => ({
-    items: [...Array(50).keys()].map(id => ({ id }))
-  })
+    items: [...Array(50).keys()].map((id) => ({ id })),
+  }),
 }
 </script>

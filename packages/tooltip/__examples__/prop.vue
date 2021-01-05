@@ -13,9 +13,9 @@ import '@vue-cdk/tooltip/themes/dark.css'
 export default {
   data() {
     return {
-      visible: false
+      visible: false,
     }
-  }
+  },
 }
 </script>
 <style scoped>

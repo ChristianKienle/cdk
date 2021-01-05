@@ -11,7 +11,7 @@
 import { ClientOnly } from '@vue-cdk/client-only'
 export default {
   components: {
-    ClientOnly
-  }
+    ClientOnly,
+  },
 }
 </script>

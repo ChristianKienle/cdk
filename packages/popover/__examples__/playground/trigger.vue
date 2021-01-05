@@ -4,16 +4,16 @@ export default {
   props: {
     native: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   render(h, context) {
     const data = {
       ...context.data,
-      class: context.props.native ? null : 'kpop-button'
+      class: context.props.native ? null : 'kpop-button',
     }
     return h('button', data, context.children)
-  }
+  },
 }
 </script>
 

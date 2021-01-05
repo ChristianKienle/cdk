@@ -19,9 +19,9 @@ export default {
       default: {
         theme: null,
         withArrow: false,
-        arrowClasses: []
-      }
-    }
+        arrowClasses: [],
+      },
+    },
   },
   computed: {
     injectedArrowClasses() {
@@ -39,12 +39,12 @@ export default {
       return normalizedClasses([
         'vcdk-popover-body',
         theme ? `vcdk-popover-theme-${this.theme}` : null,
-        !withArrow ? 'vcdk-popover--no-arrow' : null
+        !withArrow ? 'vcdk-popover--no-arrow' : null,
       ])
     },
     withArrow() {
       return this.$_popover.withArrow
-    }
-  }
+    },
+  },
 }
 </script>

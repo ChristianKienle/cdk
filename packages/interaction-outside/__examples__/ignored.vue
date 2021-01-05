@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      outside: null
+      outside: null,
     }
   },
   computed: {
@@ -40,20 +40,20 @@ export default {
     },
     insideClasses() {
       return {
-        'is-active': this.outside === false
+        'is-active': this.outside === false,
       }
     },
     outsideClasses() {
       return {
-        'is-active': this.outside === true
+        'is-active': this.outside === true,
       }
-    }
+    },
   },
   methods: {
     ignored() {
       return [this.$refs.ignored]
-    }
-  }
+    },
+  },
 }
 </script>
 

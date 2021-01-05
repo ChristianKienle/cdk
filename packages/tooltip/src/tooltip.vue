@@ -11,24 +11,24 @@ export default {
   props: {
     noArrow: {
       type: Boolean,
-      default: false
+      default: false,
     },
     visible: {
       type: Boolean,
-      default: null
+      default: null,
     },
     theme: {
       type: String,
-      default: null
+      default: null,
     },
     text: {
       type: String,
-      default: null
+      default: null,
     },
     placement: {
       type: String,
-      default: 'top'
-    }
+      default: 'top',
+    },
   },
   computed: {
     popoverTheme() {
@@ -37,7 +37,7 @@ export default {
         return null
       }
       return `tooltip-${this.theme}`
-    }
+    },
   },
   watch: {
     visible(visible) {
@@ -57,7 +57,7 @@ export default {
         return
       }
       $_popover.theme = popoverTheme
-    }
+    },
   },
   beforeUpdate() {
     if (this.$el == null) {
@@ -90,7 +90,7 @@ export default {
           theme,
           noArrow: tooltipVM.noArrow,
           visible: tooltipVM.visible,
-          placement: tooltipVM.placement
+          placement: tooltipVM.placement,
         }
       },
       methods: {
@@ -101,22 +101,22 @@ export default {
         hide() {
           this.$refs.popover.hide()
           this.visible = false
-        }
+        },
       },
       render(h) {
         const props = {
           target,
           withArrow: !this.noArrow,
           theme: this.theme,
-          placement: this.placement
+          placement: this.placement,
         }
         const on = {
-          'update:visible': newVisible => {
+          'update:visible': (newVisible) => {
             if (this.visible != null) {
               return
             }
             this.visible = newVisible
-          }
+          },
         }
         const scopedSlots = {
           default(popoverProps) {
@@ -125,10 +125,10 @@ export default {
               return h(TooltipContent, {}, [text])
             }
             return $scopedSlots.content(popoverProps)
-          }
+          },
         }
         return h(Popover, { ref: 'popover', on, parent: tooltipVM, props, scopedSlots })
-      }
+      },
     }).$mount()
     this.$forceUpdate()
   },
@@ -186,10 +186,10 @@ export default {
     handleESC() {
       this.$_popover.hide()
       this.$_escListener.isOn() && this.$_escListener.off()
-    }
+    },
   },
   render() {
     return this.$slots.default
-  }
+  },
 }
 </script>

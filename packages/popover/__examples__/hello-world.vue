@@ -8,9 +8,7 @@
       :target="() => $refs.button"
       theme="clean"
     >
-      <CPopoverContent>
-        This is a popover. Yay!
-      </CPopoverContent>
+      <CPopoverContent> This is a popover. Yay! </CPopoverContent>
     </CPopover>
   </div>
 </template>

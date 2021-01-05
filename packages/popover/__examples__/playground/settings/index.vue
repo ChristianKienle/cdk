@@ -15,14 +15,14 @@
     </SettingRow>
 
     <SettingRow label="Offset">
-      <div style="display: flex;">
+      <div style="display: flex">
         <input v-model.number="offset" class="input" type="range" min="0" max="100" value="0" />
         <label style="">{{ offset }}px</label>
       </div>
     </SettingRow>
 
     <SettingRow label="Trigger Width">
-      <div style="display: flex;">
+      <div style="display: flex">
         <input
           v-model.number="triggerWidth"
           class="input"
@@ -79,9 +79,9 @@ export default {
         'right-end',
         'bottom-start',
         'bottom',
-        'bottom-end'
+        'bottom-end',
       ],
-      themes: ['none', 'clean', 'big-arrow', 'dark']
+      themes: ['none', 'clean', 'big-arrow', 'dark'],
     }
   },
   computed: {
@@ -91,15 +91,15 @@ export default {
         flips: this.flips,
         placement: this.placement,
         withArrow: this.withArrow,
-        theme: this.theme === 'none' ? null : this.theme
+        theme: this.theme === 'none' ? null : this.theme,
       }
-    }
+    },
   },
   watch: {
     kPopProps(newProps) {
       this.$emit('changed', newProps)
-    }
-  }
+    },
+  },
 }
 </script>
 

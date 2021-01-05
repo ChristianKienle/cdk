@@ -14,8 +14,8 @@ export default {
     Link({
       componentName({ name }) {
         return `MyPrefix${name}`
-      }
-    })
-  ]
+      },
+    }),
+  ],
 }
 </script>

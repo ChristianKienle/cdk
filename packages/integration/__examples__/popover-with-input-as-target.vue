@@ -9,7 +9,7 @@
       @focus="show"
       @click="show"
     />
-    <input style="width: 200px;" value="Focus this by pressing tab" />
+    <input style="width: 200px" value="Focus this by pressing tab" />
     <CPopover
       placement="bottom"
       :target="() => $refs.input"
@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       text: 'Edit me',
-      visible: false
+      visible: false,
     }
   },
   methods: {
@@ -43,7 +43,7 @@ export default {
     },
     hide() {
       this.visible = false
-    }
-  }
+    },
+  },
 }
 </script>

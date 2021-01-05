@@ -7,14 +7,14 @@ export default {
     // Text that will be rendered as a placeholder until <CClientOnly /> is mounted on the client-side. You can use this to show a loading indicator or some other kind of placeholder.
     placeholder: {
       type: String,
-      default: null
+      default: null,
     },
     // By default the placeholder will be wrapped in a div tag, however you can use `placeholderTag` prop to customize it.
     placeholderTag: {
       type: String,
       // `div`
-      default: 'div'
-    }
+      default: 'div',
+    },
   },
   render(h, { parent, slots, props }) {
     const { default: defaultSlot = [], placeholder: placeholderSlot } = slots()
@@ -32,7 +32,7 @@ export default {
       return h(
         props.placeholderTag,
         {
-          class: ['no-ssr-placeholder']
+          class: ['no-ssr-placeholder'],
         },
         props.placeholder || placeholderSlot
       )
@@ -41,7 +41,7 @@ export default {
     // Return a placeholder element for each child in the default slot
     // Or if no children return a single placeholder
     return defaultSlot.length > 0 ? defaultSlot.map(() => h(false)) : h(false)
-  }
+  },
 }
 // Adopted from https://raw.githubusercontent.com/egoist/vue-no-ssr
 // LICENSE: see LICENSE-no-ssr.text

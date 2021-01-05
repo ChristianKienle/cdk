@@ -13,12 +13,12 @@ describe('Link', () => {
   it('allows to override attributes of external links', () => {
     const wrapper = mount(Link, {
       propsData: {
-        href: 'https://example.org'
+        href: 'https://example.org',
       },
       attrs: {
         target: '_parent',
-        rel: 'xxx'
-      }
+        rel: 'xxx',
+      },
     })
     expect(wrapper.element.tagName.toLowerCase()).toStrictEqual('a')
     expect(wrapper.attributes('href')).toStrictEqual('https://example.org')
@@ -36,7 +36,7 @@ describe('Link', () => {
     const href = 'https://example.org/hello/worl?test=1'
     const wrapper = mount(
       {
-        template: `<CLink href="${href}">hello</CLink>`
+        template: `<CLink href="${href}">hello</CLink>`,
       },
       { localVue }
     )
@@ -62,20 +62,20 @@ describe('Link', () => {
           component: {
             render(h) {
               return h('div', { class: 'home' }, ['home'])
-            }
-          }
-        }
-      ]
+            },
+          },
+        },
+      ],
     })
 
     const wrapper = mount(
       {
-        template: `<CLink :to="{ name: 'home' }">Home sweet Home</CLink>`
+        template: `<CLink :to="{ name: 'home' }">Home sweet Home</CLink>`,
       },
       {
         stubs: { RouterLink: RouterLinkStub },
         router,
-        localVue
+        localVue,
       }
     )
 
@@ -89,7 +89,7 @@ describe('Link', () => {
     localVue.use(LinkPlugin)
     const wrapper = mount(
       {
-        template: `<div><CLink @click="$emit('click', 'payload')" href="#" disabled>Home sweet Home</CLink></div>`
+        template: `<div><CLink @click="$emit('click', 'payload')" href="#" disabled>Home sweet Home</CLink></div>`,
       },
       { localVue }
     )
@@ -104,7 +104,7 @@ describe('Link', () => {
     localVue.use(LinkPlugin)
     const wrapper = mount(
       {
-        template: `<div><CLink @click="$emit('click', 'payload')" href="#">Home sweet Home</CLink></div>`
+        template: `<div><CLink @click="$emit('click', 'payload')" href="#">Home sweet Home</CLink></div>`,
       },
       { localVue }
     )
@@ -125,7 +125,7 @@ describe('Link', () => {
 
     const wrapper = mount(
       {
-        template: `<CLink href="#" data-cy-test="val">Home sweet Home</CLink>`
+        template: `<CLink href="#" data-cy-test="val">Home sweet Home</CLink>`,
       },
       { localVue }
     )

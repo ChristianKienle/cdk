@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <input tabindex="0" style="width: 100%;" value="focusable input outside" />
+      <input tabindex="0" style="width: 100%" value="focusable input outside" />
     </div>
     <button @click="active = true">Activate Trap</button>
     <CFocusTrap :active="active">
@@ -12,7 +12,7 @@
           padding: '20px',
           margin: '20px 0',
           border: '1px solid #ccc',
-          backgroundColor: '#fefefe'
+          backgroundColor: '#fefefe',
         }"
       >
         <p>I am a Modal</p>
@@ -29,8 +29,8 @@
 export default {
   data() {
     return {
-      active: false
+      active: false,
     }
-  }
+  },
 }
 </script>

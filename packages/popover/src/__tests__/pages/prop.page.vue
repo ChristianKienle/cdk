@@ -16,8 +16,8 @@ export default {
   mixins: [Popover()],
   data() {
     return {
-      visible: false
+      visible: false,
     }
-  }
+  },
 }
 </script>

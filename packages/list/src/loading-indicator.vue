@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: 'ListLoadingIndicator'
+  name: 'ListLoadingIndicator',
 }
 </script>

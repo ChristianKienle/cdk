@@ -7,9 +7,7 @@ describe('modal', () => {
     visitPage('/modal/default')
     getDataCy('modal').should('not.be.visible')
     getDataCy('button').click()
-    getDataCy('modal')
-      .should('exist')
-      .and('be.visible')
+    getDataCy('modal').should('exist').and('be.visible')
     getDataCy('close-button').click()
     getDataCy('modal').should('not.be.visible')
   })
@@ -30,9 +28,7 @@ describe('modal', () => {
     cy.get('div[id^="modal-tab-a"]').should('have.length', 1)
 
     // And that modal should not have any children yet
-    cy.get('div[id^="modal-tab-a"]')
-      .children()
-      .should('have.length', 0)
+    cy.get('div[id^="modal-tab-a"]').children().should('have.length', 0)
   })
 
   it('cleans up modals', () => {

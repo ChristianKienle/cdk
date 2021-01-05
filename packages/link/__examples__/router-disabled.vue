@@ -15,13 +15,13 @@ const router = new VueRouter({
       component: {
         render(h) {
           return h('div', 'hrhr')
-        }
-      }
-    }
-  ]
+        },
+      },
+    },
+  ],
 })
 
 export default {
-  router
+  router,
 }
 </script>
