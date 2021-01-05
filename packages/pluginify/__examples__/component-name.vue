@@ -1,9 +1,9 @@
 <template>
-  <p
-    >The following link is rendered using <code>CLink</code> which has been prefixed with
+  <p>
+    The following link is rendered using <code>CLink</code> which has been prefixed with
     <code>MyPrefix</code>:
-    <MyPrefixLink href="https://example.org">https://example.org</MyPrefixLink></p
-  >
+    <MyPrefixLink href="https://example.org">https://example.org</MyPrefixLink>
+  </p>
 </template>
 
 <script>

@@ -16,6 +16,7 @@ module.exports = {
   title: 'Vue Component Development Kit',
   description: 'Vue Components to make Vue Components',
   base,
+  cache: false,
   extraWatchFiles: [
     `${packagesDir}/**/__examples__/**/*.vue`,
     ...ApiPluginOptions.items.map(item => item.localPath)

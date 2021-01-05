@@ -1,6 +1,7 @@
 # Tasks and Ideas
 
 ## Tasks
+- There are several warnings when doing `yarn install` initially. Fix them.
 - The component API renderer needs to be improved
   - [x] A meaningful title is missing: We have access to the component name so that would be suitable in most cases.
   - [ ] There is no table of contents. There should be one that simply let's me jump to *Props*, *Events*, *Methods*, ….

@@ -15,7 +15,7 @@
           :data-cy-selected="String(selected)"
           :style="itemStyles"
         >
-          <div> {{ selected ? '[x]' : '[ ]' }} {{ item }} – {{ item.index }} </div>
+          <div>{{ selected ? '[x]' : '[ ]' }} {{ item }} – {{ item.index }}</div>
         </CListItem>
       </template>
     </CList>

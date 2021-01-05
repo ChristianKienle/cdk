@@ -1,17 +1,17 @@
 <template>
   <ul>
-    <li
-      >vcdkMq.mini = <code>{{ vcdkMq.mini }}</code></li
-    >
-    <li
-      >vcdkMq.compact = <code>{{ vcdkMq.compact }}</code></li
-    >
-    <li
-      >vcdkMq.regular = <code>{{ vcdkMq.regular }}</code></li
-    >
-    <li
-      >vcdkMq.$all = <code>{{ vcdkMq.$all }}</code></li
-    >
+    <li>
+      vcdkMq.mini = <code>{{ vcdkMq.mini }}</code>
+    </li>
+    <li>
+      vcdkMq.compact = <code>{{ vcdkMq.compact }}</code>
+    </li>
+    <li>
+      vcdkMq.regular = <code>{{ vcdkMq.regular }}</code>
+    </li>
+    <li>
+      vcdkMq.$all = <code>{{ vcdkMq.$all }}</code>
+    </li>
   </ul>
 </template>
 

@@ -2,9 +2,9 @@
   <div class="settings">
     <SettingRow label="Placement">
       <select v-model="placement">
-        <option v-for="aPlacement in placements" :key="aPlacement" :value="aPlacement">{{
-          aPlacement
-        }}</option>
+        <option v-for="aPlacement in placements" :key="aPlacement" :value="aPlacement">
+          {{ aPlacement }}
+        </option>
       </select>
     </SettingRow>
 

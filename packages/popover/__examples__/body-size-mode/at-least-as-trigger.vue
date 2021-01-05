@@ -13,9 +13,9 @@
       </CPopoverContent>
     </CPopover>
 
-    <button ref="bigTrigger" style="width: 250px" @click="bigVisible = !bigVisible"
-      >Big Trigger</button
-    >
+    <button ref="bigTrigger" style="width: 250px" @click="bigVisible = !bigVisible">
+      Big Trigger
+    </button>
     <CPopover
       :target="() => $refs.bigTrigger"
       :visible="bigVisible"
@@ -24,7 +24,7 @@
       theme="clean"
     >
       <CPopoverContent>
-        <p style="padding: 20px; width: 250px"> I am a Popover Body. </p>
+        <p style="padding: 20px; width: 250px">I am a Popover Body.</p>
       </CPopoverContent>
     </CPopover>
   </div>

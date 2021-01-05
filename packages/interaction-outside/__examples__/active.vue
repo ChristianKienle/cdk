@@ -1,9 +1,9 @@
 <template>
   <div class="outside" :class="outsideClasses">
     {{ outsideText }}
-    <button @click="active = !active"
-      >{{ active ? 'Deactivate' : 'Activate' }} CInteractionOutside</button
-    >
+    <button @click="active = !active">
+      {{ active ? 'Deactivate' : 'Activate' }} CInteractionOutside
+    </button>
     <CInteractionOutside :active="active" @detected="outside = true">
       <div class="inside" :class="insideClasses" @click="outside = false">
         {{ innerText }}
