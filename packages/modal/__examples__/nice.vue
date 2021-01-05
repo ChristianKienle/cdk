@@ -5,17 +5,17 @@
     <CModal :open.sync="open">
       <div class="modal">
         <div class="modal-title">Delete Account?</div>
-        <div class="modal-content"
-          >Are you sure to delete your account? You can also just deactivate your account and
-          activate it later on if you just want to get a little break.</div
-        >
+        <div class="modal-content">
+          Are you sure to delete your account? You can also just deactivate your account and
+          activate it later on if you just want to get a little break.
+        </div>
         <div class="modal-actions">
-          <button class="modal-action modal-confirm" @click="open = false"
-            ><span class="modal-action__title">Delete</span></button
-          >
-          <button class="modal-action modal-cancel" @click="open = false"
-            ><span class="modal-action__title">Cancel</span></button
-          >
+          <button class="modal-action modal-confirm" @click="open = false">
+            <span class="modal-action__title">Delete</span>
+          </button>
+          <button class="modal-action modal-cancel" @click="open = false">
+            <span class="modal-action__title">Cancel</span>
+          </button>
         </div>
       </div>
     </CModal>

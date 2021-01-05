@@ -31,6 +31,6 @@ module.exports = {
       },
     },
   ],
-  ignorePatterns: ['node_modules/'],
+  ignorePatterns: ['node_modules/', 'dist/'],
   extends: ['plugin:vue/recommended', '@vue/prettier'],
 }

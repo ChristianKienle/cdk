@@ -3,7 +3,7 @@
     <div>
       <input ref="inputOutside" data-cy="input-outside" tabindex="-1" />
     </div>
-    <button data-cy="trap-button" @click.prevent.cancel.stop="trap"> trap </button>
+    <button data-cy="trap-button" @click.prevent.cancel.stop="trap">trap</button>
     <Modal ref="modal">
       <div class="modal">
         <input ref="intialInput" data-cy="input-a" tabindex="0" />

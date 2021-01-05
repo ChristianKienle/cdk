@@ -11,7 +11,7 @@
     >
       <CPopoverContent>
         <CInteractionOutside @detected="visible = false">
-          <div class="inside"> Try to click outside </div>
+          <div class="inside">Try to click outside</div>
         </CInteractionOutside>
       </CPopoverContent>
     </CPopover>

@@ -20,7 +20,7 @@
       </CInteractionOutside>
     </div>
     <div ref="ignoredContainer" class="ignored" data-cy="ignoredContainer">
-      <div data-cy="always-ignored"> ignored </div>
+      <div data-cy="always-ignored">ignored</div>
       <div
         v-if="showIgnored"
         data-cy="inner-ignored"

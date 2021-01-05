@@ -3,7 +3,7 @@
     <div class="vcdk-text identifier" :style="identifierStyle">
       {{ item.index }}
     </div>
-    <div class="vcdk-text main" style="flex: 2 0 0"> Item with ID {{ item.id }} </div>
+    <div class="vcdk-text main" style="flex: 2 0 0">Item with ID {{ item.id }}</div>
     <div>
       <CPopover
         placement="bottom-end"
@@ -18,9 +18,9 @@
           <div class="menu-item">Move Item</div>
         </CPopoverContent>
       </CPopover>
-      <button ref="target" class="context-button" @click="idState.menuOpen = !idState.menuOpen"
-        >more…</button
-      >
+      <button ref="target" class="context-button" @click="idState.menuOpen = !idState.menuOpen">
+        more…
+      </button>
     </div>
   </div>
 </template>

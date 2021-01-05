@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="showModal"> Show Modal </button>
+    <button @click="showModal">Show Modal</button>
     <Modal v-if="modalVisible" ref="modal">
       <div>
         <p>I am a Modal</p>
