@@ -7,4 +7,4 @@
 </template>
 */
 // Will make eslint complain ('The template root requires an element rather than texts' and 'Parsing error: x-invalid-end-tag'). Because of that we simply prefix all of our components with a 'C'.
-export const defaultComponentName = context => `C${context.name}`
+export const defaultComponentName = (context) => `C${context.name}`

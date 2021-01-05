@@ -19,7 +19,7 @@ export default class FocusTrap {
       onDeactivate: () => {
         _options.onDeactivate()
       },
-      returnFocusOnDeactivate: false
+      returnFocusOnDeactivate: false,
     })
     this.trap.activate()
   }

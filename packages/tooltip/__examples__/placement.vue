@@ -22,9 +22,7 @@
       </CTooltip>
     </div>
 
-    <label for="examples-tooltip-placement-theme-picker">
-      Theme:
-    </label>
+    <label for="examples-tooltip-placement-theme-picker">Theme:</label>
     <select id="examples-tooltip-placement-theme-picker" v-model="theme">
       <option value="light">Light</option>
       <option value="dark">Dark</option>
@@ -38,9 +36,9 @@ import '@vue-cdk/tooltip/themes/dark.css'
 export default {
   data() {
     return {
-      theme: 'dark'
+      theme: 'dark',
     }
-  }
+  },
 }
 </script>
 

@@ -4,7 +4,7 @@
     <CModal :open.sync="open">
       <template #overlay>
         <CModalOverlay v-if="open" class="custom-overlay">
-          <div style="background-color: white;">
+          <div style="background-color: white">
             <div>modal</div>
             <button @click="open = false">close</button>
             <div>
@@ -24,9 +24,9 @@ export default {
   mixins: [CModal()],
   data() {
     return {
-      open: false
+      open: false,
     }
-  }
+  },
 }
 </script>
 

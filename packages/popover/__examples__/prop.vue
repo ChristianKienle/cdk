@@ -9,9 +9,7 @@
       theme="clean"
       with-arrow
     >
-      <CPopoverContent>
-        Popover Body
-      </CPopoverContent>
+      <CPopoverContent> Popover Body </CPopoverContent>
     </CPopover>
   </div>
 </template>
@@ -22,13 +20,13 @@ import '@vue-cdk/popover/themes/clean.css'
 export default {
   data() {
     return {
-      visible: false
+      visible: false,
     }
   },
   methods: {
     toggle() {
       this.visible = !this.visible
-    }
-  }
+    },
+  },
 }
 </script>

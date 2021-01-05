@@ -6,7 +6,7 @@ describe('createEventListener', () => {
     const localVue = createLocalVue()
     return mount(
       {
-        template: '<div />'
+        template: '<div />',
       },
       { localVue }
     ).element

@@ -3,8 +3,8 @@
     <p data-cy="tab-b">tab b</p>
     <button data-cy="button" @click="open = true">Open Modal</button>
     <CModal :portal-selector="portalSelector" :open.sync="open">
-      <template #default="{close}">
-        <div data-cy="modal" style="background-color: white;">
+      <template #default="{ close }">
+        <div data-cy="modal" style="background-color: white">
           <div>modal</div>
           <button data-cy="close-button" @click="close">close</button>
           <div>
@@ -26,8 +26,8 @@ export default {
   data() {
     return {
       open: false,
-      portalSelector: `#modal-tab-b-${shortId()}`
+      portalSelector: `#modal-tab-b-${shortId()}`,
     }
-  }
+  },
 }
 </script>

@@ -4,8 +4,8 @@
     <input tabindex="0" />
     <button data-cy="button" @click="open = true">Open Modal</button>
     <CModal :open.sync="open">
-      <template #default="{close}">
-        <div data-cy="modal" style="background-color: white;">
+      <template #default="{ close }">
+        <div data-cy="modal" style="background-color: white">
           <div>modal</div>
           <button data-cy="close-button" @click="close">close</button>
           <div>
@@ -26,8 +26,8 @@ export default {
   mixins: [CModal()],
   data() {
     return {
-      open: false
+      open: false,
     }
-  }
+  },
 }
 </script>

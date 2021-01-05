@@ -3,9 +3,9 @@
     <input v-model.number="id" type="number" />
     <input v-model.number="height" type="number" />
     <button data-cy="setHeightButton" @click="setHeight">set height</button>
-    <div style="height: 100px; border: 1px solid red;">
+    <div style="height: 100px; border: 1px solid red">
       <CInfiniteScroll :items="items">
-        <template #default="{item, active, index}">
+        <template #default="{ item, active, index }">
           <CInfiniteScrollItem
             :item="item"
             :active="active"
@@ -25,9 +25,9 @@
 <script>
 import '@vue-cdk/list/style/index.css'
 
-const createItem = id => ({
+const createItem = (id) => ({
   id,
-  height: 20
+  height: 20,
 })
 
 export default {
@@ -35,13 +35,13 @@ export default {
     return {
       id: 0,
       height: 20,
-      items: [...Array(10).keys()].map(createItem)
+      items: [...Array(10).keys()].map(createItem),
     }
   },
   methods: {
     setHeight() {
       const { id, height, items } = this
-      const item = items.find(item => id === item.id)
+      const item = items.find((item) => id === item.id)
       if (item == null) {
         throw new Error('item not found')
       }
@@ -49,12 +49,12 @@ export default {
     },
     loadMore(done) {
       const currentCount = this.items.length
-      const ids = [...Array(10).keys()].map(index => index + currentCount)
+      const ids = [...Array(10).keys()].map((index) => index + currentCount)
       const newItems = ids.map(createItem)
       this.items.push(...newItems)
       done()
-    }
-  }
+    },
+  },
 }
 </script>
 

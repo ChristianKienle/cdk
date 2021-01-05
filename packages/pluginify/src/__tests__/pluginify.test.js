@@ -8,16 +8,16 @@ describe('pluginify', () => {
       name: 'HelloWorld',
       render(h) {
         return h('div', {}, '1337')
-      }
+      },
     }
     const onDidRegisterComponent = jest.fn().mockName('mocked onDidRegisterComponent')
     const HelloWorldPlugin = pluginify(HelloWorld)
     localVue.use(HelloWorldPlugin, {
-      onDidRegisterComponent
+      onDidRegisterComponent,
     })
     expect(onDidRegisterComponent).toHaveBeenCalledWith({
       name: 'CHelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
     })
   })
 
@@ -27,19 +27,19 @@ describe('pluginify', () => {
       name: 'HelloWorld',
       render(h) {
         return h('div', {}, '1337')
-      }
+      },
     }
     const componentName = jest.fn(({ name }) => `B${name}`).mockName('mocked componentName')
     const HelloWorldPlugin = pluginify(HelloWorld)
     localVue.use(HelloWorldPlugin, {
-      componentName
+      componentName,
     })
     expect(componentName).toHaveBeenCalledWith({ name: 'HelloWorld', component: HelloWorld })
 
     // Also mount it and use the modified name
     const wrapper = mount(
       {
-        template: `<BHelloWorld />`
+        template: `<BHelloWorld />`,
       },
       { localVue }
     )
@@ -52,13 +52,13 @@ describe('pluginify', () => {
       name: 'HelloWorld',
       render(h) {
         return h('div', {}, '1337')
-      }
+      },
     }
     const HelloWorldPlugin = pluginify(HelloWorld)
     localVue.use(HelloWorldPlugin)
     const wrapper = mount(
       {
-        template: `<CHelloWorld />`
+        template: `<CHelloWorld />`,
       },
       { localVue }
     )
@@ -72,13 +72,13 @@ describe('pluginify', () => {
       functional: true,
       render(h) {
         return h('div', {}, '1337')
-      }
+      },
     }
     const HelloWorldPlugin = pluginify(HelloWorld)
     localVue.use(HelloWorldPlugin)
     const wrapper = mount(
       {
-        template: `<CHelloWorld />`
+        template: `<CHelloWorld />`,
       },
       { localVue }
     )
@@ -93,7 +93,7 @@ describe('pluginify', () => {
     localVue.use(HelloWorldPlugin)
     const wrapper = mount(
       {
-        template: `<CHelloWorld />`
+        template: `<CHelloWorld />`,
       },
       { localVue }
     )
@@ -106,18 +106,18 @@ describe('pluginify', () => {
         name: 'HelloWorld',
         render(h) {
           return h('div', {}, '1337')
-        }
+        },
       }
       const mixin = pluginify(HelloWorld)()
       expect(mixin).toBeDefined()
       expect(mixin).toMatchObject({
         components: {
-          CHelloWorld: HelloWorld
-        }
+          CHelloWorld: HelloWorld,
+        },
       })
       const wrapper = mount({
         template: `<CHelloWorld />`,
-        mixins: [mixin]
+        mixins: [mixin],
       })
       expect(wrapper.text()).toEqual('1337')
     })
@@ -127,15 +127,15 @@ describe('pluginify', () => {
         name: 'HelloWorld',
         render(h) {
           return h('div', {}, '1337')
-        }
+        },
       }
       const componentName = jest.fn(({ name }) => `B${name}`).mockName('mocked componentName')
       const mixin = pluginify(HelloWorld)({ componentName })
       expect(mixin).toBeDefined()
       expect(mixin).toMatchObject({
         components: {
-          BHelloWorld: HelloWorld
-        }
+          BHelloWorld: HelloWorld,
+        },
       })
 
       expect(componentName).toHaveBeenCalledWith({ name: 'HelloWorld', component: HelloWorld })
@@ -143,7 +143,7 @@ describe('pluginify', () => {
       // Also mount it and use the modified name
       const wrapper = mount({
         mixins: [mixin],
-        template: `<BHelloWorld />`
+        template: `<BHelloWorld />`,
       })
       expect(wrapper.text()).toEqual('1337')
     })

@@ -20,9 +20,7 @@
       </CInteractionOutside>
     </div>
     <div ref="ignoredContainer" class="ignored" data-cy="ignoredContainer">
-      <div data-cy="always-ignored">
-        ignored
-      </div>
+      <div data-cy="always-ignored"> ignored </div>
       <div
         v-if="showIgnored"
         data-cy="inner-ignored"
@@ -41,7 +39,7 @@ export default {
     return {
       showIgnored: true,
       lastDetectedInteraction: null,
-      active: false
+      active: false,
     }
   },
   computed: {
@@ -51,20 +49,20 @@ export default {
     },
     insideClasses() {
       return {
-        'is-active': this.lastDetectedInteraction === 'inside'
+        'is-active': this.lastDetectedInteraction === 'inside',
       }
     },
     outsideClasses() {
       return {
-        'is-active': this.lastDetectedInteraction === 'outside'
+        'is-active': this.lastDetectedInteraction === 'outside',
       }
-    }
+    },
   },
   methods: {
     ignored() {
       return [this.$refs.ignoredContainer]
-    }
-  }
+    },
+  },
 }
 </script>
 

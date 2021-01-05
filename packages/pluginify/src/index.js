@@ -1,7 +1,7 @@
 // @ts-check
 import normalizedPluginOptions from './normalize-options'
 
-const getComponentName = component => {
+const getComponentName = (component) => {
   if (typeof component === 'function') {
     const { prototype } = component
     return prototype.constructor.extendOptions.name
@@ -17,7 +17,7 @@ export default (...dependencies) => {
   const install = (vue, options) => {
     const _options = normalizedPluginOptions(options)
     const { onDidRegisterComponent } = _options
-    dependencies.forEach(component => {
+    dependencies.forEach((component) => {
       const rawComponentName = getComponentName(component)
       if (rawComponentName == null) {
         throw new Error(`
@@ -28,7 +28,7 @@ export default (...dependencies) => {
       vue.component(componentName, component)
       onDidRegisterComponent({
         component,
-        name: componentName
+        name: componentName,
       })
     })
   }
@@ -36,7 +36,7 @@ export default (...dependencies) => {
   function createMixin(options) {
     const _options = normalizedPluginOptions(options)
     const componentsOption = {}
-    dependencies.forEach(component => {
+    dependencies.forEach((component) => {
       const rawComponentName = getComponentName(component)
       if (rawComponentName == null) {
         throw new Error(`
@@ -47,7 +47,7 @@ export default (...dependencies) => {
       componentsOption[componentName] = component
     })
     return {
-      components: componentsOption
+      components: componentsOption,
     }
   }
   createMixin.install = install

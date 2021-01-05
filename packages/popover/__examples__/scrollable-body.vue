@@ -18,8 +18,8 @@ export default {
   methods: {
     toggle() {
       this.$refs.popover.toggle()
-    }
-  }
+    },
+  },
 }
 </script>
 

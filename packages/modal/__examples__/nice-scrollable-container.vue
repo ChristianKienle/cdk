@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 2000px;">
+  <div style="height: 2000px">
     <button @click="open = true">Open Modal</button>
 
     <CModal :open.sync="open">
@@ -24,7 +24,7 @@
     </CModal>
 
     <CModal :open.sync="nestedOpen">
-      <div class="modal" style="max-width: 90vw;">
+      <div class="modal" style="max-width: 90vw">
         <div class="modal-title">Nested Modal</div>
         <div class="modal-content"
           >Are you sure to delete your account? You can also just deactivate your account and
@@ -51,9 +51,9 @@ export default {
   data() {
     return {
       open: false,
-      nestedOpen: false
+      nestedOpen: false,
     }
-  }
+  },
 }
 </script>
 

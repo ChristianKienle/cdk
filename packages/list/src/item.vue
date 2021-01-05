@@ -5,25 +5,25 @@ import InifiniteScrollItem from '@vue-cdk/infinite-scroll/src/item.vue'
 export default {
   name: 'ListItem',
   inject: {
-    vcdkList: { default: null }
+    vcdkList: { default: null },
   },
   props: {
     item: {
       type: Object,
-      required: true
+      required: true,
     },
     keyField: {
       type: String,
-      default: 'id'
+      default: 'id',
     },
     active: {
       type: Boolean,
-      default: false
+      default: false,
     },
     sizeDependencies: {
       type: [Array, Object],
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   methods: {
     click() {
@@ -32,18 +32,18 @@ export default {
         return
       }
       vcdkList.select(this.item)
-    }
+    },
   },
   render(h) {
     const nativeOn = {
-      click: this.click
+      click: this.click,
     }
     const data = {
       props: this.$props,
       attrs: this.$attrs,
-      nativeOn
+      nativeOn,
     }
     return h(InifiniteScrollItem, data, this.$slots.default)
-  }
+  },
 }
 </script>

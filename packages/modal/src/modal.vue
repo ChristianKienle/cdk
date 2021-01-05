@@ -33,22 +33,22 @@ export default {
   props: {
     portalSelector: {
       default: () => `#${shortId()}`,
-      type: String
+      type: String,
     },
     open: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      open_: this.open
+      open_: this.open,
     }
   },
   watch: {
     open(open) {
       this.open_ = open
-    }
+    },
   },
   created() {
     this.$_lockedToTarget = null
@@ -78,7 +78,7 @@ export default {
     close() {
       this.open_ = false
       this.$emit('update:open', false)
-    }
-  }
+    },
+  },
 }
 </script>

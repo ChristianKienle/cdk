@@ -7,7 +7,7 @@ const createTrapable = () => {
   const Modal = {
     render(h) {
       return h('div', { style: 'width: 200px; height: 200px;' }, ['hi mom'])
-    }
+    },
   }
   const wrapper = mount(Modal, { localVue })
   const { vm } = wrapper
@@ -47,7 +47,7 @@ describe('normalize activation options', () => {
 
   it('uses deactivation mode provided', () => {
     const normalized = normalize(trapable.vm, {
-      deactivation: 'manual'
+      deactivation: 'manual',
     })
     expect(normalized).toHaveProperty('deactivation', 'manual')
     expect(normalized.onDeactivate).toBeDefined()
@@ -58,7 +58,7 @@ describe('normalize activation options', () => {
   it('uses provided onDeactivate function', () => {
     const onDeactivate = () => {}
     const normalized = normalize(trapable.vm, {
-      onDeactivate
+      onDeactivate,
     })
     expect(normalized).toHaveProperty('deactivation', 'on-esc')
     expect(normalized.onDeactivate).toBe(onDeactivate)
@@ -67,11 +67,11 @@ describe('normalize activation options', () => {
 
   it('uses provided initialFocus element', () => {
     const wrapper = mount({
-      template: '<div tabindex="-1">hi</div>'
+      template: '<div tabindex="-1">hi</div>',
     })
     const initialFocus = wrapper.element
     const normalized = normalize(trapable.vm, {
-      initialFocus
+      initialFocus,
     })
     expect(normalized).toHaveProperty('deactivation', 'on-esc')
     expect(typeof normalized.onDeactivate).toEqual('function')

@@ -3,4 +3,4 @@
 const EXTERNAL_URL_RE = /^[A-Za-z][A-Za-z0-9+\-.]*:(.*)$/
 
 /** @param {string} urlOrPath */
-export default urlOrPath => EXTERNAL_URL_RE.test(urlOrPath)
+export default (urlOrPath) => EXTERNAL_URL_RE.test(urlOrPath)

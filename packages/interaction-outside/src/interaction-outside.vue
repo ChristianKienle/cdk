@@ -19,7 +19,7 @@ export default {
   name: 'InteractionOutside',
   props: {
     ignored: { type: Function, default: () => [] },
-    active: { type: Boolean, default: true }
+    active: { type: Boolean, default: true },
   },
   watch: {
     active: {
@@ -28,8 +28,8 @@ export default {
         setTimeout(() => {
           this.activeDidChange(active, wasActive)
         })
-      }
-    }
+      },
+    },
   },
   beforeDestroy() {
     if (!isBrowser()) {
@@ -76,13 +76,13 @@ export default {
     },
     removeListeners() {
       const root = getRootEl()
-      EVENTS.forEach(event => {
+      EVENTS.forEach((event) => {
         root.removeEventListener(event, this.click, false)
       })
     },
     addListeners() {
       const root = getRootEl()
-      EVENTS.forEach(event => {
+      EVENTS.forEach((event) => {
         root.addEventListener(event, this.click, false)
       })
     },
@@ -96,10 +96,10 @@ export default {
       if (!isActive && wasActive === true) {
         this.removeListeners()
       }
-    }
+    },
   },
   render() {
     return this.$scopedSlots.default()
-  }
+  },
 }
 </script>

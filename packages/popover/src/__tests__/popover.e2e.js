@@ -36,7 +36,7 @@ describe('popover component', () => {
     visitStart()
     visitPage('/popover/default')
     getDataCy('popover').should('exist')
-    cy.get('body').then(body => {
+    cy.get('body').then((body) => {
       cy.wrap(body.find('#vcdk-popover-portal-container').first())
         .invoke({ log: true }, 'height')
         .should('eq', 0)

@@ -2,9 +2,9 @@
   <div>
     <input v-model.number="itemIndex" type="number" />
     <button data-cy="setHeightButton" @click="scrollToItem">scroll</button>
-    <div style="height: 100px; border: 1px solid red;">
+    <div style="height: 100px; border: 1px solid red">
       <CInfiniteScroll ref="list" :items="items">
-        <template #default="{item, active, index}">
+        <template #default="{ item, active, index }">
           <CInfiniteScrollItem
             :item="item"
             :active="active"
@@ -24,23 +24,23 @@
 <script>
 import '@vue-cdk/infinite-scroll/style/index.css'
 
-const createItem = id => ({
+const createItem = (id) => ({
   id,
-  height: 20
+  height: 20,
 })
 
 export default {
   data() {
     return {
       itemIndex: 0,
-      items: [...Array(10).keys()].map(createItem)
+      items: [...Array(10).keys()].map(createItem),
     }
   },
   methods: {
     scrollToItem() {
       this.$refs.list.scrollToIndex(this.itemIndex)
-    }
-  }
+    },
+  },
 }
 </script>
 
