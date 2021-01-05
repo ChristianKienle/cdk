@@ -8,7 +8,7 @@
   "scripts": {
     "prepublishOnly": "build-vue-lib"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
@@ -18,6 +18,9 @@
     "src/**/*.vue",
     "__examples__/**/*"
   ],
+  "cdk": {
+    "browserModuleName": "vuecdkLink"
+  },
   "dependencies": {
     "@vue-cdk/pluginify": "^0.10.0"
   },

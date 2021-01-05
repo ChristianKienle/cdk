@@ -35,7 +35,6 @@
 import CPopover from '@vue-cdk/popover/src/popover.vue'
 import CPopoverContent from '@vue-cdk/popover/src/content.vue'
 import CList from '@vue-cdk/list/src/list.vue'
-import '@vue-cdk/popover/themes/clean.css'
 import rangesInSubstring from './helper/ranges-in-string'
 
 /**

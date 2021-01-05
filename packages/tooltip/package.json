@@ -1,5 +1,11 @@
 {
   "name": "@vue-cdk/tooltip",
+  "cdk": {
+    "browserModuleName": "vuecdkTooltip"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
   "version": "0.10.0",
   "private": false,
   "publishConfig": {
@@ -14,10 +20,6 @@
     "prepublishOnly": "build-vue-lib"
   },
   "style": "themes/index.css",
-  "main": "src/index.js",
-  "module": "dist/index.esm.js",
-  "unpkg": "dist/index.umd.js",
-  "jsdelivr": "dist/index.umd.js",
   "files": [
     "dist/",
     "__examples__/**/*",
