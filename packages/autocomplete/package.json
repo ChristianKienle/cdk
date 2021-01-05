@@ -1,5 +1,8 @@
 {
   "name": "@vue-cdk/autocomplete",
+  "cdk": {
+    "browserModuleName": "vuecdkAutocomplete"
+  },
   "version": "0.10.0",
   "private": false,
   "publishConfig": {
@@ -9,10 +12,9 @@
     "test": "vue-cli-service test:unit",
     "prepublishOnly": "build-vue-lib"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
-  "jsdelivr": "dist/index.umd.js",
   "files": [
     "dist/",
     "src/**/*.js",
@@ -31,7 +33,6 @@
   "devDependencies": {
     "@vue-cdk/build-vue-lib": "^0.10.0",
     "@vue-cdk/e2e-utils": "^0.10.0",
-
     "@vue/cli-plugin-babel": "^4.4.6",
     "@vue/cli-plugin-eslint": "^4.4.6",
     "@vue/cli-plugin-unit-jest": "^4.4.6",

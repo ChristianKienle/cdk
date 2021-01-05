@@ -6,6 +6,6 @@ export default {
   functional: true,
   render(h, ctx) {
     return h(CDynamicScrollerItem, ctx.data, ctx.children)
-  }
+  },
 }
 </script>

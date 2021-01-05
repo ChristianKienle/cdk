@@ -1,6 +1,12 @@
 {
   "name": "@vue-cdk/infinite-scroll",
   "version": "0.10.0",
+  "cdk": {
+    "browserModuleName": "vuecdkInfiniteScroll"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -13,10 +19,6 @@
     "test:unit": "vue-cli-service test:unit",
     "prepublishOnly": "build-vue-lib"
   },
-  "main": "src/index.js",
-  "module": "dist/index.esm.js",
-  "unpkg": "dist/index.umd.js",
-  "jsdelivr": "dist/index.umd.js",
   "files": [
     "dist/",
     "style/**/*.css",

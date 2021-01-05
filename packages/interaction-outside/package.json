@@ -1,6 +1,13 @@
 {
   "name": "@vue-cdk/interaction-outside",
   "version": "0.10.0",
+  "cdk": {
+    "browserModuleName": "vuecdkInteractionOutside"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -8,10 +15,6 @@
   "scripts": {
     "prepublishOnly": "build-vue-lib"
   },
-  "main": "src/index.js",
-  "module": "dist/index.esm.js",
-  "unpkg": "dist/index.umd.js",
-  "jsdelivr": "dist/index.umd.js",
   "files": [
     "dist/",
     "src/**/*.js",

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import VueVirtualDynamicScroller from 'vue-virtual-scroller/src/components/DynamicScroller.vue'
+import { DynamicScroller as VueVirtualDynamicScroller } from 'vue-virtual-scroller'
 import scrollPositionsEqual from './scroll-positions-equal'
 
 // The `InfiniteScroll` component expects you to do tell it two things at a minimum:
@@ -45,31 +45,31 @@ export default {
     // Name of property that uniquely identifies an item.
     keyField: {
       type: String,
-      default: 'id'
+      default: 'id',
     },
     // Minimal size of the items (in `px`). Will be passed onto DynamicScroller.
     minItemSize: {
       type: Number,
-      default: 18
+      default: 18,
     },
     // Items to be rendered by the infinite scroll component. Each item must have a unique identifier. You can specify the name of the identifying property by using the key-field-prop.
     items: { type: Array, default: () => [] },
     // Function to be called when the list needs more items from you. This function is called with a callback parameter that you MUST call at some point with additional items.
-    loadMore: { type: Function, default: null }
+    loadMore: { type: Function, default: null },
   },
   data() {
     return {
       state: 'default',
       scrollPosition: {
         nearTop: null,
-        nearBottom: null
-      }
+        nearBottom: null,
+      },
     }
   },
   computed: {
     isLoading() {
       return this.state === 'loading'
-    }
+    },
   },
   mounted() {
     if (this.items.length === 0) {
@@ -116,7 +116,7 @@ export default {
         }
         this.loadMore(() => (this.state = 'default'))
       }
-    }
-  }
+    },
+  },
 }
 </script>
