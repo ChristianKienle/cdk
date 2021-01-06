@@ -36,7 +36,7 @@
     "@vue-cdk/pluginify": "^0.10.0",
     "@vue-cdk/portal": "^0.10.0",
     "@vue-cdk/utils": "^0.10.0",
-    "@linusborg/vue-simple-portal": "^0.1.4"
+    "@linusborg/vue-simple-portal": "^0.1.5"
   },
   "devDependencies": {
     "@vue-cdk/build-vue-lib": "^0.10.0",

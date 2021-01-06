@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@vue/compiler-sfc": "^3.0.5",
-    "rollup": "^2.35.1",
+    "rollup": "^2.36.0",
     "fs-extra": "^9.0.1",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
