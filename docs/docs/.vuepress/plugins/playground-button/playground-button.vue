@@ -5,8 +5,9 @@
 <style>
 .playground-button {
   border: 1px solid #FF307D;
-  background-color: rgba(255,255,255, 0.9);
+  background-color: #FF307D;
   backdrop-filter: blur(2px);
+  color: white;
 }
 </style>
 <style lang="stylus">
@@ -16,7 +17,7 @@
   bottom 2rem
   right 2.5rem
   border-radius 3em
-  color: rgb(231, 8, 90);
+  color white
   z-index 1
   font-size 12px
   letter-spacing .08em
