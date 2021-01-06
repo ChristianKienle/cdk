@@ -16,7 +16,7 @@
     "test:e2e:ci": "yarn test:e2e --headless",
     "poor-ci": "yarn test:unit && yarn lint && yarn test:e2e:ci && yarn docs:build",
     "lint": "eslint --ext .js,.vue packages examples storybook e2e",
-    "postinstall": "lerna bootstrap --concurrency 1 --use-workspaces"
+    "postinstall": "lerna bootstrap --concurrency 1 --use-workspaces && yarn build-packages"
   },
   "resolutions": {
     "cypress": "5.2.0"
@@ -35,11 +35,11 @@
     "@babel/core": "^7.10.3",
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@vue/cli-plugin-babel": "^4.5.9",
-    "@vue/cli-plugin-e2e-cypress": "^4.5.9",
-    "@vue/cli-plugin-eslint": "^4.5.9",
-    "@vue/cli-plugin-unit-jest": "^4.5.9",
-    "@vue/cli-service": "^4.5.9",
+    "@vue/cli-plugin-babel": "^4.5.10",
+    "@vue/cli-plugin-e2e-cypress": "^4.5.10",
+    "@vue/cli-plugin-eslint": "^4.5.10",
+    "@vue/cli-plugin-unit-jest": "^4.5.10",
+    "@vue/cli-service": "^4.5.10",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.3",
     "babel-jest": "^26.0.1",

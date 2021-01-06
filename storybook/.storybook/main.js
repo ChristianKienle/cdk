@@ -9,13 +9,13 @@ module.exports = {
     "@storybook/addon-essentials"
   ],
   webpackFinal: async config => {
-    config.resolve.alias['vue$'] = path.join(
-      __dirname,
-      '..',
-      '..',
-      'node_modules',
-      'vue/dist/vue.esm.js'
-    )
+    // config.resolve.alias['vue$'] = path.join(
+    //   __dirname,
+    //   '..',
+    //   '..',
+    //   'node_modules',
+    //   'vue/dist/vue.esm.js'
+    // )
     return config
   },
 }
