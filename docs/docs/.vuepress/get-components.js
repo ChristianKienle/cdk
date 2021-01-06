@@ -1,4 +1,5 @@
 module.exports = () => [
+  { name: 'Autocomplete', slug: 'autocomplete' },
   { name: 'Client Only', slug: 'client-only' },
   { name: 'Focus Trap', slug: 'focus-trap' },
   { name: 'Infinite Scroll', slug: 'infinite-scroll' },

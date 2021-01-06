@@ -1,3 +1,4 @@
+import Autocomplete from '@vue-cdk/autocomplete'
 import Link from '@vue-cdk/link'
 import FocusTrap from '@vue-cdk/focus-trap'
 import Popover from '@vue-cdk/popover'
@@ -8,17 +9,15 @@ import InteractionOutside from '@vue-cdk/interaction-outside'
 import Tooltip from '@vue-cdk/tooltip'
 import List from '@vue-cdk/list'
 import '@vue-cdk/infinite-scroll/style/index.css'
-import vue from 'vue'
-
-vue.config.devtools = true
-
-const options = {
-  onDidRegisterComponent({ name, component }) {
-    console.log(`did register component ${name}`)
-  }
-}
+import '@vue-cdk/popover/themes/clean.css'
 
 export default ({ Vue }) => {
-  const plugins = [InteractionOutside, Tooltip, Link, Popover, List, FocusTrap, Modal, InfiniteScroll, ScrollContainer]
+  Vue.config.devtools = true
+  const options = {
+    onDidRegisterComponent({ name }) {
+      console.log(`did register component ${name}`)
+    }
+  }
+  const plugins = [Autocomplete, InteractionOutside, Tooltip, Link, Popover, List, FocusTrap, Modal, InfiniteScroll, ScrollContainer]
   plugins.forEach(plugin => Vue.use(plugin, options))
 }
