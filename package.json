@@ -10,7 +10,7 @@
     "build-packages": "lerna run prepublishOnly",
     "docs:build": "cd storybook && yarn build && cd ../docs && yarn build && mkdir dist/storybook && cp -R ../storybook/dist/* dist/storybook",
     "docs:publish": "node docs/tools/publish.js",
-    "test:unit": "jest --clear-cache && vue-cli-service test:unit --no-collect-coverage --runInBand",
+    "test:unit": "vue-cli-service test:unit --no-collect-coverage --runInBand",
     "test:unit:watch": "vue-cli-service test:unit --no-collect-coverage --watch",
     "test:e2e": "vue-cli-service test:e2e",
     "test:e2e:ci": "yarn test:e2e --headless",
