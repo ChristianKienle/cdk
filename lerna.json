@@ -1,7 +1,15 @@
 {
-  "packages": ["packages/*", "docs", "storybook", "e2e", "examples", "lib/*", "vuepress-plugins/*"],
+  "packages": [
+    "packages/*",
+    "docs",
+    "storybook",
+    "e2e",
+    "examples",
+    "lib/*",
+    "vuepress-plugins/*"
+  ],
   "parallel": false,
   "npmClient": "yarn",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "useWorkspaces": true
 }

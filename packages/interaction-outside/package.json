@@ -1,13 +1,12 @@
 {
   "name": "@vue-cdk/interaction-outside",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "cdk": {
     "browserModuleName": "vuecdkInteractionOutside"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
-
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -22,14 +21,14 @@
     "__examples__/**/*"
   ],
   "dependencies": {
-    "@vue-cdk/pluginify": "^0.10.0"
+    "@vue-cdk/pluginify": "^0.10.1"
   },
   "peerDependencies": {
     "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@vue-cdk/build-vue-lib": "^0.10.0",
-    "@vue-cdk/e2e-utils": "^0.10.0",
+    "@vue-cdk/build-vue-lib": "^0.10.1",
+    "@vue-cdk/e2e-utils": "^0.10.1",
     "@vue/cli-plugin-babel": "^4.5.10",
     "@vue/cli-plugin-eslint": "^4.4.6",
     "@vue/cli-plugin-unit-jest": "^4.4.6",
