@@ -31,7 +31,7 @@
     "vuepress-plugins/*"
   ],
   "devDependencies": {
-    "vuepress": "^1.7.1",
+    "vuepress": "^1.8.0",
     "@babel/core": "^7.10.3",
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
