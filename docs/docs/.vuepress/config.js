@@ -109,7 +109,8 @@ module.exports = {
         package: require('./playground-package'),
         setupModule: {
           code:
-            `import Link from '@vue-cdk/link'
+            `import Autocomplete from '@vue-cdk/autocomplete'
+import Link from '@vue-cdk/link'
 import FocusTrap from '@vue-cdk/focus-trap'
 import ClientOnly from '@vue-cdk/client-only'
 import InfiniteScroll from '@vue-cdk/infinite-scroll'
@@ -125,6 +126,7 @@ import VueRouter from 'vue-router'
 export default ({ Vue }) => {
   Vue.use(VueRouter)
   Vue.config.productionTip = false
+  Vue.use(Autocomplete)
   Vue.use(Link)
   Vue.use(FocusTrap)
   Vue.use(ClientOnly)

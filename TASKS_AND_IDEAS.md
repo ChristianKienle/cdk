@@ -1,6 +1,7 @@
 # Tasks and Ideas
 
 ## Tasks
+- rename `master` to `main`
 - Fixed warning `"export 'EQUALS_TRIGGER' (imported as 'BodySizeMode') was not found in './helper/body-size-mode'` (when running `yarn storybook`)
 - There are several warnings when doing `yarn install` initially. Fix them.
 - The component API renderer needs to be improved

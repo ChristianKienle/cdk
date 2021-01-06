@@ -16,6 +16,7 @@
     "nanoid": "^3.1.20",
     "@linusborg/vue-simple-portal": "^0.1.5",
     "@vue-cdk/client-only": "^0.10.0",
+    "@vue-cdk/autocomplete": "^0.10.0",
     "@vue-cdk/focus-trap": "^0.10.0",
     "@vue-cdk/infinite-scroll": "^0.10.0",
     "@vue-cdk/interaction-outside": "^0.10.0",
