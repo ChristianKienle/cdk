@@ -25,7 +25,7 @@
     "vue": "^2.6.12"
   },
   "dependencies": {
-    "@linusborg/vue-simple-portal": "^0.1.4",
+    "@linusborg/vue-simple-portal": "^0.1.5",
     "@vue-cdk/client-only": "^0.10.0",
     "@vue-cdk/pluginify": "^0.10.0",
     "@vue-cdk/utils": "^0.10.0"
