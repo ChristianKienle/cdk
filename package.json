@@ -19,7 +19,7 @@
     "postinstall": "lerna bootstrap --concurrency 1 --use-workspaces && yarn build-packages"
   },
   "resolutions": {
-    "cypress": "5.2.0"
+    "cypress": "5.6.0"
   },
   "workspaces": [
     "packages/*",
@@ -45,7 +45,7 @@
     "@vue/test-utils": "^1.0.3",
     "babel-jest": "^26.0.1",
     "cross-env": "^7.0.0",
-    "cypress": "^5.2.0",
+    "cypress": "^5.6.0",
     "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-prettier": "^3.1.3",
