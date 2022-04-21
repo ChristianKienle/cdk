@@ -41,7 +41,7 @@
     "@storybook/core": "^6.1.11",
     "@storybook/react": "^6.1.11",
     "@storybook/source-loader": "^6.1.11",
-    "@storybook/vue": "^6.1.11",
+    "@storybook/vue": "^6.4.22",
     "@vue/cli-plugin-babel": "^4.5.10",
     "@vue/cli-plugin-eslint": "^4.5.10",
     "@vue/cli-service": "^4.5.10",
